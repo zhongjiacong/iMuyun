@@ -56,13 +56,8 @@ class OrderController extends Controller
 	{
 		$this->layout = '//layouts/column1';
 		
-		$model = $this->loadModel($id);
-		
-		if($model->customer_id != Yii::app()->user->getId())
-			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
-		
-		$this->render('pay',array(
-			'model'=>$model,
+		$this->render('view',array(
+			'model'=>$this->loadModel($id),
 		));
 	}
 

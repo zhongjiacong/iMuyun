@@ -48,77 +48,84 @@ $this->menu=array(
 	<div><?=CHtml::link(CHtml::button(Yii::t('order','Edit')),array('order/update','id'=>$model->id)); ?></div>
 </div>
 
-<div class="clear"></div>
-
-<div class="orderstate">
-	<div class="linktriangle">&nbsp;</div>
-	<span><?=($model->paytime==NULL)?Yii::t('order','non-payment'):Yii::t('order','paid'); ?></span>
+<div id="orderstate">
+	<div>
+		<span><?=($model->paytime==NULL)?Yii::t('order','non-payment'):Yii::t('order','paid'); ?></span>
+	</div>
+	<div>
+		<span><?=($model->audit==0)?Yii::t('order','unaudited'):Yii::t('order','audited'); ?></span>
+		<br />
+		审核中若发现订单描述不够明确，会及时联系您确定需求。
+	</div>
+	<div>
+		<span><?=($model->deliverytime==NULL)?
+			Yii::t('order','invoice unsent'):Yii::t('order','invoice sent'); ?></span>
+	</div>
 </div>
-<div class="orderstate">
-	<div class="linktriangle">&nbsp;</div>
-	<div class="emptytriangle">&nbsp;</div>
-	<span><?=($model->audit==0)?Yii::t('order','unaudited'):Yii::t('order','audited'); ?></span>
-	<br />
-	审核中若发现订单描述不够明确，会及时联系您确定需求。
-</div>
-<div class="orderstate">
-	<div class="emptytriangle">&nbsp;</div>
-	<span><?=($model->deliverytime==NULL)?
-		Yii::t('order','invoice unsent'):Yii::t('order','invoice sent'); ?></span>
-</div>
-
-<div class="clear"></div>
 
 <?php
 	// 总价格
 	$totalprice = 0;
 	// 获取当前订单号下的所有文本
 	$article = Article::model()->findAll('`order_id` = :order_id',array(':order_id'=>$model->id));
-	foreach ($article as $key => $value):
-		// 累计总价
-		$articleprice = Spreadtable::model()->findAll('`article_id` = :id',array(':id'=>$value->id));
-		foreach ($articleprice as $pricekey => $pricevalue) {
-			$totalprice += $pricevalue->price;
-		}
-		
-		// 找出所有该文章的句子，组合后存在变量中
-		$sentence = Sentence::model()->findAll('`article_id` = :article',
-			array(':article'=>$value->id));
-		$artcont = "";
-		foreach ($sentence as $skey => $svalue) {
-			$artcont .= $svalue->original;
-		}
+	foreach ($article as $key => $value) {
 ?>
-		<div class="form">
-			<dl>
-				<dt><?=CHtml::link(Yii::t('article','Article').': '.strval($key + 1),
-					array('article/view','id'=>$value->id)); ?>
-					<br />
-					<?=Yii::t('article','Price').': '.$value->wordcount*120/1000; ?></dt>
-				<dd>
-					<?=Yii::t('article','Language').': '.Yii::app()->params['language'][$value->srclang_id].'->'.
-						Yii::app()->params['language'][$value->tgtlang_id]; ?>
-					<br />
-					<?=Yii::t('article','Word Count').': '.$value->wordcount; ?>
-					<br />
-					<?=$value->edittime; ?>
-				</dd>
-			</dl>
-		</div>
-<?php endforeach; ?>
+<b><?=Yii::t('article','Article').': '.CHtml::link($key + 1,array('article/view','id'=>$value->id)); ?></b>
+<?=Yii::t('article','Price').': '.$value->wordcount*120/1000; ?>
+<br />
+<br />
 
-<div class="form">
-	<dl>
-		<dt><?=Yii::t('order','Total Price'); ?></dt>
-		<dd>
-			<div>￥<?=$totalprice; ?></div>
-		</dd>
-	</dl>
+<?php
+	// 累计总价
+	$articleprice = Spreadtable::model()->findAll('`article_id` = :id',array(':id'=>$value->id));
+	foreach ($articleprice as $pricekey => $pricevalue) {
+		$totalprice += $pricevalue->price;
+	}
 	
-	<?php if($model->paytime != NULL) { ?>
+	// 找出所有该文章的句子，组合后存在变量中
+	$sentence = Sentence::model()->findAll('`article_id` = :article',
+		array(':article'=>$value->id));
+	$artcont = "";
+	foreach ($sentence as $skey => $svalue) {
+		$artcont .= $svalue->original;
+	}
+	$this->widget('zii.widgets.CDetailView', array(
+		'data'=>$value,
+		'attributes'=>array(
+			array(
+				'label'=>Yii::t('article','Language'),
+				'type'=>'raw',
+				'value'=>Yii::app()->params['language'][$value->srclang_id].'->'.
+					Yii::app()->params['language'][$value->tgtlang_id],
+			),
+			array(
+				'label'=>Yii::t('article','Article Content'),
+				'type'=>'raw',
+				'value'=>$artcont,
+			),
+			'wordcount',
+			'edittime',
+			'comptime',
+		),
+	));
+?>
+<?php } ?>
+
+<br />
+<br />
+	
+<dl>
+	<dt><?=Yii::t('order','Total Price'); ?></dt>
+	<dd>
+		<div>￥<?=$totalprice; ?></div>
+	</dd>
+</dl>
+
+<?php if($model->paytime != NULL) { ?>
+<div class="form">
 	<dl>
 		<dt><?=Yii::t('order','Remark'); ?></dt>
 		<dd><?=$model->remark; ?></dd>
 	</dl>
-	<?php } ?>
 </div>
+<?php } ?>
