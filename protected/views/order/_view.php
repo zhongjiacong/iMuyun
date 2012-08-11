@@ -15,10 +15,6 @@
 				
 				<th><?=CHtml::encode($data->getAttributeLabel('submittime')); ?></th>
 				
-				<?php if($data->paytime != NULL): ?>
-				<th><?=CHtml::encode($data->getAttributeLabel('paytime')); ?></th>
-				<?php endif; ?>
-				
 				<?php if($data->deliverytime != NULL): ?>
 				<th><?=CHtml::encode($data->getAttributeLabel('deliverytime')); ?></th>
 				<?php endif; ?>
@@ -62,10 +58,6 @@
 				
 				<td><?=Time::timeDisplay($data->submittime); ?></td>
 				
-				<?php if($data->paytime != NULL): ?>
-				<td><?=Time::timeDisplay($data->paytime); ?></td>
-				<?php endif; ?>
-				
 				<?php if($data->deliverytime != NULL): ?>
 				<td><?=Time::timeDisplay($data->deliverytime); ?></td>
 				<?php endif; ?>
@@ -75,11 +67,15 @@
 				<?php endif; ?>
 				
 				<td>
+					<?php if($data->paytime == NULL): ?>
+						<?=CHtml::link(CHtml::button(Yii::t('order','Pay')),array('pay','id'=>$data->id)); ?>
+					<?php else: ?>
 					<?=CHtml::button(Yii::t('order','Evaluate'),array('onclick'=>'evaluateorder('.$data->id.');')); ?>
 					<?php
 						if(User::model()->isAdmin())
 							echo CHtml::button(Yii::t('order','Delete'),array('onclick'=>'delorder('.$data->id.');'));
 					?>
+					<?php endif; ?>
 				</td>
 			</tr>
 		</tbody>

@@ -113,34 +113,15 @@ $this->menu=array(
 
 <br />
 <br />
-<br />
+	
+<dl>
+	<dt><?=Yii::t('order','Total Price'); ?></dt>
+	<dd>
+		<div>￥<?=$totalprice; ?></div>
+	</dd>
+</dl>
 
-<?php if($model->paytime==NULL) { ?>
-<div class="form">
-	<dl>
-		<dt><?=Yii::t('order','Remark'); ?></dt>
-		<dd><?=CHtml::textArea('remark','',array('cols'=>50,'rows'=>6)); ?></dd>
-	</dl>
-	
-	<dl>
-		<dt><?=Yii::t('order','Total Price'); ?></dt>
-		<dd>
-			<div>￥<?=$totalprice; ?></div>
-		</dd>
-	</dl>
-	
-	<dl>
-		<dt><?=Yii::t('recharge','Available Balance'); ?></dt>
-		<dd>
-			<div>￥<?=Recharge::model()->availableBalance(); ?></div>
-		</dd>
-	</dl>
-	
-	<div>
-		<?=CHtml::button(Yii::t('order','Pay'),array('id'=>'redbtn')); ?>
-	</div>
-</div>
-<?php } else { ?>
+<?php if($model->paytime != NULL) { ?>
 <div class="form">
 	<dl>
 		<dt><?=Yii::t('order','Remark'); ?></dt>

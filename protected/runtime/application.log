@@ -3909,3 +3909,39 @@ in D:\Dropbox\Muyun\iMuyun\index.php (13)
 2012/08/11 17:15:27 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
 in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
 in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/11 14:02:44 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\Dropbox\Muyun\iMuyun\framework\web\CController.php:337
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('pay')
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('order/pay')
+#10 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/iMuyun/index.php/order/pay
+HTTP_REFERER=http://localhost/iMuyun/index.php/order/index
+---
+2012/08/11 14:02:51 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\Dropbox\Muyun\iMuyun\framework\web\CController.php:337
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('pay')
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('order/pay')
+#10 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/iMuyun/index.php/order/pay
+HTTP_REFERER=http://localhost/iMuyun/index.php/order/index
+---
