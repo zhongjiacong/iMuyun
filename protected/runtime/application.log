@@ -3945,3 +3945,24 @@ Stack trace:
 REQUEST_URI=/iMuyun/index.php/order/pay
 HTTP_REFERER=http://localhost/iMuyun/index.php/order/index
 ---
+2012/08/11 17:16:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\Dropbox\Muyun\iMuyun\protected\controllers\OrderController.php:228
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\protected\controllers\OrderController.php(59): OrderController->loadModel('1')
+#1 [internal function]: OrderController->actionPay('1')
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('pay')
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('order/pay')
+#14 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/iMuyun/index.php/order/pay/1
+---
