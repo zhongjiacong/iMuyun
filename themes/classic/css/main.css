@@ -1,0 +1,243 @@
+body
+{
+	margin: 0;
+	padding: 0;
+	color: #555;
+	font: normal 10pt Arial,Helvetica,sans-serif;
+	background-image: url(../img/bg.jpg);
+	background-repeat: repeat-x;
+}
+
+#header
+{
+	margin: 0;
+	padding: 0;
+	color: white;
+}
+
+#page
+{
+	background-color: #FFF;
+	-webkit-box-shadow: 0px 0px 14px #777;
+}
+
+#page a,
+#page a:hover, #page a:active
+{
+	color: #1BAD7E;
+}
+
+#content
+{
+    padding: 20px;
+}
+
+#sidebar
+{
+	padding: 20px 20px 20px 0;
+}
+
+#footer
+{
+	margin-top: 20px;
+	color: white;
+	padding: 20px;
+	background-color: #1BAD7E;
+	text-align: center;
+}
+
+#logo
+{
+	padding: 26px 20px;
+	font-size: 220%;
+	font-weight: bold;
+	width: 200px;
+	font-family: "黑体";
+	color: white;
+	text-shadow: 1px 1px 2px #375;
+}
+
+#mainmenu
+{
+	/*background: white url(../img/bg.gif) repeat-x left top;*/
+}
+
+#mainmenu ul
+{
+	padding: 8px 20px 7px 20px;
+	margin:0px;
+}
+
+#mainmenu ul li
+{
+	display: inline;
+}
+
+#mainmenu ul li a
+{
+	font-family: 'Microsoft Yahei';
+	color:#ffffff;
+	background-color:transparent;
+	font-size:12px;
+	font-weight:bold;
+	text-decoration:none;
+	padding: 7px 12px;
+	margin-right: 5px;
+	-webkit-box-shadow: 3px -3px 5px #888;
+}
+
+#mainmenu ul li a:hover, #mainmenu ul li.active a
+{
+	color: #1BAD7E;
+	background-color: #FFF;
+	text-decoration:none;
+}
+
+div.flash-error, div.flash-notice, div.flash-success
+{
+	padding:.8em;
+	margin-bottom:1em;
+	border:2px solid #ddd;
+}
+
+div.flash-error
+{
+	background:#FBE3E4;
+	color:#8a1f11;
+	border-color:#FBC2C4;
+}
+
+div.flash-notice
+{
+	background:#FFF6BF;
+	color:#514721;
+	border-color:#FFD324;
+}
+
+div.flash-success
+{
+	background:#E6EFC2;
+	color:#264409;
+	border-color:#C6D880;
+}
+
+div.flash-error a
+{
+	color:#8a1f11;
+}
+
+div.flash-notice a
+{
+	color:#514721;
+}
+
+div.flash-success a
+{
+	color:#264409;
+}
+
+div.form .rememberMe label
+{
+	display: inline;
+}
+
+div.view
+{
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid #C9E0ED;
+}
+
+div.breadcrumbs
+{
+	font-size: 0.9em;
+	padding: 5px 20px;
+}
+
+div.breadcrumbs span
+{
+	font-weight: bold;
+}
+
+div.search-form
+{
+	padding: 10px;
+	margin: 10px 0;
+	background: #eee;
+}
+
+.portlet
+{
+	font-family: "Microsoft Yahei";
+}
+
+.portlet-decoration
+{
+	padding: 3px 8px;
+	background: #B7E7D6;
+	border-left: 5px solid #6FCFAC;
+}
+
+.portlet-title
+{
+	font-size: 12px;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+	color: #29cd8d;
+}
+
+.portlet-content
+{
+	font-size:0.9em;
+	margin: 0 0 15px 0;
+	padding: 5px 8px;
+	background:#EFFFFD;
+}
+
+.portlet-content ul
+{
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	margin: 0;
+	padding: 0;
+}
+
+.portlet-content li
+{
+	padding: 2px 0 4px 0px;
+}
+
+.operations
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.operations li
+{
+	padding-bottom: 2px;
+}
+
+.operations li a
+{
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: bold;
+	color: #00A466;
+	display: block;
+	padding: 2px 0 2px 8px;
+	text-decoration: underline;
+}
+
+.operations li a:visited
+{
+	color: #00A466;
+}
+
+.operations li a:hover
+{
+	text-decoration: none;
+}
