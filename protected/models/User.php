@@ -290,7 +290,8 @@ class User extends CActiveRecord
 	{
 		// 注册并验证成功之后将用户置为可用
 		$user->enabled = 1;
-		$user->save();
+		if(!$user->save())
+			throw new CHttpException(400,Yii::t('user','User cannot enabled.'));
 		
 		// 置空后才登录，这里不remember，所以login第二个参数为0
 		$identity = new UserIdentity($user->email,$user->loginpassword);

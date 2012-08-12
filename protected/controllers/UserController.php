@@ -107,7 +107,6 @@ class UserController extends Controller
 		if(isset($_GET['verifycode'])) {
 			$user = User::model()->getVerifiedUser(addslashes($_GET['verifycode']));
 			if($user != NULL) {
-				throw new CHttpException(400,Yii::t('user','Your Sister.'));
 				if(User::model()->afterEmailVerify($user))
 					$this->redirect(Yii::app()->request->baseUrl.'/index.php/user/'.$user->id);
 			}
