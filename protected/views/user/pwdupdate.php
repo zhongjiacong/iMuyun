@@ -5,7 +5,10 @@ Yii::app()->clientScript->registerScript('register', "
 	});
 ");
 $this->menu=array(
-	array('label'=>Yii::t('user','Account Settings'), 'url'=>array('update')),
+	array('label'=>Yii::t('user','Account Settings'), 'url'=>array('update'),
+		'visible'=>!User::model()->isAdmin()),
+	array('label'=>Yii::t('user','Account Settings'), 'url'=>array('update','id'=>$model->id),
+		'visible'=>User::model()->isAdmin()),
 	array('label'=>Yii::t('user','Change Login Password'), 'url'=>array('pwdupdate')),
 	array('label'=>Yii::t('user','List User'), 'url'=>array('index'), 'visible'=>User::model()->isAdmin()),
 	array('label'=>Yii::t('user','Create User'), 'url'=>array('create'), 'visible'=>User::model()->isAdmin()),

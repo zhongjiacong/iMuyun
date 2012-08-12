@@ -129,16 +129,25 @@
 	</dl>	
 	
 	<?php
-		if(User::model()->isAdmin()):
+		if(User::model()->isAdmin() && $model->id != Yii::app()->user->getId()):
 			$privilege = Yii::app()->params['privilege'];
-			if(!User::model()->isSuper())
-				unset($privilege[array_search('Super Administrator', Yii::app()->params['privilege'])]);
+			unset($privilege[array_search('Super Administrator', Yii::app()->params['privilege'])]);
 	?>
+	<hr />
+	
 	<dl>
 		<dt><?=$form->labelEx($model,'privilege_id'); ?></dt>
 		<dd>
 			<?=$form->dropDownList($model,'privilege_id',$privilege); ?>
 			<?=$form->error($model,'privilege_id'); ?>
+		</dd>
+	</dl>
+	
+	<dl>
+		<dt><?=$form->labelEx($model,'loginpassword'); ?></dt>
+		<dd>
+			<?=$form->passwordField($model,'loginpassword',array('size'=>28,'maxlength'=>40)); ?>
+			<?=$form->error($model,'loginpassword'); ?>
 		</dd>
 	</dl>
 	
@@ -153,7 +162,7 @@
 	<dl>
 		<dt><?=$form->labelEx($model,'enabled'); ?></dt>
 		<dd>
-			<?=$form->textField($model,'enabled'); ?>
+			<?=$form->dropDownList($model,'enabled',array('Disabled','Enabled')); ?>
 			<?=$form->error($model,'enabled'); ?>
 		</dd>
 	</dl>

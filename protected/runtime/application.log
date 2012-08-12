@@ -4198,3 +4198,80 @@ Stack trace:
 #13 {main}
 REQUEST_URI=/iMuyun/index.php/user/emailverify?verifycode=ee6d33154edd
 ---
+2012/08/12 17:09:03 [warning] [application] Failed to set unsafe attribute "birthday" of "User".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (183)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 17:09:03 [warning] [application] Failed to set unsafe attribute "introduce" of "User".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (183)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 17:09:03 [warning] [application] Failed to set unsafe attribute "address" of "User".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (183)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 17:09:03 [warning] [application] Failed to set unsafe attribute "seleprod" of "User".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (183)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 17:09:03 [warning] [application] Failed to set unsafe attribute "privilege_id" of "User".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (183)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 17:09:11 [warning] [application] Failed to set unsafe attribute "birthday" of "User".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (183)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 17:09:11 [warning] [application] Failed to set unsafe attribute "introduce" of "User".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (183)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 17:09:11 [warning] [application] Failed to set unsafe attribute "address" of "User".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (183)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 17:09:11 [warning] [application] Failed to set unsafe attribute "seleprod" of "User".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (183)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 17:09:11 [warning] [application] Failed to set unsafe attribute "privilege_id" of "User".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (183)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 17:09:50 [warning] [application] Failed to set unsafe attribute "birthday" of "User".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (183)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 17:09:50 [warning] [application] Failed to set unsafe attribute "introduce" of "User".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (183)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 17:09:50 [warning] [application] Failed to set unsafe attribute "address" of "User".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (183)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 17:09:50 [warning] [application] Failed to set unsafe attribute "seleprod" of "User".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (183)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 17:09:50 [warning] [application] Failed to set unsafe attribute "privilege_id" of "User".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (183)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 17:12:03 [warning] [application] Failed to set unsafe attribute "birthday" of "User".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (294)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (179)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 17:12:03 [warning] [application] Failed to set unsafe attribute "introduce" of "User".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (294)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (179)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 17:12:03 [warning] [application] Failed to set unsafe attribute "address" of "User".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (294)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (179)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 17:12:03 [warning] [application] Failed to set unsafe attribute "seleprod" of "User".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (294)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (179)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 17:12:04 [warning] [application] Failed to set unsafe attribute "birthday" of "User".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (294)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (179)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 17:12:04 [warning] [application] Failed to set unsafe attribute "introduce" of "User".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (294)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (179)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 17:12:04 [warning] [application] Failed to set unsafe attribute "address" of "User".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (294)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (179)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 17:12:04 [warning] [application] Failed to set unsafe attribute "seleprod" of "User".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (294)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (179)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)

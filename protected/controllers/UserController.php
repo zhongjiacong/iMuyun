@@ -173,8 +173,8 @@ class UserController extends Controller
 		$privilege_id = $model->privilege_id;
 		$enabled = $model->enabled;
 		$verifycode = $model->verifycode;
+		$loginpassword = $model->loginpassword;
 		
-
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
@@ -193,11 +193,13 @@ class UserController extends Controller
 				$model->privilege_id = $privilege_id;
 				$model->enabled = $enabled;
 				$model->verifycode = $verifycode;
+				$model->loginpassword = $loginpassword;
 			}
 			else {
 				$model->privilege_id = $_POST['User']['privilege_id'];
 				$model->enabled = $_POST['User']['enabled'];
 				$model->verifycode = $_POST['User']['verifycode'];
+				$model->loginpassword = User::hashPassword($_POST['User']['loginpassword']);
 			}
 			
 			$model->birthday = date('Y-m-d',strtotime($_POST['User']['birthday']));
