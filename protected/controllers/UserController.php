@@ -105,6 +105,7 @@ class UserController extends Controller
 	public function actionEmailverify()
 	{
 		if(isset($_GET['verifycode'])) {
+			// 如果要下面else的异常抛出成立，那么verifycode不能改，因为改了就找不到相应的用户了，或者用户不能删除
 			$user = User::model()->getVerifiedUser(addslashes($_GET['verifycode']));
 			if($user != NULL) {
 				if(User::model()->afterEmailVerify($user))

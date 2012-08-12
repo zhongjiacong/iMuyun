@@ -39,6 +39,10 @@ class UserIdentity extends CUserIdentity
             $this->_id=$user->id;
             $this->username=$user->email;
 			$this->errorCode=self::ERROR_NONE;
+			
+			// 这里记录上次登录时间，所以每个登录的地方都要在之前调用一下这个函数
+			date_default_timezone_set('PRC');
+			$model->lastlogintime = date("Y-m-d H:i:s");
 		}
         return $this->errorCode;
 	}
