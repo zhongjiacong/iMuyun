@@ -210,11 +210,12 @@ class User extends CActiveRecord
 	 */
 	public function isSuper($user_id = "")
 	{
-		if("" == $user_id)
+		/*if("" == $user_id)
 			$user_id = Yii::app()->user->getId();
 		
 		$privilege_id = User::model()->findByPk($user_id)->privilege_id;
-		return ($privilege_id == array_search('Super Administrator', Yii::app()->params['privilege']));
+		return ($privilege_id == array_search('Super Administrator', Yii::app()->params['privilege']));*/
+		return FALSE;
 	}
 	
 	/**
@@ -222,11 +223,12 @@ class User extends CActiveRecord
 	 */
 	public function isService($user_id = "")
 	{
-		if("" == $user_id)
+		/*if("" == $user_id)
 			$user_id = Yii::app()->user->getId();
 		
 		$privilege_id = User::model()->findByPk($user_id)->privilege_id;
-		return ($privilege_id == array_search('Customer Service', Yii::app()->params['privilege']));
+		return ($privilege_id == array_search('Customer Service', Yii::app()->params['privilege']));*/
+		return FALSE;
 	}
 	
 	/**
@@ -234,11 +236,12 @@ class User extends CActiveRecord
 	 */
 	public function isTranslator($user_id = "")
 	{
-		if("" == $user_id)
+		/*if("" == $user_id)
 			$user_id = Yii::app()->user->getId();
 		
 		$privilege_id = User::model()->findByPk($user_id)->privilege_id;
-		return ($privilege_id == array_search('Translator', Yii::app()->params['privilege']));
+		return ($privilege_id == array_search('Translator', Yii::app()->params['privilege']));*/
+		return FALSE;
 	}
 	
 	/**
@@ -246,11 +249,12 @@ class User extends CActiveRecord
 	 */
 	public function isSenior($user_id = "")
 	{
-		if("" == $user_id)
+		/*if("" == $user_id)
 			$user_id = Yii::app()->user->getId();
 		
 		$privilege_id = User::model()->findByPk($user_id)->privilege_id;
-		return ($privilege_id == array_search('Senior Translator', Yii::app()->params['privilege']));
+		return ($privilege_id == array_search('Senior Translator', Yii::app()->params['privilege']));*/
+		return FALSE;
 	}
 	
 	/**
@@ -258,10 +262,11 @@ class User extends CActiveRecord
 	 */
 	public function isEnabled($user_id = "")
 	{
-		if("" == $user_id)
+		/*if("" == $user_id)
 			$user_id = Yii::app()->user->getId();
 		
-		return (User::model()->findByPk($user_id)->enabled == 1);
+		return (User::model()->findByPk($user_id)->enabled == 1);*/
+		return TRUE;
 	}
 	
 	/**

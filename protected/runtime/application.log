@@ -3945,3 +3945,19 @@ Stack trace:
 REQUEST_URI=/iMuyun/index.php/order/pay
 HTTP_REFERER=http://localhost/iMuyun/index.php/order/index
 ---
+2012/08/12 08:03:56 [warning] [application] Failed to set unsafe attribute "email" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (394)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 08:03:56 [warning] [application] Failed to set unsafe attribute "mobile" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (394)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 08:03:56 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (394)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 08:03:56 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (394)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
