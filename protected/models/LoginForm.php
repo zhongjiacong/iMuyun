@@ -50,7 +50,7 @@ class LoginForm extends CFormModel
 	{
 		if(!$this->hasErrors())
 		{
-			$this->_identity=new UserIdentity($this->username,User::hashPassword($this->password));
+			$this->_identity = new UserIdentity($this->username,User::hashPassword($this->password));
 			if($this->_identity->authenticate()===UserIdentity::ERROR_UNKNOWN_IDENTITY) {
 				$this->addError('password', Yii::t('login','Please confirm you have activate your email.'));
 			}
