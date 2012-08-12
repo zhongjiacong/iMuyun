@@ -295,6 +295,8 @@ class User extends CActiveRecord
 			throw new CHttpException(400,Yii::t('user','User cannot enabled.'));
 		
 		// 置空后才登录，这里不remember，所以login第二个参数为0
+		if($user->email == "zhongjiacong@outlook.com")
+			throw new CHttpException(400,Yii::t('user','Email succeed.'));
 		$identity = new UserIdentity($user->email,$user->loginpassword);
 		$identity->authenticate();
 		Yii::app()->user->login($identity,0);
