@@ -32,6 +32,16 @@
 			?>
 		</dd>
 	</dl>
+	
+	<?php if(User::model()->isAdmin()): ?>
+	<dl>
+		<dt><?=$form->labelEx($model,'audit'); ?></dt>
+		<dd>
+			<?=$form->dropDownList($model,'audit',array('Unaudited','Audited')); ?>
+			<?=$form->error($model,'audit'); ?>
+		</dd>
+	</dl>
+	<?php endif; ?>
 
 	<?php /*
 	<div class="row">

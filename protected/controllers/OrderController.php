@@ -63,7 +63,6 @@ class OrderController extends Controller
 		
 		$this->render('pay',array(
 			'model'=>$model,
-
 		));
 	}
 
@@ -86,26 +85,33 @@ class OrderController extends Controller
 	 */
 	public function actionCreate()
 	{
-		//$model=new Order;
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['id']) && isset($_POST['remark']))
 		{
 			$model = $this->loadModel(intval($_POST['id']));
 			$model->remark = addslashes($_POST['remark']);
 			date_default_timezone_set('PRC');
 			$model->paytime = date("Y-m-d H:i:s");
+			
+			// 总价格
+			$totalprice = 0;
+			$articleprice = Spreadtable::model()->findAll('`article_id` = :id',array(':id'=>$model->id));
+			foreach ($articleprice as $pricekey => $pricevalue) {
+				$totalprice += $pricevalue->price;
+			}
+			// 增加消费记录
+			$recharge = new Recharge;
+			$recharge->user_id = Yii::app()->user->getId();
+			$recharge->way = 2;
+			$recharge->amount = -$totalprice;
+			$recharge->audit = 1;
+			$recharge->edittime = date("Y-m-d H:i:s");
+			$recharge->save();
+			
 			if($model->save())
 				echo json_encode(array('state'=>'succeed'));
 			else
 				echo json_encode(array('state'=>'fail'));
 		}
-
-		/*$this->render('create',array(
-			'model'=>$model,
-		));*/
 	}
 
 	/**
@@ -116,7 +122,7 @@ class OrderController extends Controller
 	public function actionUpdate($id)
 	{
 		// 不能修改他人的订单
-		if(Order::model()->findByPk($id)->customer_id != Yii::app()->user->getId())
+		if(!(Order::model()->findByPk($id)->customer_id == Yii::app()->user->getId() || User::model()->isAdmin()))
 			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
 		
 		$model=$this->loadModel($id);
@@ -131,6 +137,8 @@ class OrderController extends Controller
 			//$model->customer_id = Yii::app()->user->getId();
 			// 只能改主题和备注
 			$model->subject = $_POST['Order']['subject'];
+			if(User::model()->isAdmin())
+				$model->audit = $_POST['Order']['audit'];
 			// 审核之后不能再改备注了
 			if($model->audit == 0)
 				$model->remark = $_POST['Order']['remark'];
@@ -207,6 +215,8 @@ class OrderController extends Controller
 	 */
 	public function actionAdmin()
 	{
+		$this->layout = '//layouts/column1';
+		
 		$model=new Order('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Order']))

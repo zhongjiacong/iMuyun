@@ -14,7 +14,7 @@ Yii::app()->clientScript->registerScript('order', "
 			beforeSend: function(){},
 			success: function(result) {
 				if(result.state == 'succeed') {
-					art.dialog({title:'',content: '".Yii::t('order','Pay successfully')."^_^',time: 250});
+					art.dialog({title:'',content: '".Yii::t('order','Pay successfully')."^_^',time: 500});
 					function myreload() {
 						window.location.reload();
 					}
@@ -88,8 +88,8 @@ $this->menu=array(
 		</div>
 <?php endforeach; ?>
 
-<?php if($model->paytime==NULL) { ?>
 <div class="form">
+	<?php if($model->paytime==NULL): ?>
 	<dl>
 		<dt><?=Yii::t('order','Remark'); ?></dt>
 		<dd><?=CHtml::textArea('remark','',array('cols'=>50,'rows'=>6)); ?></dd>
@@ -113,10 +113,10 @@ $this->menu=array(
 		<?=CHtml::button(Yii::t('order','Pay'),array('id'=>'redbtn')); ?>
 	</div>
 	
-	<?php } else { ?>
+	<?php else: ?>
 	<dl>
 		<dt><?=Yii::t('order','Remark'); ?></dt>
 		<dd><?=$model->remark; ?></dd>
 	</dl>
-	<?php } ?>
+	<?php endif; ?>
 </div>
