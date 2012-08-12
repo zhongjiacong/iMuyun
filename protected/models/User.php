@@ -293,9 +293,11 @@ class User extends CActiveRecord
 		$user->save();
 		
 		// 置空后才登录，这里不remember，所以login第二个参数为0
-		$identity=new UserIdentity($user->email,$user->loginpassword);
+		$identity = new UserIdentity($user->email,$user->loginpassword);
 		$identity->authenticate();
 		Yii::app()->user->login($identity,0);
+		
+		return TRUE;
 	}
 	
 	/**
