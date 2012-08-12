@@ -196,12 +196,13 @@ class User extends CActiveRecord
 	 */
 	public function isAdmin($user_id = "")
 	{
-		if("" == $user_id)
+		/*if("" == $user_id)
 			$user_id = Yii::app()->user->getId();
 		
 		$privilege_id = User::model()->findByPk($user_id)->privilege_id;
 		return ($privilege_id == array_search('Administrator', Yii::app()->params['privilege']) ||
-			$privilege_id == array_search('Super Administrator', Yii::app()->params['privilege']));
+			$privilege_id == array_search('Super Administrator', Yii::app()->params['privilege']));*/
+		return FALSE;
 	}
 	
 	/**
