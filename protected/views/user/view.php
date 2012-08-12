@@ -12,7 +12,14 @@ $this->menu=array(
 
 <div class="form">
 	<?php if($model->email == Yii::app()->user->name) { ?>
-	<p class="note"><?=Yii::t('user','Dear ').Yii::app()->user->name; ?></p>
+	<p class="note">
+		<?php
+			echo Yii::t('user','Dear ').Yii::app()->user->name;
+			echo '&nbsp;&nbsp;&nbsp;';
+			date_default_timezone_set('PRC');
+			echo Yii::t('user','Last login time').': '.date("Y-m-d H:i:s",strtotime($model->lastlogintime));
+		?>
+	</p>
 	<?php } ?>
 	
 	<?php if(User::model()->isAdmin()) { ?>

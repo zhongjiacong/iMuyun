@@ -42,7 +42,8 @@ class UserIdentity extends CUserIdentity
 			
 			// 这里记录上次登录时间，所以每个登录的地方都要在之前调用一下这个函数
 			date_default_timezone_set('PRC');
-			$model->lastlogintime = date("Y-m-d H:i:s");
+			$user->lastlogintime = date("Y-m-d H:i:s");
+			$user->save();
 		}
         return $this->errorCode;
 	}
