@@ -36,7 +36,7 @@ class Spreadtable extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('article_id, translator_id', 'required'),
+			array('article_id, price', 'required'),
 			array('article_id, translator_id', 'numerical', 'integerOnly'=>true),
 			array('price', 'length', 'max'=>31),
 			// The following rule is used by search().

@@ -1,10 +1,9 @@
 <?php
-$this->breadcrumbs=array(
-	'Recharges'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
-);
-
+Yii::app()->clientScript->registerScript('article', "
+	$('#redbtn').animate({backgroundColor:'rgb(204,50,9)',color:'rgb(255,255,255)'},250,function(){
+		$('#redbtn').removeAttr('disabled');
+	});
+");
 $this->menu=array(
 	array('label'=>'List Recharge', 'url'=>array('index')),
 	array('label'=>'Create Recharge', 'url'=>array('create')),
@@ -12,7 +11,5 @@ $this->menu=array(
 	array('label'=>'Manage Recharge', 'url'=>array('admin')),
 );
 ?>
-
-<h1>Update Recharge <?php echo $model->id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

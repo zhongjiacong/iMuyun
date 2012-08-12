@@ -19,7 +19,8 @@
  * @version $Id: $
  */
 return array (
-  'Select Product' => '选择产品',
+  'Last login time' => '',
+  'User cannot enabled.' => '',
   'Account Category' => '用户类型',
   'Account Settings' => '帐号设置',
   'Address' => '地址',
@@ -49,6 +50,7 @@ return array (
   'Realname' => '真实姓名',
   'Register Time' => '注册时间',
   'Repeat Password' => '重复密码',
+  'Select Product' => '选择产品',
   'Sorry, this email has been registered.' => '对不起，这个邮箱已被注册。',
   'Telephone' => '电话',
   'Verify Code' => '验证编码',

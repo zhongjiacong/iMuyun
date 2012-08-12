@@ -27,6 +27,16 @@
 			<?=$form->error($model,'amount'); ?>
 		</dd>
 	</dl>
+	
+	<?php if(User::model()->isAdmin()): ?>
+	<dl>
+		<dt><?=$form->labelEx($model,'audit'); ?></dt>
+		<dd>
+			<?=$form->dropDownList($model,'audit',array('Unaudited','Audited')); ?>
+			<?=$form->error($model,'amount'); ?>
+		</dd>
+	</dl>
+	<?php endif; ?>
 
 	<div class="row buttons">
 		<?=CHtml::submitButton(Yii::t('layouts','Submit'),

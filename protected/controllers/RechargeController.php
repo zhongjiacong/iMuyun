@@ -76,6 +76,8 @@ class RechargeController extends Controller
 			$model->user_id = Yii::app()->user->getId();
 			date_default_timezone_set('PRC');
 			$model->edittime = date("Y-m-d H:i:s");
+			// 创建不能直接审核通过
+			$model->audit = 0;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -101,7 +103,7 @@ class RechargeController extends Controller
 		{
 			$model->attributes=$_POST['Recharge'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('admin'));
 		}
 
 		$this->render('update',array(
@@ -152,6 +154,8 @@ class RechargeController extends Controller
 	 */
 	public function actionAdmin()
 	{
+		$this->layout = '//layouts/column1';
+		
 		$model=new Recharge('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Recharge']))

@@ -114,15 +114,11 @@ class ArticleController extends Controller
 	public function actionReceive()
 	{
 		if(isset($_POST['id']) && NULL == Spreadtable::model()->isReceived(intval($_POST['id']))) {
-			$spreadtable = new Spreadtable;
-			$spreadtable->article_id = intval($_POST['id']);
-			$spreadtable->translator_id = Yii::app()->user->getId();
-			$spreadtable->price = 120;
-			if($spreadtable->save())
-				echo json_encode(array('state'=>'succeed'));
-			else
-				echo json_encode(array('state'=>'fail'));
+			Spreadtable::model()->updateAll(array('translator_id'=>Yii::app()->user->getId()));
+			echo json_encode(array('state'=>'succeed'));
 		}
+		else
+			echo json_encode(array('state'=>'fail'));
 	}
 
 	public function actionProduct()
@@ -212,7 +208,7 @@ class ArticleController extends Controller
 					$model->doccont->saveAs($path);
 					
 					// 注意这里的跳转要加上控制器名
-					$this->redirect(array('order/view','id'=>$model->order_id));
+					$this->redirect(array('order/pay','id'=>$model->order_id));
 				}
 			}
 			elseif($model->artcont != "") {
@@ -253,6 +249,12 @@ class ArticleController extends Controller
 					// 把订单号加入到Article中，否则，订单号来自用户选择的旧订单号
 					$model->order_id = $order->id;
 				}
+					
+				// 添加到价位表
+				$spreadtable = new Spreadtable;
+				$spreadtable->article_id = $model->order_id;
+				$spreadtable->price = strval($model->wordcount * 120 / 1000);//
+				$spreadtable->save();
 				
 				date_default_timezone_set('PRC');
 				$model->edittime = date("Y-m-d H:i:s");
@@ -262,12 +264,11 @@ class ArticleController extends Controller
 					$sentence->article_id = $model->id;
 					$sentence->save();
 					// 重定向
-					$this->redirect(array('order/view','id'=>$model->order_id));
+					$this->redirect(array('order/pay','id'=>$model->order_id));
 				}
 			}
-			else {
+			else
 				throw new CHttpException(400,Yii::t('article','Content to translate cannot be empty!'));
-			}
 		}
 
 		$this->render('text',array(

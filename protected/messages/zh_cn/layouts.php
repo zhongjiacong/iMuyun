@@ -19,7 +19,7 @@
  * @version $Id: $
  */
 return array (
-  'Voucher Center' => '充值中心',
+  'Order' => '订单',
   'About Us' => '关于我们',
   'Article' => '文本',
   'Bussiness' => '业务',
@@ -39,6 +39,7 @@ return array (
   'Operations' => '操作',
   'Our Team' => '团队介绍',
   'Profile' => '个人主页',
+  'Recharge' => '充值',
   'Register' => '注册',
   'Save' => '保存',
   'Submit' => '提交',
@@ -46,5 +47,6 @@ return array (
   'Text Translation' => '文本翻译',
   'User' => '用户',
   'Video Translation' => '视频翻译',
+  'Voucher Center' => '充值中心',
   '{appname}' => '牧云翻译',
 );

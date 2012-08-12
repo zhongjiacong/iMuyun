@@ -1,0 +1,371 @@
+2012/08/12 21:24:42 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (399)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:24:42 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (399)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:24:51 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (399)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:24:51 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (399)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:24:52 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:24:52 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:26:06 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:26:06 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:26:15 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:26:15 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:26:16 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:26:16 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:30:49 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:30:49 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:30:49 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:30:52 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:30:52 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:30:52 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:30:53 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:30:53 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:30:53 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:32:51 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:32:51 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:32:51 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:32:54 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:32:54 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:32:54 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:32:54 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:32:54 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:32:54 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:34:46 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:34:46 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:34:46 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:34:50 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:34:50 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:34:50 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:34:51 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:34:51 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:34:51 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:38:00 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:38:00 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:38:00 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:38:03 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:38:03 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:38:03 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:38:15 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:38:15 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:38:15 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:38:15 [error] [exception.CHttpException.400] exception 'CHttpException' with message '翻译内容不能为空' in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php:262
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionText()
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('text')
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/text')
+#11 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/iMuyun/index.php/article/text
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/text
+---
+2012/08/12 21:38:24 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:38:24 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:38:24 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:38:30 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:38:30 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:38:30 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (400)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:38:31 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:38:31 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:38:31 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:38:31 [error] [exception.CHttpException.400] exception 'CHttpException' with message '翻译内容不能为空' in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php:262
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionText()
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('text')
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/text')
+#11 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/iMuyun/index.php/article/text
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/text
+---
+2012/08/12 21:59:33 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (399)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:59:33 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (399)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:59:33 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (399)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:59:34 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (399)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:59:34 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (399)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:59:34 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (399)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:59:37 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (399)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:59:37 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (399)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:59:37 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (399)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:59:47 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (399)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:59:47 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (399)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 21:59:47 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (399)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:59:49 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:59:49 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:59:49 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 22:11:09 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (395)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (147)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 22:11:09 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (395)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (147)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 22:11:09 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (395)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (147)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 22:11:11 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (395)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (147)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 22:11:11 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (395)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (147)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 22:11:11 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (395)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (147)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 22:11:19 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (395)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (147)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 22:11:19 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (395)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (147)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 22:11:19 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (395)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (147)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 06:11:20 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 06:11:20 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 06:11:20 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/12 22:24:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "update" 动作.' in D:\Dropbox\Muyun\iMuyun\framework\web\CController.php:484
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(271): CController->missingAction('update')
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('update')
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('recharge/update')
+#3 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/iMuyun/index.php/recharge/update/1
+HTTP_REFERER=http://localhost/iMuyun/index.php/recharge/admin
+---
+2012/08/12 22:24:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "update" 动作.' in D:\Dropbox\Muyun\iMuyun\framework\web\CController.php:484
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(271): CController->missingAction('update')
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('update')
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('recharge/update')
+#3 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/iMuyun/index.php/recharge/update/1
+HTTP_REFERER=http://localhost/iMuyun/index.php/recharge/admin
+---
