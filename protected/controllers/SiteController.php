@@ -61,7 +61,9 @@ class SiteController extends Controller
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login())
-				$this->redirect(Yii::app()->user->returnUrl);
+				echo '<script type="text/javascript">window.location.href = "'.
+					Yii::app()->request->baseUrl.'/index.php"</script>';
+				//$this->redirect(Yii::app()->user->returnUrl);
 				//$this->redirect(Yii::app()->homeUrl);
 		}
 		// display the login form
@@ -74,6 +76,8 @@ class SiteController extends Controller
 	public function actionLogout()
 	{
 		Yii::app()->user->logout();
-		$this->redirect(Yii::app()->homeUrl);
+		echo '<script type="text/javascript">window.location.href = "'.
+			Yii::app()->request->baseUrl.'/index.php"</script>';
+		//$this->redirect(Yii::app()->homeUrl);
 	}
 }
