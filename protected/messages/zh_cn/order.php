@@ -41,7 +41,7 @@ return array (
   'Remark' => '备注',
   'Save' => '保存',
   'Subject' => '订单主题',
-  'Submit Time' => '提交时间',
+  'Submit Time' => '下单时间',
   'Total Price' => '总价格',
   'View Order' => '查看订单',
   'audited' => '已审核',
