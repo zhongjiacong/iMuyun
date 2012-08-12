@@ -131,7 +131,8 @@
 	<?php
 		if(User::model()->isAdmin() && $model->id != Yii::app()->user->getId()):
 			$privilege = Yii::app()->params['privilege'];
-			unset($privilege[array_search('Super Administrator', Yii::app()->params['privilege'])]);
+			if(!User::model()->isSuper())
+				unset($privilege[array_search('Super Administrator', Yii::app()->params['privilege'])]);
 	?>
 	<hr />
 	
