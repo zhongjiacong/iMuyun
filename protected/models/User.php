@@ -267,11 +267,7 @@ class User extends CActiveRecord
 	 */
 	public function isEnabled($user_id = "")
 	{
-		if(Yii::app()->user->isGuest)
-			return FALSE;
-		
 		$user_id = ("" == $user_id)?Yii::app()->user->getId():$user_id;
-		
 		return (User::model()->findByPk(intval($user_id))->enabled == 1);
 	}
 	
@@ -294,7 +290,8 @@ class User extends CActiveRecord
 			throw new CHttpException(400,Yii::t('user','User cannot enabled.'));
 		
 		// 置空后才登录，这里不remember，所以login第二个参数为0
-		$identity = new UserIdentity($user->email,User::hashPassword($user->loginpassword));
+		// 这里的密码已经散列过
+		$identity = new UserIdentity($user->email,$user->loginpassword);
 		$identity->authenticate();
 		Yii::app()->user->login($identity,0);
 		
