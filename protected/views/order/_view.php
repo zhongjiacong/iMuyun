@@ -19,10 +19,6 @@
 				<th><?=CHtml::encode($data->getAttributeLabel('deliverytime')); ?></th>
 				<?php endif; ?>
 				
-				<?php if($data->remark != ""): ?>
-				<th><?=CHtml::encode($data->getAttributeLabel('remark')); ?></th>
-				<?php endif; ?>
-				
 				<th><?=Yii::t('order','Order Operation'); ?></th>
 			</tr>
 		</thead>
@@ -60,10 +56,6 @@
 				
 				<?php if($data->deliverytime != NULL): ?>
 				<td><?=Time::timeDisplay($data->deliverytime); ?></td>
-				<?php endif; ?>
-				
-				<?php if($data->remark != ""): ?>
-				<td><?=CHtml::encode($data->remark); ?></td>
 				<?php endif; ?>
 				
 				<td>
