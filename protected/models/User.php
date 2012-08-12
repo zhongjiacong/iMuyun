@@ -187,7 +187,7 @@ class User extends CActiveRecord
 	public function prodVerifyCode()
 	{
 		$firstHashCode = substr(sha1(time()),rand(0, 20),20);
-		$secondHashCode = substr(md5($firstHash),rand(0, 20),20);
+		$secondHashCode = substr(md5($firstHashCode),rand(0, 20),20);
 		return $secondHashCode;
 	}
 	
@@ -196,13 +196,12 @@ class User extends CActiveRecord
 	 */
 	public function isAdmin($user_id = "")
 	{
-		/*if("" == $user_id)
+		if("" == $user_id)
 			$user_id = Yii::app()->user->getId();
 		
 		$privilege_id = User::model()->findByPk($user_id)->privilege_id;
 		return ($privilege_id == array_search('Administrator', Yii::app()->params['privilege']) ||
-			$privilege_id == array_search('Super Administrator', Yii::app()->params['privilege']));*/
-		return FALSE;
+			$privilege_id == array_search('Super Administrator', Yii::app()->params['privilege']));
 	}
 	
 	/**
@@ -210,12 +209,11 @@ class User extends CActiveRecord
 	 */
 	public function isSuper($user_id = "")
 	{
-		/*if("" == $user_id)
+		if("" == $user_id)
 			$user_id = Yii::app()->user->getId();
 		
 		$privilege_id = User::model()->findByPk($user_id)->privilege_id;
-		return ($privilege_id == array_search('Super Administrator', Yii::app()->params['privilege']));*/
-		return FALSE;
+		return ($privilege_id == array_search('Super Administrator', Yii::app()->params['privilege']));
 	}
 	
 	/**
@@ -223,12 +221,11 @@ class User extends CActiveRecord
 	 */
 	public function isService($user_id = "")
 	{
-		/*if("" == $user_id)
+		if("" == $user_id)
 			$user_id = Yii::app()->user->getId();
 		
 		$privilege_id = User::model()->findByPk($user_id)->privilege_id;
-		return ($privilege_id == array_search('Customer Service', Yii::app()->params['privilege']));*/
-		return FALSE;
+		return ($privilege_id == array_search('Customer Service', Yii::app()->params['privilege']));
 	}
 	
 	/**
@@ -236,12 +233,11 @@ class User extends CActiveRecord
 	 */
 	public function isTranslator($user_id = "")
 	{
-		/*if("" == $user_id)
+		if("" == $user_id)
 			$user_id = Yii::app()->user->getId();
 		
 		$privilege_id = User::model()->findByPk($user_id)->privilege_id;
-		return ($privilege_id == array_search('Translator', Yii::app()->params['privilege']));*/
-		return FALSE;
+		return ($privilege_id == array_search('Translator', Yii::app()->params['privilege']));
 	}
 	
 	/**
@@ -249,12 +245,11 @@ class User extends CActiveRecord
 	 */
 	public function isSenior($user_id = "")
 	{
-		/*if("" == $user_id)
+		if("" == $user_id)
 			$user_id = Yii::app()->user->getId();
 		
 		$privilege_id = User::model()->findByPk($user_id)->privilege_id;
-		return ($privilege_id == array_search('Senior Translator', Yii::app()->params['privilege']));*/
-		return FALSE;
+		return ($privilege_id == array_search('Senior Translator', Yii::app()->params['privilege']));
 	}
 	
 	/**
@@ -262,11 +257,10 @@ class User extends CActiveRecord
 	 */
 	public function isEnabled($user_id = "")
 	{
-		/*if("" == $user_id)
+		if("" == $user_id)
 			$user_id = Yii::app()->user->getId();
 		
-		return (User::model()->findByPk($user_id)->enabled == 1);*/
-		return TRUE;
+		return (User::model()->findByPk($user_id)->enabled == 1);
 	}
 	
 	/**

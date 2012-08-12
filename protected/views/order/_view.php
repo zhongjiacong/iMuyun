@@ -19,13 +19,14 @@
 				<th><?=CHtml::encode($data->getAttributeLabel('deliverytime')); ?></th>
 				<?php endif; ?>
 				
-				<th><?=Yii::t('order','Order Operation'); ?></th>
+				<th>&nbsp;</th>
+				
+				<th>&nbsp;</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
-				<td><?=CHtml::link(CHtml::encode(CHtml::encode($data->id)),
-					array('view', 'id'=>$data->id)); ?></td>
+				<td><?=CHtml::encode($data->id); ?></td>
 				
 				<td><?=CHtml::encode($data->subject); ?></td>
 				
@@ -57,6 +58,15 @@
 				<?php if($data->deliverytime != NULL): ?>
 				<td><?=Time::timeDisplay($data->deliverytime); ?></td>
 				<?php endif; ?>
+				
+				<td>
+					<?php
+						if($data->paytime == NULL)
+							echo Yii::t('order','non-payment');
+						else
+							echo CHtml::link(Yii::t('order','Order Detail'),array('view', 'id'=>$data->id));
+					?>
+				</td>
 				
 				<td>
 					<?php if($data->paytime == NULL): ?>

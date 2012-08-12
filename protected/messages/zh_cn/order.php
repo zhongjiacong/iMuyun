@@ -19,7 +19,7 @@
  * @version $Id: $
  */
 return array (
-  'Order Text' => '订单文本',
+  'Order Detail' => '订单详情',
   'Audit' => '审核',
   'Customer' => '客户',
   'Deadline' => '截止时间',
@@ -32,8 +32,8 @@ return array (
   'ID' => '订单号',
   'Invoice' => '发票',
   'Manage Order' => '管理订单',
-  'Order Operation' => '订单操作',
   'Order State' => '订单状态',
+  'Order Text' => '订单文本',
   'Pay' => '付款',
   'Pay Time' => '付款时间',
   'Pay failed' => '付款失败',
