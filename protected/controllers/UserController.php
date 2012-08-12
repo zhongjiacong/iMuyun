@@ -199,7 +199,9 @@ class UserController extends Controller
 				$model->privilege_id = $_POST['User']['privilege_id'];
 				$model->enabled = $_POST['User']['enabled'];
 				$model->verifycode = $_POST['User']['verifycode'];
-				$model->loginpassword = User::hashPassword($_POST['User']['loginpassword']);
+				// 这里假设用户不会把散列值当做要改的密码
+				if($loginpassword != $_POST['User']['loginpassword'])
+					$model->loginpassword = User::hashPassword($_POST['User']['loginpassword']);
 			}
 			
 			$model->birthday = date('Y-m-d',strtotime($_POST['User']['birthday']));
