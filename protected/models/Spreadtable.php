@@ -92,9 +92,7 @@ class Spreadtable extends CActiveRecord
 	{
 		$article = Spreadtable::model()->find('`article_id` = :article_id',
 			array(':article_id'=>intval($article_id)));
-		if($article != NULL)
-			return $article->translator_id;
-		return NULL;
+		return ($article->translator_id != NULL)?$article->translator_id:NULL;
 	}
 	
 	public function myText()
