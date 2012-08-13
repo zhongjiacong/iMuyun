@@ -262,12 +262,6 @@ class ArticleController extends Controller
 					// 把订单号加入到Article中，否则，订单号来自用户选择的旧订单号
 					$model->order_id = $order->id;
 				}
-					
-				// 添加到价位表
-				$spreadtable = new Spreadtable;
-				$spreadtable->article_id = $model->id;
-				$spreadtable->price = strval($model->wordcount * 120 / 1000);//
-				$spreadtable->save();
 				
 				date_default_timezone_set('PRC');
 				$model->edittime = date("Y-m-d H:i:s");
@@ -276,6 +270,13 @@ class ArticleController extends Controller
 					// 重新存储
 					$sentence->article_id = $model->id;
 					$sentence->save();
+					
+					// 添加到价位表
+					$spreadtable = new Spreadtable;
+					$spreadtable->article_id = $model->id;
+					$spreadtable->price = strval($model->wordcount * 120 / 1000);//
+					$spreadtable->save();
+					
 					// 重定向
 					$this->redirect(array('order/pay','id'=>$model->order_id));
 				}

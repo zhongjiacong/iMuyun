@@ -27,8 +27,6 @@ $this->menu=array(
 	array('label'=>Yii::t('article','My Article'), 'url'=>array('my'),
 		'visible'=>User::model()->isTranslator()),
 );
-$spreadtable = Spreadtable::model()->findAll('`article_id` is not NULL');
-var_dump($spreadtable);
 ?>
 
 <?php $this->widget('zii.widgets.CListView', array(
