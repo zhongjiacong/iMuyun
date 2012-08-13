@@ -70,9 +70,6 @@
 							echo CHtml::button(Yii::t('order','Evaluate'),
 								array('onclick'=>'evaluateorder('.$data->id.');'));
 						}
-						if(User::model()->isAdmin())
-							echo CHtml::button(Yii::t('order','Delete'),
-								array('onclick'=>'delorder('.$data->id.');'));
 					?>
 				</td>
 			</tr>

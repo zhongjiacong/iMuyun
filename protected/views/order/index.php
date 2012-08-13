@@ -1,6 +1,6 @@
 <?php
 Yii::app()->clientScript->registerScript('order', "
-function delorder(id) {
+/*function delorder(id) {
 	art.dialog({
 		title: '',
         content: '确定要删除么亲？',
@@ -29,7 +29,7 @@ function delorder(id) {
             value: '取消'
         }]
 	});
-}
+}*/
 
 function evaluateorder(id) {
 	art.dialog({

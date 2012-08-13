@@ -153,39 +153,33 @@ class OrderController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-	public function actionDelete()
+	public function actionDelete($id)
 	{
 		if(Yii::app()->request->isPostRequest)
 		{
-			$id = intval($_POST['id']);
-			
-			// 只能删除自己的订单
-			if(Yii::app()->user->getId() != Order::model()->findByPk($id)->customer_id)
-				echo json_encode(array('state'=>'fail'));
-			else {
-				// 递归删除
-				$orderart = Article::model()->findAll('`order_id` = :id',array(':id'=>$id));
-				foreach ($orderart as $key => $value) {
-					$artsent = Sentence::model()->findAll('`article_id` = :id',array(':id'=>$value->id));
-					foreach ($artsent as $key => $sentvalue) {
-						Sentence::model()->deleteByPk($sentvalue->id);
-					}
-					// 删除价位表中的记录
-					if(Spreadtable::model()->isReceived($value->id))
-						Spreadtable::model()->deleteAll('`article_id` = :id',array(':id'=>$value->id));
-					Article::model()->deleteByPk($value->id);
+			// 递归删除
+			$orderart = Article::model()->findAll('`order_id` = :id',array(':id'=>$id));
+			foreach ($orderart as $key => $value) {
+				$artsent = Sentence::model()->findAll('`article_id` = :id',array(':id'=>$value->id));
+				foreach ($artsent as $key => $sentvalue) {
+					Sentence::model()->deleteByPk($sentvalue->id);
 				}
-				// we only allow deletion via POST request
-				$this->loadModel($id)->delete();
-				echo json_encode(array('state'=>'succeed'));
-	
-				// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-				//if(!isset($_GET['ajax']))
-					//$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+				// 删除价位表中的记录
+				if(Spreadtable::model()->isReceived($value->id))
+					Spreadtable::model()->deleteAll('`article_id` = :id',array(':id'=>$value->id));
+				Article::model()->deleteByPk($value->id);
 			}
+			// we only allow deletion via POST request
+			$this->loadModel($id)->delete();
+			echo json_encode(array('state'=>'succeed'));
+
+			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+			//if(!isset($_GET['ajax']))
+				//$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 		}
 		else
-			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
+			echo json_encode(array('state'=>'fail'));
+			//throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
 	}
 
 	/**

@@ -907,3 +907,271 @@ in D:\Dropbox\Muyun\iMuyun\index.php (13)
 2012/08/13 14:48:41 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
 in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (159)
 in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 07:49:26 [error] [exception.CException] exception 'CException' with message '属性 "Order.score" 未被定义.' in D:\Dropbox\Muyun\iMuyun\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(144): CComponent->__get('score')
+#1 D:\Dropbox\Muyun\iMuyun\framework\base\CComponent.php(607) : eval()'d code(1): CActiveRecord->__get('score')
+#2 D:\Dropbox\Muyun\iMuyun\framework\base\CComponent.php(607): eval()
+#3 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\grid\CButtonColumn.php(311): CComponent->evaluateExpression('$data->score > ...', Array)
+#4 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\grid\CButtonColumn.php(293): CButtonColumn->renderButton('update', Array, 0, Object(Order))
+#5 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\grid\CGridColumn.php(138): CButtonColumn->renderDataCellContent(0, Object(Order))
+#6 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\grid\CGridView.php(517): CGridColumn->renderDataCell(0)
+#7 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\grid\CGridView.php(490): CGridView->renderTableRow(0)
+#8 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\grid\CGridView.php(400): CGridView->renderTableBody()
+#9 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\CBaseListView.php(158): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\CBaseListView.php(141): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#12 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\CBaseListView.php(126): CBaseListView->renderContent()
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(174): CBaseListView->run()
+#14 D:\Dropbox\Muyun\iMuyun\protected\views\order\admin.php(67): CBaseController->widget('zii.widgets.gri...', Array)
+#15 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(127): require('D:\Dropbox\Muyu...')
+#16 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\Dropbox\Muyu...', Array, true)
+#17 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(870): CBaseController->renderFile('D:\Dropbox\Muyu...', Array, true)
+#18 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(783): CController->renderPartial('admin', Array, true)
+#19 D:\Dropbox\Muyun\iMuyun\protected\controllers\OrderController.php(223): CController->render('admin', Array)
+#20 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): OrderController->actionAdmin()
+#21 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#22 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#23 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#24 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#25 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#26 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#27 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#28 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#29 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('admin')
+#30 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('order/admin')
+#31 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#32 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#33 {main}
+REQUEST_URI=/iMuyun/index.php/order/admin
+HTTP_REFERER=http://localhost/iMuyun/index.php/user/100001
+---
+2012/08/13 07:52:40 [error] [php] call_user_func_array() [<a href='function.call-user-func-array'>function.call-user-func-array</a>]: First argument is expected to be a valid callback, 'Array' was given (D:\Dropbox\Muyun\iMuyun\framework\base\CComponent.php:612)
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\grid\CButtonColumn.php(293): CButtonColumn->renderButton()
+#1 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\grid\CGridColumn.php(138): CButtonColumn->renderDataCellContent()
+#2 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\grid\CGridView.php(517): CButtonColumn->renderDataCell()
+#3 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\grid\CGridView.php(490): CGridView->renderTableRow()
+#4 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\grid\CGridView.php(400): CGridView->renderTableBody()
+#5 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\CBaseListView.php(158): CGridView->renderItems()
+#6 unknown(0): CGridView->renderSection()
+#7 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\CBaseListView.php(141): preg_replace_callback()
+#8 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\CBaseListView.php(126): CGridView->renderContent()
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(174): CGridView->run()
+#10 D:\Dropbox\Muyun\iMuyun\protected\views\order\admin.php(64): OrderController->widget()
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(127): require()
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(96): OrderController->renderInternal()
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(870): OrderController->renderFile()
+#14 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(783): OrderController->renderPartial()
+#15 D:\Dropbox\Muyun\iMuyun\protected\controllers\OrderController.php(223): OrderController->render()
+#16 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): OrderController->actionAdmin()
+#17 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams()
+#18 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): OrderController->runAction()
+#19 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#20 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#21 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): OrderController->filterAccessControl()
+#22 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#23 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#24 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): OrderController->runActionWithFilters()
+#25 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): OrderController->run()
+#26 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#27 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#28 D:\Dropbox\Muyun\iMuyun\index.php(13): CWebApplication->run()
+REQUEST_URI=/iMuyun/index.php/order/admin
+in D:\Dropbox\Muyun\iMuyun\protected\views\order\admin.php (64)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\OrderController.php (223)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 07:52:42 [error] [php] call_user_func_array() [<a href='function.call-user-func-array'>function.call-user-func-array</a>]: First argument is expected to be a valid callback, 'Array' was given (D:\Dropbox\Muyun\iMuyun\framework\base\CComponent.php:612)
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\grid\CButtonColumn.php(293): CButtonColumn->renderButton()
+#1 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\grid\CGridColumn.php(138): CButtonColumn->renderDataCellContent()
+#2 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\grid\CGridView.php(517): CButtonColumn->renderDataCell()
+#3 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\grid\CGridView.php(490): CGridView->renderTableRow()
+#4 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\grid\CGridView.php(400): CGridView->renderTableBody()
+#5 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\CBaseListView.php(158): CGridView->renderItems()
+#6 unknown(0): CGridView->renderSection()
+#7 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\CBaseListView.php(141): preg_replace_callback()
+#8 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\CBaseListView.php(126): CGridView->renderContent()
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(174): CGridView->run()
+#10 D:\Dropbox\Muyun\iMuyun\protected\views\order\admin.php(64): OrderController->widget()
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(127): require()
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(96): OrderController->renderInternal()
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(870): OrderController->renderFile()
+#14 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(783): OrderController->renderPartial()
+#15 D:\Dropbox\Muyun\iMuyun\protected\controllers\OrderController.php(223): OrderController->render()
+#16 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): OrderController->actionAdmin()
+#17 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams()
+#18 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): OrderController->runAction()
+#19 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#20 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#21 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): OrderController->filterAccessControl()
+#22 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#23 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#24 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): OrderController->runActionWithFilters()
+#25 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): OrderController->run()
+#26 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#27 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#28 D:\Dropbox\Muyun\iMuyun\index.php(13): CWebApplication->run()
+REQUEST_URI=/iMuyun/index.php/order/admin
+in D:\Dropbox\Muyun\iMuyun\protected\views\order\admin.php (64)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\OrderController.php (223)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 07:55:01 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Invalid request. Please do not repeat this request again.' in D:\Dropbox\Muyun\iMuyun\protected\controllers\OrderController.php:188
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): OrderController->actionDelete()
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('delete')
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('order/delete')
+#11 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/iMuyun/index.php/order/delete/1
+HTTP_REFERER=http://localhost/iMuyun/index.php/order/admin
+---
+2012/08/13 08:02:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\Dropbox\Muyun\iMuyun\protected\controllers\OrderController.php:236
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\protected\controllers\OrderController.php(178): OrderController->loadModel(0)
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): OrderController->actionDelete()
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('delete')
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('order/delete')
+#12 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/iMuyun/index.php/order/delete
+HTTP_REFERER=http://localhost/iMuyun/index.php/order/admin
+---
+2012/08/13 08:02:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\Dropbox\Muyun\iMuyun\protected\controllers\OrderController.php:236
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\protected\controllers\OrderController.php(178): OrderController->loadModel(0)
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): OrderController->actionDelete()
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('delete')
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('order/delete')
+#12 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/iMuyun/index.php/order/delete
+HTTP_REFERER=http://localhost/iMuyun/index.php/order/admin
+---
+2012/08/13 08:03:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\Dropbox\Muyun\iMuyun\protected\controllers\OrderController.php:237
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\protected\controllers\OrderController.php(178): OrderController->loadModel(0)
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): OrderController->actionDelete()
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('delete')
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('order/delete')
+#12 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/iMuyun/index.php/order/delete
+HTTP_REFERER=http://localhost/iMuyun/index.php/order/admin
+---
+2012/08/13 08:03:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\Dropbox\Muyun\iMuyun\protected\controllers\OrderController.php:237
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\protected\controllers\OrderController.php(178): OrderController->loadModel(0)
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): OrderController->actionDelete()
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('delete')
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('order/delete')
+#12 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/iMuyun/index.php/order/delete
+HTTP_REFERER=http://localhost/iMuyun/index.php/order/admin
+---
+2012/08/13 08:04:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\Dropbox\Muyun\iMuyun\protected\controllers\OrderController.php:237
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\protected\controllers\OrderController.php(178): OrderController->loadModel(0)
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): OrderController->actionDelete()
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('delete')
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('order/delete')
+#12 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/iMuyun/index.php/order/delete
+HTTP_REFERER=http://localhost/iMuyun/index.php/order/admin
+---
+2012/08/13 08:04:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\Dropbox\Muyun\iMuyun\protected\controllers\OrderController.php:237
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\protected\controllers\OrderController.php(178): OrderController->loadModel(0)
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): OrderController->actionDelete()
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('delete')
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('order/delete')
+#12 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/iMuyun/index.php/order/delete
+HTTP_REFERER=http://localhost/iMuyun/index.php/order/admin
+---
+2012/08/13 08:06:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\Dropbox\Muyun\iMuyun\protected\controllers\OrderController.php:236
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\protected\controllers\OrderController.php(177): OrderController->loadModel(0)
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): OrderController->actionDelete()
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('delete')
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('order/delete')
+#12 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/iMuyun/index.php/order/delete
+HTTP_REFERER=http://localhost/iMuyun/index.php/order/admin
+---
