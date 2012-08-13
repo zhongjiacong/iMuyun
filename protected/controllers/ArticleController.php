@@ -159,7 +159,8 @@ class ArticleController extends Controller
 			$model->attributes=$_POST['Article'];
 			// 一定要这样赋值一下才行
 			//$model->deadline = $_POST['Article']['deadline'];
-			$model->orderlist = $_POST['Article']['orderlist'];
+			// 如果没有选择新旧订单则定为0，也即新订单
+			$model->orderlist = isset($_POST['Article']['orderlist'])?$_POST['Article']['orderlist']:0;
 			$model->subject = $_POST['Article']['subject'];
 			$model->artcont = $_POST['Article']['artcont'];
 			$model->doccont = CUploadedFile::getInstance($model,'doccont');
