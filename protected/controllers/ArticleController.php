@@ -122,9 +122,12 @@ class ArticleController extends Controller
 	public function actionReceive()
 	{
 		if(isset($_POST['id']) && NULL == Spreadtable::model()->isReceived(intval($_POST['id']))) {
-			Spreadtable::model()->updateAll(array('translator_id'=>Yii::app()->user->getId()),
+			$updatenum = Spreadtable::model()->updateAll(array('translator_id'=>Yii::app()->user->getId()),
 				'`article_id` = :id',array(':id'=>intval($_POST['id'])));
-			echo json_encode(array('state'=>'succeed'));
+			if($updatenum != 0)
+				echo json_encode(array('state'=>'succeed'));
+			else
+				echo json_encode(array('state'=>'fail'));
 		}
 		else
 			echo json_encode(array('state'=>'fail'));
