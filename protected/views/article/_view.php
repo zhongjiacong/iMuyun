@@ -1,3 +1,5 @@
+<?php print_r($data); ?>
+<?php /*
 <?php if($data->comptime == NULL): ?>
 <div class="textview">
 <?php else: ?>
@@ -6,12 +8,12 @@
 
 	<?=CHtml::link('<b>'.CHtml::encode($data->getAttributeLabel('id')).':</b>'.CHtml::encode($data->id),
 		array('article/view', 'id'=>$data->id)); ?>
-
+*/ ?>
 	<?php /*
 		<b><?=CHtml::encode($data->getAttributeLabel('fieldcat_id')); ?>:</b>
 		<?=CHtml::encode($data->fieldcat_id); ?>
 	*/ ?>
-
+<?php /*
 	<b><?=CHtml::encode($data->getAttributeLabel('wordcount')); ?>:</b>
 	<?=CHtml::encode($data->wordcount); ?>
 
@@ -33,3 +35,5 @@
 	</span>
 
 </div>
+ * 
+ */ ?>
