@@ -265,7 +265,7 @@ class ArticleController extends Controller
 					
 				// 添加到价位表
 				$spreadtable = new Spreadtable;
-				$spreadtable->article_id = $model->order_id;
+				$spreadtable->article_id = $model->id;
 				$spreadtable->price = strval($model->wordcount * 120 / 1000);//
 				$spreadtable->save();
 				
