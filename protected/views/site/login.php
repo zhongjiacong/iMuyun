@@ -12,6 +12,10 @@ Yii::app()->clientScript->registerScript('register', "
 		redbtn();
 	});
 	
+	$('input').focus(function(){
+		redbtn();
+	});
+	
 	function redbtn() {
 		var bo = true;
 		for(var i = 0; i < 2; i++)

@@ -176,5 +176,25 @@ class Article extends CActiveRecord
 		}
 		return $wordcount;
 	}
+	
+	public function getText($text_id)
+	{
+		$artcont = "";
+		$sentence = Sentence::model()->findAll('`article_id` = :id',array(':id'=>$text_id));
+		foreach ($sentence as $key => $value) {
+			$artcont .= $value->original;
+		}
+		return $artcont;
+	}
+	
+	public function getTrans($text_id)
+	{
+		$transcont = "";
+		$sentence = Sentence::model()->findAll('`article_id` = :id',array(':id'=>$text_id));
+		foreach ($sentence as $key => $value) {
+			$transcont .= $value->translation;
+		}
+		return $transcont;
+	}
 
 }

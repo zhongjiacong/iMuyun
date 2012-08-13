@@ -19,7 +19,12 @@
  * @version $Id: $
  */
 return array (
-  'Order Detail' => '订单详情',
+  'Audited' => '已审核',
+  'Non-payment' => '未付款',
+  'Paid' => '已付款',
+  'Translation has completed' => '翻译已完成',
+  'Translation is not complete' => '翻译未完成',
+  'Unaudited' => '未审核',
   'Audit' => '审核',
   'Customer' => '客户',
   'Deadline' => '截止时间',
@@ -32,6 +37,7 @@ return array (
   'ID' => '订单号',
   'Invoice' => '发票',
   'Manage Order' => '管理订单',
+  'Order Detail' => '订单详情',
   'Order State' => '订单状态',
   'Order Text' => '订单文本',
   'Pay' => '付款',
@@ -45,9 +51,5 @@ return array (
   'Total Price' => '总价格',
   'View Order' => '查看订单',
   'audited' => '已审核',
-  'invoice sent' => '发票已发送',
-  'invoice unsent' => '发票未发送',
   'non-payment' => '未付款',
-  'paid' => '已付款',
-  'unaudited' => '未审核',
 );

@@ -242,6 +242,11 @@
 	border-collapse: collapse;
 }
 
+.orderview table.grayorder thead th
+{
+	background: #CCC !important;
+}
+
 .orderview table th, .orderview table td
 {
 	border: 1px solid #CCC;

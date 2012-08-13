@@ -1,6 +1,6 @@
 <div class="orderview">
 	
-	<table>
+	<table<?=($data->deliverytime != NULL)?' class="grayorder"':''; ?>>
 		<thead>
 			<tr>
 				<th><?=CHtml::encode($data->getAttributeLabel('id')); ?></th>
@@ -14,10 +14,6 @@
 				<?php endif; ?>
 				
 				<th><?=CHtml::encode($data->getAttributeLabel('submittime')); ?></th>
-				
-				<?php if($data->deliverytime != NULL): ?>
-				<th><?=CHtml::encode($data->getAttributeLabel('deliverytime')); ?></th>
-				<?php endif; ?>
 				
 				<th>&nbsp;</th>
 				
@@ -55,10 +51,6 @@
 				
 				<td><?=Time::timeDisplay($data->submittime); ?></td>
 				
-				<?php if($data->deliverytime != NULL): ?>
-				<td><?=Time::timeDisplay($data->deliverytime); ?></td>
-				<?php endif; ?>
-				
 				<td>
 					<?php
 						if($data->paytime == NULL)
@@ -69,15 +61,19 @@
 				</td>
 				
 				<td>
-					<?php if($data->paytime == NULL): ?>
-						<?=CHtml::link(CHtml::button(Yii::t('order','Pay')),array('pay','id'=>$data->id)); ?>
-					<?php else: ?>
-					<?=CHtml::button(Yii::t('order','Evaluate'),array('onclick'=>'evaluateorder('.$data->id.');')); ?>
 					<?php
+						if($data->paytime == NULL){
+							echo CHtml::link(CHtml::button(Yii::t('order','Pay')),
+								array('pay','id'=>$data->id));
+						}
+						elseif($data->deliverytime != NULL){
+							echo CHtml::button(Yii::t('order','Evaluate'),
+								array('onclick'=>'evaluateorder('.$data->id.');'));
+						}
 						if(User::model()->isAdmin())
-							echo CHtml::button(Yii::t('order','Delete'),array('onclick'=>'delorder('.$data->id.');'));
+							echo CHtml::button(Yii::t('order','Delete'),
+								array('onclick'=>'delorder('.$data->id.');'));
 					?>
-					<?php endif; ?>
 				</td>
 			</tr>
 		</tbody>

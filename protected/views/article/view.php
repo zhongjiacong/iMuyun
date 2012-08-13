@@ -88,6 +88,7 @@ $this->menu = array(
 			array('id'=>'starttrans','onclick'=>'starttrans();')):
 		CHtml::button(Yii::t('article','Complete Translation'),
 			array('id'=>'comptrans','onclick'=>'comptrans();'));
+	
 	$this->widget('zii.widgets.CDetailView', array(
 		'data'=>$model,
 		'attributes'=>array(
@@ -110,7 +111,19 @@ $this->menu = array(
 				'label'=>Yii::t('article','Article Content'),
 				'type'=>'raw',
 				'value'=>$transoptbtn,
-				'visible'=>(NULL == $model->comptime),
+				'visible'=>(NULL == $model->comptime && User::model()->isTranslator()),
+			),
+			array(
+				'label'=>Yii::t('article','Article Content'),
+				'type'=>'raw',
+				'value'=>Article::model()->getText($model->id),
+				'visible'=>!User::model()->isTranslator(),
+			),
+			array(
+				'label'=>Yii::t('article','Translation Content'),
+				'type'=>'raw',
+				'value'=>Article::model()->getTrans($model->id),
+				'visible'=>(NULL != $model->comptime && !User::model()->isTranslator()),
 			),
 			array(
 				'label'=>Yii::t('article','Complete Time'),
@@ -120,21 +133,17 @@ $this->menu = array(
 			),
 		),
 	));
-?>
 
-<?php
-	if($model->starttime != NULL) {
-		if($model->comptime == NULL) {
-			$sentence = Sentence::model()->findAll('`article_id` = :article_id ORDER BY `sentencenum` ASC',
-				array(':article_id'=>$model->id));
-			foreach ($sentence as $key => $value) {
-				echo $this->renderPartial('/sentence/_form', array('model'=>$value));
-			}
+	if($model->starttime != NULL && $model->comptime == NULL && User::model()->isTranslator()) {
+		$sentence = Sentence::model()->findAll('`article_id` = :article_id ORDER BY `sentencenum` ASC',
+			array(':article_id'=>$model->id));
+		foreach ($sentence as $key => $value) {
+			echo $this->renderPartial('/sentence/_form', array('model'=>$value));
 		}
-		else
-			$this->widget('zii.widgets.CListView', array(
-				'dataProvider'=>$dataProvider,
-				'itemView'=>'/sentence/_view',
-			));
 	}
+	if($model->comptime != NULL)
+		$this->widget('zii.widgets.CListView', array(
+			'dataProvider'=>$dataProvider,
+			'itemView'=>'/sentence/_view',
+		));
 ?>

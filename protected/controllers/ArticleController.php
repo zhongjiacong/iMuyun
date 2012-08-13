@@ -105,6 +105,14 @@ class ArticleController extends Controller
 			date_default_timezone_set('PRC');
 			Article::model()->updateByPk(intval($_POST['id']),
 				array('comptime'=>date("Y-m-d H:i:s")));
+			// 判断是否可以交付
+			$order_id = Article::model()->findByPk(intval($_POST['id']))->order_id;
+			$article = Article::model()->findAll('`order_id` = :id AND `comptime` is NULL',
+				array(':id'=>$order_id));
+			// 如果已经没有未完成的翻译内容，则交付
+			if($article == NULL)
+				Order::model()->updateByPk($order_id,array('deliverytime'=>date("Y-m-d H:i:s")));
+				
 			echo json_encode(array('state'=>'succeed'));
 		}
 		else
@@ -341,9 +349,13 @@ class ArticleController extends Controller
 	 */
 	public function actionIndex()
 	{
+		// 这里用了临时表名，表前缀要用变量
         $dataProvider=new CActiveDataProvider('Article', array(
             'criteria'=>array(
                 'order'=>'`id` DESC',
+                'join'=>'INNER JOIN `'.Yii::app()->db->tablePrefix.
+                	'c_order` ON t.order_id = `'.Yii::app()->db->tablePrefix.'c_order`.id',
+                'condition'=>'`'.Yii::app()->db->tablePrefix.'c_order`.`audit` <> 0',
             ),
             'pagination'=>array(
                 //'pageSize'=>10,

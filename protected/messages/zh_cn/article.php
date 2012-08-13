@@ -19,7 +19,7 @@
  * @version $Id: $
  */
 return array (
-  'Original-target Language' => '源-目标语言',
+  'Translation Content' => '译文内容',
   'Article' => '文本',
   'Article Content' => '翻译内容',
   'Complete Time' => '完成时间',
@@ -39,6 +39,7 @@ return array (
   'My Article' => '我领取的文本',
   'New subject' => '新主题',
   'Order' => '订单',
+  'Original-target Language' => '源-目标语言',
   'Please choose the correct source language!' => '请选择正确的源语言！',
   'Please {entertext} in the text box below, or {uploadfile}.' => '请在文本框{entertext}，或{uploadfile}。',
   'Price' => '价格',

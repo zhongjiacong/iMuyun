@@ -369,3 +369,541 @@ Stack trace:
 REQUEST_URI=/iMuyun/index.php/recharge/update/1
 HTTP_REFERER=http://localhost/iMuyun/index.php/recharge/admin
 ---
+2012/08/13 05:30:52 [error] [exception.CException] exception 'CException' with message '属性 "Article.original" 未被定义.' in D:\Dropbox\Muyun\iMuyun\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(144): CComponent->__get('original')
+#1 D:\Dropbox\Muyun\iMuyun\protected\views\article\view.php(118): CActiveRecord->__get('original')
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(127): require('D:\Dropbox\Muyu...')
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\Dropbox\Muyu...', Array, true)
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(870): CBaseController->renderFile('D:\Dropbox\Muyu...', Array, true)
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#6 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(87): CController->render('view', Array)
+#7 [internal function]: ArticleController->actionView('1')
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ArticleController), Array)
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ArticleController), Object(ReflectionMethod), Array)
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#17 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('view')
+#19 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/view')
+#20 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/iMuyun/index.php/article/1
+HTTP_REFERER=http://localhost/iMuyun/index.php/order/1
+---
+2012/08/13 05:37:59 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-100003' for key 1. The SQL statement executed was: UPDATE `tbl_u_spreadtable` SET `translator_id`=:yp0.
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (117)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:37:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-100003' for key 1. The SQL statement executed was: UPDATE `tbl_u_spreadtable` SET `translator_id`=:yp0' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1699): CDbCommand->execute()
+#1 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(117): CActiveRecord->updateAll(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionReceive()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('receive')
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/receive')
+#13 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/iMuyun/index.php/article/receive
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/index
+---
+2012/08/13 05:38:05 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-100003' for key 1. The SQL statement executed was: UPDATE `tbl_u_spreadtable` SET `translator_id`=:yp0.
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (117)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:38:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-100003' for key 1. The SQL statement executed was: UPDATE `tbl_u_spreadtable` SET `translator_id`=:yp0' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1699): CDbCommand->execute()
+#1 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(117): CActiveRecord->updateAll(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionReceive()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('receive')
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/receive')
+#13 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/iMuyun/index.php/article/receive
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/index
+---
+2012/08/13 05:38:34 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-100003' for key 1. The SQL statement executed was: UPDATE `tbl_u_spreadtable` SET `translator_id`=:yp0.
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (117)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:38:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-100003' for key 1. The SQL statement executed was: UPDATE `tbl_u_spreadtable` SET `translator_id`=:yp0' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1699): CDbCommand->execute()
+#1 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(117): CActiveRecord->updateAll(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionReceive()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('receive')
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/receive')
+#13 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/iMuyun/index.php/article/receive
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/index
+---
+2012/08/13 05:38:39 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-100003' for key 1. The SQL statement executed was: UPDATE `tbl_u_spreadtable` SET `translator_id`=:yp0.
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (117)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:38:39 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-100003' for key 1. The SQL statement executed was: UPDATE `tbl_u_spreadtable` SET `translator_id`=:yp0' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1699): CDbCommand->execute()
+#1 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(117): CActiveRecord->updateAll(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionReceive()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('receive')
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/receive')
+#13 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/iMuyun/index.php/article/receive
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/index
+---
+2012/08/13 05:38:42 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-100003' for key 1. The SQL statement executed was: UPDATE `tbl_u_spreadtable` SET `translator_id`=:yp0.
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (117)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:38:42 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-100003' for key 1. The SQL statement executed was: UPDATE `tbl_u_spreadtable` SET `translator_id`=:yp0' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1699): CDbCommand->execute()
+#1 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(117): CActiveRecord->updateAll(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionReceive()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('receive')
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/receive')
+#13 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/iMuyun/index.php/article/receive
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/index
+---
+2012/08/13 05:38:43 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-100003' for key 1. The SQL statement executed was: UPDATE `tbl_u_spreadtable` SET `translator_id`=:yp0.
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (117)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:38:43 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-100003' for key 1. The SQL statement executed was: UPDATE `tbl_u_spreadtable` SET `translator_id`=:yp0' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1699): CDbCommand->execute()
+#1 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(117): CActiveRecord->updateAll(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionReceive()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('receive')
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/receive')
+#13 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/iMuyun/index.php/article/receive
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/index
+---
+2012/08/13 05:38:43 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-100003' for key 1. The SQL statement executed was: UPDATE `tbl_u_spreadtable` SET `translator_id`=:yp0.
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (117)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:38:43 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-100003' for key 1. The SQL statement executed was: UPDATE `tbl_u_spreadtable` SET `translator_id`=:yp0' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1699): CDbCommand->execute()
+#1 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(117): CActiveRecord->updateAll(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionReceive()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('receive')
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/receive')
+#13 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/iMuyun/index.php/article/receive
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/index
+---
+2012/08/13 05:38:43 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-100003' for key 1. The SQL statement executed was: UPDATE `tbl_u_spreadtable` SET `translator_id`=:yp0.
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (117)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:38:43 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-100003' for key 1. The SQL statement executed was: UPDATE `tbl_u_spreadtable` SET `translator_id`=:yp0' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1699): CDbCommand->execute()
+#1 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(117): CActiveRecord->updateAll(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionReceive()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('receive')
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/receive')
+#13 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/iMuyun/index.php/article/receive
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/index
+---
+2012/08/13 05:38:44 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-100003' for key 1. The SQL statement executed was: UPDATE `tbl_u_spreadtable` SET `translator_id`=:yp0.
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (117)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:38:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-100003' for key 1. The SQL statement executed was: UPDATE `tbl_u_spreadtable` SET `translator_id`=:yp0' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1699): CDbCommand->execute()
+#1 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(117): CActiveRecord->updateAll(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionReceive()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('receive')
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/receive')
+#13 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/iMuyun/index.php/article/receive
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/index
+---
+2012/08/13 05:39:01 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-100003' for key 1. The SQL statement executed was: UPDATE `tbl_u_spreadtable` SET `translator_id`=:yp0.
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (117)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:39:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-100003' for key 1. The SQL statement executed was: UPDATE `tbl_u_spreadtable` SET `translator_id`=:yp0' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1699): CDbCommand->execute()
+#1 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(117): CActiveRecord->updateAll(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionReceive()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('receive')
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/receive')
+#13 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/iMuyun/index.php/article/receive
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/index
+---
+2012/08/13 05:41:58 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (395)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (147)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:41:58 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (395)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (147)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:42:05 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (395)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (147)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:42:05 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (395)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (147)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:43:49 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (395)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (147)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:43:49 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (395)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (147)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:43:53 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (395)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (147)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:43:53 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (395)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (147)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:44:00 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (395)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (147)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:44:00 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (395)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (147)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 13:44:03 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 13:44:03 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (151)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:45:42 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'paytime' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `tbl_c_article` `t` WHERE `paytime` is not NULL.
+in D:\Dropbox\Muyun\iMuyun\protected\views\article\index.php (35)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (355)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:45:42 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'paytime' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `tbl_c_article` `t` WHERE `paytime` is not NULL' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1536): CDbCommand->queryScalar()
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\CDataProvider.php(193): CActiveDataProvider->calculateTotalItemCount()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\CDataProvider.php(137): CActiveDataProvider->fetchData()
+#6 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\CBaseListView.php(105): CDataProvider->getData()
+#7 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\CListView.php(173): CBaseListView->init()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(148): CListView->init()
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#10 D:\Dropbox\Muyun\iMuyun\protected\views\article\index.php(35): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(127): require('D:\Dropbox\Muyu...')
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\Dropbox\Muyu...', Array, true)
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(870): CBaseController->renderFile('D:\Dropbox\Muyu...', Array, true)
+#14 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#15 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(355): CController->render('index', Array)
+#16 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionIndex()
+#17 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#18 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#19 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#20 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#21 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#22 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#24 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('index')
+#26 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/index')
+#27 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#28 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/iMuyun/index.php/article/index
+---
+2012/08/13 05:52:48 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'imuyunco_muyundb.tbl_order' doesn't exist. The SQL statement executed was: SELECT COUNT(*) FROM `tbl_c_article` `t` INNER JOIN `tbl_order` ON t.order_id = `tbl_order`.id WHERE `tbl_order`.`paytime` is not NULL.
+in D:\Dropbox\Muyun\iMuyun\protected\views\article\index.php (35)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (356)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 05:52:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'imuyunco_muyundb.tbl_order' doesn't exist. The SQL statement executed was: SELECT COUNT(*) FROM `tbl_c_article` `t` INNER JOIN `tbl_order` ON t.order_id = `tbl_order`.id WHERE `tbl_order`.`paytime` is not NULL' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1536): CDbCommand->queryScalar()
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\CDataProvider.php(193): CActiveDataProvider->calculateTotalItemCount()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\CDataProvider.php(137): CActiveDataProvider->fetchData()
+#6 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\CBaseListView.php(105): CDataProvider->getData()
+#7 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\CListView.php(173): CBaseListView->init()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(148): CListView->init()
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#10 D:\Dropbox\Muyun\iMuyun\protected\views\article\index.php(35): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(127): require('D:\Dropbox\Muyu...')
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\Dropbox\Muyu...', Array, true)
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(870): CBaseController->renderFile('D:\Dropbox\Muyu...', Array, true)
+#14 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#15 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(356): CController->render('index', Array)
+#16 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionIndex()
+#17 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#18 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#19 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#20 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#21 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#22 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#24 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('index')
+#26 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/index')
+#27 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#28 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/iMuyun/index.php/article/index
+---
+2012/08/13 05:54:33 [error] [exception.CException] exception 'CException' with message '属性 "CAttributeCollection.dbPrefix" 未被定义.' in D:\Dropbox\Muyun\iMuyun\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\collections\CAttributeCollection.php(52): CComponent->__get('dbPrefix')
+#1 D:\Dropbox\Muyun\iMuyun\protected\views\article\index.php(30): CAttributeCollection->__get('dbPrefix')
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(127): require('D:\Dropbox\Muyu...')
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\Dropbox\Muyu...', Array, true)
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(870): CBaseController->renderFile('D:\Dropbox\Muyu...', Array, true)
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#6 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(357): CController->render('index', Array)
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionIndex()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#15 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('index')
+#17 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/index')
+#18 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/iMuyun/index.php/article/index
+---
+2012/08/13 05:54:34 [error] [exception.CException] exception 'CException' with message '属性 "CAttributeCollection.dbPrefix" 未被定义.' in D:\Dropbox\Muyun\iMuyun\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\collections\CAttributeCollection.php(52): CComponent->__get('dbPrefix')
+#1 D:\Dropbox\Muyun\iMuyun\protected\views\article\index.php(30): CAttributeCollection->__get('dbPrefix')
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(127): require('D:\Dropbox\Muyu...')
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\Dropbox\Muyu...', Array, true)
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(870): CBaseController->renderFile('D:\Dropbox\Muyu...', Array, true)
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#6 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(357): CController->render('index', Array)
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionIndex()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#15 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('index')
+#17 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/index')
+#18 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/iMuyun/index.php/article/index
+---
+2012/08/13 06:02:12 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'imuyunco_muyundb.c_order' doesn't exist. The SQL statement executed was: SELECT COUNT(*) FROM `tbl_c_article` `t` INNER JOIN `c_order` ON t.order_id = `c_order`.id WHERE `c_order`.`paytime` is not NULL.
+in D:\Dropbox\Muyun\iMuyun\protected\views\article\index.php (35)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (358)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 06:02:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'imuyunco_muyundb.c_order' doesn't exist. The SQL statement executed was: SELECT COUNT(*) FROM `tbl_c_article` `t` INNER JOIN `c_order` ON t.order_id = `c_order`.id WHERE `c_order`.`paytime` is not NULL' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1536): CDbCommand->queryScalar()
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\CDataProvider.php(193): CActiveDataProvider->calculateTotalItemCount()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\CDataProvider.php(137): CActiveDataProvider->fetchData()
+#6 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\CBaseListView.php(105): CDataProvider->getData()
+#7 D:\Dropbox\Muyun\iMuyun\framework\zii\widgets\CListView.php(173): CBaseListView->init()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(148): CListView->init()
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#10 D:\Dropbox\Muyun\iMuyun\protected\views\article\index.php(35): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(127): require('D:\Dropbox\Muyu...')
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\Dropbox\Muyu...', Array, true)
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(870): CBaseController->renderFile('D:\Dropbox\Muyu...', Array, true)
+#14 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#15 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(358): CController->render('index', Array)
+#16 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionIndex()
+#17 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#18 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#19 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#20 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#21 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#22 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#24 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('index')
+#26 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/index')
+#27 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#28 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/iMuyun/index.php/article/index
+---
+2012/08/13 06:06:39 [error] [exception.CException] exception 'CException' with message '属性 "ArticleController.components" 未被定义.' in D:\Dropbox\Muyun\iMuyun\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(344): CComponent->__get('components')
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionIndex()
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('index')
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/index')
+#12 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/iMuyun/index.php/article/index
+---
+2012/08/13 06:06:40 [error] [exception.CException] exception 'CException' with message '属性 "ArticleController.components" 未被定义.' in D:\Dropbox\Muyun\iMuyun\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(344): CComponent->__get('components')
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionIndex()
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('index')
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/index')
+#12 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/iMuyun/index.php/article/index
+---
+2012/08/13 06:48:38 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (407)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 06:48:38 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (407)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 06:48:41 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (407)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 06:48:41 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (407)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (155)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 14:48:41 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (159)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 14:48:41 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (159)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)

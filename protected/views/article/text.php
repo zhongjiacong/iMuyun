@@ -23,7 +23,7 @@ Yii::app()->clientScript->registerScript('article', "
 	});
 	
 	$('#Article_artcont').keyup(function(){
-		$('#wordcount span').html('￥'+wcount($('#Article_artcont').val()));
+		$('#wordcount span').html('￥'+wcount($('#Article_artcont').val()) * 0.12);
 	});
 	
 	$('#numform1 div:nth-child(2)').css('background-color','#1BAD7E');
