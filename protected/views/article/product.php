@@ -16,18 +16,32 @@ Yii::app()->clientScript->registerScript('seleprod',"
 ",CClientScript::POS_HEAD);
 ?>
 
+<div class="clear"></div>
+
 <div class="product">
-	<span><?=Yii::t('article','Video Translation'); ?></span>
-	<?=CHtml::image(Yii::app()->theme->baseUrl.'/img/videoprod.png','',array('id'=>'videoimg')); ?>
+<div><?=Yii::t('article','Video Translation'); ?></div>
+<?=CHtml::link(CHtml::image(Yii::app()->theme->baseUrl.'/img/videoprod.png','',
+	array('id'=>'videoimg')),'javascript:void(0);'); ?>
 </div>
 
 <div class="product">
-	<span><?=Yii::t('article','Text Translation'); ?></span>
-	<?=CHtml::image(Yii::app()->theme->baseUrl.'/img/textprod.png','',array('id'=>'textimg')); ?>
+<div><?=Yii::t('article','Text Translation'); ?></div>
+<?=CHtml::link(CHtml::image(Yii::app()->theme->baseUrl.'/img/textprod.png','',
+	array('id'=>'textimg')),'javascript:void(0);'); ?>
 </div>
 
-<div>
-	<?=CHtml::checkBox('autoaccess','',array('id'=>'autoaccess')).
-		Yii::t('article','Remember my choice next time.').
-		Yii::t('article','You can reselect in the settings of your profile.'); ?>
+<div class="clear"></div>
+
+<br />
+<br />
+
+<div class="form">
+	<dl>
+		<dt>&nbsp;</dt>
+		<dd>
+			<?=CHtml::checkBox('autoaccess','',array('id'=>'autoaccess')).
+				Yii::t('article','Remember my choice next time.').
+				Yii::t('article','You can reselect in the settings of your profile.'); ?>
+		</dd>
+	</dl>
 </div>
