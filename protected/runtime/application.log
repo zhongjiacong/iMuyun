@@ -1175,3 +1175,25 @@ Stack trace:
 REQUEST_URI=/iMuyun/index.php/order/delete
 HTTP_REFERER=http://localhost/iMuyun/index.php/order/admin
 ---
+2012/08/13 08:26:20 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (412)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (159)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 08:26:20 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (412)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (159)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 08:26:23 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (412)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (159)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 08:26:23 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (412)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (159)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 16:26:23 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (163)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/13 16:26:23 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (163)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
