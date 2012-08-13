@@ -93,7 +93,8 @@ class Spreadtable extends CActiveRecord
 		$article = Spreadtable::model()->find('`article_id` = :article_id',
 			array(':article_id'=>intval($article_id)));
 		// 要先判断是否有这个数据模型
-		return (NULL != $article && NULL != $article->translator_id)?$article->translator_id:NULL;
+		return NULL;
+		//return (NULL != $article && NULL != $article->translator_id)?$article->translator_id:NULL;
 	}
 	
 	public function myText()
