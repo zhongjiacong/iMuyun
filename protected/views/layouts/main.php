@@ -17,6 +17,7 @@
 	<link rel="stylesheet" type="text/css" href="<?=Yii::app()->theme->baseUrl; ?>/css/form.css" />
 	<link rel="stylesheet" type="text/css" href="<?=Yii::app()->theme->baseUrl; ?>/css/layouts.css" />
 	<link rel="stylesheet" type="text/css" href="<?=Yii::app()->theme->baseUrl; ?>/css/view.css" />
+	<link rel="stylesheet" type="text/css" href="<?=Yii::app()->theme->baseUrl; ?>/css/tab.css" />
     <link id="artDialog-skin" rel="stylesheet" type="text/css"
         href="<?=Yii::app()->theme->baseUrl; ?>/js/artDialog/skins/green.css" />
 
@@ -92,15 +93,25 @@
 		</div>
 		<div id="mainmenu">
 			<?php
-				if(!(Yii::app()->controller->id == 'site' && Yii::app()->controller->action->id == 'index') &&
-					!(Yii::app()->controller->id == 'article' && Yii::app()->controller->action->id == 'product')) {
+				if(!(Yii::app()->controller->id == 'site' &&
+					Yii::app()->controller->action->id == 'index') &&
+					!(Yii::app()->controller->id == 'article' &&
+					Yii::app()->controller->action->id == 'product')) {
 					$menuItems = array(
-						array('label'=>Yii::t('layouts','Video Translation'), 'url'=>array('/article/video')),
-						array('label'=>Yii::t('layouts','Text Translation'), 'url'=>array('/article/text')),
-						array('label'=>Yii::t('layouts','My Order'), 'url'=>array('/order/index'), 'visible'=>!Yii::app()->user->isGuest),
-						array('label'=>Yii::t('layouts','Profile'), 'url'=>array('/user/view','id'=>Yii::app()->user->getId()),'visible'=>!Yii::app()->user->isGuest),
+						array('label'=>Yii::t('layouts','Video Translation'), 'url'=>array('/article/video'),
+							'itemOptions'=>array('class'=>'tab-label-1')),
+						array('label'=>Yii::t('layouts','Text Translation'), 'url'=>array('/article/text'),
+							'itemOptions'=>array('class'=>'tab-label-2')),
+						array('label'=>Yii::t('layouts','My Order'), 'url'=>array('/order/index'),
+							'visible'=>!Yii::app()->user->isGuest,
+							'itemOptions'=>array('class'=>'tab-label-3')),
+						array('label'=>Yii::t('layouts','Profile'),
+							'url'=>array('/user/view','id'=>Yii::app()->user->getId()),
+							'visible'=>!Yii::app()->user->isGuest,
+							'itemOptions'=>array('class'=>'tab-label-4')),
 						array('label'=>Yii::t('layouts','Voucher Center'), 'url'=>array('/recharge/create'),
-							'visible'=>!Yii::app()->user->isGuest),
+							'visible'=>!Yii::app()->user->isGuest,
+							'itemOptions'=>array('class'=>'tab-label-5')),
 						array('label'=>Yii::t('layouts','Recharge'), 'url'=>array('/recharge/admin'),
 							'visible'=>User::model()->isAdmin(), 'itemOptions'=>array('class'=>'adminmenu')),
 						array('label'=>Yii::t('layouts','Article'), 'url'=>array('/article/admin'),
@@ -119,8 +130,7 @@
 					$this->widget('zii.widgets.CMenu',array(
 						'items'=>$menuItems,
 					));
-				}
-			?>
+			} ?>
 		</div><!-- mainmenu -->
 	</div>
 </div><!-- header -->

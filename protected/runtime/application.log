@@ -1658,3 +1658,33 @@ Stack trace:
 REQUEST_URI=/iMuyun/index.php/user/langupdate
 HTTP_REFERER=http://localhost/iMuyun/index.php/user/langupdate
 ---
+2012/08/14 08:07:40 [error] [php] array_count_values() [<a href='function.array-count-values'>function.array-count-values</a>]: Can only count STRING and INTEGER values! (D:\Dropbox\Muyun\iMuyun\protected\views\layouts\main.php:128)
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(96): ArticleController->renderInternal()
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\widgets\CContentDecorator.php(77): ArticleController->renderFile()
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(207): CContentDecorator->run()
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(301): ArticleController->endWidget()
+#6 D:\Dropbox\Muyun\iMuyun\protected\views\layouts\column2.php(21): ArticleController->endContent()
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(127): require()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(96): ArticleController->renderInternal()
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(785): ArticleController->renderFile()
+#10 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(290): ArticleController->render()
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionText()
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams()
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): ArticleController->runAction()
+#14 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#15 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#16 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): ArticleController->filterAccessControl()
+#17 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#18 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#19 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): ArticleController->runActionWithFilters()
+#20 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): ArticleController->run()
+#21 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#22 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 D:\Dropbox\Muyun\iMuyun\index.php(13): CWebApplication->run()
+REQUEST_URI=/iMuyun/index.php/article/text
+in D:\Dropbox\Muyun\iMuyun\protected\views\layouts\main.php (128)
+in D:\Dropbox\Muyun\iMuyun\protected\views\layouts\column2.php (21)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (290)
