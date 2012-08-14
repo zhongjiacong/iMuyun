@@ -28,16 +28,17 @@ input[type='button']
 #logoimgdiv
 {
 	float: left;
-	padding: 2px;
 	margin: 28px 18px;
-	border-radius: 2px;
-	background-color: white;
 }
 
-#logoimg
+#logoimgdiv img
 {
+	background: white;
 	width: 40px;
 	height: 40px;
+	padding: 2px;
+	border: 1px solid #DDD;
+	border-radius: 2px;
 }
 
 #logo span

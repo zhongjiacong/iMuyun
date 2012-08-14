@@ -42,7 +42,6 @@
                   
               }, 1000 );
               
-         
               setInterval( function() {
               var hours = new Date().getHours();
               var mins = new Date().getMinutes();
@@ -52,8 +51,7 @@
               $("#hour").css({"-moz-transform" : hrotate, "-webkit-transform" : hrotate});
                   
               }, 1000 );
-        
-        
+				
               setInterval( function() {
               var mins = new Date().getMinutes();
               var mdegree = mins * 6;
@@ -117,8 +115,7 @@
 		?>
 		<div id="headleft">
 			<div id="logoimgdiv">
-				<?=CHtml::image(Yii::app()->theme->baseUrl.'/img/logoimg.jpg','Logo Image',
-					array('id'=>'logoimg')); ?>
+				<?=CHtml::image(Yii::app()->theme->baseUrl.'/img/logoimg.jpg','Logo Image'); ?>
 			</div>
 			<div id="logo">
 				牧云翻译
