@@ -1240,3 +1240,421 @@ in D:\Dropbox\Muyun\iMuyun\index.php (13)
 2012/08/13 16:47:18 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
 in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (163)
 in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/14 03:26:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "lang" 动作.' in D:\Dropbox\Muyun\iMuyun\framework\web\CController.php:484
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(271): CController->missingAction('lang')
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('lang')
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('user/lang')
+#3 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/iMuyun/index.php/user/lang
+HTTP_REFERER=http://localhost/iMuyun/index.php/user/100001
+---
+2012/08/14 03:33:02 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1. The SQL statement executed was: SELECT * FROM `tbl_u_friend` `t` WHERE `fans_id` = .
+in D:\Dropbox\Muyun\iMuyun\protected\views\user\langupdate.php (2)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (133)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/14 03:33:02 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1. The SQL statement executed was: SELECT * FROM `tbl_u_friend` `t` WHERE `fans_id` = ' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryAll()
+#2 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1406): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\Dropbox\Muyun\iMuyun\protected\views\user\langupdate.php(2): CActiveRecord->findAll('`fans_id` = ')
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(127): require('D:\Dropbox\Muyu...')
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\Dropbox\Muyu...', Array, true)
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(870): CBaseController->renderFile('D:\Dropbox\Muyu...', Array, true)
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(783): CController->renderPartial('langupdate', Array, true)
+#8 D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php(133): CController->render('langupdate', Array)
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): UserController->actionLangupdate()
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#17 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('langupdate')
+#19 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('user/langupdate')
+#20 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/iMuyun/index.php/user/langupdate
+HTTP_REFERER=http://localhost/iMuyun/index.php/user/100001
+---
+2012/08/14 04:24:14 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-1' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1).
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (139)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/14 04:24:14 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-1' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1)' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php(139): CActiveRecord->save()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): UserController->actionLangupdate()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('langupdate')
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('user/langupdate')
+#14 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/iMuyun/index.php/user/langupdate
+HTTP_REFERER=http://localhost/iMuyun/index.php/user/langupdate
+---
+2012/08/14 04:26:30 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1).
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (139)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/14 04:26:30 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1)' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php(139): CActiveRecord->save()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): UserController->actionLangupdate()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('langupdate')
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('user/langupdate')
+#14 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/iMuyun/index.php/user/langupdate
+HTTP_REFERER=http://localhost/iMuyun/index.php/user/langupdate
+---
+2012/08/14 04:26:49 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1).
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (139)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/14 04:26:49 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1)' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php(139): CActiveRecord->save()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): UserController->actionLangupdate()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('langupdate')
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('user/langupdate')
+#14 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/iMuyun/index.php/user/langupdate
+HTTP_REFERER=http://localhost/iMuyun/index.php/user/langupdate
+---
+2012/08/14 04:27:15 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1).
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (139)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/14 04:27:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1)' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php(139): CActiveRecord->save()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): UserController->actionLangupdate()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('langupdate')
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('user/langupdate')
+#14 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/iMuyun/index.php/user/langupdate
+HTTP_REFERER=http://localhost/iMuyun/index.php/user/langupdate
+---
+2012/08/14 04:27:15 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1).
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (139)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/14 04:27:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1)' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php(139): CActiveRecord->save()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): UserController->actionLangupdate()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('langupdate')
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('user/langupdate')
+#14 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/iMuyun/index.php/user/langupdate
+HTTP_REFERER=http://localhost/iMuyun/index.php/user/langupdate
+---
+2012/08/14 04:27:16 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1).
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (139)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/14 04:27:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1)' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php(139): CActiveRecord->save()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): UserController->actionLangupdate()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('langupdate')
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('user/langupdate')
+#14 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/iMuyun/index.php/user/langupdate
+HTTP_REFERER=http://localhost/iMuyun/index.php/user/langupdate
+---
+2012/08/14 04:28:34 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1).
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (139)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/14 04:28:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1)' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php(139): CActiveRecord->save()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): UserController->actionLangupdate()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('langupdate')
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('user/langupdate')
+#14 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/iMuyun/index.php/user/langupdate
+HTTP_REFERER=http://localhost/iMuyun/index.php/user/langupdate
+---
+2012/08/14 04:29:33 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1).
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (139)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/14 04:29:33 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1)' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php(139): CActiveRecord->save()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): UserController->actionLangupdate()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('langupdate')
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('user/langupdate')
+#14 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/iMuyun/index.php/user/langupdate
+HTTP_REFERER=http://localhost/iMuyun/index.php/user/langupdate
+---
+2012/08/14 04:30:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1).
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (139)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/14 04:30:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1)' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php(139): CActiveRecord->save()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): UserController->actionLangupdate()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('langupdate')
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('user/langupdate')
+#14 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/iMuyun/index.php/user/langupdate
+HTTP_REFERER=http://localhost/iMuyun/index.php/user/langupdate
+---
+2012/08/14 04:30:27 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1).
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (139)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/14 04:30:27 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1)' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php(139): CActiveRecord->save()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): UserController->actionLangupdate()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('langupdate')
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('user/langupdate')
+#14 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/iMuyun/index.php/user/langupdate
+HTTP_REFERER=http://localhost/iMuyun/index.php/user/langupdate
+---
+2012/08/14 04:30:32 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1).
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (139)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/14 04:30:32 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1)' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php(139): CActiveRecord->save()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): UserController->actionLangupdate()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('langupdate')
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('user/langupdate')
+#14 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/iMuyun/index.php/user/langupdate
+HTTP_REFERER=http://localhost/iMuyun/index.php/user/langupdate
+---
+2012/08/14 04:31:05 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1).
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (139)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/14 04:31:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1)' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php(139): CActiveRecord->save()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): UserController->actionLangupdate()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('langupdate')
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('user/langupdate')
+#14 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/iMuyun/index.php/user/langupdate
+HTTP_REFERER=http://localhost/iMuyun/index.php/user/langupdate
+---
+2012/08/14 04:31:16 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1).
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (139)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/14 04:31:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1)' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php(139): CActiveRecord->save()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): UserController->actionLangupdate()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('langupdate')
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('user/langupdate')
+#14 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/iMuyun/index.php/user/langupdate
+HTTP_REFERER=http://localhost/iMuyun/index.php/user/langupdate
+---
+2012/08/14 04:32:18 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1).
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (139)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/14 04:32:18 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1)' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php(139): CActiveRecord->save()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): UserController->actionLangupdate()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('langupdate')
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('user/langupdate')
+#14 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/iMuyun/index.php/user/langupdate
+HTTP_REFERER=http://localhost/iMuyun/index.php/user/langupdate
+---
+2012/08/14 04:34:38 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1).
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php (141)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/14 04:34:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-2' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1)' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php(141): CActiveRecord->save()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): UserController->actionLangupdate()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('langupdate')
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('user/langupdate')
+#14 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/iMuyun/index.php/user/langupdate
+HTTP_REFERER=http://localhost/iMuyun/index.php/user/langupdate
+---

@@ -59,10 +59,10 @@ return array(
 	
 	// 要配合着单词数量判断来改
 	'language'=>array(
-		'中文',
+		'Chinese',
 		'English',
-		'Español',
-		'العربية',
+		'Spanish',
+		'Arabic',
 		/*'Japanese',
 		'Korean',
 		'German',

@@ -31,7 +31,7 @@ class UserController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update','pwdupdate'),
+				'actions'=>array('update','pwdupdate','langupdate'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -125,6 +125,34 @@ class UserController extends Controller
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
+	}
+	
+	public function actionLangupdate()
+	{
+		$model = $this->loadModel(Yii::app()->user->getId());
+		$model->scenario = 'langupdate';
+		
+		if(Yii::app()->request->isPostRequest) {
+			if(1 == intval($_POST['flag']))
+				Userlang::model()->deleteAll('`user_id` = :user_id',
+					array(':user_id'=>Yii::app()->user->getId()));
+			else if(0 == intval($_POST['flag'])) {
+				$userlang = new Userlang;
+				$userlang->user_id = Yii::app()->user->getId();
+				$userlang->lang_id = intval($_POST['lang_id']);
+				if(!Userlang::model()->exists('`user_id` = :user_id AND `lang_id` = :lang_id',
+					array(':user_id'=>Yii::app()->user->getId(),':lang_id'=>intval($_POST['lang_id']))))
+					$userlang->save();
+			}
+			else
+				echo json_encode(array('state'=>'succeed'));
+		}
+		else {
+			$this->render('langupdate',array(
+				'model'=>$model,
+			));
+		}
+		
 	}
 	
 	public function actionPwdupdate()

@@ -19,8 +19,9 @@
  * @version $Id: $
  */
 return array (
-  'Order' => '订单',
+  'Update' => '更新',
   'About Us' => '关于我们',
+  'Add' => '添加',
   'Article' => '文本',
   'Bussiness' => '业务',
   'Charge Mode' => '计费方式',
@@ -29,6 +30,7 @@ return array (
   'Contact Way' => '联系方式',
   'Copyright Reserved' => '版权所有',
   'Create' => '新建',
+  'Delete' => '删除',
   'Fields with <span class="required">*</span> are required.' => '标<span class="required">*</span>为必填项。',
   'Frequently Asked Questions' => '常见问题',
   'Hello, ' => '您好，',
@@ -37,6 +39,7 @@ return array (
   'Msg' => '留言',
   'My Order' => '我的订单',
   'Operations' => '操作',
+  'Order' => '订单',
   'Our Team' => '团队介绍',
   'Profile' => '个人主页',
   'Recharge' => '充值',

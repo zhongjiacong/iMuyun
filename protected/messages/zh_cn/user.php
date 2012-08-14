@@ -19,14 +19,15 @@
  * @version $Id: $
  */
 return array (
-  'Last login time' => '',
-  'User cannot enabled.' => '',
+  'Update Language Failed' => '语言更新失败',
+  'Update Language Successfully' => '语言更新成功',
   'Account Category' => '用户类型',
   'Account Settings' => '帐号设置',
   'Address' => '地址',
   'Birthday' => '生日',
   'Change Login Password' => '修改登录密码',
   'Click the link to activate your account! ' => '点击链接激活您的帐号！',
+  'Common Language' => '常用语言',
   'Congratulations! Registration successful. Please check your email and activate your account.' => '恭喜！ 注册成功。 请查看您的邮件并激活您的账号。',
   'Create User' => '创建用户',
   'Dear ' => '亲爱的 ',
@@ -37,6 +38,7 @@ return array (
   'Gender Id' => '性别',
   'Introduce' => '介绍',
   'Last Login Time' => '上次登录时间',
+  'Last login time' => '上次登录时间',
   'List User' => '用户列表',
   'Login Password' => '登录密码',
   'Manage User' => '管理用户',
@@ -53,6 +55,7 @@ return array (
   'Select Product' => '选择产品',
   'Sorry, this email has been registered.' => '对不起，这个邮箱已被注册。',
   'Telephone' => '电话',
+  'User cannot enabled.' => '用户未能启用',
   'Verify Code' => '验证编码',
   'View User' => '查看用户',
   'Your account has been activated.' => '您的帐号已经激活。',

@@ -21,7 +21,24 @@ $this->menu=array(
 		?>
 	</p>
 	<?php } ?>
-	
+	<dl>
+		<dt><?=Yii::t('user','Common Language'); ?></dt>
+		<dd>
+		<?php
+			/*$_SERVER["HTTP_ACCEPT_LANGUAGE"];*/
+		?>
+		<?php
+			$userlang = Userlang::model()->findAll('`user_id` = :id',array(':id'=>$model->id));
+			if(NULL != $userlang){
+				foreach ($userlang as $key => $value) {
+					echo Yii::app()->params['language'][$value->lang_id].', ';
+				}
+				echo CHtml::link(Yii::t('layouts','Update'),array('user/langupdate'));
+			}
+		?>
+		</dd>
+	</dl>
+	<hr />
 	<?php if(User::model()->isAdmin()) { ?>
 	<dl>
 		<dt><?=Yii::t('user','Email'); ?></dt>
