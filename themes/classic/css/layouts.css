@@ -54,11 +54,11 @@ input[type='button']
 
 #login
 {
-	float: left;
+	float: right;
 	text-align: right;
 	font-size: 14px;
 	line-height: 20px;
-	width: 460px;
+	width: 420px;
 	padding: 20px;
 }
 
@@ -84,4 +84,37 @@ input[type='button']
 #footer ul li a
 {
 	color: white !important;
+}
+
+#clock {
+	padding: 0px;
+	margin: 10px 0px 0px 0px;
+	float: right;
+	position: relative;
+	width: 60px;
+	height: 60px;
+	background: url(../img/clock/clockface.png);
+	list-style: none;
+}
+
+#sec, #min, #hour {
+	position: absolute;
+	width: 1px;
+	height: 60px;
+	left: 30px;
+}
+
+#sec {
+	background: url(../img/clock/sechand.png);
+	z-index: 3;
+}
+   
+#min {
+	background: url(../img/clock/minhand.png);
+	z-index: 2;
+}
+   
+#hour {
+	background: url(../img/clock/hourhand.png);
+	z-index: 1;
 }
