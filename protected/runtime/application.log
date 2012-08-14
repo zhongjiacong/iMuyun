@@ -1688,3 +1688,11 @@ REQUEST_URI=/iMuyun/index.php/article/text
 in D:\Dropbox\Muyun\iMuyun\protected\views\layouts\main.php (128)
 in D:\Dropbox\Muyun\iMuyun\protected\views\layouts\column2.php (21)
 in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (290)
+2012/08/14 09:12:03 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (413)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (159)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/14 09:12:03 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (413)
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (159)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)

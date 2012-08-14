@@ -39,6 +39,7 @@
 <body>
 
 <div class="container">
+	<div id="headerline">&nbsp;</div>
 	<div id="header">
 		<div id="headright">
 			<div id="syslangdiv">
