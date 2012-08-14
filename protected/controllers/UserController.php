@@ -204,7 +204,8 @@ class UserController extends Controller
 		if(Yii::app()->user->isGuest)
 			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
 		
-		$user_id = User::model()->isAdmin() ? intval($_GET['id']) : Yii::app()->user->getId();
+		$user_id = (isset($_GET['id']) && User::model()->isAdmin()) ? intval($_GET['id']):
+			Yii::app()->user->getId();
 		$model = $this->loadModel($user_id);
 		
 		// 安全性
