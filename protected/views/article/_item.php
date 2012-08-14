@@ -1,17 +1,17 @@
 <div class="artview">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('article/view', 'id'=>$data->id)); ?>
+	<?=CHtml::link('<b>'.CHtml::encode($data->getAttributeLabel('id')).':</b>'.
+		CHtml::encode($data->id), array('article/view', 'id'=>$data->id)); ?>
 	<br />
 
 <?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('fieldcat_id')); ?>:</b>
-	<?php echo CHtml::encode($data->fieldcat_id); ?>
+	<b><?=CHtml::encode($data->getAttributeLabel('fieldcat_id')); ?>:</b>
+	<?=CHtml::encode($data->fieldcat_id); ?>
 	<br />
 */ ?>
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('wordcount')); ?>:</b>
-	<?php echo CHtml::encode($data->wordcount); ?>
+	<b><?=CHtml::encode($data->getAttributeLabel('wordcount')); ?>:</b>
+	<?=CHtml::encode($data->wordcount); ?>
 	<br />
 
 	<b><?=Yii::t('article','Language'); ?>:</b>

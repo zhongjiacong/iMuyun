@@ -202,6 +202,7 @@ class ArticleController extends Controller
 					$order->customer_id = $user_id;
 					date_default_timezone_set('PRC');
 					$deadline = date("Y-m-d H:i:s");
+					$order->deadline = $deadline;//$model->deadline;
 					$order->submittime = $deadline;
 					$order->save();
 					// 如果用户没有设置新的主题，保存了之后将订单id记为subject
@@ -216,11 +217,18 @@ class ArticleController extends Controller
 			
 				date_default_timezone_set('PRC');
 				$model->edittime = date("Y-m-d H:i:s");
+				$model->filename = $model->doccont->getName();
 				
 				if($model->save()) {
 					// 保存文件
-					$path = dirname(__FILE__).'/../../public/file/'.$model->doccont->getName();
+					$path = Article::model()->fileAddr($model->id);
 					$model->doccont->saveAs($path);
+					
+					// 添加到价位表
+					$spreadtable = new Spreadtable;
+					$spreadtable->article_id = $model->id;
+					$spreadtable->price = 0;//
+					$spreadtable->save();
 					
 					// 注意这里的跳转要加上控制器名
 					$this->redirect(array('order/pay','id'=>$model->order_id));

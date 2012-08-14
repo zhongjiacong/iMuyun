@@ -195,6 +195,7 @@
 	
 	<div class="clear"></div>
 	
+	<div id="footerline">&nbsp;</div>
 	<div id="footer">
 		<dl>
 			<dt><?=Yii::t('layouts','About Us'); ?></dt>

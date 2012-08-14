@@ -9,10 +9,6 @@
 				
 				<th><?=Yii::t('order','Order Text'); ?></th>
 				
-				<?php if($data->deadline != $data->submittime): ?>
-				<th><?=Time::timeDisplay($data->deadline); ?></th>
-				<?php endif; ?>
-				
 				<th><?=CHtml::encode($data->getAttributeLabel('submittime')); ?></th>
 				
 				<th>&nbsp;</th>
@@ -44,10 +40,6 @@
 						));
 					?>
 				</td>
-				
-				<?php if($data->deadline != $data->submittime) { ?>
-				<td><?=Time::timeDisplay($data->deadline); ?></td>
-				<?php } ?>
 				
 				<td><?=Time::timeDisplay($data->submittime); ?></td>
 				

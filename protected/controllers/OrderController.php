@@ -167,6 +167,8 @@ class OrderController extends Controller
 				// 删除价位表中的记录
 				if(Spreadtable::model()->isReceived($value->id))
 					Spreadtable::model()->deleteAll('`article_id` = :id',array(':id'=>$value->id));
+				if(NULL != $value->filename)
+					unlink(Article::model()->fileAddr($value->id));
 				Article::model()->deleteByPk($value->id);
 			}
 			// we only allow deletion via POST request

@@ -196,5 +196,23 @@ class Article extends CActiveRecord
 		}
 		return $transcont;
 	}
+	
+	public function fileAddr($text_id,$physical = TRUE)
+	{
+		$text = Article::model()->findByPk($text_id);
+		$time = strtotime($text->edittime);
+		$name = $text->filename;
+		
+		$namearr = explode('.', $name);
+		$type = '.'.$namearr[count($namearr)-1];
+		unset($namearr[count($namearr)-1]);
+		$filename = implode('.', $namearr);
+		
+		if($physical)
+			return dirname(__FILE__).'/../../public/file/'.strval(strtotime($model->edittime)).
+				sha1($filename).$type;
+		return Yii::app()->request->baseUrl.'/public/file/'.strval(strtotime($model->edittime)).
+				sha1($filename).$type;
+	}
 
 }

@@ -19,6 +19,16 @@ body
 	background-repeat: repeat-x;
 }
 
+#footerline
+{
+	margin-top: 20px;
+	height: 3px;
+	width: 100%;
+	background-image: url(../img/bg_line.png);
+	background-repeat: repeat-x;
+	background-position: 0px -10px;
+}
+
 #header
 {
 	margin: 0;
@@ -51,7 +61,6 @@ body
 #footer
 {
 	font-family: "Microsoft Yahei";
-	margin-top: 20px;
 	color: white;
 	padding: 20px;
 	background-image: url(../img/bg_short.png);
