@@ -17,7 +17,7 @@
 	<link rel="stylesheet" type="text/css" href="<?=Yii::app()->theme->baseUrl; ?>/css/form.css" />
 	<link rel="stylesheet" type="text/css" href="<?=Yii::app()->theme->baseUrl; ?>/css/layouts.css" />
 	<link rel="stylesheet" type="text/css" href="<?=Yii::app()->theme->baseUrl; ?>/css/view.css" />
-	<link rel="stylesheet" type="text/css" href="<?=Yii::app()->theme->baseUrl; ?>/css/tab.css" />
+	<link rel="stylesheet" type="text/css" href="<?=Yii::app()->theme->baseUrl; ?>/css/menu.css" />
     <link id="artDialog-skin" rel="stylesheet" type="text/css"
         href="<?=Yii::app()->theme->baseUrl; ?>/js/artDialog/skins/green.css" />
 

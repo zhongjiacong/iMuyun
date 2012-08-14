@@ -1,6 +1,6 @@
 <?php
 Yii::app()->clientScript->registerScript('article', "
-	$('body').css('background-image','url(".Yii::app()->theme->baseUrl."/img/bg_long.jpg)');
+	$('body').css('background-image','url(".Yii::app()->theme->baseUrl."/img/bg_long.png)');
 	$('#entrance').click(function(){
 		if($.cookie('SELEPROD') != null)
 			window.location.href = '".Yii::app()->request->baseUrl."/index.php/article/'+$.cookie('SELEPROD');

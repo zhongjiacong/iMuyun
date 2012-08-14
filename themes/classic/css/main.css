@@ -4,7 +4,7 @@ body
 	padding: 0;
 	color: #555;
 	font: normal 10pt Arial,Helvetica,sans-serif;
-	background-image: url(../img/header.png);
+	background-image: url(../img/bg_short.png);
 	background-repeat: repeat-x;
 }
 
@@ -15,7 +15,7 @@ body
 	top: 0px;
 	left: 0px;
 	width: 100%;
-	background-image: url(../img/header_footer_line.png);
+	background-image: url(../img/bg_line.png);
 	background-repeat: repeat-x;
 }
 
