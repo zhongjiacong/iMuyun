@@ -17,12 +17,11 @@
     line-height: 34px;
     height: 34px;
     position: relative;
-    padding: 0 5px;
+    padding: 0 10px;
     float: left;
     display: block;
-    width: 80px;
     letter-spacing: 1px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     font-weight: bold;
     text-align: center;
     text-shadow: 1px 1px 1px rgba(255,255,255,0.3);
