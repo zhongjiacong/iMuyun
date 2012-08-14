@@ -86,9 +86,6 @@
 			</div>
 			<div id="logo">
 				牧云翻译
-				<?php
-					/*Yii::t('layouts','{appname}',array('{appname}'=>Yii::app()->name));*/
-				?>
 				<span>Muyun Translation</span>
 			</div>
 		</div>

@@ -19,7 +19,7 @@
  * @version $Id: $
  */
 return array (
-  'Delete' => '@@@@@@@@@@删除@@@@@@@@@@',
+  'Delete' => '@@@@@@@@@@@@删除@@@@@@@@@@@@',
   'Audit' => '审核',
   'Audited' => '已审核',
   'Customer' => '客户',

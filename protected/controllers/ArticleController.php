@@ -153,6 +153,8 @@ class ArticleController extends Controller
 	 */
 	public function actionText()
 	{
+		$this->layout = "//layouts/column1";
+		
 		$model=new Article;
 
 		// Uncomment the following line if AJAX validation is needed

@@ -19,7 +19,7 @@
  * @version $Id: $
  */
 return array (
-  'Update' => '更新',
+  'MuYun Translation' => '牧云翻译服务',
   'About Us' => '关于我们',
   'Add' => '添加',
   'Article' => '文本',
@@ -48,6 +48,7 @@ return array (
   'Submit' => '提交',
   'Successful Case' => '成功案例',
   'Text Translation' => '文本翻译',
+  'Update' => '更新',
   'User' => '用户',
   'Video Translation' => '视频翻译',
   'Voucher Center' => '充值中心',

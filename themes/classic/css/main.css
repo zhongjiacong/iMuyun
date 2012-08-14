@@ -50,10 +50,11 @@ body
 
 #footer
 {
+	font-family: "Microsoft Yahei";
 	margin-top: 20px;
 	color: white;
 	padding: 20px;
-	background-color: #32A075;
+	background-image: url(../img/bg_short.png);
 	text-align: center;
 }
 

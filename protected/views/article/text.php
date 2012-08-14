@@ -51,6 +51,8 @@ Yii::app()->clientScript->registerScript('article', "
 			'<div class=\"errorMessage\" id=\"Article_doccont_em_\" style=\"display:none\"></div>'
 		);
 	});
+	
+	$('.textintro span, .textintro div').animate({marginLeft:'100px',opacity:'1'},1500,function(){});
 ");
 Yii::app()->clientScript->registerScript('textform', "
 	function selectOrderList() {
@@ -100,7 +102,9 @@ Yii::app()->clientScript->registerScript('textform', "
 ",CClientScript::POS_HEAD);
 ?>
 
-<div><?=CHtml::image(Yii::app()->theme->baseUrl.'/img/artcreateimg.jpg','',
-	array('class'=>'artcreateimg')); ?></div>
+<div class="textintro">
+	<div><?=Yii::t('layouts','MuYun Translation'); ?></div>
+	<span>be of your service</span>
+</div>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
