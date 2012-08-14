@@ -135,6 +135,20 @@
 
 <div class="clear"></div>
 
+<?php if(Yii::app()->controller->id == 'site' &&
+		Yii::app()->controller->action->id == 'index'): ?>
+		<div id="slidecontainer">
+			<div id="slideimg">
+				<div><?=Yii::t('layouts','MuYun Translation'); ?></div>
+				<span>be of your service</span>
+				<?=CHtml::link('<div id="entrance">'.Yii::t('site','Start Now').'</div>'); ?>
+			</div>
+		</div>
+		<br />
+		<br />
+<div class="clear"></div>
+<?php endif; ?>
+
 <div class="container" id="page">
 	<div id="maincontent">
 		<?php if(isset($this->breadcrumbs)):?>
