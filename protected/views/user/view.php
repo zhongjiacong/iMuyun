@@ -9,7 +9,6 @@ $this->menu=array(
 		'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?'), 'visible'=>User::model()->isAdmin()),
 );
 ?>
-
 <div class="form">
 	<?php if($model->email == Yii::app()->user->name) { ?>
 	<p class="note">
@@ -24,16 +23,13 @@ $this->menu=array(
 	<dl>
 		<dt><?=Yii::t('user','Common Language'); ?></dt>
 		<dd>
-		<?php
-			/*$_SERVER["HTTP_ACCEPT_LANGUAGE"];*/
-		?>
-		<?php
-			$userlang = Userlang::model()->findAll('`user_id` = :id',array(':id'=>$model->id));
-			foreach ($userlang as $key => $value) {
-				echo Yii::app()->params['language'][$value->lang_id].', ';
-			}
-			echo CHtml::link(Yii::t('layouts','Update'),array('user/langupdate'));
-		?>
+			<?php
+				$userlang = Userlang::model()->findAll('`user_id` = :id',array(':id'=>$model->id));
+				foreach ($userlang as $key => $value) {
+					echo Yii::app()->params['language'][$value->lang_id].', ';
+				}
+				echo CHtml::link(Yii::t('layouts','Update'),array('user/langupdate'));
+			?>
 		</dd>
 	</dl>
 	<hr />

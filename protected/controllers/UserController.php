@@ -85,7 +85,13 @@ class UserController extends Controller
 			$model->lastlogintime = date("Y-m-d H:i:s");
 			
 			if($model->save()) {
-				// 2.发送验证邮件
+				// 2.给用户添加默认语言
+				$userlang = new Userlang;
+				$userlang->user_id = $model->id;
+				$userlang->lang_id = User::model()->defaultLang();
+				$userlang->save();
+				
+				// 3.发送验证邮件
 				User::model()->emailVerify($model->email, $verifyCode);
 				$this->render('register',array(
 					'model'=>$model,
@@ -140,12 +146,19 @@ class UserController extends Controller
 				$userlang = new Userlang;
 				$userlang->user_id = Yii::app()->user->getId();
 				$userlang->lang_id = intval($_POST['lang_id']);
-				if(!Userlang::model()->exists('`user_id` = :user_id AND `lang_id` = :lang_id',
-					array(':user_id'=>Yii::app()->user->getId(),':lang_id'=>intval($_POST['lang_id']))))
-					$userlang->save();
+				$userlang->save();
 			}
-			else
+			else {
+				// 判断用户是不是把所有语言删了，这样就得加入默认语言
+				if(!Userlang::model()->exists('`user_id` = :user_id',
+					array(':user_id'=>Yii::app()->user->getId()))) {
+					$userlang = new Userlang;
+					$userlang->user_id = Yii::app()->user->getId();
+					$userlang->lang_id = User::model()->defaultLang();
+					$userlang->save();
+				}
 				echo json_encode(array('state'=>'succeed'));
+			}
 		}
 		else {
 			$this->render('langupdate',array(

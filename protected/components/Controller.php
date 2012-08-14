@@ -15,12 +15,10 @@ class Controller extends CController
     	Yii::app()->clientScript->registerCoreScript('jquery');
 		
 		// 通过cookie来判断系统语言
-        if(isset($_COOKIE['SYSLANG']) && $_COOKIE['SYSLANG']!="")
-        {
+        if(isset($_COOKIE['SYSLANG']) && $_COOKIE['SYSLANG']!="") {
             Yii::app()->language=$_COOKIE['SYSLANG'];
         }
-        else
-        {
+        else {
             $lang=explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE']);
             Yii::app()->language=strtolower(str_replace('-','_',$lang[0]));
         }

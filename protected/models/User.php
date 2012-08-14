@@ -347,5 +347,31 @@ class User extends CActiveRecord
         $pattern .= ")";
         return $pattern;
     }
+	
+	public function defaultLang()
+	{
+		//只取前4位，这样只判断最优先的语言。如果取前5位，可能出现en,zh的情况，影响判断。
+		$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 4);
+		if (preg_match("/zh-c/i", $lang))
+			return array_search('Chinese', Yii::app()->params['language']);//echo "简体中文";
+		else if (preg_match("/zh/i", $lang))
+			return array_search('Chinese', Yii::app()->params['language']);//echo "繁體中文";
+		else if (preg_match("/en/i", $lang))
+			return array_search('English', Yii::app()->params['language']);//echo "English";
+		else if (preg_match("/fr/i", $lang))
+			return array_search('French', Yii::app()->params['language']);//echo "French";
+		else if (preg_match("/de/i", $lang))
+			return array_search('German', Yii::app()->params['language']);//echo "German";
+		else if (preg_match("/jp/i", $lang))
+			return array_search('Japanese', Yii::app()->params['language']);//echo "Japanese";
+		else if (preg_match("/ko/i", $lang))
+			return array_search('Korean', Yii::app()->params['language']);//echo "Korean";
+		else if (preg_match("/es/i", $lang))
+			return array_search('Spanish', Yii::app()->params['language']);//echo "Spanish";
+		else if (preg_match("/sv/i", $lang))
+			return array_search('Swedish', Yii::app()->params['language']);//echo "Swedish";
+		//else echo $_SERVER["HTTP_ACCEPT_LANGUAGE"];
+		return array_search('English', Yii::app()->params['language']);
+	}
 
 }

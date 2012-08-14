@@ -69,7 +69,8 @@ return array(
 		'French',
 		'Russian',
 		'Portuguese',
-		'Persian',*/
+		'Persian',
+		'Swedish',*/
 	),
 	
 	'comptime'=>array(
