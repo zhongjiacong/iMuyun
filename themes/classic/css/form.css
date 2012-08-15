@@ -219,20 +219,20 @@ div.wide.form .buttons, div.wide.form .hint, div.wide.form .errorMessage
 	font-size: 16px;
 	font-family: 'Microsoft Yahei';
 	font-weight: bold;
-	background: #ffaf4b;
-	background: -moz-linear-gradient(top, #ffaf4b 0%, #ff920a 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffaf4b), color-stop(100%,#ff920a));
-	background: -webkit-linear-gradient(top, rgb(214,56,11) 0%,rgb(194,46,8) 100%);
-	background: -o-linear-gradient(top, #ffaf4b 0%,#ff920a 100%);
-	background: -ms-linear-gradient(top, #ffaf4b 0%,#ff920a 100%);
-	background: linear-gradient(top, #ffaf4b 0%,#ff920a 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff920a',GradientType=0 );
+	background: #d6380b;
+	background: -moz-linear-gradient(top, #d6380b 0%, #c22c08 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d6380b), color-stop(100%,#c22c08));
+	background: -webkit-linear-gradient(top, #d6380b 0%,#c22c08 100%);
+	background: -o-linear-gradient(top, #d6380b 0%,#c22c08 100%);
+	background: -ms-linear-gradient(top, #d6380b 0%,#c22c08 100%);
+	background: linear-gradient(top, #d6380b 0%,#c22c08 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6380b', endColorstr='#c22c08',GradientType=0 );
 	box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
 	-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
 }
 .form dl dd input[type="submit"]:active {
 	box-shadow: 0px 1px 2px rgba(255,255,255,0.5);
-	background: #ffaf4b;
+	background: #d6380b;
 }
 ::-webkit-validation-bubble{
 	z-index: 100000;
