@@ -1,16 +1,10 @@
 <?php
 Yii::app()->clientScript->registerScript('msg', "
 	$('#remark').keyup(function(){
-		if($('#remark').val() != '') {
-			$('#redbtn').animate({backgroundColor:'rgb(204,50,9)',color:'rgb(255,255,255)'},250,function(){
-				$('#redbtn').removeAttr('disabled');
-			});
-		}
-		else {
-			$('#redbtn').animate({backgroundColor:'rgb(240,240,240)',color:'rgb(109,109,109)'},250,function(){
-				$('#redbtn').attr('disabled','disabled');
-			});
-		}
+		if($('#remark').val() != '')
+			$('#redbtn').removeAttr('disabled');
+		else
+			$('#redbtn').attr('disabled','disabled');
 	});
 	
 	$('#redbtn').click(function(){

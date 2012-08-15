@@ -1,8 +1,6 @@
 <?php
 Yii::app()->clientScript->registerScript('register', "
-	$('#redbtn').animate({backgroundColor:'rgb(204,50,9)',color:'rgb(255,255,255)'},250,function(){
-		$('#redbtn').removeAttr('disabled');
-	});
+	$('#redbtn').removeAttr('disabled');
 ");
 $this->menu=array(
 	array('label'=>Yii::t('user','Account Settings'), 'url'=>array('update'),

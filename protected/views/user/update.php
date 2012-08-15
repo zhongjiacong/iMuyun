@@ -1,8 +1,7 @@
 <?php
 Yii::app()->clientScript->registerScript('register', "
-	$('#redbtn').animate({backgroundColor:'rgb(204,50,9)',color:'rgb(255,255,255)'},250,function(){
-		$('#redbtn').removeAttr('disabled');
-	});
+	$('#redbtn').removeAttr('disabled');
+
 	$('#User_enabled').change(function(){
 		if($('#User_enabled').val('0'))
 			$('#User_verifycode').val('');

@@ -1,9 +1,8 @@
 <?php
 	//Friend::model()->findAll('`fans_id` = :id',array(':id'=>Yii::app()->user->getId()));
 Yii::app()->clientScript->registerScript('addlang', "
-	$('#redbtn').animate({backgroundColor:'rgb(204,50,9)',color:'rgb(255,255,255)'},250,function(){
-		$('#redbtn').removeAttr('disabled');
-	});
+	$('#redbtn').removeAttr('disabled');
+
 	$('#redbtn').click(function(){
 		var langsize = $('.lang').size();
 		for(var i = -1; i <= langsize; i++) {

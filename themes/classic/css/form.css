@@ -107,8 +107,8 @@ div.form input.success,
 div.form textarea.success,
 div.form select.success
 {
-	background: #E6EFC2;
-	border-color: #C6D880;
+	background: #d9fcdf;
+	border-color: #c6f8d0;
 }
 
 
@@ -157,4 +157,83 @@ div.wide.form .buttons, div.wide.form .hint, div.wide.form .errorMessage
 {
 	clear: left;
 	padding-left: 110px;
+}
+
+.form dl dd input[type=text],
+.form dl dd input[type=email],
+.form dl dd input[type=password],
+.form dl dd input[type=date] {
+	font-family: 'Microsoft Yahei';
+	border: 1px solid #ddd;
+	padding: 5px 10px;
+	font-weight: bold;
+	text-shadow: 0 1px 1px rgba(255,255,255,0.8);
+	color: #666;
+	background: #ffffff;
+	background: -moz-linear-gradient(top, #ffffff 0%, #f7f7f7 7%, #f7f7f7 22%, #ffffff 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(7%,#f7f7f7), color-stop(22%,#f7f7f7), color-stop(100%,#ffffff));
+	background: -webkit-linear-gradient(top, #ffffff 0%,#f7f7f7 7%,#f7f7f7 22%,#ffffff 100%);
+	background: -o-linear-gradient(top, #ffffff 0%,#f7f7f7 7%,#f7f7f7 22%,#ffffff 100%);
+	background: -ms-linear-gradient(top, #ffffff 0%,#f7f7f7 7%,#f7f7f7 22%,#ffffff 100%);
+	background: linear-gradient(top, #ffffff 0%,#f7f7f7 7%,#f7f7f7 22%,#ffffff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
+	box-shadow: 0px 1px 1px rgba(255,255,255,0.7), 1px 1px 2px rgba(0,0,0,0.1) inset;
+}
+.form dl dd input:focus {
+	background: #d9fcdf;
+	outline: none;
+}
+.form input[type="submit"]:disabled, .form #redbtn:disabled {
+	border: 1px solid #c8c8c8;
+	text-shadow: 0px 1px 1px rgba(255,255,255,0.4);
+	color: rgb(104,104,104);
+	display: inline-block;
+	border-radius: 6px;
+	margin-top: 10px;
+	margin-left: 560px;
+	padding: 10px 20px;
+	font-size: 16px;
+	font-family: 'Microsoft Yahei';
+	font-weight: bold;
+	background: #DDD;
+	background: -moz-linear-gradient(top, #DDD 0%, #CCC 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#DDD), color-stop(100%,#CCC));
+	background: -webkit-linear-gradient(top, #DDD 0%,#CCC 100%);
+	background: -o-linear-gradient(top, #DDD 0%,#CCC 100%);
+	background: -ms-linear-gradient(top, #DDD 0%,#CCC 100%);
+	background: linear-gradient(top, #DDD 0%,#CCC 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#DDD', endColorstr='#CCC',GradientType=0 );
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+}
+.form input[type="submit"], .form #redbtn {
+	cursor: pointer;
+	border: 1px solid rgb(164,30,7);
+	text-shadow: 0px 1px 1px rgba(255,255,255,0.4);
+	color: rgb(104,16,5);
+	display: inline-block;
+	border-radius: 6px;
+	margin-top: 10px;
+	margin-left: 560px;
+	padding: 10px 20px;
+	font-size: 16px;
+	font-family: 'Microsoft Yahei';
+	font-weight: bold;
+	background: #ffaf4b;
+	background: -moz-linear-gradient(top, #ffaf4b 0%, #ff920a 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffaf4b), color-stop(100%,#ff920a));
+	background: -webkit-linear-gradient(top, rgb(214,56,11) 0%,rgb(194,46,8) 100%);
+	background: -o-linear-gradient(top, #ffaf4b 0%,#ff920a 100%);
+	background: -ms-linear-gradient(top, #ffaf4b 0%,#ff920a 100%);
+	background: linear-gradient(top, #ffaf4b 0%,#ff920a 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff920a',GradientType=0 );
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+}
+.form dl dd input[type="submit"]:active {
+	box-shadow: 0px 1px 2px rgba(255,255,255,0.5);
+	background: #ffaf4b;
+}
+::-webkit-validation-bubble{
+	z-index: 100000;
 }

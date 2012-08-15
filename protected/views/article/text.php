@@ -10,20 +10,10 @@ Yii::app()->clientScript->registerScript('article', "
 	$('#Article_tgtlang_id').get(0).selectedIndex = 1;
 	
 	$('#accept').click(function(){
-		if($('#accept').attr('checked') == 'checked') {
-			$('#redbtn').animate({backgroundColor:'rgb(204,50,9)',color:'rgb(255,255,255)'},250,function(){
-				$('#redbtn').removeAttr('disabled');
-			});
-		}
-		else {
-			$('#redbtn').animate({backgroundColor:'rgb(240,240,240)',color:'rgb(109,109,109)'},250,function(){
-				$('#redbtn').attr('disabled','disabled');
-			});
-		}
-	});
-	
-	$('#Article_artcont').keyup(function(){
-		$('#wordcount span').html('￥'+wcount($('#Article_artcont').val()) * 0.12);
+		if($('#accept').attr('checked') == 'checked')
+			$('#redbtn').removeAttr('disabled');
+		else
+			$('#redbtn').attr('disabled','disabled');
 	});
 	
 	$('#numform1 div:nth-child(2)').css('background-color','#1BAD7E');
@@ -38,11 +28,20 @@ Yii::app()->clientScript->registerScript('article', "
 			$('#'+$(this).attr('class')+' div:nth-child(3)').animate({backgroundColor:'#1BAD7E'},500);
 		}
 	});
+	
+	$('#Article_artcont').keyup(function(){
+		$('#wordcount div').html('￥'+formatFloat(wcount($('#Article_artcont').val()) * 0.12));
+	});
+	
 	$('#textartbtn').click(function(){
 		$('#artcontent').html(
 			'<textarea rows=\"10\" cols=\"63\" name=\"Article[artcont]\" id=\"Article_artcont\"></textarea>'+
 			'<div class=\"errorMessage\" id=\"Article_artcont_em_\" style=\"display:none\"></div>'
 		);
+		// 这里竟然要写回调函数了，坑爹啊
+		$('#Article_artcont').keyup(function(){
+			$('#wordcount div').html('￥'+formatFloat(wcount($('#Article_artcont').val()) * 0.12));
+		});
 	});
 	$('#fileartbtn').click(function(){
 		$('#artcontent').html(
@@ -98,6 +97,13 @@ Yii::app()->clientScript->registerScript('textform', "
 			}
 		}
 		return c;
+	}
+	
+	function formatFloat(flt) {
+		if(parseFloat(flt) == flt)
+			return Math.round(flt * 10000) / 10000;
+		else
+			return 0;
 	}
 ",CClientScript::POS_HEAD);
 ?>

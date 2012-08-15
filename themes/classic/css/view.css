@@ -104,13 +104,6 @@
 	overflow: hidden;
 }
 
-.form dl dd input[type="text"], .form dl dd input[type="password"],
-.form dl dd select
-{
-	line-height: 22px;
-	font-family: 'Microsoft Yahei';
-}
-
 .form dl dd select
 {
 	height: 28px;
@@ -172,15 +165,16 @@
 #wordcount
 {
 	width: 100px;
-	margin: 50px 0px 40px 0px;
+	margin: 40px 0px 40px 0px;
 }
 
-#wordcount span
+#wordcount div
 {
-	padding: 20px 40px;
+	width: 108px;
+	height: 56px;
 	background: #CCC;
 	color: #1BAD7E;
-	line-height: 36px;
+	line-height: 56px;
 	border-radius: 3px;
 	text-align: center;
 }
@@ -198,19 +192,6 @@
 .artactivebtn
 {
 	color: green;
-}
-
-#redbtn
-{
-	padding: 10px 20px;
-	font-size: 16px;
-	float: left;
-	margin-left: 560px;
-	border-radius: 10px;
-	cursor: pointer;
-	border: 1px solid #CCC;
-	font-family: 'Microsoft Yahei';
-	-webkit-box-shadow: 1px 1px 5px #888;
 }
 
 .textintro

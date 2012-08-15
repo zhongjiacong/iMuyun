@@ -76,7 +76,7 @@
 	<dl class="numform<?=$counter; ?>">
 		<dt>
 			<div id="wordcount">
-				<span>￥0</span>
+				<div>￥0</div>
 			</div>
 		</dt>
 		<dd>
