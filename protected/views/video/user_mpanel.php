@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
     if(!isset($_POST["username"]))
-        header( 'Location: '.Yii::app()->request->baseUrl.'/index.php/article/login/err/1' ) ;
+        header( 'Location: '.Yii::app()->request->baseUrl.'/index.php/article/video/err/1' ) ;
 ?>
 <html>
     <head>
