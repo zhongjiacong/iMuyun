@@ -769,7 +769,7 @@ input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus,
 .uneditable-input:focus {
-  border-color: rgba(82, 168, 236, 0.8);
+  border-color: rgba(72, 206, 108, 0.8);
   outline: 0;
   outline: thin dotted \9;
   /* IE6-9 */
@@ -2347,7 +2347,8 @@ table .span24 {
 .dropdown-menu .active > a:hover {
   color: #ffffff;
   text-decoration: none;
-  background-color: #0088cc;
+  cursor: pointer;
+  background-color: #d9fcdf;
 }
 
 .open {
@@ -3151,11 +3152,15 @@ input[type="submit"].btn.btn-mini {
   padding: 3px 15px;
 }
 
+.nav-list > li > a:hover {
+	cursor: pointer;
+}
+
 .nav-list > .active > a,
 .nav-list > .active > a:hover {
   color: #ffffff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-color: #0088cc;
+  /*text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);*/
+  background-color: #d9fcdf;
 }
 
 .nav-list [class^="icon-"] {
