@@ -7,10 +7,10 @@ return array(
     
     'mail'=>array(
         'Host'=>'smtp.163.com',
-        'Username'=>'sysuonline',
-        'Password'=>'lovelyonline',
-        'From'=>'sysuonline@163.com',
-        'FromName'=>'sysuonline',
+        'Username'=>'muyunfanyi',
+        'Password'=>'muyunfanyi2012',
+        'From'=>'muyunfanyi@163.com',
+        'FromName'=>'muyunfanyi',
     ),
     
 	// 系统性别
