@@ -3,7 +3,7 @@ Yii::app()->clientScript->registerScript('register', "
 	$('#redbtn').removeAttr('disabled');
 
 	$('#User_enabled').change(function(){
-		if($('#User_enabled').val('0'))
+		if($('#User_enabled').val() == 0)
 			$('#User_verifycode').val('');
 	});
 ",CClientScript::POS_READY);
