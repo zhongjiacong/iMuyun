@@ -209,9 +209,9 @@ class Article extends CActiveRecord
 		$filename = implode('.', $namearr);
 		
 		if($physical)
-			return dirname(__FILE__).'/../../public/file/'.strval(strtotime($model->edittime)).
+			return dirname(__FILE__).'/../../public/file/'.strval(strtotime($time)).
 				sha1($filename).$type;
-		return Yii::app()->request->baseUrl.'/public/file/'.strval(strtotime($model->edittime)).
+		return Yii::app()->request->baseUrl.'/public/file/'.strval(strtotime($time)).
 				sha1($filename).$type;
 	}
 
