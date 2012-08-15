@@ -192,7 +192,7 @@
             }
 
             function streamCreatedHandler(event) {
-                alert('hey');
+                //alert('hey');
                 // Subscribe to the newly created streams
                 for (var i = 0; i < event.streams.length; i++) {
                     TB.log("streamCreated - connectionId: " + event.streams[i].connection.connectionId);
@@ -202,12 +202,12 @@
             }
 
             function connectionCreatedHandler(event) {
-                alert('hey');
+                //alert('hey');
                 // TODO
             }
 
             function sessionConnectedHandler(event){
-                alert("hey");
+                //alert("hey");
                 for (var i = 0; i < event.streams.length; i++) {
                     addStream(event.streams[i]);
                 }
