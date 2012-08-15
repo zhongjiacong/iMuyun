@@ -4,7 +4,7 @@
         <link href="<?=Yii::app()->theme->baseUrl; ?>/video/css/bootstrap.css" rel="stylesheet">
     </head>
     <body>
-        <div class="container">
+        <div>
             <ul class="nav nav-tabs">
                 <li><a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/user_mpanel">Conferencing</a></li>
                 <li class="active">

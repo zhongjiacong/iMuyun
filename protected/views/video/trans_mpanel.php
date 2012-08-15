@@ -10,7 +10,7 @@
         <link href="<?=Yii::app()->theme->baseUrl; ?>/video/css/bootstrap.css" rel="stylesheet">
     </head>
     <body>
-        <div class="container" id="container">
+        <div id="container">
             <div class-"row">
                 <div class="span12">
                     <ul class="nav nav-tabs">
