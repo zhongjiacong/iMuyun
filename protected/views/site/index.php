@@ -30,22 +30,28 @@ $this->pageTitle=Yii::t('layouts','{appname}',
 				<li>翻译内容与客户之前已有订单的重复翻译部分不收费。</li>
 				<li>翻译内容报价在基本收费基础上，再由系统自动计算难度系数之后，综合反馈给客户。</li>
 			</ul>
-			<div>
-			<?=CHtml::button(Yii::t('layouts','More Details')); ?></div>
+			<?=CHtml::button(Yii::t('layouts','More Details')); ?>
 		</dd>
 	</dl>
 	
 	<dl>
 		<dt><?=Yii::t('layouts','Frequently Asked Questions'); ?></dt>
 		<dd>
-			<div>
-			<?=CHtml::button(Yii::t('layouts','More Details')); ?></div>
+			<ul>
+				<li>如果您有任何问题可以通过页面底部的意见反馈向我们反映。</li>
+			</ul>
+			<?=CHtml::button(Yii::t('layouts','More Details')); ?>
 		</dd>
 	</dl>
 	
 	<dl>
 		<dt><?=Yii::t('layouts','Contact Information'); ?></dt>
 		<dd>
+			<ul>
+				<li>办公电话 ：020-29134285<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					020-22922037</li>
+			</ul>
 			<?=CHtml::button(Yii::t('layouts','More Details')); ?>
 		</dd>
 	</dl>

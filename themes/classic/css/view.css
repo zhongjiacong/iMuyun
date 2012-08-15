@@ -79,6 +79,10 @@
 	background-image: url(../img/indexcol3.jpg);
 }
 
+#column dl dd ul {
+	height: 85px;
+}
+
 #column dl dd ul li {
 	font-family: "Microsoft Yahei";
 	font-size: 12px;
@@ -86,8 +90,24 @@
 }
 
 #column dl dd input[type=button] {
-	display: inline;
-	vertical-align: bottom;
+	font-size: 18px;
+	color: #666666;
+	border: 1px solid #dddddd;
+	border-radius: 3px;
+	font-family: "Microsoft Yahei";
+	width: 200px;
+	height: 56px;
+	margin-left: 40px;
+	background: #eeeeee;
+	background: -moz-linear-gradient(top, #eeeeee 0%, #dddddd 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#dddddd));
+	background: -webkit-linear-gradient(top, #eeeeee 0%,#dddddd 100%);
+	background: -o-linear-gradient(top, #eeeeee 0%,#dddddd 100%);
+	background: -ms-linear-gradient(top, #eeeeee 0%,#dddddd 100%);
+	background: linear-gradient(top, #eeeeee 0%,#dddddd 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#dddddd',GradientType=0 );
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
 }
 
 .form dl
