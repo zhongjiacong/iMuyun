@@ -30,7 +30,7 @@
                 <div class="span4">
                     <form class="well form-inline" id="add_contact_form">
                         <input type="text" class="input-small" id="new_contact" name="targetUsername" placeholder="New contact..."/>
-                        <button type="submit" class="btn btn-primary" id="add_contact_button">Add</button>
+                        <button type="submit" class="btn btn-success" id="add_contact_button">Add</button>
                     </form>
                     <div class="well">
                         <ul class="nav nav-list" id="contacts-list">
@@ -38,7 +38,7 @@
                             <li class="nav-header" id="contacts-list-head">Contacts</li>
                         </ul>
                     </div>
-                    <button class="btn btn-primary" id="start_conference">Start Conference</button>
+                    <button class="btn btn-success" id="start_conference">Start Conference</button>
                     <p />
                     <div class="btn-group">
                         <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
