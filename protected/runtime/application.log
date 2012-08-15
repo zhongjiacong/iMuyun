@@ -2396,3 +2396,97 @@ in D:\Dropbox\Muyun\iMuyun\index.php (13)
 in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (423)
 in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (161)
 in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/15 13:00:27 [error] [exception.CException] exception 'CException' with message 'ArticleController 无法找到请求的视图 "video/login".' in D:\Dropbox\Muyun\iMuyun\framework\web\CController.php:879
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(783): CController->renderPartial('video/login', Array, true)
+#1 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(148): CController->render('video/login', Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionVideo()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('video')
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/video')
+#13 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/iMuyun/index.php/article/video
+HTTP_REFERER=http://localhost/iMuyun/index.php/recharge/create
+---
+2012/08/15 13:00:28 [error] [exception.CException] exception 'CException' with message 'ArticleController 无法找到请求的视图 "video/login".' in D:\Dropbox\Muyun\iMuyun\framework\web\CController.php:879
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(783): CController->renderPartial('video/login', Array, true)
+#1 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(148): CController->render('video/login', Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionVideo()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('video')
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/video')
+#13 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/iMuyun/index.php/article/video
+HTTP_REFERER=http://localhost/iMuyun/index.php/recharge/create
+---
+2012/08/15 13:00:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "assets" 动作.' in D:\Dropbox\Muyun\iMuyun\framework\web\CController.php:484
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(271): CController->missingAction('assets')
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('assets')
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/assets/...')
+#3 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/iMuyun/index.php/article/assets/css/bootstrap.css
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/video
+---
+2012/08/15 13:00:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "assets" 动作.' in D:\Dropbox\Muyun\iMuyun\framework\web\CController.php:484
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(271): CController->missingAction('assets')
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('assets')
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/assets/...')
+#3 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/iMuyun/index.php/article/assets/js/jquery.min.js
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/video
+---
+2012/08/15 13:37:02 [error] [exception.CException] exception 'CException' with message 'ArticleController 无法找到请求的视图 "video/user_mpanel".' in D:\Dropbox\Muyun\iMuyun\framework\web\CController.php:879
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(783): CController->renderPartial('video/user_mpan...', Array, true)
+#1 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(172): CController->render('video/user_mpan...', Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionUser_mpanel()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('user_mpanel')
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/user_mp...')
+#13 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/iMuyun/index.php/article/user_mpanel
+---
+2012/08/15 13:38:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "login.php" 动作.' in D:\Dropbox\Muyun\iMuyun\framework\web\CController.php:484
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(271): CController->missingAction('login.php')
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('login.php')
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/login.p...')
+#3 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/iMuyun/index.php/article/login.php?err=1
+---

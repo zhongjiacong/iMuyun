@@ -27,7 +27,8 @@ class ArticleController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('text','video','product'),
+				'actions'=>array('text','product','video','trans_cpanel',
+					'trans_mpanel','user_cpanel','user_mpanel'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'text' and 'update' actions
@@ -143,7 +144,31 @@ class ArticleController extends Controller
 	
 	public function actionVideo()
 	{
-		$this->render('video',array(
+		$this->render('/video/login',array(
+		));
+	}
+	
+	public function actionTrans_cpanel()
+	{
+		$this->render('/video/trans_cpanel',array(
+		));
+	}
+	
+	public function actionTrans_mpanel()
+	{
+		$this->render('/video/trans_mpanel',array(
+		));
+	}
+	
+	public function actionUser_cpanel()
+	{
+		$this->render('/video/user_cpanel',array(
+		));
+	}
+	
+	public function actionUser_mpanel()
+	{
+		$this->render('/video/user_mpanel',array(
 		));
 	}
 
