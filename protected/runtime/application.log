@@ -2490,3 +2490,45 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/iMuyun/index.php/article/login.php?err=1
 ---
+2012/08/15 13:55:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "login" 动作.' in D:\Dropbox\Muyun\iMuyun\framework\web\CController.php:484
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(271): CController->missingAction('login')
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('login')
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/login/e...')
+#3 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/iMuyun/index.php/article/login/err/1
+---
+2012/08/15 13:59:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "login" 动作.' in D:\Dropbox\Muyun\iMuyun\framework\web\CController.php:484
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(271): CController->missingAction('login')
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('login')
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/login/e...')
+#3 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/iMuyun/index.php/article/login/err/1
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/video
+---
+2012/08/15 14:00:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "user_cpanel.php" 动作.' in D:\Dropbox\Muyun\iMuyun\framework\web\CController.php:484
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(271): CController->missingAction('user_cpanel.php')
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('user_cpanel.php')
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/user_cp...')
+#3 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/iMuyun/index.php/article/user_cpanel.php
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/user_mpanel
+---
+2012/08/15 14:01:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "user_cpanel.php" 动作.' in D:\Dropbox\Muyun\iMuyun\framework\web\CController.php:484
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(271): CController->missingAction('user_cpanel.php')
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('user_cpanel.php')
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/user_cp...')
+#3 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/iMuyun/index.php/article/user_cpanel.php
+---

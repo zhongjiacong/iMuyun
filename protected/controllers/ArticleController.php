@@ -27,12 +27,12 @@ class ArticleController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('text','product','video','trans_cpanel',
-					'trans_mpanel','user_cpanel','user_mpanel'),
+				'actions'=>array('text','product'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'text' and 'update' actions
-				'actions'=>array('index','update','view'),
+				'actions'=>array('index','update','view','video','trans_cpanel',
+					'trans_mpanel','user_cpanel','user_mpanel'),
 				'users'=>array('@'),
 			),
 			array('allow',
@@ -144,30 +144,40 @@ class ArticleController extends Controller
 	
 	public function actionVideo()
 	{
+		$this->layout='//layouts/column1';
+		
 		$this->render('/video/login',array(
 		));
 	}
 	
 	public function actionTrans_cpanel()
 	{
+		$this->layout='//layouts/column1';
+		
 		$this->render('/video/trans_cpanel',array(
 		));
 	}
 	
 	public function actionTrans_mpanel()
 	{
+		$this->layout='//layouts/column1';
+		
 		$this->render('/video/trans_mpanel',array(
 		));
 	}
 	
 	public function actionUser_cpanel()
 	{
+		$this->layout='//layouts/column1';
+		
 		$this->render('/video/user_cpanel',array(
 		));
 	}
 	
 	public function actionUser_mpanel()
 	{
+		$this->layout='//layouts/column1';
+		
 		$this->render('/video/user_mpanel',array(
 		));
 	}

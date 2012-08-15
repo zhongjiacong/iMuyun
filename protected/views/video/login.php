@@ -34,16 +34,16 @@
             </form>
         </div>
         <script>
-            $("#loginform").bind("submit", function () {
-                $("#submit_button").addClass("disabled");
-                $("#submit_button").html("Loading");
+            //$("#loginform").bind("submit", function () {
+                //$("#submit_button").addClass("disabled");
+                //$("#submit_button").html("Loading");
                 $.ajax({
                     url: "http://omegaga.net:8000/login/",
                     type: "POST",
                     cache: false,
                     dataType: "json",
                     crossDomain: true,
-                    data: $(this).serialize(),
+                    data: {username:'172367155@qq.com',password:'743215968'},//$(this).serialize(),
                     success: function (data) {
                         if (data.message == "success") {
                             if (data.privilege_id == '0')
@@ -60,8 +60,8 @@
                         }
                     }
                 });
-                return false;
-            });
+                //return false;
+            //});
         </script>
     </body>
 </html>

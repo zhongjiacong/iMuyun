@@ -20,9 +20,9 @@
                 <div class="span12">
                     <ul class="nav nav-tabs">
                         <li class="active">
-                            <a href="user_mpanel.php">Conferencing</a>
+                            <a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/user_mpanel">Conferencing</a>
                         </li>
-                        <li><a href="user_cpanel.php">Control Panel</a></li>
+                        <li><a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/user_cpanel">Control Panel</a></li>
                     </ul>
                 </div>
             </div>
