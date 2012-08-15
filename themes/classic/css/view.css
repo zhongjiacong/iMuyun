@@ -32,7 +32,7 @@
 	color: white;
 	float: left;
 	width: 128px;
-	height: 47px;
+	height: 32px;
 	background-image: url(../img/indexbg.png);
 	padding: 20px !important;
 	text-align: center;
@@ -40,6 +40,7 @@
 	margin-top: 80px;
 	margin-left: 740px;
 	border-radius: 5px;
+	-webkit-box-reflect: below 0px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(.92, transparent), to(white));
 }
 
 #column dt
@@ -52,8 +53,8 @@
 #column dl
 {
 	float: left;
-	width: 290px;
-	padding: 8px;
+	width: 280px;
+	padding: 13px;
 }
 
 #column dl dd
@@ -61,7 +62,6 @@
 	margin-left: 0px;
 	padding-top: 138px;
 	background-repeat: repeat-x;
-	background-position: -10px 0px;
 }
 
 #column dl:nth-child(1) dd
@@ -77,6 +77,17 @@
 #column dl:nth-child(3) dd
 {
 	background-image: url(../img/indexcol3.jpg);
+}
+
+#column dl dd ul li {
+	font-family: "Microsoft Yahei";
+	font-size: 12px;
+	line-height: 20px;
+}
+
+#column dl dd input[type=button] {
+	display: inline;
+	vertical-align: bottom;
 }
 
 .form dl

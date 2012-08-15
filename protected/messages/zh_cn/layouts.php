@@ -19,7 +19,8 @@
  * @version $Id: $
  */
 return array (
-  'MuYun Translation' => '牧云翻译服务',
+  'Feedback' => '意见反馈',
+  'More Details' => '了解详情',
   'About Us' => '关于我们',
   'Add' => '添加',
   'Article' => '文本',
@@ -37,6 +38,7 @@ return array (
   'Login' => '登录',
   'Logout' => '退出',
   'Msg' => '留言',
+  'MuYun Translation' => '牧云翻译服务',
   'My Order' => '我的订单',
   'Operations' => '操作',
   'Order' => '订单',

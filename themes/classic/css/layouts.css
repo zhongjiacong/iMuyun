@@ -66,9 +66,9 @@ input[type='button']
 #footer dl
 {
 	float: left;
-	width: 200px;
+	width: 180px;
 	text-align: left;
-	margin-bottom: 0px;
+	margin: 0px 15px 0px 15px;
 }
 
 #footer dt

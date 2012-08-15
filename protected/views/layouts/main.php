@@ -223,6 +223,7 @@
 			<dt><?=Yii::t('layouts','Contact Us'); ?></dt>
 			<dd>
 				<ul>
+					<li><?=CHtml::link(Yii::t('layouts','Feedback'),array('/msg/contact')); ?></li>
 					<li><?=CHtml::link(Yii::t('layouts','Contact Way'),array('/msg/contact')); ?></li>
 				</ul>
 			</dd>

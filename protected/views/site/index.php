@@ -26,22 +26,27 @@ $this->pageTitle=Yii::t('layouts','{appname}',
 	<dl>
 		<dt><?=Yii::t('layouts','Charge Mode'); ?></dt>
 		<dd>
-			<ol>
+			<ul>
 				<li>翻译内容与客户之前已有订单的重复翻译部分不收费。</li>
 				<li>翻译内容报价在基本收费基础上，再由系统自动计算难度系数之后，综合反馈给客户。</li>
-			</ol>
+			</ul>
+			<div>
+			<?=CHtml::button(Yii::t('layouts','More Details')); ?></div>
 		</dd>
 	</dl>
 	
 	<dl>
 		<dt><?=Yii::t('layouts','Frequently Asked Questions'); ?></dt>
 		<dd>
+			<div>
+			<?=CHtml::button(Yii::t('layouts','More Details')); ?></div>
 		</dd>
 	</dl>
 	
 	<dl>
 		<dt><?=Yii::t('layouts','Contact Information'); ?></dt>
 		<dd>
+			<?=CHtml::button(Yii::t('layouts','More Details')); ?>
 		</dd>
 	</dl>
 </div>
