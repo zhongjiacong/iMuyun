@@ -7,7 +7,7 @@ Yii::app()->clientScript->registerScript('register', "
 			$('#User_verifycode').val('');
 	});
 ",CClientScript::POS_READY);
-if($_COOKIE['SELEPROD'] != NULL) {
+if(isset($_COOKIE['SELEPROD'])) {
 	Yii::app()->clientScript->registerScript('seleprod', "
 		$('#User_seleprod').attr('value',".array_search(ucwords($_COOKIE['SELEPROD']),Yii::app()->params['product']).");
 	",CClientScript::POS_READY);
