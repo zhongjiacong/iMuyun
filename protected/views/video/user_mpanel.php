@@ -1,18 +1,14 @@
 <!DOCTYPE html>
-<?php
-    if(!isset($_POST["username"]))
-        header( 'Location: '.Yii::app()->request->baseUrl.'/index.php/article/video/err/1' ) ;
-?>
 <html>
     <head>
-        <link href="<?=Yii::app()->theme->baseUrl; ?>/video/css/bootstrap.css" rel="stylesheet">
-        <script src="<?=Yii::app()->theme->baseUrl; ?>/video/js/jquery.min.js" ></script>
+        <link href="<?=Yii::app()->theme->baseUrl; ?>/css/bootstrap.css" rel="stylesheet">
+        <script src="<?=Yii::app()->theme->baseUrl; ?>/js/jquery.min.js" ></script>
         <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
         <script src="http://static.opentok.com/v0.91/js/TB.min.js" ></script>
         <!-- <script src="http://staging.tokbox.com/v0.91/js/TB.min.js" type="text/javascript" charset="utf-8"></script> -->
         <!-- <script src="http://static.opentok.com/v0.92-alpha/js/TB.min.js" type="text/javascript"></script>-->
 
-        <script src="<?=Yii::app()->theme->baseUrl; ?>/video/js/bootstrap-dropdown.js" ></script>
+        <script src="<?=Yii::app()->theme->baseUrl; ?>/js/bootstrap-dropdown.js" ></script>
     </head>
     <body>
         <div id="container">
@@ -20,15 +16,15 @@
                 <div class="span12">
                     <ul class="nav nav-tabs">
                         <li class="active">
-                            <a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/user_mpanel">Conferencing</a>
+                            <a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video">Conferencing</a>
                         </li>
-                        <li><a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/user_cpanel">Control Panel</a></li>
+                        <li><a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video/cpanel">Control Panel</a></li>
                     </ul>
                 </div>
             </div>
             <div class="row">
                 <div class="span8" id="conferencing_area">
-                    <button class="btn"><?=$_POST["username"]; ?></button>
+                    <button class="btn"><?=Yii::app()->user->name; ?></button>
                     <br />
                 </div>
                 <div class="span4">
@@ -62,8 +58,8 @@
         <script type="text/javascript" charset="utf-8">
 
             var session_id, token;
-            var username = "<?=$_POST['username']?>";
-            var address = "<?=$_SERVER['REMOTE_ADDR']?>";
+            var username = "<?=Yii::app()->user->name; ?>";
+            var address = "<?=$_SERVER['REMOTE_ADDR']; ?>";
             var session;
             var apiKey = 16937882; 
             var target_language=-1;

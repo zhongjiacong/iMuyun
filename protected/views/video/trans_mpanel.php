@@ -6,8 +6,8 @@
         <script src="http://static.opentok.com/v0.91/js/TB.min.js" ></script>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <!-- <script src="http://static.opentok.com/v0.91/js/TB.min.js" ></script> -->
-        <script src="<?=Yii::app()->theme->baseUrl; ?>/video/js/bootstrap-dropdown.js" ></script>
-        <link href="<?=Yii::app()->theme->baseUrl; ?>/video/css/bootstrap.css" rel="stylesheet">
+        <script src="<?=Yii::app()->theme->baseUrl; ?>/js/bootstrap-dropdown.js" ></script>
+        <link href="<?=Yii::app()->theme->baseUrl; ?>/css/bootstrap.css" rel="stylesheet">
     </head>
     <body>
         <div id="container">
@@ -15,9 +15,9 @@
                 <div class="span12">
                     <ul class="nav nav-tabs">
                         <li class="active">
-                            <a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/trans_mpanel">Working Space</a>
+                            <a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video">Working Space</a>
                         </li>
-                        <li><a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/trans_cpanel">Control Panel</a></li>
+                        <li><a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video/cpanel">Control Panel</a></li>
                     </ul>
                 </div>
             </div>
@@ -28,8 +28,8 @@
         </div>
         <script type="text/javascript" charset="utf-8">
             var session_id, token;
-            var username = "<?=$_POST['username']?>";
-            var address = "<?=$_SERVER['REMOTE_ADDR']?>";
+            var username = "<?=Yii::app()->user->name; ?>";
+            var address = "<?=$_SERVER['REMOTE_ADDR']; ?>";
             var session;
             var apiKey = "16937882"; 
             var subscribers = {};

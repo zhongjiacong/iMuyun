@@ -31,8 +31,7 @@ class ArticleController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'text' and 'update' actions
-				'actions'=>array('index','update','view','video','trans_cpanel',
-					'trans_mpanel','user_cpanel','user_mpanel'),
+				'actions'=>array('index','update','view','video'),
 				'users'=>array('@'),
 			),
 			array('allow',
@@ -146,40 +145,18 @@ class ArticleController extends Controller
 	{
 		$this->layout='//layouts/column1';
 		
-		$this->render('/video/login',array(
-		));
-	}
-	
-	public function actionTrans_cpanel()
-	{
-		$this->layout='//layouts/column1';
-		
-		$this->render('/video/trans_cpanel',array(
-		));
-	}
-	
-	public function actionTrans_mpanel()
-	{
-		$this->layout='//layouts/column1';
-		
-		$this->render('/video/trans_mpanel',array(
-		));
-	}
-	
-	public function actionUser_cpanel()
-	{
-		$this->layout='//layouts/column1';
-		
-		$this->render('/video/user_cpanel',array(
-		));
-	}
-	
-	public function actionUser_mpanel()
-	{
-		$this->layout='//layouts/column1';
-		
-		$this->render('/video/user_mpanel',array(
-		));
+		if(!isset($_GET['cpanel'])) {
+			if(User::model()->isTranslator())
+				$this->render('/video/trans_mpanel',array());
+			else
+				$this->render('/video/user_mpanel',array());
+		}
+		else {
+			if(User::model()->isTranslator())
+				$this->render('/video/trans_cpanel',array());
+			else
+				$this->render('/video/user_cpanel',array());
+		}
 	}
 
 	/**

@@ -2554,3 +2554,14 @@ Stack trace:
 REQUEST_URI=/iMuyun/index.php/article/login/err/1
 HTTP_REFERER=http://localhost/iMuyun/index.php/article/user_cpanel
 ---
+2012/08/15 15:19:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "user_cpanel" 动作.' in D:\Dropbox\Muyun\iMuyun\framework\web\CController.php:484
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(271): CController->missingAction('user_cpanel')
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('user_cpanel')
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/user_cp...')
+#3 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/iMuyun/index.php/article/user_cpanel
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/video
+---

@@ -84,6 +84,9 @@ class UserController extends Controller
 			$model->registertime = date("Y-m-d H:i:s");
 			$model->lastlogintime = date("Y-m-d H:i:s");
 			
+			// 很重要，这个不能因表单提交而改变
+			$model->enabled = 0;
+			
 			if($model->save()) {
 				// 2.给用户添加默认语言
 				$userlang = new Userlang;
