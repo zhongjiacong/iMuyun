@@ -19,6 +19,7 @@
  * @version $Id: $
  */
 return array (
+  'Has not been evaluated' => '尚未进行评价',
   'Audit' => '审核',
   'Audited' => '已审核',
   'Customer' => '客户',

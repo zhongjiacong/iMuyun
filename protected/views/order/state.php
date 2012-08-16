@@ -8,13 +8,17 @@
 	<div class="linktriangle">&nbsp;</div>
 	<div class="emptytriangle">&nbsp;</div>
 	<span><?=($model->audit == 0)?Yii::t('order','Unaudited'):Yii::t('order','Audited'); ?></span>
-	<br />
-	审核中若发现订单描述不够明确，会及时联系您确定需求。
+	<div>审核中若发现订单描述不够明确，会及时联系您确定需求。</div>
 </div>
 <div class="orderstate<?=($model->deliverytime != NULL || $model->audit == 0)?' graystate':'';?>">
+	<div class="linktriangle">&nbsp;</div>
 	<div class="emptytriangle">&nbsp;</div>
 	<span><?=($model->deliverytime == NULL)?
 		Yii::t('order','Translation is not complete'):Yii::t('order','Translation has completed'); ?></span>
+</div>
+<div class="orderstate graystate">
+	<div class="emptytriangle">&nbsp;</div>
+	<span><?=Yii::t('order','Has not been evaluated'); ?></span>
 </div>
 
 <div class="clear"></div>
