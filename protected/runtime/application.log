@@ -3464,3 +3464,117 @@ Stack trace:
 REQUEST_URI=/iMuyun/index.php/article/video
 HTTP_REFERER=http://localhost/iMuyun/index.php
 ---
+2012/08/16 12:10:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection 无法开启数据库连线: SQLSTATE[HY000] [2005] Unknown MySQL server host 'omegaga.net:3306' (11004)' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbConnection.php:382
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 D:\Dropbox\Muyun\iMuyun\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 D:\Dropbox\Muyun\iMuyun\framework\base\CModule.php(388): CDbConnection->init()
+#3 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(431): CModule->getComponent('db')
+#4 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(615): CApplication->getDb()
+#5 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(User))
+#7 D:\Dropbox\Muyun\iMuyun\protected\models\User.php(38): CActiveRecord::model('User')
+#8 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(149): User::model()
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionVideo()
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#17 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('video')
+#19 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/video')
+#20 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/iMuyun/index.php/article/video
+HTTP_REFERER=http://localhost/iMuyun/index.php
+---
+2012/08/16 12:13:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection 无法开启数据库连线: SQLSTATE[HY000] [2003] Can't connect to MySQL server on 'omegaga.net' (10061)' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbConnection.php:382
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 D:\Dropbox\Muyun\iMuyun\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 D:\Dropbox\Muyun\iMuyun\framework\base\CModule.php(388): CDbConnection->init()
+#3 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(431): CModule->getComponent('db')
+#4 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(615): CApplication->getDb()
+#5 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(User))
+#7 D:\Dropbox\Muyun\iMuyun\protected\models\User.php(38): CActiveRecord::model('User')
+#8 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(149): User::model()
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionVideo()
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#17 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('video')
+#19 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/video')
+#20 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/iMuyun/index.php/article/video
+HTTP_REFERER=http://localhost/iMuyun/index.php
+---
+2012/08/16 12:13:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection 无法开启数据库连线: SQLSTATE[HY000] [2003] Can't connect to MySQL server on 'omegaga.net' (10061)' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbConnection.php:382
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 D:\Dropbox\Muyun\iMuyun\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 D:\Dropbox\Muyun\iMuyun\framework\base\CModule.php(388): CDbConnection->init()
+#3 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(431): CModule->getComponent('db')
+#4 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(615): CApplication->getDb()
+#5 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(User))
+#7 D:\Dropbox\Muyun\iMuyun\protected\models\User.php(38): CActiveRecord::model('User')
+#8 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(149): User::model()
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionVideo()
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#17 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('video')
+#19 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/video')
+#20 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/iMuyun/index.php/article/video
+HTTP_REFERER=http://localhost/iMuyun/index.php
+---
+2012/08/16 12:49:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection 无法开启数据库连线: SQLSTATE[HY000] [2005] Unknown MySQL server host '19k9.68.199.152' (11004)' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbConnection.php:382
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 D:\Dropbox\Muyun\iMuyun\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 D:\Dropbox\Muyun\iMuyun\framework\base\CModule.php(388): CDbConnection->init()
+#3 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(431): CModule->getComponent('db')
+#4 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(615): CApplication->getDb()
+#5 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(User))
+#7 D:\Dropbox\Muyun\iMuyun\protected\models\User.php(38): CActiveRecord::model('User')
+#8 D:\Dropbox\Muyun\iMuyun\protected\controllers\UserController.php(52): User::model()
+#9 [internal function]: UserController->isAdmin(Object(CWebUser), Object(CAccessRule))
+#10 D:\Dropbox\Muyun\iMuyun\framework\base\CComponent.php(612): call_user_func_array(Array, Array)
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\auth\CAccessControlFilter.php(340): CComponent->evaluateExpression(Array, Array)
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\auth\CAccessControlFilter.php(244): CAccessRule->isExpressionMatched(Object(CWebUser))
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\auth\CAccessControlFilter.php(116): CAccessRule->isUserAllowed(Object(CWebUser), Object(UserController), Object(CInlineAction), '127.0.0.1', 'GET')
+#14 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#15 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#16 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#17 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#19 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('admin')
+#21 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('user/admin')
+#22 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/iMuyun/index.php/user/admin
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/text
+---
