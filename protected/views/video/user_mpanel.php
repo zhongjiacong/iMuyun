@@ -29,7 +29,7 @@
                 </div>
                 <div class="span4">
                     <form class="well form-inline" id="add_contact_form">
-                        <input type="text" class="input-small" id="new_contact" name="targetUsername" placeholder="New contact..."/>
+                        <input type="text" class="input-large" id="new_contact" name="follow" placeholder="New contact..."/>
                         <button type="submit" class="btn btn-success" id="add_contact_button">Add</button>
                     </form>
                     <div class="well">
@@ -39,7 +39,7 @@
                         </ul>
                     </div>
                     <button class="btn btn-success" id="start_conference">Start Conference</button>
-                    <p />
+                    <hr />
                     <div class="btn-group">
                         <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
                             Call Translator Only
@@ -153,17 +153,17 @@
 
             function getContact() {
                 $.ajax({
-                    url: "http://omegaga.net:8000/contacts/",
+                    url: "<?=Yii::app()->request->baseUrl; ?>/index.php/friend/contacts/",
                     type: "POST",
                     cache: false,
                     dataType: "json",
+                    data: {},
                     crossDomain: true,
-                    data: "username="+username,
                     success: function(data) {
                     	$('#contacts-list').html('<li class="nav-header" id="contacts-list-head">Contacts</li>');
                         $.each(data.contacts, function(key,val){
                             $('<li class="contact"><a><i class="icon-user"></i>'+
-                            	val.username+
+                            	val.email+
                             '</a>').insertAfter($('#contacts-list-head'));
                         });
                         $(".contact").click(function (){
@@ -220,14 +220,14 @@
 
             $("#add_contact_form").bind("submit", function () {
                 $.ajax({
-                    url: "http://omegaga.net:8000/addContact/",
+                    url: "<?=Yii::app()->request->baseUrl; ?>/index.php/friend/create/",
                     type: "POST",
                     cache: false,
                     dataType: "json",
                     crossDomain: true,
-                    data: $(this).serialize()+"&username="+username,
+                    data: $(this).serialize(),
                     success: function (data) {
-                        getContact();
+                    	getContact();
                     }
                 });
                 return false;

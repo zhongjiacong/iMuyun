@@ -26,12 +26,12 @@ class FriendController extends Controller
 	public function accessRules()
 	{
 		return array(
-			/*array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array(),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('create','contacts'),
 				'users'=>array('@'),
-			),*/
+			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('index','view','create','update','admin','delete'),
+				'actions'=>array('index','view','update','admin','delete'),
 				'expression'=>array($this,'isAdmin'),
 			),
 			array('deny',  // deny all users
@@ -65,21 +65,36 @@ class FriendController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Friend;
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Friend']))
-		{
-			$model->attributes=$_POST['Friend'];
+		if(Yii::app()->request->isPostRequest) {
+			$follow_id = User::model()->find('`email` = :email',
+				array(':email'=>addslashes($_POST['follow'])))->id;
+			
+			$model=new Friend;
+			$model->fans_id = Yii::app()->user->getId();
+			$model->follow_id = $follow_id;
+			date_default_timezone_set('PRC');
+			$model->addtime = date("Y-m-d H:i:s");
+			
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				echo json_encode(array('state'=>'Save'));
+			else
+				echo json_encode(array('state'=>'Fail'));
 		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
+		else
+			echo json_encode(array('state'=>'No'));
+	}
+	
+	public function actionContacts()
+	{
+		$user_id = isset($_POST['user_id'])?intval($_POST['user_id']):Yii::app()->user->getId();
+		$friend = Friend::model()->findAll('`fans_id` = :fans_id',array(':fans_id'=>$user_id));
+		$contacts = array();
+		foreach ($friend as $key => $value) {
+			array_push($contacts, array(
+				'email'=>User::model()->findByPk($value->follow_id)->email)
+			);
+		}
+		echo json_encode(array('contacts'=>$contacts));
 	}
 
 	/**

@@ -1,7 +1,6 @@
 <?php
 $this->menu=array(
 	array('label'=>'List Friend', 'url'=>array('index')),
-	array('label'=>'Create Friend', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "

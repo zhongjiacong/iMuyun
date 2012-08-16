@@ -38,7 +38,7 @@ class Friend extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('fans_id, follow_id, group_id, addtime', 'required'),
+			array('fans_id, follow_id, addtime', 'required'),
 			array('fans_id, follow_id, group_id', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
