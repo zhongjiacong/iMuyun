@@ -19,8 +19,7 @@
  * @version $Id: $
  */
 return array (
-  'Feedback' => '意见反馈',
-  'More Details' => '了解详情',
+  'Friend' => '好友',
   'About Us' => '关于我们',
   'Add' => '添加',
   'Article' => '文本',
@@ -32,11 +31,13 @@ return array (
   'Copyright Reserved' => '版权所有',
   'Create' => '新建',
   'Delete' => '删除',
+  'Feedback' => '意见反馈',
   'Fields with <span class="required">*</span> are required.' => '标<span class="required">*</span>为必填项。',
   'Frequently Asked Questions' => '常见问题',
   'Hello, ' => '您好，',
   'Login' => '登录',
   'Logout' => '退出',
+  'More Details' => '了解详情',
   'Msg' => '留言',
   'MuYun Translation' => '牧云翻译服务',
   'My Order' => '我的订单',

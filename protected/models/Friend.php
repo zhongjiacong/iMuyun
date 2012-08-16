@@ -4,6 +4,7 @@
  * This is the model class for table "{{u_friend}}".
  *
  * The followings are the available columns in table '{{u_friend}}':
+ * @property integer $id
  * @property integer $fans_id
  * @property integer $follow_id
  * @property integer $group_id
@@ -41,7 +42,7 @@ class Friend extends CActiveRecord
 			array('fans_id, follow_id, group_id', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('fans_id, follow_id, group_id, addtime', 'safe', 'on'=>'search'),
+			array('id, fans_id, follow_id, group_id, addtime', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -62,6 +63,7 @@ class Friend extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			'id' => 'ID',
 			'fans_id' => 'Fans',
 			'follow_id' => 'Follow',
 			'group_id' => 'Group',
@@ -80,6 +82,7 @@ class Friend extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		$criteria->compare('id',$this->id);
 		$criteria->compare('fans_id',$this->fans_id);
 		$criteria->compare('follow_id',$this->follow_id);
 		$criteria->compare('group_id',$this->group_id);

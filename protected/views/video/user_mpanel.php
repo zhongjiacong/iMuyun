@@ -160,8 +160,11 @@
                     crossDomain: true,
                     data: "username="+username,
                     success: function(data) {
+                    	$('#contacts-list').html('<li class="nav-header" id="contacts-list-head">Contacts</li>');
                         $.each(data.contacts, function(key,val){
-                            $('<li class="contact"><a><i class="icon-user"></i>'+val.username+'</a>').insertAfter($('#contacts-list-head'));
+                            $('<li class="contact"><a><i class="icon-user"></i>'+
+                            	val.username+
+                            '</a>').insertAfter($('#contacts-list-head'));
                         });
                         $(".contact").click(function (){
                             if(target = $("#contacts-list").find(".active")){

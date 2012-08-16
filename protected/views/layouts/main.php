@@ -165,6 +165,8 @@
 							'visible'=>User::model()->isAdmin(), 'itemOptions'=>array('class'=>'adminmenu')),
 						array('label'=>Yii::t('layouts','Msg'), 'url'=>array('/msg/admin'),
 							'visible'=>User::model()->isAdmin(), 'itemOptions'=>array('class'=>'adminmenu')),
+						array('label'=>Yii::t('layouts','Friend'), 'url'=>array('/friend/admin'),
+							'visible'=>User::model()->isAdmin(), 'itemOptions'=>array('class'=>'adminmenu')),
 						array('label'=>Yii::t('layouts','Msg'), 'url'=>array('/msg/new'),
 							'visible'=>User::model()->isService(), 'itemOptions'=>array('class'=>'adminmenu')),
 						array('label'=>Yii::t('layouts','User'), 'url'=>array('/user/admin'),
