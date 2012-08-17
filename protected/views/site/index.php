@@ -1,6 +1,6 @@
 <?php
 Yii::app()->clientScript->registerScript('slideimg', "
-	$('#slideimg span, #slideimg div').animate({marginLeft:'620px',opacity:'1'},1000,function(){});
+	$('#slideimg span, #slideimg div').animate({marginLeft:'120px',opacity:'1'},1000,function(){});
 ");
 Yii::app()->clientScript->registerScript('article', "
 	$('body').css('background-image','url(".Yii::app()->theme->baseUrl."/img/bg_long.png)');

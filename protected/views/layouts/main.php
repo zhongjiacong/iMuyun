@@ -186,8 +186,8 @@
 		Yii::app()->controller->action->id == 'index'): ?>
 		<div id="slidecontainer">
 			<div id="slideimg">
-				<div><?=Yii::t('layouts','MuYun Translation'); ?></div>
-				<span>be of your service</span>
+				<div><?=Yii::t('layouts','MuYun Translation'); ?></div><br />
+				<?php /*<span>be of your service</span>*/ ?>
 				<?=CHtml::link('<div id="entrance">'.Yii::t('site','Start Now').'</div>'); ?>
 			</div>
 		</div>
