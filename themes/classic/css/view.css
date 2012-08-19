@@ -1,13 +1,4 @@
-#slideimg
-{
-	width: 960px;
-	margin: 0 auto;
-	height: 470px;
-	background-image: url(../img/index_2.png);
-	-webkit-box-shadow: 0px 0px 14px #555;
-}
-
-#slideimg div
+/*#slideimg div
 {
 	font-family: "Microsoft Yahei";
 	font-size: 34px;
@@ -38,7 +29,7 @@
 	margin-left: 740px;
 	border-radius: 5px;
 	-webkit-box-reflect: below 0px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(.92, transparent), to(white));
-}
+}*/
 
 #column dt
 {
@@ -513,4 +504,57 @@ div .graystate .linktriangle
 {
 	margin: 10px 10px 0px 0px;
 	float: right;
+}
+
+#idNum {
+	padding-bottom: 0px;
+	margin: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+}
+#slideimg
+{
+	width: 960px;
+	margin: 0 auto;
+	height: 470px;
+	-webkit-box-shadow: 0px 0px 14px #555;
+}
+#slideimg img {
+	width: 960px;
+	height: 470px;
+	border-style: none;
+}
+#slideimg table tr th, #slideimg table tr td {
+	padding: 0px;
+}
+.td_f a img {
+	padding: 0px;
+	margin: 0px;
+}
+.slideimgnum {
+	position: absolute;
+	width: 90px;
+	float: right;
+	top: 420px;
+	left: 860px;
+}
+.slideimgnum li {
+	text-align: center;
+	line-height: 15px;
+	list-style-type: none;
+	margin: 1px;
+	width: 15px;
+	font-family: arial;
+	float: left;
+	height: 15px;
+	color: #86a2b8;
+	font-size: 12px;
+	cursor: pointer;
+}
+.slideimgnum li.on {
+	line-height: 15px;
+	width: 15px;
+	height: 15px;
+	color: #ffffff;
 }

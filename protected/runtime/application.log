@@ -3578,3 +3578,67 @@ Stack trace:
 REQUEST_URI=/iMuyun/index.php/user/admin
 HTTP_REFERER=http://localhost/iMuyun/index.php/article/text
 ---
+2012/08/19 09:25:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "images/manage.jpg"。' in D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php:280
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('images/manage.j...')
+#1 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/iMuyun/index.php/images/manage.jpg
+HTTP_REFERER=http://localhost/iMuyun/index.php/site/index
+---
+2012/08/19 09:25:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "images/manage.jpg"。' in D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php:280
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('images/manage.j...')
+#1 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/iMuyun/index.php/images/manage.jpg
+HTTP_REFERER=http://localhost/iMuyun/index.php/site/index
+---
+2012/08/19 09:25:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "images/manage.jpg"。' in D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php:280
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('images/manage.j...')
+#1 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/iMuyun/index.php/images/manage.jpg
+HTTP_REFERER=http://localhost/iMuyun/index.php/site/index
+---
+2012/08/19 09:25:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "images/manage.jpg"。' in D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php:280
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('images/manage.j...')
+#1 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/iMuyun/index.php/images/manage.jpg
+HTTP_REFERER=http://localhost/iMuyun/index.php/site/index
+---
+2012/08/19 09:26:57 [error] [exception.CException] exception 'CException' with message '属性 "CWebApplication.themes" 未被定义.' in D:\Dropbox\Muyun\iMuyun\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\base\CModule.php(106): CComponent->__get('themes')
+#1 D:\Dropbox\Muyun\iMuyun\protected\views\layouts\main.php(192): CModule->__get('themes')
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(127): require('D:\Dropbox\Muyu...')
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\Dropbox\Muyu...', Array, true)
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('D:\Dropbox\Muyu...', Array, true)
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(207): COutputProcessor->run()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#9 D:\Dropbox\Muyun\iMuyun\protected\views\layouts\column1.php(5): CBaseController->endContent()
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(127): require('D:\Dropbox\Muyu...')
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\Dropbox\Muyu...', Array, true)
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(785): CBaseController->renderFile('D:\Dropbox\Muyu...', Array, true)
+#13 D:\Dropbox\Muyun\iMuyun\protected\controllers\SiteController.php(27): CController->render('index')
+#14 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#15 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('index')
+#19 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('site/index')
+#20 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/iMuyun/index.php/site/index
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/video
+---

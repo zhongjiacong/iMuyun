@@ -74,7 +74,8 @@ return array(
 		),
 		*/
 		'db'=>array(
-			'connectionString' => 'mysql:host=199.68.199.152;dbname=imuyunco_muyundb',
+			//'connectionString' => 'mysql:host=199.68.199.152;dbname=imuyunco_muyundb',
+			'connectionString' => 'mysql:host=localhost;dbname=imuyunco_muyundb',
 			'emulatePrepare' => true,
 			'username' => 'imuyunco_zjc',
 			'password' => 'dbconn743215968',

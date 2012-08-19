@@ -184,12 +184,24 @@
 
 <?php if(Yii::app()->controller->id == 'site' &&
 		Yii::app()->controller->action->id == 'index'): ?>
-		<div id="slidecontainer">
-			<div id="slideimg">
-				<div><?=Yii::t('layouts','MuYun Translation'); ?></div><br />
-				<?php /*<span>be of your service</span>*/ ?>
-				<?=CHtml::link('<div id="entrance">'.Yii::t('site','Start Now').'</div>'); ?>
-			</div>
+		<?php /*
+		<div><?=Yii::t('layouts','MuYun Translation'); ?></div><br />
+		<?php <span>be of your service</span> ?>
+		<?=CHtml::link('<div id="entrance">'.Yii::t('site','Start Now').'</div>'); ?>
+		*/ ?>
+		<div id="slideimg">
+			<table id="idSlider2" border="0" cellSpacing="0" cellPadding="0">
+				<tbody>
+					<tr>
+						<?php for($i = 1; $i <= 2; $i++): ?>
+						<td class="td_f">
+							<img src="<?=Yii::app()->theme->baseUrl; ?>/img/index_<?=$i; ?>.png" />
+						</td>
+						<?php endfor; ?>
+					</tr>
+				</tbody>
+			</table>
+			<ul id="idNum" class="slideimgnum"></ul>
 		</div>
 		<br />
 		<br />
