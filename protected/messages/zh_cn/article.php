@@ -19,7 +19,7 @@
  * @version $Id: $
  */
 return array (
-  'Translation Content' => '译文内容',
+  'I accept {terms of service}.' => '我接受 {terms of service}。',
   'Article' => '文本',
   'Article Content' => '翻译内容',
   'Complete Time' => '完成时间',
@@ -30,7 +30,6 @@ return array (
   'Delete Article' => '删除文本',
   'Document Content' => '文档内容',
   'Edit Time' => '提交时间',
-  'I accept this terms of service.' => '我接受这服务条款。',
   'ID' => '文本编号',
   'Language' => '语言',
   'List Article' => '文本列表',
@@ -53,6 +52,7 @@ return array (
   'Target Language' => '目标语言',
   'Terms of Service' => '服务条款',
   'Text Translation' => '文本翻译',
+  'Translation Content' => '译文内容',
   'Update Article' => '更新文本',
   'User registration' => '用户登记',
   'Video Translation' => '视频翻译',

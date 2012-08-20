@@ -19,11 +19,9 @@
  * @version $Id: $
  */
 return array (
-  'Document Translation' => '文档翻译',
   'Error' => '错误',
   'Login' => '登录',
   'Password' => '密码',
-  'Quick Translation' => '快速翻译',
   'Remember me next time' => '下次记住我',
   'Start Now' => '开始',
   'Username' => '帐号',

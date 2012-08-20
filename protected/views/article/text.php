@@ -16,16 +16,13 @@ Yii::app()->clientScript->registerScript('article', "
 			$('#redbtn').attr('disabled','disabled');
 	});
 	
-	$('#numform1 div:nth-child(2)').css('background-color','#1BAD7E');
-	$('#numform1 div:nth-child(3)').css('background-color','#1BAD7E');
+	$('#numform1 div:nth-child(2), #numform1 div:nth-child(3)').addClass('shortbg');
 	
 	$('dl').click(function(){
 		// 注意颜色格式
 		if($('#'+$(this).attr('class')+' div:nth-child(2)').css('background-color') == 'rgb(204, 204, 204)'){
-			$('.numform div:nth-child(2)').css('background-color','#CCC');
-			$('.numform div:nth-child(3)').css('background-color','#CCC');
-			$('#'+$(this).attr('class')+' div:nth-child(2)').animate({backgroundColor:'#1BAD7E'},500);
-			$('#'+$(this).attr('class')+' div:nth-child(3)').animate({backgroundColor:'#1BAD7E'},500);
+			$('.numform div:nth-child(2), .numform div:nth-child(3)').removeClass('shortbg');
+			$('#'+$(this).attr('class')+' div:nth-child(2)'+', #'+$(this).attr('class')+' div:nth-child(3)').addClass('shortbg');
 		}
 	});
 	

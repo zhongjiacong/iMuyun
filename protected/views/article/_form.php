@@ -16,7 +16,7 @@
 	<?php if(Yii::app()->user->isGuest): ?>
 		<div class="numform" id="numform<?=$counter; ?>">
 			<div>&nbsp;</div>
-			<div><?=$counter; ?></div>
+			<div>&nbsp;</div>
 			<div><?=Yii::t('article','User registration'); ?></div>
 		</div>
 		<p class="note"><?=Yii::t('article','You can login and skip this step.'); ?></p>
@@ -35,7 +35,7 @@
 	
 	<div class="numform" id="numform<?=$counter; ?>">
 		<div>&nbsp;</div>
-		<div><?=$counter; ?></div>
+		<div>&nbsp;</div>
 		<div><?=$form->labelEx($model,'artcont'); ?></div>
 	</div>
 	<dl class="numform<?=$counter; ?>">
@@ -93,6 +93,15 @@
 			</div>
 		</dd>
 	</dl>
+	<dl class="numform<?=$counter; ?>">
+		<dt>&nbsp;</dt>
+		<dd>
+			<?=CHtml::checkBox('accept',array()).' '.
+				Yii::t('article','I accept {terms of service}.',array(
+				'{terms of service}'=>CHtml::link('《'.Yii::t('article','Terms of Service').'》',
+				array('/site/page','view'=>'terms')))); ?>
+		</dd>
+	</dl>
 	<?php $counter++; ?>
 
 	<?php /*$this->widget( 'ext.EJuiTimePicker.EJuiTimePicker', array(
@@ -106,25 +115,6 @@
 	        'style'=>'width: 108px;',
 	    ),
 	));*/ ?>
-	
-	<div class="numform" id="numform<?=$counter; ?>">
-		<div>&nbsp;</div>
-		<div><?=$counter; ?></div>
-		<div><?=Yii::t('article','Terms of Service'); ?></div>
-	</div>
-	<dl class="numform<?=$counter; ?>">
-		<dt>&nbsp;</dt>
-		<dd>
-			<?=CHtml::textArea('termofservice',
-				'这是我们的服务条款简略内容...',
-				array('cols'=>'63','rows'=>'2')); ?>
-			<div class="clear"></div>
-			<?php /*CHtml::link('《'.Yii::t('article','Terms of Service').'》',
-				array('site/page','view'=>'service'));*/ ?>
-			<?=CHtml::checkBox('accept',array()).' '.Yii::t('article','I accept this terms of service.'); ?>
-		</dd>
-	</dl>
-	<?php $counter++; ?>
 	
 	<div class="row buttons">
 		<?=CHtml::submitButton($model->isNewRecord ?
