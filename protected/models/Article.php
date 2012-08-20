@@ -208,11 +208,8 @@ class Article extends CActiveRecord
 		unset($namearr[count($namearr)-1]);
 		$filename = implode('.', $namearr);
 		
-		if($physical)
-			return dirname(__FILE__).'/../../public/file/'.strval(strtotime($time)).
-				sha1($filename).$type;
-		return Yii::app()->request->baseUrl.'/public/file/'.strval(strtotime($time)).
-				sha1($filename).$type;
+		return $physical?dirname(__FILE__).'/../../public/file/'.$time.sha1($filename).$type:
+			Yii::app()->request->baseUrl.'/public/file/'.$time.sha1($filename).$type;
 	}
 
 }
