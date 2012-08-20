@@ -3738,3 +3738,31 @@ REQUEST_URI=/iMuyun/index.php
 in D:\Dropbox\Muyun\iMuyun\protected\views\layouts\main.php (35)
 in D:\Dropbox\Muyun\iMuyun\protected\views\layouts\column1.php (5)
 in D:\Dropbox\Muyun\iMuyun\protected\controllers\SiteController.php (27)
+2012/08/20 18:18:54 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection 无法开启数据库连线: SQLSTATE[42000] [1049] Unknown database 'imuyunco_muyundb'' in D:\Dropbox\Muyun\iMuyun\framework\db\CDbConnection.php:382
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 D:\Dropbox\Muyun\iMuyun\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 D:\Dropbox\Muyun\iMuyun\framework\base\CModule.php(388): CDbConnection->init()
+#3 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(431): CModule->getComponent('db')
+#4 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(615): CApplication->getDb()
+#5 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 D:\Dropbox\Muyun\iMuyun\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(User))
+#7 D:\Dropbox\Muyun\iMuyun\protected\models\User.php(38): CActiveRecord::model('User')
+#8 D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php(149): User::model()
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionVideo()
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#17 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('video')
+#19 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/video')
+#20 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/iMuyun/index.php/article/video
+HTTP_REFERER=http://localhost/iMuyun/index.php
+---
