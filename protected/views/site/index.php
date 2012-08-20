@@ -96,7 +96,7 @@ Yii::app()->clientScript->registerScript('slideimg', '
 				Change:  0,//改变量
 				Duration: 150,//滑动持续时间
 				Time:  10,//滑动延时
-				Pause:  6500,//停顿时间(Auto为true时有效)
+				Pause:  2000,//停顿时间(Auto为true时有效)
 				onStart: function(){},//开始转换时执行
 				onFinish: function(){},//完成转换时执行
 				Tween:  Tween.Quart.easeOut//tween算子
@@ -113,18 +113,9 @@ Yii::app()->clientScript->registerScript('slideimg', '
 			this._t = 0;
 			this._b = parseInt(CurrentStyle(this._slider)[this.options.Vertical ? "top" : "left"]);
 			this._c = this._target - this._b;
-
+			
 			this.onStart();
 			this.Move();
-			//art.dialog({title:"",content: "^_^",time: 500,});
-			if(!isNaN(this._b)) {
-				if(this._b == 0)
-					$("#entranceintro_b, #entranceintro_s, #entrance").animate({
-						marginLeft: "-580px",opacity:"1"},1100,function(){});
-				else
-					$("#entranceintro_b, #entranceintro_s, #entrance").animate({
-						marginLeft: "0px",opacity:"1"},1100,function(){});
-			}
 		},
 		//移动
 		Move: function() {
@@ -141,6 +132,9 @@ Yii::app()->clientScript->registerScript('slideimg', '
 		//移动到
 		MoveTo: function(i) {
 			this._slider.style[this._css] = i + "px";
+			$("#entranceintro_b, #entranceintro_s, #entrance").animate({
+				marginLeft: i / 16 * 9,opacity:"1",
+			},0,function(){});
 		},
 		//下一个
 		Next: function() {
@@ -167,15 +161,28 @@ Yii::app()->clientScript->registerScript('slideimg', '
 		}
 	}
 	// 这里第三个参数修改图片数量
-	var st = new SlideTrans(document.getElementById("slideimg"), document.getElementById("idSlider2"), 2, { Vertical: false });
+	var st = new SlideTrans(
+		document.getElementById("slideimg"),
+		document.getElementById("idSlider2"),
+		2,
+		{ Vertical: false }
+	);
 	var nums = [];
 	//插入数字
 	for(var i = 0, n = st._count - 1; i <= n;){
 		(nums[i] = document.getElementById("idNum").appendChild(document.createElement("li"))).innerHTML = ++i;
 	}
 	forEach(nums, function(o, i){
-		o.onmouseover = function(){ o.className = "on"; st.Auto = false; st.Run(i); }
-		o.onmouseout = function(){ o.className = ""; st.Auto = true; st.Run(); }
+		o.onmouseover = function(){
+			o.className = "on";
+			st.Auto = false;
+			st.Run(i);
+		}
+		o.onmouseout = function(){
+			o.className = "";
+			st.Auto = true;
+			st.Run();
+		}
 	})
 	//设置按钮样式
 	st.onStart = function(){

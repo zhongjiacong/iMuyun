@@ -1,10 +1,26 @@
+#slideimg
+{
+	background: #e3e3e3;
+	background: -moz-linear-gradient(top, #e3e3e3 0%, #bebebe 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e3e3e3), color-stop(100%,#bebebe));
+	background: -webkit-linear-gradient(top, #e3e3e3 0%,#bebebe 100%);
+	background: -o-linear-gradient(top, #e3e3e3 0%,#bebebe 100%);
+	background: -ms-linear-gradient(top, #e3e3e3 0%,#bebebe 100%);
+	background: linear-gradient(top, #e3e3e3 0%,#bebebe 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e3e3', endColorstr='#bebebe',GradientType=0 );
+}
+
 #slideimg #entranceintro_b
 {
 	position: absolute;
+	width: 340px;
+	text-align: center;
 	font-family: "Microsoft Yahei";
+	text-shadow: 0 1px 0 #ffffff;
+	font-weight: bold;
 	font-size: 34px;
 	top: 85px;
-	left: 670px;
+	left: 600px;
 	z-index: 1;
 	/*opacity: 0;*/
 }
@@ -13,16 +29,18 @@
 {
 	position: absolute;
 	font-family: "Microsoft Yahei";
+	text-shadow: 0 1px 0 #efefef;
 	font-size: 16px;
 	top: 140px;
-	left: 690px;
+	left: 670px;
 	z-index: 1;
 }
 
 #entrance
 {
 	position: absolute;
-	font-size: 24px !important;
+	font-size: 28px !important;
+	line-height: 34px;
 	color: white;
 	width: 128px;
 	height: 32px;
@@ -30,8 +48,8 @@
 	padding: 20px !important;
 	text-align: center;
 	text-decoration: none;
-	top: 240px;
-	left: 680px;
+	top: 220px;
+	left: 670px;
 	border-radius: 5px;
 	-webkit-box-reflect: below 0px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(.92, transparent), to(white));
 	z-index: 1;
