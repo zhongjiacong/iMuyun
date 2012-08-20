@@ -22,7 +22,7 @@
 	top: 85px;
 	left: 600px;
 	z-index: 1;
-	/*opacity: 0;*/
+	opacity: 0;
 }
 
 #slideimg #entranceintro_s
@@ -564,21 +564,21 @@ div .graystate .linktriangle
 	left: 860px;
 }
 .slideimgnum li {
-	text-align: center;
-	line-height: 15px;
 	list-style-type: none;
-	margin: 1px;
-	width: 15px;
-	font-family: arial;
 	float: left;
-	height: 15px;
-	color: #86a2b8;
-	font-size: 12px;
+	font-size: 0px;
 	cursor: pointer;
+	display: block;
+	height: 12px;
+	width: 12px;
+	margin-right: 3px;
+	border-radius: 5px;
+	background: #bbbbbb;
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0px 1px 3px rgba(255,255,255,0.2);
 }
 .slideimgnum li.on {
-	line-height: 15px;
-	width: 15px;
-	height: 15px;
-	color: #ffffff;
+	background: #aaaaaa;
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0px 1px 3px rgba(255,255,255,0.2);
 }
