@@ -180,7 +180,7 @@ class ArticleController extends Controller
 			// 如果没有选择新旧订单则定为0，也即新订单
 			$model->orderlist = isset($_POST['Article']['orderlist'])?$_POST['Article']['orderlist']:0;
 			$model->subject = $_POST['Article']['subject'];
-			$model->artcont = $_POST['Article']['artcont'];
+			$model->artcont = isset($_POST['Article']['artcont'])?$_POST['Article']['artcont']:'';
 			$model->doccont = CUploadedFile::getInstance($model,'doccont');
 			
 			// 如果用户未注册，那么记录用户邮箱和手机，存入用户数据表

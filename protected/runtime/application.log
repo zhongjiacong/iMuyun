@@ -4029,3 +4029,9 @@ in D:\Dropbox\Muyun\iMuyun\index.php (13)
 in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (435)
 in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (173)
 in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 05:25:36 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 05:25:36 [warning] [application] Failed to set unsafe attribute "doccont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
