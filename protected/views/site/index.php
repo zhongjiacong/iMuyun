@@ -96,7 +96,7 @@ Yii::app()->clientScript->registerScript('slideimg', '
 				Change:  0,//改变量
 				Duration: 150,//滑动持续时间
 				Time:  10,//滑动延时
-				Pause:  2000,//停顿时间(Auto为true时有效)
+				Pause:  7000,//停顿时间(Auto为true时有效)
 				onStart: function(){},//开始转换时执行
 				onFinish: function(){},//完成转换时执行
 				Tween:  Tween.Quart.easeOut//tween算子
