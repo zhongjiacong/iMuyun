@@ -1,35 +1,41 @@
-/*#slideimg div
+#slideimg #entranceintro_b
 {
+	position: absolute;
 	font-family: "Microsoft Yahei";
 	font-size: 34px;
-	padding-top: 85px;
-	opacity: 0;
+	top: 85px;
+	left: 670px;
+	z-index: 1;
+	/*opacity: 0;*/
 }
 
-#slideimg span
+#slideimg #entranceintro_s
 {
+	position: absolute;
 	font-family: "Microsoft Yahei";
 	font-size: 16px;
-	padding-top: 20px;
-	padding-left: 60px;
+	top: 140px;
+	left: 690px;
+	z-index: 1;
 }
 
 #entrance
 {
+	position: absolute;
 	font-size: 24px !important;
 	color: white;
-	float: left;
 	width: 128px;
 	height: 32px;
 	background-image: url(../img/indexbg.png);
 	padding: 20px !important;
 	text-align: center;
 	text-decoration: none;
-	margin-top: 80px;
-	margin-left: 740px;
+	top: 240px;
+	left: 680px;
 	border-radius: 5px;
 	-webkit-box-reflect: below 0px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(.92, transparent), to(white));
-}*/
+	z-index: 1;
+}
 
 #column dt
 {

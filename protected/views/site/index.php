@@ -13,9 +13,6 @@ Yii::app()->clientScript->registerScript('article', "
 	});
 ",CClientScript::POS_READY);
 Yii::app()->clientScript->registerScript('slideimg', '
-	var $ = function (id) {
-		return "string" == typeof id ? document.getElementById(id) : id;
-	};
 	var Extend = function(destination, source) {
 		for (var property in source) {
 			destination[property] = source[property];
@@ -59,8 +56,8 @@ Yii::app()->clientScript->registerScript('slideimg', '
 	}
 	//容器对象,滑动对象,切换数量
 	var SlideTrans = function(slideimgcontainer, slider, count, options) {
-		this._slider = $(slider);
-		this._container = $(slideimgcontainer);//容器对象
+		this._slider = slider;
+		this._container = slideimgcontainer;//容器对象
 		this._timer = null;//定时器
 		this._count = Math.abs(count);//切换数量
 		this._target = 0;//目标值
@@ -119,6 +116,15 @@ Yii::app()->clientScript->registerScript('slideimg', '
 
 			this.onStart();
 			this.Move();
+			//art.dialog({title:"",content: "^_^",time: 500,});
+			if(!isNaN(this._b)) {
+				if(this._b == 0)
+					$("#entranceintro_b, #entranceintro_s, #entrance").animate({
+						marginLeft: "-580px",opacity:"1"},1100,function(){});
+				else
+					$("#entranceintro_b, #entranceintro_s, #entrance").animate({
+						marginLeft: "0px",opacity:"1"},1100,function(){});
+			}
 		},
 		//移动
 		Move: function() {
@@ -149,9 +155,6 @@ Yii::app()->clientScript->registerScript('slideimg', '
 			clearTimeout(this._timer); this.MoveTo(this._target);
 		}
 	};
-',CClientScript::POS_READY);
-Yii::app()->clientScript->registerScript('slidecontent', '
-	//$("#slideimg span, #slideimg div").animate({marginLeft:"120px",opacity:"1"},1000,function(){});
 	
 	var forEach = function(array, callback, thisObject){
 		if(array.forEach){
@@ -159,15 +162,16 @@ Yii::app()->clientScript->registerScript('slidecontent', '
 		}else{
 			for (var i = 0, len = array.length; i < len; i++) {
 				callback.call(thisObject, array[i], i, array);
+				alert("shit");
 			}
 		}
 	}
 	// 这里第三个参数修改图片数量
-	var st = new SlideTrans("slideimg", "idSlider2", 2, { Vertical: false });
+	var st = new SlideTrans(document.getElementById("slideimg"), document.getElementById("idSlider2"), 2, { Vertical: false });
 	var nums = [];
 	//插入数字
 	for(var i = 0, n = st._count - 1; i <= n;){
-		(nums[i] = $("idNum").appendChild(document.createElement("li"))).innerHTML = ++i;
+		(nums[i] = document.getElementById("idNum").appendChild(document.createElement("li"))).innerHTML = ++i;
 	}
 	forEach(nums, function(o, i){
 		o.onmouseover = function(){ o.className = "on"; st.Auto = false; st.Run(i); }
@@ -180,7 +184,7 @@ Yii::app()->clientScript->registerScript('slidecontent', '
 		})
 	}
 	st.Run();
-');
+',CClientScript::POS_READY);
 ?>
 
 <div id="column">

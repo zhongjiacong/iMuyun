@@ -25,13 +25,21 @@
 
     <script type="text/javascript" src="<?=Yii::app()->theme->baseUrl; ?>/js/jquery.animate-colors-min.js"></script>
     <script type="text/javascript" src="<?=Yii::app()->theme->baseUrl; ?>/js/jquery.cookie.js"></script>
-    <script type="text/javascript" src="<?=Yii::app()->theme->baseUrl; ?>/js/syscookie.js"></script>
     <script type="text/javascript" src="<?=Yii::app()->theme->baseUrl; ?>/js/view.js"></script>
     <?php
         Yii::app()->clientScript->registerScriptFile(
             Yii::app()->theme->baseUrl.'/js/artDialog/artDialog.min.js', CClientScript::POS_HEAD);
         Yii::app()->clientScript->registerScriptFile(
             Yii::app()->theme->baseUrl.'/js/artDialog/artDialog.plugins.min.js', CClientScript::POS_HEAD);
+		Yii::app()->clientScript->registerScript('langswitch','
+			$("#syslang").change(function(){
+				$.cookie("SYSLANG",$("#syslang").val(),{expires:7,path:"/"});
+				document.location.reload();
+			});
+			$("#headleft").click(function(){
+				window.location.href = "'.Yii::app()->request->baseUrl.'/index.php/site/index";
+			});
+		',CClientScript::POS_LOAD);
 		Yii::app()->clientScript->registerScript('clock','
 			setInterval( function() {
 				var seconds = new Date().getSeconds();
@@ -72,9 +80,8 @@
 					"-o-transform" : mrotate,
 				});
 			}, 1000 );
-		');
+		',CClientScript::POS_HEAD);
 	?>
-
 </head>
 
 <body>
@@ -94,11 +101,6 @@
 						'zh_cn'=>'中文',
 						'en_us'=>'English',
 					);
-					Yii::app()->clientScript->registerScript('language', "
-						$('#syslang').change(function(){
-							langSwitch($('#syslang').val());
-						});
-					");
 					echo CHtml::dropDownList('syslang', isset($_COOKIE['SYSLANG'])?$_COOKIE['SYSLANG']:'zh_cn', $syslang);
 					//echo $_SERVER['QUERY_STRING'];
 				?>
@@ -118,13 +120,6 @@
 				?>
 			</div>
 		</div>
-		<?php
-			Yii::app()->clientScript->registerScript('header', "
-				$('#headleft').click(function(){
-					window.location.href = '".Yii::app()->request->baseUrl."/index.php/site/index';
-				});
-			");
-		?>
 		<div id="headleft">
 			<div id="logoimgdiv">
 				<?=CHtml::image(Yii::app()->theme->baseUrl.'/img/logoimg.jpg','Logo Image'); ?>
@@ -184,12 +179,10 @@
 
 <?php if(Yii::app()->controller->id == 'site' &&
 		Yii::app()->controller->action->id == 'index'): ?>
-		<?php /*
-		<div><?=Yii::t('layouts','MuYun Translation'); ?></div><br />
-		<?php <span>be of your service</span> ?>
-		<?=CHtml::link('<div id="entrance">'.Yii::t('site','Start Now').'</div>'); ?>
-		*/ ?>
 		<div id="slideimg">
+			<div id="entranceintro_b"><?=Yii::t('layouts','MuYun Translation'); ?></div>
+			<div id="entranceintro_s">be of your service</div>
+			<?=CHtml::link('<div id="entrance">'.Yii::t('site','Start Now').'</div>'); ?>
 			<table id="idSlider2" border="0" cellSpacing="0" cellPadding="0">
 				<tbody>
 					<tr>
