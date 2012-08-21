@@ -43,7 +43,8 @@ Yii::app()->clientScript->registerScript('article', "
 	$('#fileartbtn').click(function(){
 		$('#artcontent').html(
 			'<input id=\"ytArticle_doccont\" type=\"hidden\" value=\"\" name=\"Article[doccont]\">'+
-			'<input name=\"Article[doccont]\" id=\"Article_doccont\" type=\"file\">'+
+			'<input name=\"Article[doccont]\" id=\"Article_doccont\" type=\"file\"><br />'+
+			'<div>.doc only! Please do not upload other format file.</div>'+
 			'<div class=\"errorMessage\" id=\"Article_doccont_em_\" style=\"display:none\"></div>'
 		);
 	});
