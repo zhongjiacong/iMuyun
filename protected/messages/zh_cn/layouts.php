@@ -19,7 +19,7 @@
  * @version $Id: $
  */
 return array (
-  'Friend' => '好友',
+  'Professional human translation' => '专业人工翻译',
   'About Us' => '关于我们',
   'Add' => '添加',
   'Article' => '文本',
@@ -34,6 +34,7 @@ return array (
   'Feedback' => '意见反馈',
   'Fields with <span class="required">*</span> are required.' => '标<span class="required">*</span>为必填项。',
   'Frequently Asked Questions' => '常见问题',
+  'Friend' => '好友',
   'Hello, ' => '您好，',
   'Login' => '登录',
   'Logout' => '退出',

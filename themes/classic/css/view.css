@@ -13,14 +13,14 @@
 #slideimg #entranceintro_b
 {
 	position: absolute;
-	width: 340px;
+	width: 420px;
 	text-align: center;
 	font-family: "Microsoft Yahei";
 	text-shadow: 0 1px 0 #ffffff;
 	font-weight: bold;
 	font-size: 34px;
 	top: 85px;
-	left: 600px;
+	left: 540px;
 	z-index: 1;
 	opacity: 0;
 }

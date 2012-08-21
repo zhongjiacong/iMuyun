@@ -180,7 +180,7 @@
 <?php if(Yii::app()->controller->id == 'site' &&
 		Yii::app()->controller->action->id == 'index'): ?>
 		<div id="slideimg">
-			<div id="entranceintro_b"><?=Yii::t('layouts','MuYun Translation'); ?></div>
+			<div id="entranceintro_b"><?=Yii::t('layouts','Professional human translation'); ?></div>
 			<div id="entranceintro_s">be of your service</div>
 			<?=CHtml::link('<div id="entrance">'.Yii::t('site','Start Now').'</div>'); ?>
 			<table id="idSlider2" border="0" cellSpacing="0" cellPadding="0">

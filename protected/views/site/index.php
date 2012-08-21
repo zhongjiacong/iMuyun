@@ -3,7 +3,7 @@ $this->pageTitle=Yii::t('layouts','{appname}',
 	array('{appname}'=>Yii::app()->name));
 
 // ready要放前面
-Yii::app()->clientScript->registerScript('article', "
+Yii::app()->clientScript->registerScript('article',"
 	$('body').css('background-image','url(".Yii::app()->theme->baseUrl."/img/bg_long.png)');
 	$('#entrance').click(function(){
 		if($.cookie('SELEPROD') != null)
@@ -12,7 +12,12 @@ Yii::app()->clientScript->registerScript('article', "
 			window.location.href = '".Yii::app()->request->baseUrl."/index.php/article/product';
 	});
 ",CClientScript::POS_READY);
-Yii::app()->clientScript->registerScript('slideimg', '
+if(Yii::app()->language == 'en_us') {
+	Yii::app()->clientScript->registerScript('article',"
+		$('#entranceintro_b').css('font-size','22px');
+	",CClientScript::POS_READY);
+}
+Yii::app()->clientScript->registerScript('slideimg','
 	var Extend = function(destination, source) {
 		for (var property in source) {
 			destination[property] = source[property];
