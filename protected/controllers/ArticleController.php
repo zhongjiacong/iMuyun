@@ -237,8 +237,9 @@ class ArticleController extends Controller
 					$model->doccont->saveAs($path);
 					
 					// 这里用技术方式读取doc等文档，统计文本字数
-					$shellcommand = './../public/antiword-0.37/antiword -m UTF-8.txt /var/www/imuyun/public/file/'.$path;
+					$shellcommand = './../../public/antiword-0.37/antiword -m UTF-8.txt '.$path;
 					$content = shell_exec($shellcommand);
+					throw new CHttpException(400,$content);
 					
 					$model->wordcount = Article::model()->wordCount($model->srclang_id,$content);
 					if($model->wordcount == 0)
