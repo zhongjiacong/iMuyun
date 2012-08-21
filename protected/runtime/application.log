@@ -4519,3 +4519,113 @@ Stack trace:
 REQUEST_URI=/iMuyun/index.php/article/text
 HTTP_REFERER=http://localhost/iMuyun/index.php/article/text
 ---
+2012/08/21 21:04:29 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 21:04:29 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 21:04:29 [warning] [application] Failed to set unsafe attribute "doccont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 21:04:29 [error] [exception.CHttpException.400] exception 'CHttpException' with message '***' in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php:245
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionText()
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('text')
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/text')
+#11 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/iMuyun/index.php/article/text
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/text
+---
+2012/08/21 21:06:36 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 21:06:36 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 21:06:36 [warning] [application] Failed to set unsafe attribute "doccont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 21:06:36 [error] [exception.CHttpException.400] exception 'CHttpException' with message ' 驱动器 D 中的卷没有标签。
+ 卷的序列号是 08ED-18CD
+
+ d:\ 的目录
+
+2012/08/21  16:20    <DIR>          Dropbox
+2012/08/21  16:21    <DIR>          SkyDrive
+2012/08/21  19:29                 7 test.bat
+2012/08/21  17:26           911,872 test1.doc
+2012/08/08  15:19           136,704 test2.doc
+2012/08/21  18:29    <DIR>          微云网盘
+               3 个文件      1,048,583 字节
+               3 个目录 56,107,700,224 可用字节
+***' in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php:245
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionText()
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('text')
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/text')
+#11 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/iMuyun/index.php/article/text
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/text
+---
+2012/08/21 21:11:01 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 21:11:01 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 21:11:01 [warning] [application] Failed to set unsafe attribute "doccont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 21:11:01 [error] [exception.CHttpException.400] exception 'CHttpException' with message ' 驱动器 D 中的卷没有标签。
+ 卷的序列号是 08ED-18CD
+
+ d:\ 的目录
+
+2012/08/21  16:20    <DIR>          Dropbox
+2012/08/21  16:21    <DIR>          SkyDrive
+2012/08/21  19:29                 7 test.bat
+2012/08/21  17:26           911,872 test1.doc
+2012/08/08  15:19           136,704 test2.doc
+2012/08/21  18:29    <DIR>          微云网盘
+               3 个文件      1,048,583 字节
+               3 个目录 56,107,556,864 可用字节
+***' in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php:245
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionText()
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('text')
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/text')
+#11 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/iMuyun/index.php/article/text
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/text
+---
