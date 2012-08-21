@@ -237,9 +237,11 @@ class ArticleController extends Controller
 					$model->doccont->saveAs($path);
 					
 					// 这里用技术方式读取doc等文档，统计文本字数
-					$shellcommand = 'antiword -m UTF-8.txt /var/www/imuyun/public/file/testantiword.doc';
-					$content = shell_exec($shellcommand);
-					
+					$testcontent = `ls`;
+					$content = `antiword -m UTF-8.txt /var/www/imuyun/public/file/testantiword.doc`;
+					//$content = shell_exec($shellcommand);
+					throw new CHttpException(400,$testcontent.'***'.$content);
+										
 					$model->wordcount = Article::model()->wordCount($model->srclang_id,$content);
 					if($model->wordcount == 0)
 						throw new CHttpException(400,Yii::t('article','Please choose the correct source language!'));
