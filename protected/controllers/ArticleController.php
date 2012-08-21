@@ -236,10 +236,19 @@ class ArticleController extends Controller
 					$path = Article::model()->fileAddr($model->id);
 					$model->doccont->saveAs($path);
 					
+					// 这里用技术方式读取doc等文档，统计文本字数
+					$shellcommand = 'antiword -m UTF-8.txt /var/www/imuyun/public/file/df7d748a54163253d6ce74a370907ab1790f0c18.doc';
+					$content = shell_exec($shellcommand);
+					throw new CHttpException(400,$content);
+					
+					$model->wordcount = Article::model()->wordCount($model->srclang_id,$content);
+					if($model->wordcount == 0)
+						throw new CHttpException(400,Yii::t('article','Please choose the correct source language!'));
+					
 					// 添加到价位表
 					$spreadtable = new Spreadtable;
 					$spreadtable->article_id = $model->id;
-					$spreadtable->price = 0;//
+					$spreadtable->price = strval($model->wordcount * 120 / 1000);//
 					$spreadtable->save();
 					
 					// 注意这里的跳转要加上控制器名

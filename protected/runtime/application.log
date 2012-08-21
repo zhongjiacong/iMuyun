@@ -4062,3 +4062,432 @@ in D:\Dropbox\Muyun\iMuyun\index.php (13)
 2012/08/21 05:38:12 [warning] [application] Failed to set unsafe attribute "doccont" of "Article".
 in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
 in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 17:45:58 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 17:45:58 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 17:45:58 [warning] [application] Failed to set unsafe attribute "doccont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 17:53:05 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 17:53:05 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 17:53:05 [warning] [application] Failed to set unsafe attribute "doccont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 17:53:06 [error] [exception.CHttpException.400] exception 'CHttpException' with message '请选择正确的源语言！' in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php:244
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionText()
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('text')
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/text')
+#11 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/iMuyun/index.php/article/text
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/text
+---
+2012/08/21 17:53:58 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 17:53:58 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 17:53:58 [warning] [application] Failed to set unsafe attribute "doccont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 17:53:58 [error] [exception.CHttpException.400] exception 'CHttpException' with message '请选择正确的源语言！' in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php:244
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionText()
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('text')
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/text')
+#11 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/iMuyun/index.php/article/text
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/text
+---
+2012/08/21 17:56:26 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 17:56:26 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 17:56:26 [warning] [application] Failed to set unsafe attribute "doccont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 17:56:26 [error] [exception.CHttpException.400] exception 'CHttpException' with message '请选择正确的源语言！' in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php:243
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionText()
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('text')
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/text')
+#11 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/iMuyun/index.php/article/text
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/text
+---
+2012/08/21 18:41:14 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:41:14 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:41:14 [warning] [application] Failed to set unsafe attribute "doccont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:41:15 [error] [exception.CHttpException.400] exception 'CHttpException' in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php:241
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionText()
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('text')
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/text')
+#11 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/iMuyun/index.php/article/text
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/text
+---
+2012/08/21 18:41:56 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:41:56 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:41:56 [warning] [application] Failed to set unsafe attribute "doccont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:41:56 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'D:\Dropbox\Muyun\iMuyun\protected\models/../../public/file/1345545716aeb390afbabdffd6f2fe6040ebee9b28196d83dc.doc' in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php:241
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionText()
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('text')
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/text')
+#11 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/iMuyun/index.php/article/text
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/text
+---
+2012/08/21 18:44:21 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:44:21 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:44:21 [warning] [application] Failed to set unsafe attribute "doccont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:44:21 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'antiword –f D:\Dropbox\Muyun\iMuyun\protected\models/../../public/file/1345545861df7d748a54163253d6ce74a370907ab1790f0c18.doc' in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php:242
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionText()
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('text')
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/text')
+#11 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/iMuyun/index.php/article/text
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/text
+---
+2012/08/21 18:46:08 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:46:08 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:46:08 [warning] [application] Failed to set unsafe attribute "doccont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:46:08 [error] [exception.CHttpException.400] exception 'CHttpException' in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php:242
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionText()
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('text')
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/text')
+#11 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/iMuyun/index.php/article/text
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/text
+---
+2012/08/21 18:49:38 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:49:38 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:49:38 [warning] [application] Failed to set unsafe attribute "doccont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:49:38 [error] [exception.CHttpException.400] exception 'CHttpException' in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php:242
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionText()
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('text')
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/text')
+#11 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/iMuyun/index.php/article/text
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/text
+---
+2012/08/21 18:50:57 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:50:57 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:50:57 [warning] [application] Failed to set unsafe attribute "doccont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:50:57 [error] [exception.CHttpException.400] exception 'CHttpException' in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php:242
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionText()
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('text')
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/text')
+#11 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/iMuyun/index.php/article/text
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/text
+---
+2012/08/21 18:52:27 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:52:27 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:52:27 [warning] [application] Failed to set unsafe attribute "doccont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:52:27 [error] [exception.CHttpException.400] exception 'CHttpException' in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php:242
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionText()
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('text')
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/text')
+#11 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/iMuyun/index.php/article/text
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/text
+---
+2012/08/21 18:54:56 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:54:56 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:54:56 [warning] [application] Failed to set unsafe attribute "doccont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:54:56 [error] [exception.CHttpException.400] exception 'CHttpException' in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php:242
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionText()
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('text')
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/text')
+#11 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/iMuyun/index.php/article/text
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/text
+---
+2012/08/21 18:55:57 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:55:57 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:55:57 [warning] [application] Failed to set unsafe attribute "doccont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:55:57 [error] [exception.CHttpException.400] exception 'CHttpException' in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php:242
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionText()
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('text')
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/text')
+#11 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/iMuyun/index.php/article/text
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/text
+---
+2012/08/21 18:58:10 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:58:10 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:58:10 [warning] [application] Failed to set unsafe attribute "doccont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 18:58:10 [error] [exception.CHttpException.400] exception 'CHttpException' in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php:242
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionText()
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('text')
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/text')
+#11 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/iMuyun/index.php/article/text
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/text
+---
+2012/08/21 19:00:35 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 19:00:35 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 19:00:35 [warning] [application] Failed to set unsafe attribute "doccont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 19:00:35 [error] [exception.CHttpException.400] exception 'CHttpException' in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php:242
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionText()
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('text')
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/text')
+#11 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/iMuyun/index.php/article/text
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/text
+---
+2012/08/21 19:01:23 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 19:01:23 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 19:01:23 [warning] [application] Failed to set unsafe attribute "doccont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/21 19:01:23 [error] [exception.CHttpException.400] exception 'CHttpException' in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php:242
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionText()
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): CController->run('text')
+#10 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('article/text')
+#11 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Dropbox\Muyun\iMuyun\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/iMuyun/index.php/article/text
+HTTP_REFERER=http://localhost/iMuyun/index.php/article/text
+---
