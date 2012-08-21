@@ -13,7 +13,7 @@ Yii::app()->clientScript->registerScript('article',"
 	});
 ",CClientScript::POS_READY);
 if(Yii::app()->language == 'en_us') {
-	Yii::app()->clientScript->registerScript('article',"
+	Yii::app()->clientScript->registerScript('entrancefont',"
 		$('#entranceintro_b').css('font-size','22px');
 	",CClientScript::POS_READY);
 }
