@@ -238,12 +238,14 @@ class ArticleController extends Controller
 					
 					// 这里用技术方式读取doc等文档，统计文本字数
 					$shellcommand = '/var/www/imuyun/public/antiword-0.37/antiword -m UTF-8.txt '.$path;
-					$content = shell_exec($shellcommand);
-					throw new CHttpException(400,$content);
+					$model->doccont = shell_exec($shellcommand);
 					
-					$model->wordcount = Article::model()->wordCount($model->srclang_id,$content);
+					$model->wordcount = Article::model()->wordCount($model->srclang_id,$model->doccont);
 					if($model->wordcount == 0)
 						throw new CHttpException(400,Yii::t('article','Please choose the correct source language!'));
+
+					// restore the model
+					$model->save();
 					
 					// 添加到价位表
 					$spreadtable = new Spreadtable;
