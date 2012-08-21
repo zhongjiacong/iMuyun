@@ -237,7 +237,7 @@ class ArticleController extends Controller
 					$model->doccont->saveAs($path);
 					
 					// 这里用技术方式读取doc等文档，统计文本字数
-					$shellcommand = '/var/www/imuyun/public/antiword-0.37/antiword -m UTF-8.txt /var/www/imuyun/public/file/testantiword.doc';//.$path;
+					$shellcommand = './../../public/antiword-0.37/antiword -m UTF-8.txt /var/www/imuyun/public/file/testantiword.doc';//.$path;
 					$content = shell_exec($shellcommand);
 					throw new CHttpException(400,$content);
 					
