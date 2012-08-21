@@ -41,6 +41,11 @@ body
 	background-color: #FFF;
 	-webkit-box-shadow: 0px 0px 14px #777;
 }
+#page a,
+#page a:hover, #page a:active
+{
+	color: #32A075;
+}
 
 #content
 {
