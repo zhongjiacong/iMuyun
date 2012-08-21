@@ -247,6 +247,16 @@ class ArticleController extends Controller
 					// restore the model
 					$model->save();
 					
+					// 把文字存成句子
+					$sentence = new Sentence;
+					// 先给个初始的art id，在下面进行修改，以满足
+					$sentence->article_id = $model->id;
+					$sentence->sentencenum = 0;
+					$sentence->original = $model->artcont;
+					date_default_timezone_set('PRC');
+					$sentence->edittime = date("Y-m-d H:i:s");
+					$sentence->save();
+					
 					// 添加到价位表
 					$spreadtable = new Spreadtable;
 					$spreadtable->article_id = $model->id;
@@ -262,16 +272,6 @@ class ArticleController extends Controller
 				$model->wordcount = Article::model()->wordCount($model->srclang_id,$model->artcont);
 				if($model->wordcount == 0)
 					throw new CHttpException(400,Yii::t('article','Please choose the correct source language!'));
-				
-				// 把文字存成句子
-				$sentence = new Sentence;
-				// 先给个初始的art id，在下面进行修改，以满足
-				$sentence->article_id = 0;
-				$sentence->sentencenum = 0;
-				$sentence->original = $model->artcont;
-				date_default_timezone_set('PRC');
-				$sentence->edittime = date("Y-m-d H:i:s");
-				$sentence->save();
 				
 				// 添加到订单
 				if(0 == $model->orderlist) {
@@ -300,8 +300,14 @@ class ArticleController extends Controller
 				$model->edittime = date("Y-m-d H:i:s");
 				
 				if($model->save()) {
-					// 重新存储
+					// 把文字存成句子
+					$sentence = new Sentence;
+					// 先给个初始的art id，在下面进行修改，以满足
 					$sentence->article_id = $model->id;
+					$sentence->sentencenum = 0;
+					$sentence->original = $model->artcont;
+					date_default_timezone_set('PRC');
+					$sentence->edittime = date("Y-m-d H:i:s");
 					$sentence->save();
 					
 					// 添加到价位表

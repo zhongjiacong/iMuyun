@@ -199,6 +199,8 @@ class Article extends CActiveRecord
 	
 	public function fileAddr($text_id,$physical = TRUE)
 	{
+		date_default_timezone_set('PRC');
+		
 		$text = Article::model()->findByPk($text_id);
 		$time = strtotime($text->edittime);
 		$name = $text->filename;

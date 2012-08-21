@@ -117,7 +117,7 @@ $this->menu = array(
 				'label'=>Yii::t('article','Article Content'),
 				'type'=>'raw',
 				'value'=>Article::model()->getText($model->id),
-				'visible'=>(NULL == $model->filename && !User::model()->isTranslator()),
+				'visible'=>!User::model()->isTranslator(),
 			),
 			array(
 				'label'=>Yii::t('article','Article Content'),
@@ -144,14 +144,13 @@ $this->menu = array(
 	));
 
 	if($model->starttime != NULL && $model->comptime == NULL && User::model()->isTranslator()) {
-		if(NULL == $model->filename) {
-			$sentence = Sentence::model()->findAll('`article_id` = :article_id ORDER BY `sentencenum` ASC',
-				array(':article_id'=>$model->id));
-			foreach ($sentence as $key => $value) {
-				echo $this->renderPartial('/sentence/_form', array('model'=>$value));
-			}
+		$sentence = Sentence::model()->findAll('`article_id` = :article_id ORDER BY `sentencenum` ASC',
+			array(':article_id'=>$model->id));
+		foreach ($sentence as $key => $value) {
+			echo $this->renderPartial('/sentence/_form', array('model'=>$value));
 		}
-		else {
+		
+		if(NULL != $model->filename) {
 ?>
 <div class="form">
 	<dl>
@@ -169,14 +168,13 @@ $this->menu = array(
 <?php
 		}
 	}
-	if($model->comptime != NULL)
-		if(NULL == $model->filename) {
-			$this->widget('zii.widgets.CListView', array(
-				'dataProvider'=>$dataProvider,
-				'itemView'=>'/sentence/_view',
-			));
-		}
-		elseif(User::model()->isTranslator()) {
+	if($model->comptime != NULL) {
+		$this->widget('zii.widgets.CListView', array(
+			'dataProvider'=>$dataProvider,
+			'itemView'=>'/sentence/_view',
+		));
+		
+		if(NULL != $model->filename && User::model()->isTranslator()) {
 ?>
 <div class="form">
 	<dl>
@@ -185,4 +183,4 @@ $this->menu = array(
 					array('target'=>'_blank')); ?></dd>
 	</dl>
 </div>
-<?php } ?>
+<?php }} ?>
