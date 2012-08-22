@@ -244,8 +244,8 @@ class Article extends CActiveRecord
 	        for($i = 0; $i < $zip->numFiles; $i++) {
 	            $entry = $zip->getNameIndex($i);
 	            if(pathinfo($entry, PATHINFO_BASENAME) == "document.xml") {
-	                $zip->extractTo(pathinfo($file, PATHINFO_DIRNAME)."/".pathinfo($file, PATHINFO_FILENAME), array($entry));
-	                $filepath = pathinfo($file, PATHINFO_DIRNAME)."/".pathinfo($file,PATHINFO_FILENAME)."/".$entry;
+	                $zip->extractTo(pathinfo($file, PATHINFO_DIRNAME)."/".pathinfo($file, PATHINFO_FILENAME)."_", array($entry));
+	                $filepath = pathinfo($file, PATHINFO_DIRNAME)."/".pathinfo($file,PATHINFO_FILENAME)."_/".$entry;
 	                $content = strip_tags(file_get_contents($filepath));
 	                break;
 	            }
