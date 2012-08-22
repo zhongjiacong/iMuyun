@@ -211,8 +211,8 @@ class ArticleController extends Controller
 					'application/pdf',
 					'application/vnd.ms-excel',
 					'text/plain',
-					/*'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-					'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',*/
+					'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+					/*'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',*/
 				);
 				// cannot upload file format not in the list of allow type
 				if(!in_array($model->doccont->type, $allowType))
@@ -266,6 +266,10 @@ class ArticleController extends Controller
 							break;
 						case $allowType[3]:
 							$shellcommand = 'cat '.$path;
+							$model->artcont = shell_exec($shellcommand);
+							break;
+						case $allowType[4]:
+							$shellcommand = dirname(__FILE__).'/../extensions/antiword-0.37/antiword -m UTF-8.txt '.$path;
 							$model->artcont = shell_exec($shellcommand);
 							break;
 						default:
