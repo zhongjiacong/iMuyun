@@ -19,7 +19,7 @@
  * @version $Id: $
  */
 return array (
-  'I accept {terms of service}.' => '我接受 {terms of service}。',
+  'Wrong file format!' => '错误的文件格式！',
   'Article' => '文本',
   'Article Content' => '翻译内容',
   'Complete Time' => '完成时间',
@@ -30,6 +30,7 @@ return array (
   'Delete Article' => '删除文本',
   'Document Content' => '文档内容',
   'Edit Time' => '提交时间',
+  'I accept {terms of service}.' => '我接受 {terms of service}。',
   'ID' => '文本编号',
   'Language' => '语言',
   'List Article' => '文本列表',

@@ -204,6 +204,18 @@ class ArticleController extends Controller
 			
 			// 根据用户提交的是文档还是
 			if(is_object($model->doccont) && get_class($model->doccont) === 'CUploadedFile') {
+				// should not change the order
+				$allowType = array(
+					'application/msword',
+					'application/pdf',
+					'application/vnd.ms-excel',
+					/*'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+					'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',*/
+				);
+				// cannot upload file format not in the list of allow type
+				if(!in_array($model->doccont->type, $allowType))
+					throw new CHttpException(400,Yii::t('article','Wrong file format!'));
+				
 				if(0 == $model->orderlist) {
 					// 新建订单
 					$order = new Order;
@@ -232,14 +244,26 @@ class ArticleController extends Controller
 				$model->filename = $model->doccont->getName();
 				
 				if($model->save()) {
-					// 保存文件
+					// save the file
 					$path = Article::model()->fileAddr($model->id);
 					$model->doccont->saveAs($path);
 					
-					// 这里用技术方式读取doc等文档，统计文本字数
-					//$shellcommand = dirname(__FILE__).'/../extensions/antiword-0.37/antiword -m UTF-8.txt '.$path;
-					//$shellcommand = 'pdftotext -layout '.$path.' /dev/stdout';
-					$shellcommand = 'xls2txt '.$path;
+					// read .doc, .pdf, .xls file though web and count the words
+					switch ($model->doccont->type) {
+						case $allowType[0]:
+							$shellcommand = dirname(__FILE__).'/../extensions/antiword-0.37/antiword -m UTF-8.txt '.$path;
+							break;
+						case $allowType[1]:
+							$shellcommand = 'pdftotext -layout '.$path.' /dev/stdout';
+							break;
+						case $allowType[2]:
+							$shellcommand = 'xls2txt '.$path;
+							break;
+						default:
+							// actually, this exception should never appear
+							throw new CHttpException(400,Yii::t('article','Wrong file format!'));
+							break;
+					}
 					$model->artcont = shell_exec($shellcommand);
 					
 					$model->wordcount = Article::model()->wordCount($model->srclang_id,$model->artcont);
