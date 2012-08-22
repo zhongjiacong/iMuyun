@@ -161,7 +161,6 @@ Yii::app()->clientScript->registerScript('slideimg','
 		}else{
 			for (var i = 0, len = array.length; i < len; i++) {
 				callback.call(thisObject, array[i], i, array);
-				alert("shit");
 			}
 		}
 	}
