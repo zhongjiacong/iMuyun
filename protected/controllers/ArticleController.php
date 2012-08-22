@@ -204,11 +204,13 @@ class ArticleController extends Controller
 			
 			// 根据用户提交的是文档还是
 			if(is_object($model->doccont) && get_class($model->doccont) === 'CUploadedFile') {
+				// throw new CHttpException(400,$model->doccont->type);
 				// should not change the order
 				$allowType = array(
 					'application/msword',
 					'application/pdf',
 					'application/vnd.ms-excel',
+					'text/plain',
 					/*'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
 					'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',*/
 				);
@@ -252,19 +254,25 @@ class ArticleController extends Controller
 					switch ($model->doccont->type) {
 						case $allowType[0]:
 							$shellcommand = dirname(__FILE__).'/../extensions/antiword-0.37/antiword -m UTF-8.txt '.$path;
+							$model->artcont = shell_exec($shellcommand);
 							break;
 						case $allowType[1]:
 							$shellcommand = 'pdftotext -layout '.$path.' /dev/stdout';
+							$model->artcont = shell_exec($shellcommand);
 							break;
 						case $allowType[2]:
 							$shellcommand = 'xls2txt '.$path;
+							$model->artcont = shell_exec($shellcommand);
+							break;
+						case $allowType[3]:
+							$shellcommand = 'vim '.$path;
+							$model->artcont = shell_exec($shellcommand);
 							break;
 						default:
 							// actually, this exception should never appear
 							throw new CHttpException(400,Yii::t('article','Wrong file format!'));
 							break;
 					}
-					$model->artcont = shell_exec($shellcommand);
 					
 					$model->wordcount = Article::model()->wordCount($model->srclang_id,$model->artcont);
 					if($model->wordcount == 0)
