@@ -230,9 +230,10 @@ class Article extends CActiveRecord
 	    }
 	}
 
+	// linux
 	function docx2text($file) {
 	    // 1. rename
-	    $newfile = substr($file,0,strlen($file)-5).'_.zip';
+	    $newfile = pathinfo($file, PATHINFO_DIRNAME)."/".pathinfo($file, PATHINFO_FILENAME).'_.zip';
 	    if(!is_file($newfile))
 	        shell_exec('cp -f '.$file.' '.$newfile);
 	    // 2. zip
@@ -252,10 +253,10 @@ class Article extends CActiveRecord
 	        $zip->close();
 	        // 3. rmdir
 	        rrmdir(pathinfo($file, PATHINFO_DIRNAME)."/".pathinfo($file, PATHINFO_FILENAME)."_");
-	        echo $content;
+	        return $content;
 	    }
 	    else {
-	        echo "";
+	        return "";
 	    }
 	}
 
