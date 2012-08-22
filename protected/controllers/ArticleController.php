@@ -269,8 +269,7 @@ class ArticleController extends Controller
 							$model->artcont = shell_exec($shellcommand);
 							break;
 						case $allowType[4]:
-							$shellcommand = dirname(__FILE__).'/../extensions/antiword-0.37/antiword -m UTF-8.txt '.$path;
-							$model->artcont = shell_exec($shellcommand);
+							$model->artcont = Article::model()->docx2text($path);
 							break;
 						default:
 							// actually, this exception should never appear
