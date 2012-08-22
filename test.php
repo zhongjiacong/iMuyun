@@ -27,6 +27,11 @@ function parseWord($file) {
         return ""; 
     } 
 }
-
-echo parseWord(dirname(__FILE__).'/public/file/test.docx');
+// 1. rename
+// $newfile = '_'.substr($file,0,strlen($file)-4).'zip';
+// shell_exec('cp -f '.$file.' '.$newfile);
+// 2. zip
+//
+// 3.
+// echo parseWord(dirname(__FILE__).'/public/file/test.docx');
 ?>
