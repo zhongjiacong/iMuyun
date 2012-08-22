@@ -4629,3 +4629,28 @@ Stack trace:
 REQUEST_URI=/iMuyun/index.php/article/text
 HTTP_REFERER=http://localhost/iMuyun/index.php/article/text
 ---
+2012/08/22 13:57:56 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/22 13:57:56 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/22 13:57:56 [warning] [application] Failed to set unsafe attribute "doccont" of "Article".
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (177)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)
+2012/08/22 13:57:56 [error] [php] Illegal offset type (D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php:242)
+Stack trace:
+#0 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(134): ArticleController->runAction()
+#1 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#2 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#3 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CInlineFilter.php(59): ArticleController->filterAccessControl()
+#4 D:\Dropbox\Muyun\iMuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(292): CFilterChain->run()
+#6 D:\Dropbox\Muyun\iMuyun\framework\web\CController.php(266): ArticleController->runActionWithFilters()
+#7 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(276): ArticleController->run()
+#8 D:\Dropbox\Muyun\iMuyun\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 D:\Dropbox\Muyun\iMuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 D:\Dropbox\Muyun\iMuyun\index.php(13): CWebApplication->run()
+REQUEST_URI=/iMuyun/index.php/article/text
+in D:\Dropbox\Muyun\iMuyun\protected\controllers\ArticleController.php (242)
+in D:\Dropbox\Muyun\iMuyun\index.php (13)

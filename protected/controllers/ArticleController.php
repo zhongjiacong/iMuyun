@@ -237,7 +237,9 @@ class ArticleController extends Controller
 					$model->doccont->saveAs($path);
 					
 					// 这里用技术方式读取doc等文档，统计文本字数
-					$shellcommand = dirname(__FILE__).'/../extensions/antiword-0.37/antiword -m UTF-8.txt '.$path;
+					//$shellcommand = dirname(__FILE__).'/../extensions/antiword-0.37/antiword -m UTF-8.txt '.$path;
+					//$shellcommand = 'pdftotext -layout '.$path.' /dev/stdout';
+					$shellcommand = 'xls2txt '.$path;
 					$model->artcont = shell_exec($shellcommand);
 					
 					$model->wordcount = Article::model()->wordCount($model->srclang_id,$model->artcont);
