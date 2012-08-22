@@ -265,7 +265,7 @@ class ArticleController extends Controller
 							$model->artcont = shell_exec($shellcommand);
 							break;
 						case $allowType[3]:
-							$shellcommand = 'vim '.$path;
+							$shellcommand = 'cat '.$path;
 							$model->artcont = shell_exec($shellcommand);
 							break;
 						default:
