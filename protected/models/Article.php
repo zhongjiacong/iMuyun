@@ -220,7 +220,7 @@ class Article extends CActiveRecord
 	        foreach($objects as $object) {
 	            if($object != "." && $object != "..") {
 	                if(filetype($dir."/".$object) == "dir")
-	                    rrmdir($dir."/".$object);
+	                    $this->rrmdir($dir."/".$object);
 	                else
 	                    unlink($dir."/".$object);
 	            }
@@ -252,7 +252,7 @@ class Article extends CActiveRecord
 	        }
 	        $zip->close();
 	        // 3. rmdir
-	        rrmdir(pathinfo($file, PATHINFO_DIRNAME)."/".pathinfo($file, PATHINFO_FILENAME)."_");
+	        $this->rrmdir(pathinfo($file, PATHINFO_DIRNAME)."/".pathinfo($file, PATHINFO_FILENAME)."_");
 	        return $content;
 	    }
 	    else {
