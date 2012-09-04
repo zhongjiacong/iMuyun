@@ -236,7 +236,8 @@
 			</dd>
 		</dl>
 		<div class="clear"></div>
-		<?=Yii::t('layouts','Copyright Reserved'); ?> &copy; <?=date('Y'); ?>
+		粤ICP备12033964号-3<br />
+		<?=Yii::t('layouts','Copyright Reserved'); ?> &copy; imuyun 2012
 	</div><!-- footer -->
 </div><!-- page -->
 
