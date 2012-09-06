@@ -203,23 +203,21 @@ Yii::app()->clientScript->registerScript('slideimg','
 		<dt><?=Yii::t('layouts','Charge Mode'); ?></dt>
 		<dd>
 			<ul>
-				<li>翻译内容与客户之前已有订单的重复翻译部分不收费。</li>
-				<li>翻译内容报价在基本收费基础上，再由系统自动计算难度系数之后，综合反馈给客户。</li>
+				<li>翻译费用一律按源语言进行计算。</li>
+				<li>文本翻译服务默认并不翻译图片中的文字信息，如果有需要请另行说明。</li>
 			</ul>
-			<?=CHtml::button(Yii::t('layouts','More Details')); ?>
+			<?=CHtml::link(CHtml::button(Yii::t('layouts','More Details')),array('/site/page','view'=>'regular')); ?>
 		</dd>
 	</dl>
-	
 	<dl>
 		<dt><?=Yii::t('layouts','Frequently Asked Questions'); ?></dt>
 		<dd>
 			<ul>
 				<li>如果您有任何问题可以通过页面底部的意见反馈向我们反映。</li>
 			</ul>
-			<?=CHtml::button(Yii::t('layouts','More Details')); ?>
+			<?=CHtml::link(CHtml::button(Yii::t('layouts','More Details')),array('/site/page','view'=>'faq'));; ?>
 		</dd>
 	</dl>
-	
 	<dl>
 		<dt><?=Yii::t('layouts','Contact Information'); ?></dt>
 		<dd>
@@ -228,7 +226,7 @@ Yii::app()->clientScript->registerScript('slideimg','
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					020-22922037</li>
 			</ul>
-			<?=CHtml::button(Yii::t('layouts','More Details')); ?>
+			<?=CHtml::link(CHtml::button(Yii::t('layouts','More Details')),array('/site/page','view'=>'contact')); ?>
 		</dd>
 	</dl>
 </div>
