@@ -6374,3 +6374,39 @@ in D:\Dropbox\www\imuyun\index.php (13)
 in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
 in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
 in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/07 03:31:52 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (184)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/07 03:31:52 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (184)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/07 03:31:52 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (184)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/06 19:33:50 [error] [exception.CException] exception 'CException' with message '属性 "Article.content" 未被定义.' in D:\Dropbox\www\imuyun\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\db\ar\CActiveRecord.php(144): CComponent->__get('content')
+#1 D:\Dropbox\www\imuyun\protected\views\order\pay.php(70): CActiveRecord->__get('content')
+#2 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(127): require('D:\Dropbox\www\...')
+#3 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\Dropbox\www\...', Array, true)
+#4 D:\Dropbox\www\imuyun\framework\web\CController.php(870): CBaseController->renderFile('D:\Dropbox\www\...', Array, true)
+#5 D:\Dropbox\www\imuyun\framework\web\CController.php(783): CController->renderPartial('pay', Array, true)
+#6 D:\Dropbox\www\imuyun\protected\controllers\OrderController.php(62): CController->render('pay', Array)
+#7 [internal function]: OrderController->actionPay('59')
+#8 D:\Dropbox\www\imuyun\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#9 D:\Dropbox\www\imuyun\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#10 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 D:\Dropbox\www\imuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 D:\Dropbox\www\imuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 D:\Dropbox\www\imuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 D:\Dropbox\www\imuyun\framework\web\CController.php(292): CFilterChain->run()
+#17 D:\Dropbox\www\imuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('pay')
+#19 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('order/pay')
+#20 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/imuyun/index.php/order/pay/59
+---
