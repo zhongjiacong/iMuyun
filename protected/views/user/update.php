@@ -13,10 +13,6 @@ if(isset($_COOKIE['SELEPROD'])) {
 	",CClientScript::POS_READY);
 }
 $this->menu=array(
-	array('label'=>Yii::t('user','Account Settings'), 'url'=>array('update'),
-		'visible'=>!User::model()->isAdmin()),
-	array('label'=>Yii::t('user','Account Settings'), 'url'=>array('update','id'=>$model->id),
-		'visible'=>User::model()->isAdmin()),
 	array('label'=>Yii::t('user','Change Login Password'), 'url'=>array('pwdupdate')),
 	array('label'=>Yii::t('user','View User'), 'url'=>array('view','id'=>$model->id),
 		'visible'=>User::model()->isAdmin()),

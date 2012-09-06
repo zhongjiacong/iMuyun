@@ -5814,3 +5814,28 @@ in D:\Dropbox\www\imuyun\index.php (13)
 in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (479)
 in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (173)
 in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/06 18:19:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-0' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1).
+in D:\Dropbox\www\imuyun\protected\controllers\UserController.php (152)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/06 18:19:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '100001-0' for key 1. The SQL statement executed was: INSERT INTO `tbl_u_userlang` (`user_id`, `lang_id`) VALUES (:yp0, :yp1)' in D:\Dropbox\www\imuyun\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 D:\Dropbox\www\imuyun\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 D:\Dropbox\www\imuyun\protected\controllers\UserController.php(152): CActiveRecord->save()
+#3 D:\Dropbox\www\imuyun\framework\web\actions\CInlineAction.php(50): UserController->actionLangupdate()
+#4 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 D:\Dropbox\www\imuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\Dropbox\www\imuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 D:\Dropbox\www\imuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Dropbox\www\imuyun\framework\web\CController.php(292): CFilterChain->run()
+#11 D:\Dropbox\www\imuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('langupdate')
+#13 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('user/langupdate')
+#14 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/imuyun/index.php/user/langupdate
+HTTP_REFERER=http://localhost/imuyun/index.php/user/langupdate
+---

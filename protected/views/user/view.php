@@ -1,9 +1,5 @@
 <?php
 $this->menu=array(
-	array('label'=>Yii::t('user','Account Settings'), 'url'=>array('update'),
-		'visible'=>!User::model()->isAdmin()),
-	array('label'=>Yii::t('user','Account Settings'), 'url'=>array('update','id'=>$model->id),
-		'visible'=>User::model()->isAdmin()),
 	array('label'=>Yii::t('user','Change Login Password'), 'url'=>array('pwdupdate')),
 	array('label'=>Yii::t('user','Delete User'), 'url'=>'#',
 		'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?'), 'visible'=>User::model()->isAdmin()),
@@ -26,13 +22,21 @@ $this->menu=array(
 			<?php
 				$userlang = Userlang::model()->findAll('`user_id` = :id',array(':id'=>$model->id));
 				foreach ($userlang as $key => $value) {
-					echo Yii::app()->params['language'][$value->lang_id].', ';
+					echo Yii::app()->params['language'][$value->lang_id];
+					if($key != count($userlang) - 1)
+						echo ', ';
 				}
-				echo CHtml::link(Yii::t('layouts','Update'),array('user/langupdate'));
+				echo '<div class="updatelink">'.CHtml::link(Yii::t('layouts','Update'),array('user/langupdate')).'</div>';
 			?>
 		</dd>
 	</dl>
 	<hr />
+	<?php
+		if(User::model()->isAdmin())
+			echo '<div class="updatelink">'.CHtml::link(Yii::t('layouts','Update'), array('update','id'=>$model->id)).'</div>';
+		else
+			echo '<div class="updatelink">'.CHtml::link(Yii::t('layouts','Update'), array('update')).'</div>';
+	?>
 	<?php if(User::model()->isAdmin()) { ?>
 	<dl>
 		<dt><?=Yii::t('user','Email'); ?></dt>
