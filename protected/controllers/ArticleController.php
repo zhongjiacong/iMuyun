@@ -27,7 +27,7 @@ class ArticleController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('text','product'),
+				'actions'=>array('text','product','textinfor'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'text' and 'update' actions
@@ -63,6 +63,13 @@ class ArticleController extends Controller
     {
         return User::model()->isAdmin();
     }
+	
+	public function actionTextinfor()
+	{
+		if(Yii::app()->request->isPostRequest) {
+			echo json_encode(Article::model()->textInfor(intval($_POST["srclang_id"]),addslashes($_POST["content"])));
+		}
+	}
 
 	/**
 	 * Displays a particular model.
@@ -261,7 +268,8 @@ class ArticleController extends Controller
 							break;
 					}
 					
-					$model->wordcount = Article::model()->wordCount($model->srclang_id,$model->artcont);
+					$textinfor = Article::model()->textInfor($model->srclang_id,$model->artcont);
+					$model->wordcount = $textinfor["wordcount"];
 					if($model->wordcount == 0)
 						throw new CHttpException(400,Yii::t('article','Please choose the correct source language!'));
 
@@ -281,7 +289,7 @@ class ArticleController extends Controller
 					// 添加到价位表
 					$spreadtable = new Spreadtable;
 					$spreadtable->article_id = $model->id;
-					$spreadtable->price = strval($model->wordcount * 120 / 1000);//
+					$spreadtable->price = $textinfor["price"];
 					$spreadtable->save();
 					
 					// 注意这里的跳转要加上控制器名
@@ -293,7 +301,8 @@ class ArticleController extends Controller
 			}
 			elseif($model->artcont != "") {
 				// 这里统计text文本字数
-				$model->wordcount = Article::model()->wordCount($model->srclang_id,$model->artcont);
+				$textinfor = Article::model()->textInfor($model->srclang_id,$model->artcont);
+				$model->wordcount = $textinfor["wordcount"];
 				if($model->wordcount == 0)
 					throw new CHttpException(400,Yii::t('article','Please choose the correct source language!'));
 				
@@ -337,7 +346,7 @@ class ArticleController extends Controller
 					// 添加到价位表
 					$spreadtable = new Spreadtable;
 					$spreadtable->article_id = $model->id;
-					$spreadtable->price = strval($model->wordcount * 120 / 1000);//
+					$spreadtable->price = $textinfor["price"];
 					$spreadtable->save();
 					
 					// 重定向

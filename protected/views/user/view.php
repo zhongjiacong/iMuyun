@@ -106,6 +106,7 @@ $this->menu=array(
 		</dd>
 	</dl>
 	<?php if(User::model()->isAdmin()) { ?>
+	<hr />
 	<dl>
 		<dt><?=Yii::t('user','Privilege Id'); ?></dt>
 		<dd>

@@ -145,7 +145,11 @@ class Article extends CActiveRecord
 		return $pendingOrder;
 	}
 	
-	public function wordCount($srclang_id,$content) {
+	/**
+	 * @param 源语言，文本
+	 * @return 字数，报价
+	 */
+	public function textInfor($srclang_id,$content) {
 		switch ($srclang_id) {
 			case 0:
 				$content = preg_replace("|[a-z ]|is","",$content);
@@ -174,7 +178,14 @@ class Article extends CActiveRecord
 				$wordcount = 0;
 				break;
 		}
-		return $wordcount;
+		
+		// 待完善
+		$price = $wordcount / 5;
+		
+		return array(
+			'wordcount'=>$wordcount,
+			'price'=>$price,
+		);
 	}
 	
 	public function getText($text_id)

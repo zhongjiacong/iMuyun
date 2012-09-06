@@ -26,9 +26,25 @@ Yii::app()->clientScript->registerScript('article', "
 		}
 	});
 	
-	$('#Article_artcont').keyup(function(){
-		$('#wordcount div').html('￥'+formatFloat(wcount($('#Article_artcont').val()) * 0.12));
+	$('#Article_artcont').keyup(function() {
+		textinfor();
 	});
+	
+	// 因为要回调，所以这里写成函数
+	function textinfor() {
+		$.ajax({
+			type: 'POST',
+			url: '".Yii::app()->request->baseUrl."/index.php/article/textinfor',
+			data: {srclang_id: $('#Article_srclang_id').val(), content: $('#Article_artcont').val()},
+			dataType: 'json',
+			beforeSend: function() {
+				//$('#wordcount div').html('￥...');
+			},
+			success: function(result) {
+				$('#wordcount div').html('￥'+formatFloat(result.price));
+			}
+		});
+	}
 	
 	$('#textartbtn').click(function(){
 		$('#artcontent').html(
@@ -37,7 +53,7 @@ Yii::app()->clientScript->registerScript('article', "
 		);
 		// 这里竟然要写回调函数了，坑爹啊
 		$('#Article_artcont').keyup(function(){
-			$('#wordcount div').html('￥'+formatFloat(wcount($('#Article_artcont').val()) * 0.12));
+			textinfor();
 		});
 	});
 	$('#fileartbtn').click(function(){
@@ -61,40 +77,6 @@ Yii::app()->clientScript->registerScript('textform', "
 			$('#newOrderList').addClass('hide');
 			$('#oldOrderList').removeClass('hide');
 		}
-	}
-	
-	function wcount(str) {
-		// 统计空格数
-		var reg = new RegExp(' ',\"gi\");
-		var c = str.match(reg);
-		var spaceCount = c ? c.length : 0;
-		// 计算英文单词数
-		var enWcount = en_wcount(str);
-		// 计算剩余字符
-		var reg = new RegExp(/[a-zA-Z]+/g);// g是往下走
-		return str.replace(reg,'').length + enWcount - spaceCount;
-	}
-	
-	/**
-	 * 来自网上，计算单词数量 
-	 * @param {Object} str
-	 */
-	function en_wcount(str) {
-		var i=0,j=0,c=0;
-		var t=/[a-zA-Z]+/;
-		var bo=false;
-		for(i=0,j=i+1;j<=str.length;i=j++) {
-			if(t.test(str.substring(i,j))&&!bo)
-			{
-				bo=true;
-				c++;
-			}
-			else if(!t.test(str.substring(i,j)))
-			{
-				bo=false;
-			}
-		}
-		return c;
 	}
 	
 	function formatFloat(flt) {
