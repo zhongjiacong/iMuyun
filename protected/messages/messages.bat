@@ -1,1 +1,1 @@
-yiic message D:\Dropbox\Muyun\iMuyun\protected\messages\config.php
+yiic message D:\Dropbox\www\imuyun\protected\messages\config.php

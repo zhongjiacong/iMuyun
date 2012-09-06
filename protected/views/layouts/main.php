@@ -220,18 +220,35 @@
 			<dt><?=Yii::t('layouts','About Us'); ?></dt>
 			<dd>
 				<ul>
-					<li><?=CHtml::link(Yii::t('layouts','Our Team'),array('/site/page', 'view'=>'about')); ?></li>
-					<li><?=CHtml::link(Yii::t('layouts','Bussiness'),array('/site/page', 'view'=>'about')); ?></li>
-					<li><?=CHtml::link(Yii::t('layouts','Successful Case'),array('/site/page', 'view'=>'about')); ?></li>
+					<li><?=CHtml::link(Yii::t('layouts','Our Team'),array('/site/page', 'view'=>'team')); ?></li>
+					<li><?=CHtml::link(Yii::t('layouts','Bussiness'),array('/site/page', 'view'=>'bussiness')); ?></li>
+					<li><?=CHtml::link(Yii::t('layouts','Successful Case'),array('/site/page', 'view'=>'case')); ?></li>
 				</ul>
 			</dd>
 		</dl>
 		<dl>
-			<dt><?=Yii::t('layouts','Contact Us'); ?></dt>
+			<dt><?=Yii::t('layouts','Contact Information'); ?></dt>
 			<dd>
 				<ul>
-					<li><?=CHtml::link(Yii::t('layouts','Feedback'),array('/msg/contact')); ?></li>
-					<li><?=CHtml::link(Yii::t('layouts','Contact Way'),array('/msg/contact')); ?></li>
+					<li><?=CHtml::link(Yii::t('layouts','Contact Way'),array('/site/page','view'=>'contact')); ?></li>
+					<li><?=CHtml::link(Yii::t('layouts','Suggestion Feedback'),array('/msg/contact')); ?></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl>
+			<dt><?=Yii::t('layouts','Charging Method'); ?></dt>
+			<dd>
+				<ul>
+					<li><?=CHtml::link(Yii::t('layouts','Regular Service'),array('/site/page', 'view'=>'regular')); ?></li>
+					<li><?=CHtml::link(Yii::t('layouts','Special Service'),array('/site/page', 'view'=>'special')); ?></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl>
+			<dt><?=Yii::t('layouts','FAQ'); ?></dt>
+			<dd>
+				<ul>
+					<li><?=CHtml::link(Yii::t('layouts','FAQ'),array('/site/page', 'view'=>'faq')); ?></li>
 				</ul>
 			</dd>
 		</dl>
