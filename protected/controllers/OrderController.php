@@ -209,7 +209,7 @@ class OrderController extends Controller
 	{
 		$this->layout = '//layouts/column1';
 		
-		$model=new Order('search');
+		$model = new Order('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Order']))
 			$model->attributes=$_GET['Order'];

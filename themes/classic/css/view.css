@@ -324,36 +324,43 @@ div.shortbg
    -moz-box-shadow: 0 28px 10px #666;
 }
 
-.orderview
-{
-	margin: 5px 15px;
-	overflow: hidden;
-}
-
-.orderview a
-{
-	color: #1BAD7E;
-}
-
-.orderview table
-{
+.ordertable {
+	margin-bottom: 0;
 	border-collapse: collapse;
 }
-
-.orderview table.grayorder thead th
-{
-	background: #CCC !important;
+.ordertable a {
+	color: #1BAD7E;
 }
-
-.orderview table th, .orderview table td
-{
-	border: 1px solid #CCC;
+.ordertable thead tr {
+	background: #1BAD7E;
 }
-
-.orderview table th
-{
+.ordertable thead tr th {
 	color: white;
 	font-family: "Microsoft Yahei";
+}
+.ordertable thead tr th, .ordertable tbody tr td {
+	border: 1px solid #CCC;
+}
+.ordertable tbody tr td {
+	border-top: 0;
+}
+.ordertable tbody tr.grayorder td {
+	background-color: #dfdfdf !important;
+}
+.ordertable thead tr th:nth-child(1), .ordertable tbody tr td:nth-child(1) {
+	width: 40px;
+}
+.ordertable thead tr th:nth-last-child(4), .ordertable tbody tr td:nth-last-child(4) {
+	width: 220px;
+}
+.ordertable thead tr th:nth-last-child(3), .ordertable tbody tr td:nth-last-child(3) {
+	width: 100px;
+}
+.ordertable thead tr th:nth-last-child(2), .ordertable tbody tr td:nth-last-child(2) {
+	width: 70px;
+}
+.ordertable thead tr th:nth-last-child(1), .ordertable tbody tr td:nth-last-child(1) {
+	width: 60px;
 }
 
 .artview

@@ -19,7 +19,7 @@
  * @version $Id: $
  */
 return array (
-  'Wrong file format!' => '错误的文件格式！',
+  'Successfully submission, we will contact you as soon as possible.' => '成功提交，我们将会尽快联系您。',
   'Article' => '文本',
   'Article Content' => '翻译内容',
   'Complete Time' => '完成时间',
@@ -58,6 +58,7 @@ return array (
   'User registration' => '用户登记',
   'Video Translation' => '视频翻译',
   'Word Count' => '字数统计',
+  'Wrong file format!' => '错误的文件格式！',
   'You can login and skip this step.' => '您可以登录跳过这一步骤。',
   'You can reselect in the settings of your profile.' => '您可以在个人主页的设置中重新选择。',
   'enter text' => '输入文本',

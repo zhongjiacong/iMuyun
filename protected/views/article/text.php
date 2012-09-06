@@ -110,5 +110,11 @@ Yii::app()->clientScript->registerScript('textform', "
 	<div><?=Yii::t('layouts','MuYun Translation'); ?></div>
 	<span>be of your service</span>
 </div>
-
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php if(Yii::app()->user->hasFlash("text")): ?>
+	<div class="flash-success">
+		<?=Yii::app()->user->getFlash("text"); ?>
+	</div>
+<?php
+	endif;
+	$this->renderPartial('_form', array('model'=>$model));
+?>

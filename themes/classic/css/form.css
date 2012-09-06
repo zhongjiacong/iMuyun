@@ -165,9 +165,9 @@ div.wide.form .buttons, div.wide.form .hint, div.wide.form .errorMessage
 .form dl dd input[type=date] {
 	font-family: 'Microsoft Yahei';
 	border: 1px solid #ddd;
-	padding: 5px 10px;
-	font-weight: bold;
-	text-shadow: 0 1px 1px rgba(255,255,255,0.8);
+	padding: 5px 5px;
+	/*font-weight: bold;
+	text-shadow: 0 1px 1px rgba(255,255,255,0.8);*/
 	color: #666;
 	background: #ffffff;
 	background: -moz-linear-gradient(top, #ffffff 0%, #f7f7f7 7%, #f7f7f7 22%, #ffffff 100%);

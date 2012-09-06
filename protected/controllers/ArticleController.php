@@ -183,24 +183,8 @@ class ArticleController extends Controller
 			$model->artcont = isset($_POST['Article']['artcont'])?$_POST['Article']['artcont']:'';
 			$model->doccont = CUploadedFile::getInstance($model,'doccont');
 			
-			// 如果用户未注册，那么记录用户邮箱和手机，存入用户数据表
-			if(Yii::app()->user->isGuest) {
-				$user = new User;
-				$user->email = $_POST['Article']['email'];
-				$user->mobile = $_POST['Article']['mobile'];
-				date_default_timezone_set('PRC');
-				// 这里当做用户创建时间用，而不是注册时间
-				$user->registertime = date("Y-m-d H:i:s");
-				// 根据用户是否已经注册来设定订单中的用户数据
-				if($user->save())
-					$user_id = $user->id;
-				else
-					$user_id = User::model()->find('`email` = :email and `mobile` = :mobile and `enabled` = 0',
-						array(':email'=>$user->email,':mobile'=>$user->mobile))->id;
-			}
-			else {
-				$user_id = Yii::app()->user->getId();
-			}
+			// -- Confirm User ID -- //
+			$user_id = User::model()->confirmUserId($_POST['Article']['email'], $_POST['Article']['mobile']);
 			
 			// 根据用户提交的是文档还是
 			if(is_object($model->doccont) && get_class($model->doccont) === 'CUploadedFile') {
@@ -301,7 +285,10 @@ class ArticleController extends Controller
 					$spreadtable->save();
 					
 					// 注意这里的跳转要加上控制器名
-					$this->redirect(array('order/pay','id'=>$model->order_id));
+					if(Yii::app()->user->isGuest)
+						Yii::app()->user->setFlash("success",Yii::t("article","Successfully submission."));
+					else
+						$this->redirect(array('order/pay','id'=>$model->order_id));
 				}
 			}
 			elseif($model->artcont != "") {
@@ -354,7 +341,10 @@ class ArticleController extends Controller
 					$spreadtable->save();
 					
 					// 重定向
-					$this->redirect(array('order/pay','id'=>$model->order_id));
+					if(Yii::app()->user->isGuest)
+						Yii::app()->user->setFlash("text",Yii::t("article","Successfully submission, we will contact you as soon as possible."));
+					else
+						$this->redirect(array('order/pay','id'=>$model->order_id));
 				}
 			}
 			else

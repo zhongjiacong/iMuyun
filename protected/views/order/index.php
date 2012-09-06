@@ -40,16 +40,23 @@ function evaluateorder(id) {
 	});
 }
 ",CClientScript::POS_HEAD);
-$this->menu=array(
-	array(
-		'label'=>Yii::t('order','Manage Order'),
-		'url'=>array('admin'),
-		'visible'=>User::model()->isAdmin()
-	),
-);
 ?>
+
+<table class="ordertable">
+	<thead>
+		<tr>
+			<th><?=CHtml::encode(Order::model()->getAttributeLabel('id')); ?></th>
+			<th><?=CHtml::encode(Order::model()->getAttributeLabel('subject')); ?></th>
+			<th><?=Yii::t('order','Order Text'); ?></th>
+			<th><?=CHtml::encode(Order::model()->getAttributeLabel('submittime')); ?></th>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+		</tr>
+	</thead>
+</table>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
+	'template'=>'{items}{summary}<br />{pager}',
 )); ?>

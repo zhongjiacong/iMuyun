@@ -374,4 +374,37 @@ class User extends CActiveRecord
 		return array_search('English', Yii::app()->params['language']);
 	}
 
+	/**
+	 *  根据用户的邮箱和手机号码返回用户id，无则添加用户
+	 *  @param email, mobile
+	 *  @return user_id
+	 */
+	public function confirmUserId($email, $mobile)
+	{
+		// 如果用户未登录，判断用户是否注册：①注册过则记录在已注册用户id；②未注册则记录用户邮箱和手机，存入用户数据表
+		// 如果用户已登录，则记录当前用户id
+		if(Yii::app()->user->isGuest) {
+			// 初始化一个用户，和基本字段
+			$user = new User;
+			$user->email = addslashes($email);
+			$user->mobile = addslashes($mobile);
+			// 读取是否存在用户
+			$registeruser = User::model()->find('`email` = :email and `mobile` = :mobile',array(':email'=>$user->email,':mobile'=>$user->mobile));
+			if(NULL == $registeruser) {
+				date_default_timezone_set('PRC');
+				// 这里当做用户创建时间用，而不是注册时间
+				$user->registertime = date("Y-m-d H:i:s");
+				// 根据用户是否已经注册来设定订单中的用户数据
+				$user->save();
+				$user_id = $user->id;
+			}
+			else
+				$user_id = $registeruser->id;
+		}
+		else
+			$user_id = Yii::app()->user->getId();
+		
+		return $user_id;
+	}
+
 }
