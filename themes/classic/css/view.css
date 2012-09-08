@@ -331,21 +331,18 @@ div.shortbg
 .ordertable a {
 	color: #1BAD7E;
 }
-.ordertable thead tr {
-	background: #1BAD7E;
-}
 .ordertable thead tr th {
-	color: white;
+	text-align: center;
+	background: white;
 	font-family: "Microsoft Yahei";
-}
-.ordertable thead tr th, .ordertable tbody tr td {
-	border: 1px solid #CCC;
+	border-bottom: 1px solid #ddd;
 }
 .ordertable tbody tr td {
+	border: 1px solid #ddd;
 	border-top: 0;
 }
 .ordertable tbody tr.grayorder td {
-	background-color: #dfdfdf !important;
+	background-color: #eee !important;
 }
 .ordertable thead tr th:nth-child(1), .ordertable tbody tr td:nth-child(1) {
 	width: 40px;
@@ -602,6 +599,9 @@ div .graystate .linktriangle
 	line-height: 24px;
 	text-indent: 30px;
 	margin: 15px 0;
+}
+.intro .center {
+	text-align: center;
 }
 
 .updatelink {

@@ -29,9 +29,9 @@
 			<td>
 				<?php
 					if($data->paytime == NULL)
-						echo Yii::t('order','non-payment');
+						echo Yii::t('order','Non-payment');
 					else
-						echo CHtml::link(Yii::t('order','Order Detail'),array('view', 'id'=>$data->id));
+						echo Yii::t("order","Paid")."<br />".CHtml::link(Yii::t('order','Order Detail'),array('view', 'id'=>$data->id));
 				?>
 			</td>
 			

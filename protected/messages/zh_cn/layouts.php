@@ -19,7 +19,7 @@
  * @version $Id: $
  */
 return array (
-  'Suggestion Feedback' => '意见反馈',
+  'Consume' => '消费',
   'About Us' => '关于我们',
   'Add' => '添加',
   'Article' => '文本',
@@ -47,13 +47,13 @@ return array (
   'Our Team' => '团队介绍',
   'Professional human translation' => '专业人工翻译',
   'Profile' => '个人主页',
-  'Recharge' => '充值',
   'Register' => '注册',
   'Regular Service' => '常规服务',
   'Save' => '保存',
   'Special Service' => '特色服务',
   'Submit' => '提交',
   'Successful Case' => '成功案例',
+  'Suggestion Feedback' => '意见反馈',
   'Text Translation' => '文本翻译',
   'Update' => '更新',
   'User' => '用户',

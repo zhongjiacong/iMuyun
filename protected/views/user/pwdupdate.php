@@ -14,4 +14,4 @@ $this->menu=array(
 );
 ?>
 
-<?php echo $this->renderPartial('_pwdform', array('model'=>$model)); ?>
+<?=$this->renderPartial('_pwdform', array('model'=>$model)); ?>

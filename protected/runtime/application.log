@@ -6410,3 +6410,376 @@ Stack trace:
 #22 {main}
 REQUEST_URI=/imuyun/index.php/order/pay/59
 ---
+2012/09/08 03:10:09 [warning] [application] Failed to set unsafe attribute "email" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/08 03:10:09 [warning] [application] Failed to set unsafe attribute "mobile" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/08 03:10:09 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/08 03:10:09 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/08 03:10:22 [warning] [application] Failed to set unsafe attribute "email" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/08 03:10:22 [warning] [application] Failed to set unsafe attribute "mobile" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/08 03:10:22 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/08 03:10:22 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/08 03:46:15 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/08 03:46:15 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/08 11:46:35 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (184)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/08 11:46:35 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (184)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/08 06:49:10 [error] [exception.CException] exception 'CException' with message '属性 "Consume.way" 未被定义.' in D:\Dropbox\www\imuyun\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\db\ar\CActiveRecord.php(144): CComponent->__get('way')
+#1 D:\Dropbox\www\imuyun\protected\views\consume\view.php(23): CActiveRecord->__get('way')
+#2 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(127): require('D:\Dropbox\www\...')
+#3 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\Dropbox\www\...', Array, true)
+#4 D:\Dropbox\www\imuyun\framework\web\CController.php(870): CBaseController->renderFile('D:\Dropbox\www\...', Array, true)
+#5 D:\Dropbox\www\imuyun\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#6 D:\Dropbox\www\imuyun\protected\controllers\ConsumeController.php(59): CController->render('view', Array)
+#7 [internal function]: ConsumeController->actionView('1')
+#8 D:\Dropbox\www\imuyun\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ConsumeController), Array)
+#9 D:\Dropbox\www\imuyun\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ConsumeController), Object(ReflectionMethod), Array)
+#10 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 D:\Dropbox\www\imuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 D:\Dropbox\www\imuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 D:\Dropbox\www\imuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 D:\Dropbox\www\imuyun\framework\web\CController.php(292): CFilterChain->run()
+#17 D:\Dropbox\www\imuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('view')
+#19 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('consume/view')
+#20 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/imuyun/index.php/consume/1
+HTTP_REFERER=http://localhost/imuyun/index.php/consume/create
+---
+2012/09/08 06:49:12 [error] [exception.CException] exception 'CException' with message '属性 "Consume.way" 未被定义.' in D:\Dropbox\www\imuyun\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\db\ar\CActiveRecord.php(144): CComponent->__get('way')
+#1 D:\Dropbox\www\imuyun\protected\views\consume\view.php(23): CActiveRecord->__get('way')
+#2 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(127): require('D:\Dropbox\www\...')
+#3 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\Dropbox\www\...', Array, true)
+#4 D:\Dropbox\www\imuyun\framework\web\CController.php(870): CBaseController->renderFile('D:\Dropbox\www\...', Array, true)
+#5 D:\Dropbox\www\imuyun\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#6 D:\Dropbox\www\imuyun\protected\controllers\ConsumeController.php(59): CController->render('view', Array)
+#7 [internal function]: ConsumeController->actionView('2')
+#8 D:\Dropbox\www\imuyun\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ConsumeController), Array)
+#9 D:\Dropbox\www\imuyun\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ConsumeController), Object(ReflectionMethod), Array)
+#10 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 D:\Dropbox\www\imuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 D:\Dropbox\www\imuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 D:\Dropbox\www\imuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 D:\Dropbox\www\imuyun\framework\web\CController.php(292): CFilterChain->run()
+#17 D:\Dropbox\www\imuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('view')
+#19 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('consume/view')
+#20 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/imuyun/index.php/consume/2
+HTTP_REFERER=http://localhost/imuyun/index.php/consume/create
+---
+2012/09/08 06:53:24 [error] [exception.CException] exception 'CException' with message '属性 "Consume.way" 未被定义.' in D:\Dropbox\www\imuyun\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\db\ar\CActiveRecord.php(144): CComponent->__get('way')
+#1 D:\Dropbox\www\imuyun\protected\views\consume\view.php(23): CActiveRecord->__get('way')
+#2 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(127): require('D:\Dropbox\www\...')
+#3 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\Dropbox\www\...', Array, true)
+#4 D:\Dropbox\www\imuyun\framework\web\CController.php(870): CBaseController->renderFile('D:\Dropbox\www\...', Array, true)
+#5 D:\Dropbox\www\imuyun\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#6 D:\Dropbox\www\imuyun\protected\controllers\ConsumeController.php(59): CController->render('view', Array)
+#7 [internal function]: ConsumeController->actionView('3')
+#8 D:\Dropbox\www\imuyun\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ConsumeController), Array)
+#9 D:\Dropbox\www\imuyun\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ConsumeController), Object(ReflectionMethod), Array)
+#10 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 D:\Dropbox\www\imuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 D:\Dropbox\www\imuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 D:\Dropbox\www\imuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 D:\Dropbox\www\imuyun\framework\web\CController.php(292): CFilterChain->run()
+#17 D:\Dropbox\www\imuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('view')
+#19 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('consume/view')
+#20 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/imuyun/index.php/consume/3
+HTTP_REFERER=http://localhost/imuyun/index.php/consume/create
+---
+2012/09/08 06:57:15 [error] [exception.CException] exception 'CException' with message '属性 "Consume.way" 未被定义.' in D:\Dropbox\www\imuyun\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\db\ar\CActiveRecord.php(144): CComponent->__get('way')
+#1 D:\Dropbox\www\imuyun\framework\web\helpers\CHtml.php(2044): CActiveRecord->__get('way')
+#2 D:\Dropbox\www\imuyun\framework\web\helpers\CHtml.php(1774): CHtml::resolveValue(Object(Consume), 'way')
+#3 D:\Dropbox\www\imuyun\framework\web\helpers\CHtml.php(1205): CHtml::activeInputField('text', Object(Consume), 'way', Array)
+#4 D:\Dropbox\www\imuyun\framework\web\widgets\CActiveForm.php(575): CHtml::activeTextField(Object(Consume), 'way', Array)
+#5 D:\Dropbox\www\imuyun\protected\views\consume\_search.php(20): CActiveForm->textField(Object(Consume), 'way')
+#6 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(127): require('D:\Dropbox\www\...')
+#7 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\Dropbox\www\...', Array, true)
+#8 D:\Dropbox\www\imuyun\framework\web\CController.php(870): CBaseController->renderFile('D:\Dropbox\www\...', Array, true)
+#9 D:\Dropbox\www\imuyun\protected\views\consume\admin.php(20): CController->renderPartial('_search', Array)
+#10 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(127): require('D:\Dropbox\www\...')
+#11 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\Dropbox\www\...', Array, true)
+#12 D:\Dropbox\www\imuyun\framework\web\CController.php(870): CBaseController->renderFile('D:\Dropbox\www\...', Array, true)
+#13 D:\Dropbox\www\imuyun\framework\web\CController.php(783): CController->renderPartial('admin', Array, true)
+#14 D:\Dropbox\www\imuyun\protected\controllers\ConsumeController.php(166): CController->render('admin', Array)
+#15 D:\Dropbox\www\imuyun\framework\web\actions\CInlineAction.php(50): ConsumeController->actionAdmin()
+#16 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#17 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#18 D:\Dropbox\www\imuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#19 D:\Dropbox\www\imuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#20 D:\Dropbox\www\imuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#21 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#22 D:\Dropbox\www\imuyun\framework\web\CController.php(292): CFilterChain->run()
+#23 D:\Dropbox\www\imuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('admin')
+#25 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('consume/admin')
+#26 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#27 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/imuyun/index.php/consume/admin
+HTTP_REFERER=http://localhost/imuyun/index.php/consume/create
+---
+2012/09/08 07:12:27 [error] [exception.CException] exception 'CException' with message '属性 "Consume.way" 未被定义.' in D:\Dropbox\www\imuyun\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\db\ar\CActiveRecord.php(144): CComponent->__get('way')
+#1 D:\Dropbox\www\imuyun\framework\web\helpers\CHtml.php(2044): CActiveRecord->__get('way')
+#2 D:\Dropbox\www\imuyun\framework\web\helpers\CHtml.php(1774): CHtml::resolveValue(Object(Consume), 'way')
+#3 D:\Dropbox\www\imuyun\framework\web\helpers\CHtml.php(1205): CHtml::activeInputField('text', Object(Consume), 'way', Array)
+#4 D:\Dropbox\www\imuyun\framework\zii\widgets\grid\CDataColumn.php(105): CHtml::activeTextField(Object(Consume), 'way', Array)
+#5 D:\Dropbox\www\imuyun\framework\zii\widgets\grid\CGridColumn.php(106): CDataColumn->renderFilterCellContent()
+#6 D:\Dropbox\www\imuyun\framework\zii\widgets\grid\CGridView.php(450): CGridColumn->renderFilterCell()
+#7 D:\Dropbox\www\imuyun\framework\zii\widgets\grid\CGridView.php(428): CGridView->renderFilter()
+#8 D:\Dropbox\www\imuyun\framework\zii\widgets\grid\CGridView.php(398): CGridView->renderTableHeader()
+#9 D:\Dropbox\www\imuyun\framework\zii\widgets\CBaseListView.php(158): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 D:\Dropbox\www\imuyun\framework\zii\widgets\CBaseListView.php(141): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#12 D:\Dropbox\www\imuyun\framework\zii\widgets\CBaseListView.php(126): CBaseListView->renderContent()
+#13 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(174): CBaseListView->run()
+#14 D:\Dropbox\www\imuyun\protected\views\consume\admin.php(38): CBaseController->widget('zii.widgets.gri...', Array)
+#15 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(127): require('D:\Dropbox\www\...')
+#16 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\Dropbox\www\...', Array, true)
+#17 D:\Dropbox\www\imuyun\framework\web\CController.php(870): CBaseController->renderFile('D:\Dropbox\www\...', Array, true)
+#18 D:\Dropbox\www\imuyun\framework\web\CController.php(783): CController->renderPartial('admin', Array, true)
+#19 D:\Dropbox\www\imuyun\protected\controllers\ConsumeController.php(166): CController->render('admin', Array)
+#20 D:\Dropbox\www\imuyun\framework\web\actions\CInlineAction.php(50): ConsumeController->actionAdmin()
+#21 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#22 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#23 D:\Dropbox\www\imuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#24 D:\Dropbox\www\imuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#25 D:\Dropbox\www\imuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#26 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#27 D:\Dropbox\www\imuyun\framework\web\CController.php(292): CFilterChain->run()
+#28 D:\Dropbox\www\imuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#29 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('admin')
+#30 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('consume/admin')
+#31 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#32 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#33 {main}
+REQUEST_URI=/imuyun/index.php/consume/admin
+---
+2012/09/08 07:20:11 [error] [exception.CException] exception 'CException' with message '属性 "CWebApplication.action" 未被定义.' in D:\Dropbox\www\imuyun\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\base\CModule.php(106): CComponent->__get('action')
+#1 D:\Dropbox\www\imuyun\protected\views\consume\_form.php(31): CModule->__get('action')
+#2 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(127): require('D:\Dropbox\www\...')
+#3 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\Dropbox\www\...', Array, true)
+#4 D:\Dropbox\www\imuyun\framework\web\CController.php(870): CBaseController->renderFile('D:\Dropbox\www\...', Array, true)
+#5 D:\Dropbox\www\imuyun\protected\views\consume\create.php(16): CController->renderPartial('_form', Array)
+#6 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(127): require('D:\Dropbox\www\...')
+#7 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\Dropbox\www\...', Array, true)
+#8 D:\Dropbox\www\imuyun\framework\web\CController.php(870): CBaseController->renderFile('D:\Dropbox\www\...', Array, true)
+#9 D:\Dropbox\www\imuyun\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#10 D:\Dropbox\www\imuyun\protected\controllers\ConsumeController.php(87): CController->render('create', Array)
+#11 D:\Dropbox\www\imuyun\framework\web\actions\CInlineAction.php(50): ConsumeController->actionCreate()
+#12 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#13 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#14 D:\Dropbox\www\imuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#15 D:\Dropbox\www\imuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#16 D:\Dropbox\www\imuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#17 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\Dropbox\www\imuyun\framework\web\CController.php(292): CFilterChain->run()
+#19 D:\Dropbox\www\imuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('create')
+#21 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('consume/create')
+#22 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/imuyun/index.php/consume/create
+---
+2012/09/08 15:27:04 [error] [exception.CException] exception 'CException' with message '属性 "Consume.way" 未被定义.' in D:\Dropbox\www\imuyun\framework\base\CComponent.php:174
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\db\ar\CActiveRecord.php(160): CComponent->__set('way', 2)
+#1 D:\Dropbox\www\imuyun\protected\controllers\OrderController.php(100): CActiveRecord->__set('way', 2)
+#2 D:\Dropbox\www\imuyun\framework\web\actions\CInlineAction.php(50): OrderController->actionCreate()
+#3 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\Dropbox\www\imuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\Dropbox\www\imuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\www\imuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\Dropbox\www\imuyun\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\Dropbox\www\imuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('create')
+#12 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('order/create')
+#13 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/imuyun/index.php/order/create
+HTTP_REFERER=http://localhost/imuyun/index.php/order/pay/1
+---
+2012/09/08 15:27:10 [error] [exception.CException] exception 'CException' with message '属性 "Consume.way" 未被定义.' in D:\Dropbox\www\imuyun\framework\base\CComponent.php:174
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\db\ar\CActiveRecord.php(160): CComponent->__set('way', 2)
+#1 D:\Dropbox\www\imuyun\protected\controllers\OrderController.php(100): CActiveRecord->__set('way', 2)
+#2 D:\Dropbox\www\imuyun\framework\web\actions\CInlineAction.php(50): OrderController->actionCreate()
+#3 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\Dropbox\www\imuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\Dropbox\www\imuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\www\imuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\Dropbox\www\imuyun\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\Dropbox\www\imuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('create')
+#12 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('order/create')
+#13 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/imuyun/index.php/order/create
+HTTP_REFERER=http://localhost/imuyun/index.php/order/pay/1
+---
+2012/09/08 15:27:20 [error] [exception.CException] exception 'CException' with message '属性 "Consume.way" 未被定义.' in D:\Dropbox\www\imuyun\framework\base\CComponent.php:174
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\db\ar\CActiveRecord.php(160): CComponent->__set('way', 2)
+#1 D:\Dropbox\www\imuyun\protected\controllers\OrderController.php(100): CActiveRecord->__set('way', 2)
+#2 D:\Dropbox\www\imuyun\framework\web\actions\CInlineAction.php(50): OrderController->actionCreate()
+#3 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\Dropbox\www\imuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\Dropbox\www\imuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\www\imuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\Dropbox\www\imuyun\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\Dropbox\www\imuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('create')
+#12 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('order/create')
+#13 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/imuyun/index.php/order/create
+HTTP_REFERER=http://localhost/imuyun/index.php/order/pay/1
+---
+2012/09/08 15:41:21 [error] [php] Creating default object from empty value (D:\Dropbox\www\imuyun\protected\controllers\ConsumeController.php:79)
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(134): ConsumeController->runAction()
+#1 D:\Dropbox\www\imuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#2 D:\Dropbox\www\imuyun\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#3 D:\Dropbox\www\imuyun\framework\web\filters\CInlineFilter.php(59): ConsumeController->filterAccessControl()
+#4 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 D:\Dropbox\www\imuyun\framework\web\CController.php(292): CFilterChain->run()
+#6 D:\Dropbox\www\imuyun\framework\web\CController.php(266): ConsumeController->runActionWithFilters()
+#7 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): ConsumeController->run()
+#8 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 D:\Dropbox\www\imuyun\index.php(13): CWebApplication->run()
+REQUEST_URI=/imuyun/index.php/consume/create
+in D:\Dropbox\www\imuyun\protected\controllers\ConsumeController.php (79)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/08 07:48:08 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/08 07:48:08 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/08 07:48:11 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/08 07:48:11 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/08 07:48:34 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/08 07:48:34 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/08 15:48:35 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (184)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/08 15:48:35 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (184)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/08 09:41:41 [error] [php] strtotime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. (D:\Dropbox\www\imuyun\protected\views\article\_view.php:23)
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(96): ArticleController->renderInternal()
+#1 D:\Dropbox\www\imuyun\framework\web\CController.php(870): ArticleController->renderFile()
+#2 D:\Dropbox\www\imuyun\framework\zii\widgets\CListView.php(242): ArticleController->renderPartial()
+#3 D:\Dropbox\www\imuyun\framework\zii\widgets\CBaseListView.php(158): CListView->renderItems()
+#4 unknown(0): CListView->renderSection()
+#5 D:\Dropbox\www\imuyun\framework\zii\widgets\CBaseListView.php(141): preg_replace_callback()
+#6 D:\Dropbox\www\imuyun\framework\zii\widgets\CBaseListView.php(126): CListView->renderContent()
+#7 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(174): CListView->run()
+#8 D:\Dropbox\www\imuyun\protected\views\article\index.php(35): ArticleController->widget()
+#9 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(127): require()
+#10 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(96): ArticleController->renderInternal()
+#11 D:\Dropbox\www\imuyun\framework\web\CController.php(870): ArticleController->renderFile()
+#12 D:\Dropbox\www\imuyun\framework\web\CController.php(783): ArticleController->renderPartial()
+#13 D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php(447): ArticleController->render()
+#14 D:\Dropbox\www\imuyun\framework\web\actions\CInlineAction.php(50): ArticleController->actionIndex()
+#15 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CInlineAction->runWithParams()
+#16 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(134): ArticleController->runAction()
+#17 D:\Dropbox\www\imuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#18 D:\Dropbox\www\imuyun\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#19 D:\Dropbox\www\imuyun\framework\web\filters\CInlineFilter.php(59): ArticleController->filterAccessControl()
+#20 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#21 D:\Dropbox\www\imuyun\framework\web\CController.php(292): CFilterChain->run()
+#22 D:\Dropbox\www\imuyun\framework\web\CController.php(266): ArticleController->runActionWithFilters()
+#23 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): ArticleController->run()
+#24 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#25 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#26 D:\Dropbox\www\imuyun\index.php(13): CWebApplication->run()
+REQUEST_URI=/imuyun/index.php/article/index
+in D:\Dropbox\www\imuyun\protected\views\article\_view.php (23)
+in D:\Dropbox\www\imuyun\protected\views\article\index.php (35)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (447)

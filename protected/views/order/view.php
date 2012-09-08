@@ -67,13 +67,14 @@ $this->menu=array(
 		foreach ($sentence as $skey => $svalue) {
 			$artcont .= $svalue->original;
 		}
+		$textinfor = Article::model()->textInfor($value->srclang_id, $artcont);
 ?>
 		<div class="form">
 			<dl>
-				<dt><?=CHtml::link(Yii::t('article','Article').': '.strval($key + 1),
+				<dt><?=CHtml::link(Article::model()->getAttributeLabel('id').': '.$value->id,
 					array('article/view','id'=>$value->id)); ?>
 					<br />
-					<?=Yii::t('article','Price').': '.$value->wordcount*120/1000; ?></dt>
+					<?=Yii::t('article','Price').': '.$textinfor["price"]; ?></dt>
 				<dd>
 					<?=Yii::t('article','Language').': '.Yii::app()->params['language'][$value->srclang_id].'->'.
 						Yii::app()->params['language'][$value->tgtlang_id]; ?>

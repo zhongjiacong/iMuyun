@@ -6,47 +6,47 @@
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
+		<?=$form->label($model,'id'); ?>
+		<?=$form->textField($model,'id'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'fieldcat_id'); ?>
-		<?php echo $form->textField($model,'fieldcat_id'); ?>
+		<?=$form->label($model,'fieldcat_id'); ?>
+		<?=$form->textField($model,'fieldcat_id'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'order_id'); ?>
-		<?php echo $form->textField($model,'order_id'); ?>
+		<?=$form->label($model,'order_id'); ?>
+		<?=$form->textField($model,'order_id'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'wordcount'); ?>
-		<?php echo $form->textField($model,'wordcount'); ?>
+		<?=$form->label($model,'wordcount'); ?>
+		<?=$form->textField($model,'wordcount'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'srclang_id'); ?>
-		<?php echo $form->textField($model,'srclang_id'); ?>
+		<?=$form->label($model,'srclang_id'); ?>
+		<?=$form->textField($model,'srclang_id'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'tgtlang_id'); ?>
-		<?php echo $form->textField($model,'tgtlang_id'); ?>
+		<?=$form->label($model,'tgtlang_id'); ?>
+		<?=$form->textField($model,'tgtlang_id'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'comptime'); ?>
-		<?php echo $form->textField($model,'comptime'); ?>
+		<?=$form->label($model,'comptime'); ?>
+		<?=$form->textField($model,'comptime'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'edittime'); ?>
-		<?php echo $form->textField($model,'edittime'); ?>
+		<?=$form->label($model,'edittime'); ?>
+		<?=$form->textField($model,'edittime'); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+		<?=CHtml::submitButton('Search'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

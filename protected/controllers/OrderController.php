@@ -95,13 +95,13 @@ class OrderController extends Controller
 				$totalprice += $pricevalue->price;
 			}
 			// 增加消费记录
-			$recharge = new Recharge;
-			$recharge->user_id = Yii::app()->user->getId();
-			$recharge->way = 2;
-			$recharge->amount = -$totalprice;
-			$recharge->audit = 1;
-			$recharge->edittime = date("Y-m-d H:i:s");
-			$recharge->save();
+			$consume = new Consume;
+			$consume->user_id = Yii::app()->user->getId();
+			$consume->content = "Text Spending";
+			$consume->amount = -$totalprice;
+			$consume->audit = 1;
+			$consume->edittime = date("Y-m-d H:i:s");
+			$consume->save();
 			
 			if($model->save())
 				echo json_encode(array('state'=>'succeed'));

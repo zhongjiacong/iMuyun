@@ -86,13 +86,13 @@ return array(
 	'orderstate'=>array(
 	),
 	
-	'rechargeway'=>array(
-		'Web Recharge',
-		'App Recharge',
+	/*'consumeway'=>array(
+		'Web Consume',
+		'App Consume',
 		'Text Spending',
 		'Video Spending',
 		'Other',
-	),
+	),*/
 	
 	'product'=>array(
 		'Video',

@@ -19,7 +19,7 @@
  * @version $Id: $
  */
 return array (
-  'Has not been evaluated' => '尚未进行评价',
+  'Non-payment' => '未付款',
   'Audit' => '审核',
   'Audited' => '已审核',
   'Customer' => '客户',
@@ -29,6 +29,7 @@ return array (
   'Evaluate' => '评价',
   'Evaluation module will open soon' => '评价模块即将开放',
   'Express' => '快递',
+  'Has not been evaluated' => '尚未进行评价',
   'ID' => '订单号',
   'Invoice' => '发票',
   'Manage Order' => '管理订单',
@@ -50,6 +51,6 @@ return array (
   'Translation is not complete' => '翻译未完成',
   'Unaudited' => '未审核',
   'View Order' => '查看订单',
+  'Your balance is not enought.' => '您的余额不足。',
   'audited' => '已审核',
-  'non-payment' => '未付款',
 );

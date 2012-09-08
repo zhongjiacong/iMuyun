@@ -19,8 +19,8 @@
  * @version $Id: $
  */
 return array (
-  'Successfully submission, we will contact you as soon as possible.' => '成功提交，我们将会尽快联系您。',
-  'Article' => '文本',
+  'Successfully submission.' => '',
+  'Article' => '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@文本@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@',
   'Article Content' => '翻译内容',
   'Complete Time' => '完成时间',
   'Complete Translation' => '完成翻译',
@@ -50,6 +50,7 @@ return array (
   'Start Translation' => '开始翻译',
   'Start Translation failed' => '开始翻译失败',
   'Subject' => '订单主题',
+  'Successfully submission, we will contact you as soon as possible.' => '成功提交，我们将会尽快联系您。',
   'Target Language' => '目标语言',
   'Terms of Service' => '服务条款',
   'Text Translation' => '文本翻译',

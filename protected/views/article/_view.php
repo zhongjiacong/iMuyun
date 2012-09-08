@@ -20,7 +20,10 @@
 		Yii::app()->params['language'][intval($data->tgtlang_id)]; ?>
 	
 	<b><?=Yii::t('article','Edit Time'); ?></b>
-	<?=date('m-d H:i',strtotime($data->edittime)); ?>
+	<?php
+		date_default_timezone_set("PRC");
+		echo date('m-d H:i',strtotime($data->edittime));
+	?>
 
 	<?php if(NULL != $data->comptime) { ?>
 	<b><?=CHtml::encode($data->getAttributeLabel('comptime')); ?>:</b>
