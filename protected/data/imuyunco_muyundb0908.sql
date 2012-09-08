@@ -510,18 +510,18 @@ CREATE TABLE `tbl_u_friend` (
 -- 导出表中的数据 `tbl_u_friend`
 -- 
 
-INSERT INTO `tbl_u_friend` VALUES (1, 100011, 100011, 0, 0, '2012-08-14 00:00:00');
-INSERT INTO `tbl_u_friend` VALUES (2, 100011, 100014, 0, 0, '2012-08-14 00:00:00');
-INSERT INTO `tbl_u_friend` VALUES (3, 100014, 100011, 0, 0, '2012-08-14 00:00:00');
-INSERT INTO `tbl_u_friend` VALUES (4, 100014, 100014, 0, 0, '2012-08-14 00:00:00');
-INSERT INTO `tbl_u_friend` VALUES (5, 100014, 100013, 0, 0, '2012-08-14 00:00:00');
-INSERT INTO `tbl_u_friend` VALUES (16, 100001, 100013, 0, 0, '2012-08-16 21:01:34');
-INSERT INTO `tbl_u_friend` VALUES (8, 100013, 100001, 0, 0, '2012-08-15 00:00:00');
-INSERT INTO `tbl_u_friend` VALUES (17, 100001, 100003, 0, 0, '2012-08-16 21:03:56');
-INSERT INTO `tbl_u_friend` VALUES (10, 100016, 100001, 0, 0, '2012-08-15 00:00:00');
-INSERT INTO `tbl_u_friend` VALUES (12, 100013, 100016, 0, 0, '2012-08-15 00:00:00');
-INSERT INTO `tbl_u_friend` VALUES (14, 100011, 100013, 0, 0, '2012-08-16 00:00:00');
-INSERT INTO `tbl_u_friend` VALUES (15, 100011, 100016, 0, 0, '2012-08-16 00:00:00');
+INSERT INTO `tbl_u_friend` VALUES (1, 100011, 100011, '', 0, 0, '2012-08-14 00:00:00');
+INSERT INTO `tbl_u_friend` VALUES (2, 100011, 100014, '', 0, 0, '2012-08-14 00:00:00');
+INSERT INTO `tbl_u_friend` VALUES (3, 100014, 100011, '', 0, 0, '2012-08-14 00:00:00');
+INSERT INTO `tbl_u_friend` VALUES (4, 100014, 100014, '', 0, 0, '2012-08-14 00:00:00');
+INSERT INTO `tbl_u_friend` VALUES (5, 100014, 100013, '', 0, 0, '2012-08-14 00:00:00');
+INSERT INTO `tbl_u_friend` VALUES (16, 100001, 100013, '', 0, 0, '2012-08-16 21:01:34');
+INSERT INTO `tbl_u_friend` VALUES (8, 100013, 100001, '', 0, 0, '2012-08-15 00:00:00');
+INSERT INTO `tbl_u_friend` VALUES (17, 100001, 100003, '', 0, 0, '2012-08-16 21:03:56');
+INSERT INTO `tbl_u_friend` VALUES (10, 100016, 100001, '', 0, 0, '2012-08-15 00:00:00');
+INSERT INTO `tbl_u_friend` VALUES (12, 100013, 100016, '', 0, 0, '2012-08-15 00:00:00');
+INSERT INTO `tbl_u_friend` VALUES (14, 100011, 100013, '', 0, 0, '2012-08-16 00:00:00');
+INSERT INTO `tbl_u_friend` VALUES (15, 100011, 100016, '', 0, 0, '2012-08-16 00:00:00');
 
 -- --------------------------------------------------------
 
