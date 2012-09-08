@@ -58,7 +58,7 @@ class UserController extends Controller
 	public function actionRegister()
 	{
 		// 这样才能绑定上rules的on
-		$model=new User;
+		$model = new User;
 		$model->scenario = 'register';
 
 		// Uncomment the following line if AJAX validation is needed
@@ -66,9 +66,9 @@ class UserController extends Controller
 
 		if(isset($_POST['User']))
 		{
-			$model->attributes=$_POST['User'];
+			$model->attributes = $_POST['User'];
 			
-			// 1.修改数据模型的其他信息
+			// 1. 修改数据模型的其他信息
 			// 对注册的密码进行散列存储
 			// 这里用paypassword暂时用来存储邮箱验证编码
 			$model->loginpassword = User::hashPassword($model->loginpassword);
@@ -84,28 +84,24 @@ class UserController extends Controller
 			$model->registertime = date("Y-m-d H:i:s");
 			$model->lastlogintime = date("Y-m-d H:i:s");
 			
-			// 很重要，这个不能因表单提交而改变
-			$model->enabled = 0;
-			
 			if($model->save()) {
-				// 2.给用户添加默认语言
+				// 2. 很重要，这个不能因表单提交而改变
+				User::model()->updateByPk($model->id,array("enabled"=>0));
+			
+				// 3. 给用户添加默认语言
 				$userlang = new Userlang;
 				$userlang->user_id = $model->id;
 				$userlang->lang_id = User::model()->defaultLang();
 				$userlang->save();
 				
-				// 3.发送验证邮件
+				// 4. 发送验证邮件
 				User::model()->emailVerify($model->email, $verifyCode);
-				$this->render('register',array(
-					'model'=>$model,
-				));
+				//$this->redirect(Yii::app()->request->baseUrl.'/index.php/user/register');
 			}
 		}
-		else {
-			$this->render('register',array(
-				'model'=>$model,
-			));
-		}
+		$this->render('register',array(
+			'model'=>$model,
+		));
 	}
 	
 	/**

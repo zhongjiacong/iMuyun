@@ -25,7 +25,7 @@ class Email {
         else
             Yii::app()->mailer->AddAddress($address);
         Yii::app()->mailer->Subject = $subjet;
-        Yii::app()->mailer->MsgHTML(eregi_replace("[\]",'',$body));
+        Yii::app()->mailer->MsgHTML($body);
         //Yii::app()->mailer->Body = $body;
         Yii::app()->mailer->Send();
     }

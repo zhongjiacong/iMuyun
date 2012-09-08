@@ -293,6 +293,9 @@ class User extends CActiveRecord
 		if(!$user->save())
 			throw new CHttpException(400,Yii::t('user','User cannot enabled.'));
 		
+		// 删除所有邮箱名相同的副本
+		User::model()->deleteAll("`email` = :email AND enabled = 0",array(":email"=>$user->email));
+		
 		// 置空后才登录，这里不remember，所以login第二个参数为0
 		// 这里的密码已经散列过
 		$identity = new UserIdentity($user->email,$user->loginpassword);
