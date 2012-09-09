@@ -80,4 +80,5 @@ class SiteController extends Controller
 			Yii::app()->request->baseUrl.'/index.php"</script>';*/
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
 }

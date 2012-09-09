@@ -6916,3 +6916,144 @@ in D:\Dropbox\www\imuyun\index.php (13)
 2012/09/09 15:55:12 [warning] [application] Failed to set unsafe attribute "lang" of "User".
 in D:\Dropbox\www\imuyun\protected\controllers\UserController.php (69)
 in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/09 09:10:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "imuyun" 动作.' in D:\Dropbox\www\imuyun\framework\web\CController.php:484
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\web\CController.php(271): CController->missingAction('imuyun')
+#1 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('imuyun')
+#2 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('site/imuyun/imu...')
+#3 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/imuyun/index.php/site/imuyun/imuyun/imuyun/imuyun/imuyun/imuyun/imuyun/imuyun/imuyun/imuyun/imuyun/imuyun/imuyun/imuyun/imuyun/imuyun/imuyun/imuyun/imuyun/imuyun/imuyun/
+---
+2012/09/09 09:12:50 [warning] [application] Failed to set unsafe attribute "email" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/09 09:12:50 [warning] [application] Failed to set unsafe attribute "mobile" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/09 09:12:50 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/09 09:12:50 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/09 09:39:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '找不到请求的视图 "forget"。' in D:\Dropbox\www\imuyun\framework\web\actions\CViewAction.php:113
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\web\actions\CViewAction.php(124): CViewAction->resolveView('forget')
+#1 D:\Dropbox\www\imuyun\framework\web\actions\CAction.php(75): CViewAction->run()
+#2 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 D:\Dropbox\www\imuyun\framework\web\CController.php(287): CController->runAction(Object(CViewAction))
+#4 D:\Dropbox\www\imuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('page')
+#6 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('site/page')
+#7 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/imuyun/index.php/site/page?view=forget
+HTTP_REFERER=http://localhost/imuyun/index.php/site/login
+---
+2012/09/09 10:25:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message '找不到请求的视图 "forget"。' in D:\Dropbox\www\imuyun\framework\web\actions\CViewAction.php:113
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\web\actions\CViewAction.php(124): CViewAction->resolveView('forget')
+#1 D:\Dropbox\www\imuyun\framework\web\actions\CAction.php(75): CViewAction->run()
+#2 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 D:\Dropbox\www\imuyun\framework\web\CController.php(287): CController->runAction(Object(CViewAction))
+#4 D:\Dropbox\www\imuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('page')
+#6 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('site/page')
+#7 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/imuyun/index.php/site/page?view=forget
+HTTP_REFERER=http://localhost/imuyun/index.php/site/login
+---
+2012/09/09 10:26:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "forget" 动作.' in D:\Dropbox\www\imuyun\framework\web\CController.php:484
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\web\CController.php(271): CController->missingAction('forget')
+#1 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('forget')
+#2 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('site/forget')
+#3 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/imuyun/index.php/site/forget
+HTTP_REFERER=http://localhost/imuyun/index.php/site/login
+---
+2012/09/09 10:35:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "forget" 动作.' in D:\Dropbox\www\imuyun\framework\web\CController.php:484
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\web\CController.php(271): CController->missingAction('forget')
+#1 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('forget')
+#2 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('site/forget')
+#3 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/imuyun/index.php/site/forget
+HTTP_REFERER=http://localhost/imuyun/index.php/site/login
+---
+2012/09/09 11:30:48 [error] [php] date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. (D:\Dropbox\www\imuyun\protected\extensions\mailer\phpmailer\class.phpmailer.php:1799)
+Stack trace:
+#0 D:\Dropbox\www\imuyun\protected\extensions\mailer\phpmailer\class.phpmailer.php(499): PHPMailer->CreateHeader()
+#1 unknown(0): PHPMailer->Send()
+#2 D:\Dropbox\www\imuyun\protected\extensions\mailer\EMailer.php(153): call_user_func_array()
+#3 D:\Dropbox\www\imuyun\protected\components\Email.php(30): EMailer->__call()
+#4 D:\Dropbox\www\imuyun\protected\components\Email.php(30): EMailer->Send()
+#5 D:\Dropbox\www\imuyun\protected\controllers\UserController.php(128): sendEmail()
+#6 D:\Dropbox\www\imuyun\framework\web\actions\CInlineAction.php(50): UserController->actionForget()
+#7 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CInlineAction->runWithParams()
+#8 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(134): UserController->runAction()
+#9 D:\Dropbox\www\imuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 D:\Dropbox\www\imuyun\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#11 D:\Dropbox\www\imuyun\framework\web\filters\CInlineFilter.php(59): UserController->filterAccessControl()
+#12 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#13 D:\Dropbox\www\imuyun\framework\web\CController.php(292): CFilterChain->run()
+#14 D:\Dropbox\www\imuyun\framework\web\CController.php(266): UserController->runActionWithFilters()
+#15 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): UserController->run()
+#16 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#17 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 D:\Dropbox\www\imuyun\index.php(13): CWebApplication->run()
+REQUEST_URI=/imuyun/index.php/user/forget
+in D:\Dropbox\www\imuyun\protected\extensions\mailer\phpmailer\class.phpmailer.php (1799)
+in D:\Dropbox\www\imuyun\protected\extensions\mailer\phpmailer\class.phpmailer.php (961)
+in D:\Dropbox\www\imuyun\protected\extensions\mailer\phpmailer\class.phpmailer.php (499)
+2012/09/09 12:15:43 [error] [php] session_regenerate_id(): Cannot regenerate session id - headers already sent (D:\Dropbox\www\imuyun\framework\web\CHttpSession.php:182)
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\web\auth\CWebUser.php(228): CWebUser->changeIdentity()
+#1 D:\Dropbox\www\imuyun\protected\controllers\UserController.php(159): CWebUser->login()
+#2 D:\Dropbox\www\imuyun\framework\web\actions\CInlineAction.php(50): UserController->actionReset()
+#3 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CInlineAction->runWithParams()
+#4 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(134): UserController->runAction()
+#5 D:\Dropbox\www\imuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\Dropbox\www\imuyun\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#7 D:\Dropbox\www\imuyun\framework\web\filters\CInlineFilter.php(59): UserController->filterAccessControl()
+#8 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#9 D:\Dropbox\www\imuyun\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\Dropbox\www\imuyun\framework\web\CController.php(266): UserController->runActionWithFilters()
+#11 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): UserController->run()
+#12 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#13 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\Dropbox\www\imuyun\index.php(13): CWebApplication->run()
+REQUEST_URI=/imuyun/index.php/user/reset?verifycode=35a1cf8031cb5ad91164
+in D:\Dropbox\www\imuyun\protected\controllers\UserController.php (159)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/09 12:18:24 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Error' in D:\Dropbox\www\imuyun\protected\controllers\UserController.php:170
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\web\actions\CInlineAction.php(50): UserController->actionReset()
+#1 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 D:\Dropbox\www\imuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 D:\Dropbox\www\imuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 D:\Dropbox\www\imuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\www\imuyun\framework\web\CController.php(292): CFilterChain->run()
+#8 D:\Dropbox\www\imuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('reset')
+#10 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('user/reset')
+#11 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/imuyun/index.php/user/reset?verifycode=35a1cf8031cb5ad91164
+---

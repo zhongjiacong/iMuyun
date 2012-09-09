@@ -294,7 +294,7 @@ class ArticleController extends Controller
 					
 					// 注意这里的跳转要加上控制器名
 					if(Yii::app()->user->isGuest)
-						Yii::app()->user->setFlash("success",Yii::t("article","Successfully submission."));
+						Yii::app()->user->setFlash("text",Yii::t("article","Successfully submission."));
 					else
 						$this->redirect(array('order/pay','id'=>$model->order_id));
 				}

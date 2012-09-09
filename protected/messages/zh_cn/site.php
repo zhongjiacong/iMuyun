@@ -19,6 +19,7 @@
  * @version $Id: $
  */
 return array (
+  'Forgot Password?' => '忘记密码？',
   'Error' => '错误',
   'Login' => '登录',
   'Password' => '密码',

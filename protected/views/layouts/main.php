@@ -124,10 +124,10 @@
 						echo ' | ';
 						echo CHtml::link(Yii::t('layouts','Logout'),array('/site/logout'));
 					}
-					else
-						echo CHtml::link(Yii::t('layouts','Login'),array('/site/login'));
-					echo ' | ';
-					echo CHtml::link(Yii::t('layouts','Register'),array('/user/register'));
+					else {
+						echo CHtml::link(Yii::t('layouts','Login'),array('/site/login')).' | '.
+							CHtml::link(Yii::t('layouts','Register'),array('/user/register'));
+					}
 				?>
 			</div>
 		</div>

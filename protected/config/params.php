@@ -10,7 +10,7 @@ return array(
         'Username'=>'muyunfanyi',
         'Password'=>'muyunfanyi2012',
         'From'=>'muyunfanyi@163.com',
-        'FromName'=>'muyunfanyi',
+        'FromName'=>'牧云翻译',
     ),
     
 	// 系统性别

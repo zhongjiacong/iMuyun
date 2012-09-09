@@ -19,8 +19,7 @@
  * @version $Id: $
  */
 return array (
-  'Successfully submission.' => '',
-  'Article' => '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@文本@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@',
+  'Successfully submission.' => '成功提交。',
   'Article Content' => '翻译内容',
   'Complete Time' => '完成时间',
   'Complete Translation' => '完成翻译',

@@ -52,6 +52,7 @@ Yii::app()->clientScript->registerScript('register', "
 		<dt><?=$form->labelEx($model,'password'); ?></dt>
 		<dd>
 			<?=$form->passwordField($model,'password',array('size'=>28,'maxlength'=>40)); ?>
+			<?=CHtml::link(Yii::t("site","Forgot Password?"),array("/user/forget")); ?>
 			<?=$form->error($model,'password'); ?>
 		</dd>
 	</dl>
@@ -65,8 +66,7 @@ Yii::app()->clientScript->registerScript('register', "
 	</dl>
 
 	<div class="row buttons">
-		<?=CHtml::submitButton(Yii::t('site','Login'),
-			array('id'=>'redbtn')); ?>
+		<?=CHtml::submitButton(Yii::t('site','Login'),array('id'=>'redbtn')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

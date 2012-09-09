@@ -1796,6 +1796,7 @@ class PHPMailer {
    * @static
    */
   public static function RFCDate() {
+  	date_default_timezone_set("PRC");
     $tz = date('Z');
     $tzs = ($tz < 0) ? '-' : '+';
     $tz = abs($tz);

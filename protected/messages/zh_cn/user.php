@@ -19,7 +19,9 @@
  * @version $Id: $
  */
 return array (
-  'Native Language' => '母语',
+  'Change' => '更改',
+  'Click the link to reset your password! ' => '点击链接重置您的密码！',
+  'Muyun Translation reset password:' => '牧云翻译重置密码：',
   'Account Category' => '用户类型',
   'Account Settings' => '帐号设置',
   'Address' => '地址',
@@ -33,6 +35,7 @@ return array (
   'Delete User' => '删除用户',
   'Email' => '邮箱',
   'Enabled' => '启用',
+  'Find' => '找回',
   'Gender' => '性别',
   'Gender Id' => '性别',
   'Introduce' => '介绍',
@@ -43,8 +46,10 @@ return array (
   'Manage User' => '管理用户',
   'Mobile' => '手机',
   'Muyun Translation account activation:' => '牧云翻译用户验证：',
+  'Native Language' => '母语',
   'Nickname' => '昵称',
   'Pay Password' => '支付密码',
+  'Please check your email.' => '请查看您的邮箱。',
   'Please repeat your password.' => '请重复输入您的密码。',
   'Postcode' => '邮政编码',
   'Privilege Id' => '用户权限',

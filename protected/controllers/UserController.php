@@ -27,7 +27,7 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','register','emailverify'),
+				'actions'=>array('index','view','register','emailverify','forget','reset'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -103,6 +103,74 @@ class UserController extends Controller
 		$this->render('register',array(
 			'model'=>$model,
 		));
+	}
+	
+	/*
+	 *  forget password
+	 */
+	public function actionForget()
+	{
+		$model = new User;
+		$model->scenario = 'forget';
+
+		// Uncomment the following line if AJAX validation is needed
+		$this->performAjaxValidation($model);
+		
+		if(Yii::app()->request->isPostRequest) {
+			$model->attributes = $_POST['User'];
+			
+			$verifyCode = User::model()->prodVerifyCode();
+			User::model()->updateAll(array("verifycode"=>$verifyCode),"`email` = :email",array(":email"=>$model->email));
+			
+			$link = Yii::app()->request->hostInfo.Yii::app()->request->baseUrl.
+				'/index.php/user/reset?verifycode='.$verifyCode;
+			Email::sendEmail($model->email, Yii::t('user','Muyun Translation reset password:'),
+				Yii::t('user','Click the link to reset your password! ').CHtml::link($link, $link));
+			
+			Yii::app()->user->setFlash("forget",Yii::t("user","Please check your email."));
+		}
+
+		// display the forget form
+		$this->render('forget',array('model'=>$model));
+	}
+	
+	public function actionReset()
+	{
+		$model = new User;
+		$model->scenario = 'reset';
+
+		// Uncomment the following line if AJAX validation is needed
+		$this->performAjaxValidation($model);
+		
+		if(Yii::app()->request->isPostRequest) {
+			$user = User::model()->getVerifiedUser(addslashes($_GET['verifycode']));
+			
+			$model->attributes = $_POST['User'];
+			// 这里用paypassword暂时用来存储邮箱验证编码
+			$model->loginpassword = User::hashPassword($model->loginpassword);
+			// 验证的时候要求两者要相等，所以hash之后也要一起hash
+			$model->repeatpwd = User::hashPassword($model->repeatpwd);
+			
+			User::model()->updateByPk($user->id,
+				array("loginpassword"=>$model->loginpassword,"verifycode"=>""));
+			
+			$identity = new UserIdentity($user->email,$model->loginpassword);
+			$identity->authenticate();
+			Yii::app()->user->login($identity,0);
+			
+			$this->redirect(Yii::app()->request->baseUrl.'/index.php/user/'.$user->id);
+		}
+		else if(isset($_GET["verifycode"])) {
+			// 如果要下面else的异常抛出成立，那么verifycode不能改，因为改了就找不到相应的用户了，或者用户不能删除
+			$user = User::model()->getVerifiedUser(addslashes($_GET['verifycode']));
+			if($user != NULL) {
+				$this->render('reset',array('model'=>$model));
+			}
+			else
+				throw new CHttpException(400,"Error");
+		}
+		else
+			throw new CHttpException(400,"Error");
 	}
 	
 	/**

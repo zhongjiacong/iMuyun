@@ -65,6 +65,13 @@ class User extends CActiveRecord
 			array('repeatpwd', 'safe', 'on'=>'pwdupdate'),
 			array('repeatpwd','compare','compareAttribute'=>'loginpassword','on'=>'pwdupdate'),
 			
+			array('loginpassword, repeatpwd', 'required', 'on'=>'reset'),
+			array('repeatpwd', 'safe', 'on'=>'reset'),
+			array('repeatpwd','compare','compareAttribute'=>'loginpassword','on'=>'reset'),
+			
+			array('email','required','on'=>'forget'),
+			array('email', 'exist', 'on'=>'forget', 'attributeName'=>'email', 'className'=>'User'),
+			
 			array('accountcat_id, gender_id, enabled', 'numerical', 'integerOnly'=>true),
 			array('email+enabled', 'uniqueMultiColumnValidator',
 				'message'=>Yii::t('user','Sorry, this email has been registered.')),
