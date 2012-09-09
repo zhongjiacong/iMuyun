@@ -19,8 +19,7 @@
  * @version $Id: $
  */
 return array (
-  'Update Language Failed' => '语言更新失败',
-  'Update Language Successfully' => '语言更新成功',
+  'Native Language' => '母语',
   'Account Category' => '用户类型',
   'Account Settings' => '帐号设置',
   'Address' => '地址',
@@ -55,6 +54,8 @@ return array (
   'Select Product' => '选择产品',
   'Sorry, this email has been registered.' => '对不起，这个邮箱已被注册。',
   'Telephone' => '电话',
+  'Update Language Failed' => '语言更新失败',
+  'Update Language Successfully' => '语言更新成功',
   'User cannot enabled.' => '用户未能启用',
   'Verify Code' => '验证编码',
   'View User' => '查看用户',

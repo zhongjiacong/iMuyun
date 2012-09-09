@@ -7,22 +7,22 @@
 
 	<p class="note"><?=Yii::t('layouts','Fields with <span class="required">*</span> are required.'); ?></p>
 
-	<?php echo $form->errorSummary($model); ?>
+	<?=$form->errorSummary($model); ?>
 
 	<dl>
-		<dt><?php echo $form->labelEx($model,'email'); ?></dt>
+		<dt><?=$form->labelEx($model,'email'); ?></dt>
 		<dd>
-			<?php echo $form->textField($model,'email',
+			<?=$form->textField($model,'email',
 				array('size'=>28,'maxlength'=>31)); ?>
-			<?php echo $form->error($model,'email'); ?>
+			<?=$form->error($model,'email'); ?>
 		</dd>
 	</dl>
 
 	<dl>
-		<dt><?php echo $form->labelEx($model,'loginpassword'); ?></dt>
+		<dt><?=$form->labelEx($model,'loginpassword'); ?></dt>
 		<dd>
-			<?php echo $form->passwordField($model,'loginpassword',array('size'=>28,'maxlength'=>40)); ?>
-			<?php echo $form->error($model,'loginpassword'); ?>
+			<?=$form->passwordField($model,'loginpassword',array('size'=>28,'maxlength'=>40)); ?>
+			<?=$form->error($model,'loginpassword'); ?>
 		</dd>
 	</dl>
 
@@ -37,17 +37,25 @@
     </dl>
 
 	<dl>
-		<dt><?php echo $form->labelEx($model,'mobile'); ?></dt>
+		<dt><?=$form->labelEx($model,'mobile'); ?></dt>
 		<dd>
 			<?=$form->textField($model,'mobile',
 				array('size'=>28,'maxlength'=>15,'pattern'=>'[0-9]{11}')); ?>
-			<?php echo $form->error($model,'mobile'); ?>
+			<?=$form->error($model,'mobile'); ?>
+		</dd>
+	</dl>
+
+	<dl>
+		<dt><?=$form->labelEx($model,'lang'); ?></dt>
+		<dd>
+			<?=$form->dropDownList($model,'lang',Yii::app()->params["language"]); ?>
+			<?=$form->error($model,'lang'); ?>
 		</dd>
 	</dl>
 
 	<div class="row">
-		<?php echo $form->hiddenField($model,'enabled',array('value'=>1)); ?>
-		<?php echo $form->error($model,'enabled'); ?>
+		<?=$form->hiddenField($model,'enabled',array('value'=>1)); ?>
+		<?=$form->error($model,'enabled'); ?>
 	</div>
 
 	<div class="row buttons">

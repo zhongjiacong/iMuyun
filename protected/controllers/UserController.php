@@ -91,7 +91,7 @@ class UserController extends Controller
 				// 3. 给用户添加默认语言
 				$userlang = new Userlang;
 				$userlang->user_id = $model->id;
-				$userlang->lang_id = User::model()->defaultLang();
+				$userlang->lang_id = $_POST["User"]["lang"];//User::model()->defaultLang();
 				$userlang->save();
 				
 				// 4. 发送验证邮件
@@ -99,6 +99,7 @@ class UserController extends Controller
 				//$this->redirect(Yii::app()->request->baseUrl.'/index.php/user/register');
 			}
 		}
+		$model->lang = User::model()->defaultLang();
 		$this->render('register',array(
 			'model'=>$model,
 		));

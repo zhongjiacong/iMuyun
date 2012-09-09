@@ -14,6 +14,7 @@ Yii::app()->clientScript->registerScript('register', "
 ?>
 
 <?php
+	// use model's id to judge if registered
 	if($model->id == NULL)
 		echo $this->renderPartial('_regform', array('model'=>$model));
 	else {

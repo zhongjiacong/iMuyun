@@ -27,6 +27,7 @@ class User extends CActiveRecord
 {
 	public $repeatpwd;
 	public $seleprod;
+	public $lang;
 	
 	/**
 	 * Returns the static model of the specified AR class.
@@ -58,7 +59,7 @@ class User extends CActiveRecord
 			array('repeatpwd', 'safe', 'on'=>'register'),
 			array('email', 'email', 'on'=>'register'),
 			array('repeatpwd','compare','compareAttribute'=>'loginpassword','on'=>'register'),
-			array('email, loginpassword, mobile, nickname', 'required', 'on'=>'register'),
+			array('email, loginpassword, mobile, nickname, lang', 'required', 'on'=>'register'),
 			
 			array('loginpassword, repeatpwd', 'required', 'on'=>'pwdupdate'),
 			array('repeatpwd', 'safe', 'on'=>'pwdupdate'),
@@ -120,6 +121,7 @@ class User extends CActiveRecord
 			'registertime' => Yii::t('user','Register Time'),
 			'lastlogintime' => Yii::t('user','Last Login Time'),
 			'seleprod' => Yii::t('user','Select Product'),
+			'lang' => Yii::t('user','Native Language'),
 		);
 	}
 

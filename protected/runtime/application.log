@@ -6845,3 +6845,74 @@ Stack trace:
 #16 {main}
 REQUEST_URI=/imuyun/index.php/user/100030
 ---
+2012/09/09 07:37:12 [warning] [application] Failed to set unsafe attribute "email" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/09 07:37:12 [warning] [application] Failed to set unsafe attribute "mobile" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/09 07:37:12 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/09 07:37:12 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/09 07:37:13 [warning] [application] Failed to set unsafe attribute "email" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/09 07:37:13 [warning] [application] Failed to set unsafe attribute "mobile" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/09 07:37:13 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/09 07:37:13 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/09 07:49:08 [warning] [application] Failed to set unsafe attribute "lang" of "User".
+in D:\Dropbox\www\imuyun\protected\controllers\UserController.php (337)
+in D:\Dropbox\www\imuyun\protected\controllers\UserController.php (65)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/09 07:49:10 [warning] [application] Failed to set unsafe attribute "lang" of "User".
+in D:\Dropbox\www\imuyun\protected\controllers\UserController.php (337)
+in D:\Dropbox\www\imuyun\protected\controllers\UserController.php (65)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/09 07:53:12 [warning] [application] Failed to set unsafe attribute "lang" of "User".
+in D:\Dropbox\www\imuyun\protected\controllers\UserController.php (337)
+in D:\Dropbox\www\imuyun\protected\controllers\UserController.php (65)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/09 07:54:37 [warning] [application] Failed to set unsafe attribute "lang" of "User".
+in D:\Dropbox\www\imuyun\protected\controllers\UserController.php (337)
+in D:\Dropbox\www\imuyun\protected\controllers\UserController.php (65)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/09 07:54:57 [warning] [application] Failed to set unsafe attribute "lang" of "User".
+in D:\Dropbox\www\imuyun\protected\controllers\UserController.php (337)
+in D:\Dropbox\www\imuyun\protected\controllers\UserController.php (65)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/09 07:55:01 [warning] [application] Failed to set unsafe attribute "lang" of "User".
+in D:\Dropbox\www\imuyun\protected\controllers\UserController.php (337)
+in D:\Dropbox\www\imuyun\protected\controllers\UserController.php (65)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/09 07:55:03 [warning] [application] Failed to set unsafe attribute "lang" of "User".
+in D:\Dropbox\www\imuyun\protected\controllers\UserController.php (337)
+in D:\Dropbox\www\imuyun\protected\controllers\UserController.php (65)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/09 07:55:08 [warning] [application] Failed to set unsafe attribute "lang" of "User".
+in D:\Dropbox\www\imuyun\protected\controllers\UserController.php (337)
+in D:\Dropbox\www\imuyun\protected\controllers\UserController.php (65)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/09 07:55:10 [warning] [application] Failed to set unsafe attribute "lang" of "User".
+in D:\Dropbox\www\imuyun\protected\controllers\UserController.php (337)
+in D:\Dropbox\www\imuyun\protected\controllers\UserController.php (65)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/09 15:55:12 [warning] [application] Failed to set unsafe attribute "lang" of "User".
+in D:\Dropbox\www\imuyun\protected\controllers\UserController.php (69)
+in D:\Dropbox\www\imuyun\index.php (13)
