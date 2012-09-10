@@ -50,6 +50,7 @@ $this->menu=array(
 <?=$this->renderPartial('state', array('model'=>$model)); ?>
 
 <?php
+	$article = Article::model()->findAll('`order_id` = :order_id',array(':order_id'=>$model->id));
 	foreach($article as $key => $value):		
 		// 找出所有该文章的句子，组合后存在变量中
 		$sentence = Sentence::model()->findAll('`article_id` = :article',
