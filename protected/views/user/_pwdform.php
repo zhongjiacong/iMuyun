@@ -7,13 +7,21 @@
 
 	<p class="note"><?=Yii::t('layouts','Fields with <span class="required">*</span> are required.'); ?></p>
 
-	<?php echo $form->errorSummary($model); ?>
+	<?=$form->errorSummary($model); ?>
 	
 	<dl>
 		<dt><?=$form->labelEx($model,'loginpassword'); ?></dt>
 		<dd>
 			<?=$form->passwordField($model,'loginpassword',array('size'=>28,'maxlength'=>40)); ?>
 			<?=$form->error($model,'loginpassword'); ?>
+		</dd>
+	</dl>
+	
+	<dl>
+		<dt><?=$form->labelEx($model,'newpwd'); ?></dt>
+		<dd>
+			<?=$form->passwordField($model,'newpwd',array('size'=>28,'maxlength'=>40)); ?>
+			<?=$form->error($model,'newpwd'); ?>
 		</dd>
 	</dl>
 

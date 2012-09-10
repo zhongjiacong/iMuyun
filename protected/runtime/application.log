@@ -7100,3 +7100,55 @@ in D:\Dropbox\www\imuyun\index.php (13)
 2012/09/10 16:35:11 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
 in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (184)
 in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/10 09:59:21 [error] [exception.CException] exception 'CException' with message '属性 "User.newpwd" 未被定义.' in D:\Dropbox\www\imuyun\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\db\ar\CActiveRecord.php(144): CComponent->__get('newpwd')
+#1 D:\Dropbox\www\imuyun\framework\web\helpers\CHtml.php(2044): CActiveRecord->__get('newpwd')
+#2 D:\Dropbox\www\imuyun\framework\web\helpers\CHtml.php(1774): CHtml::resolveValue(Object(User), 'newpwd')
+#3 D:\Dropbox\www\imuyun\framework\web\helpers\CHtml.php(1238): CHtml::activeInputField('password', Object(User), 'newpwd', Array)
+#4 D:\Dropbox\www\imuyun\framework\web\widgets\CActiveForm.php(605): CHtml::activePasswordField(Object(User), 'newpwd', Array)
+#5 D:\Dropbox\www\imuyun\protected\views\user\_pwdform.php(23): CActiveForm->passwordField(Object(User), 'newpwd', Array)
+#6 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(127): require('D:\Dropbox\www\...')
+#7 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\Dropbox\www\...', Array, true)
+#8 D:\Dropbox\www\imuyun\framework\web\CController.php(870): CBaseController->renderFile('D:\Dropbox\www\...', Array, true)
+#9 D:\Dropbox\www\imuyun\protected\views\user\pwdupdate.php(17): CController->renderPartial('_pwdform', Array)
+#10 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(127): require('D:\Dropbox\www\...')
+#11 D:\Dropbox\www\imuyun\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\Dropbox\www\...', Array, true)
+#12 D:\Dropbox\www\imuyun\framework\web\CController.php(870): CBaseController->renderFile('D:\Dropbox\www\...', Array, true)
+#13 D:\Dropbox\www\imuyun\framework\web\CController.php(783): CController->renderPartial('pwdupdate', Array, true)
+#14 D:\Dropbox\www\imuyun\protected\controllers\UserController.php(264): CController->render('pwdupdate', Array)
+#15 D:\Dropbox\www\imuyun\framework\web\actions\CInlineAction.php(50): UserController->actionPwdupdate()
+#16 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#17 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#18 D:\Dropbox\www\imuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#19 D:\Dropbox\www\imuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#20 D:\Dropbox\www\imuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#21 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#22 D:\Dropbox\www\imuyun\framework\web\CController.php(292): CFilterChain->run()
+#23 D:\Dropbox\www\imuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('pwdupdate')
+#25 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('user/pwdupdate')
+#26 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#27 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/imuyun/index.php/user/pwdupdate
+---
+2012/09/10 10:02:19 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您输入的旧密码不正确！' in D:\Dropbox\www\imuyun\protected\controllers\UserController.php:259
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\web\actions\CInlineAction.php(50): UserController->actionPwdupdate()
+#1 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 D:\Dropbox\www\imuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 D:\Dropbox\www\imuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 D:\Dropbox\www\imuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\www\imuyun\framework\web\CController.php(292): CFilterChain->run()
+#8 D:\Dropbox\www\imuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('pwdupdate')
+#10 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('user/pwdupdate')
+#11 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/imuyun/index.php/user/pwdupdate
+HTTP_REFERER=http://localhost/imuyun/index.php/user/pwdupdate
+---

@@ -25,6 +25,7 @@
  */
 class User extends CActiveRecord
 {
+	public $newpwd;
 	public $repeatpwd;
 	public $seleprod;
 	public $lang;
@@ -61,9 +62,9 @@ class User extends CActiveRecord
 			array('repeatpwd','compare','compareAttribute'=>'loginpassword','on'=>'register'),
 			array('email, loginpassword, mobile, nickname, lang', 'required', 'on'=>'register'),
 			
-			array('loginpassword, repeatpwd', 'required', 'on'=>'pwdupdate'),
+			array('newpwd, loginpassword, repeatpwd', 'required', 'on'=>'pwdupdate'),
 			array('repeatpwd', 'safe', 'on'=>'pwdupdate'),
-			array('repeatpwd','compare','compareAttribute'=>'loginpassword','on'=>'pwdupdate'),
+			array('repeatpwd','compare','compareAttribute'=>'newpwd','on'=>'pwdupdate'),
 			
 			array('loginpassword, repeatpwd', 'required', 'on'=>'reset'),
 			array('repeatpwd', 'safe', 'on'=>'reset'),
@@ -77,8 +78,8 @@ class User extends CActiveRecord
 				'message'=>Yii::t('user','Sorry, this email has been registered.')),
 			array('email, nickname', 'length', 'max'=>31),
 			array('nickname', 'length', 'min'=>2),
-			array('loginpassword, paypassword', 'length', 'min'=>6),
-			array('loginpassword, paypassword', 'length', 'max'=>40),
+			array('newpwd, loginpassword, paypassword', 'length', 'min'=>6),
+			array('newpwd, loginpassword, paypassword', 'length', 'max'=>40),
 			array('realname, mobile, telephone', 'length', 'max'=>15),
 			array('postcode', 'length', 'max'=>6),
 			array('verifycode', 'length', 'max'=>20),
@@ -129,6 +130,7 @@ class User extends CActiveRecord
 			'lastlogintime' => Yii::t('user','Last Login Time'),
 			'seleprod' => Yii::t('user','Select Product'),
 			'lang' => Yii::t('user','Native Language'),
+			'newpwd'=> Yii::t('user','New Password'),
 		);
 	}
 

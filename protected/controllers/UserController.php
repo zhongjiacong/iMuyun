@@ -245,15 +245,18 @@ class UserController extends Controller
 		
 		if(isset($_POST['User'])) {
 			// 对密码进行处理
-			// 需要新开一个页面
 			/*$model->loginpassword = User::hashPassword($model->loginpassword);
 			if($model->paypassword != NULL)
 				$model->paypassword = User::hashPassword($model->paypassword);*/
-			$model->loginpassword = User::hashPassword($_POST['User']['loginpassword']);
-			$model->repeatpwd = User::hashPassword($_POST['User']['repeatpwd']);
-			if($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
+			if($model->loginpassword == User::hashPassword($_POST['User']['loginpassword'])) {
+				$model->newpwd = User::hashPassword($_POST['User']['newpwd']);
+				$model->repeatpwd = User::hashPassword($_POST['User']['repeatpwd']);
+				if($model->save()) {
+					$this->redirect(array('view','id'=>$model->id));
+				}
 			}
+			else
+				throw new CHttpException(400,Yii::t("user","The old password you entered is incorrect!"));
 		}
 		
 		$this->render('pwdupdate',array(
