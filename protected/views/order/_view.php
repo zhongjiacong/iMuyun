@@ -26,6 +26,8 @@
 			
 			<td><?=Time::timeDisplay($data->submittime); ?></td>
 			
+			<td><?="￥".Order::model()->orderPrice($data->id); ?></td>
+			
 			<td>
 				<?php
 					if($data->paytime == NULL)

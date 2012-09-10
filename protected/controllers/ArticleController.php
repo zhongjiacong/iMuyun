@@ -191,7 +191,7 @@ class ArticleController extends Controller
 			$model->doccont = CUploadedFile::getInstance($model,'doccont');
 			
 			// -- Confirm User ID -- //
-			$user_id = User::model()->confirmUserId($_POST['Article']['email'], $_POST['Article']['mobile']);
+			$user_id = User::model()->confirmUserId($model->email, $model->mobile);
 			
 			// 根据用户提交的是文档还是
 			if(is_object($model->doccont) && get_class($model->doccont) === 'CUploadedFile') {

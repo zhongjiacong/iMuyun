@@ -49,6 +49,7 @@ function evaluateorder(id) {
 			<th><?=CHtml::encode(Order::model()->getAttributeLabel('subject')); ?></th>
 			<th><?=Yii::t('order','Order Text'); ?></th>
 			<th><?=CHtml::encode(Order::model()->getAttributeLabel('submittime')); ?></th>
+			<th><?=Yii::t('order','Total Price'); ?></th>
 			<th>&nbsp;</th>
 			<th>&nbsp;</th>
 		</tr>

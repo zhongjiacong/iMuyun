@@ -346,12 +346,17 @@ div.shortbg
 }
 .ordertable thead tr th:nth-child(1), .ordertable tbody tr td:nth-child(1) {
 	width: 40px;
+	text-align: center;
+}
+.ordertable thead tr th:nth-child(2), .ordertable tbody tr td:nth-child(2) {
+	width: 100px;
 }
 .ordertable thead tr th:nth-last-child(4), .ordertable tbody tr td:nth-last-child(4) {
-	width: 220px;
+	width: 70px;
+	text-align: center;
 }
 .ordertable thead tr th:nth-last-child(3), .ordertable tbody tr td:nth-last-child(3) {
-	width: 100px;
+	width: 60px;
 }
 .ordertable thead tr th:nth-last-child(2), .ordertable tbody tr td:nth-last-child(2) {
 	width: 70px;

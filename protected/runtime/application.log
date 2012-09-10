@@ -7057,3 +7057,46 @@ Stack trace:
 #13 {main}
 REQUEST_URI=/imuyun/index.php/user/reset?verifycode=35a1cf8031cb5ad91164
 ---
+2012/09/10 08:26:00 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/10 08:26:00 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/10 08:33:54 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/10 08:33:54 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/10 16:34:30 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (184)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/10 16:34:30 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (184)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/10 08:34:49 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/10 08:34:49 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/10 08:34:49 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (488)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/10 16:35:11 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (184)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/10 16:35:11 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (184)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/10 16:35:11 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (184)
+in D:\Dropbox\www\imuyun\index.php (13)
