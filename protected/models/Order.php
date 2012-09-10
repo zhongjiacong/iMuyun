@@ -125,4 +125,24 @@ class Order extends CActiveRecord
 	{
 		return Article::model()->findAll('`order_id` = :order',array(':order'=>$order_id));
 	}
+	
+	/**
+	 *  @param 传入订单号
+	 *  @return 返回订单总价格
+	 */
+	public function orderPrice($order_id)
+	{
+		$totalprice = 0;
+		// find text whit the same order id
+		$article = Article::model()->findAll('`order_id` = :order_id',array(':order_id'=>$order_id));
+		foreach($article as $key => $value) {
+			// calculate the totalprice
+			$articleprice = Spreadtable::model()->findAll('`article_id` = :id',array(':id'=>$value->id));
+			foreach ($articleprice as $pricekey => $pricevalue) {
+				$totalprice += $pricevalue->price;
+			}
+		}
+		return $totalprice;
+	}
+
 }

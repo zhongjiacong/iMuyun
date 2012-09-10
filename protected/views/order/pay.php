@@ -1,15 +1,6 @@
 <?php
 // -- calculate the totalprice start -- //
-$totalprice = 0;
-// find text whit the same order id
-$article = Article::model()->findAll('`order_id` = :order_id',array(':order_id'=>$model->id));
-foreach($article as $key => $value) {
-	// calculate the totalprice
-	$articleprice = Spreadtable::model()->findAll('`article_id` = :id',array(':id'=>$value->id));
-	foreach ($articleprice as $pricekey => $pricevalue) {
-		$totalprice += $pricevalue->price;
-	}
-}
+$totalprice = Order::model()->orderPrice($model->id);
 // -- calculate the totalprice end -- //
 
 if(Consume::model()->availableBalance() >= $totalprice)
