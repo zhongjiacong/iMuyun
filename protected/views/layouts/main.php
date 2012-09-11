@@ -193,7 +193,7 @@
 		<div id="slideimg">
 			<div id="entranceintro_b"><?=Yii::t('layouts','Professional human translation'); ?></div>
 			<div id="entranceintro_s">be of your service</div>
-			<?=CHtml::link('<div id="entrance">'.Yii::t('site','Start Now').'</div>'); ?>
+			<?=CHtml::link('<div id="entrance">'.Yii::t('site','Start Now').'</div>','javascript:void(0);'); ?>
 			<table id="idSlider2" border="0" cellSpacing="0" cellPadding="0">
 				<tbody>
 					<tr>

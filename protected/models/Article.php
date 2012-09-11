@@ -18,6 +18,7 @@ class Article extends CActiveRecord
 {
 	public $artcont;
 	public $doccont;
+	// judge the order type, old or new
 	public $orderlist;
 	public $subject;
 	
@@ -150,6 +151,10 @@ class Article extends CActiveRecord
 	 * @return 字数，报价
 	 */
 	public function textInfor($srclang_id,$content) {
+		// remove punctuation
+		$content = preg_replace("/(·|！|￥|…|（|）|—|【|】|；|：|“|”|‘|’|╗|╚|┐|└|《|》|〈|〉|？|，|。|、)+/","",
+			preg_replace("/[[:punct:]]/","",$content));
+		
 		switch ($srclang_id) {
 			case 0:
 				$content = preg_replace("|[a-z ]|is","",$content);
