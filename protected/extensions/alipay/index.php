@@ -221,19 +221,19 @@ ul,ol{
                     <dt>标题：</dt>
                     <dd>
                         <span class="red-star">*</span>
-                        <input size=30 name=subject />
+                        <input size=30 name="subject" />
                         <span>如：7月5日定货款。</span>
                     </dd>
                     <dt>付款金额：</dt>
                     <dd>
                         <span class="red-star">*</span>
-                        <input maxLength=10 size=30 name=total_fee onfocus="if(Number(this.value)==0){this.value='';}" value="00.00"/>
+                        <input maxLength=10 size=30 name="total_fee" onfocus="if(Number(this.value)==0){this.value='';}" value="00.00"/>
                         <span>如：112.21</span>
                     </dd>
                     <dt>备注：</dt>
                     <dd>
                         <span class="null-star">*</span>
-                        <textarea style="margin-left:3px;" name=alibody rows=2 cols=40 wrap="physical"></textarea><br/>
+                        <textarea style="margin-left:3px;" name="alibody" rows=2 cols=40 wrap="physical"></textarea><br/>
                         <span>（如联系方法，商品要求、数量等。100汉字内）</span>
                     </dd>
                     <dt></dt>

@@ -27,7 +27,7 @@ class ConsumeController extends Controller
 	{
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','create','view'),
+				'actions'=>array('index','create','view','return','notify'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -47,6 +47,16 @@ class ConsumeController extends Controller
     {
         return User::model()->isAdmin();
     }
+	
+	public function actionReturn()
+	{
+		require dirname(__FILE__).'/../extensions/alipay/return_url.php';
+	}
+	
+	public function actionNotify()
+	{
+		require dirname(__FILE__).'/../extensions/alipay/notify_url.php';
+	}
 
 	/**
 	 * Displays a particular model.
@@ -76,16 +86,17 @@ class ConsumeController extends Controller
 			$model->user_id = Yii::app()->user->getId();
 			date_default_timezone_set('PRC');
 			$model->edittime = date("Y-m-d H:i:s");
-			$model->content = "Web Consume";
+			$model->content = "Alipay";
 			// 创建不能直接审核通过
 			$model->audit = 0;
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				require dirname(__FILE__).'/../extensions/alipay/alipayto.php';
+				//$this->redirect(array('view','id'=>$model->id));
 		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
+		else
+			$this->render('create',array(
+				'model'=>$model,
+			));
 	}
 
 	/**

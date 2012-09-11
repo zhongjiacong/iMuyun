@@ -19,8 +19,8 @@
  */
 
 
-require_once("alipay.config.php");
-require_once("lib/alipay_notify.class.php");
+require_once dirname(__FILE__)."/alipay.config.php";
+require_once dirname(__FILE__)."/lib/alipay_notify.class.php";
 
 //计算得出通知验证结果
 $alipayNotify = new AlipayNotify($aliapy_config);

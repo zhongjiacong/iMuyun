@@ -17,8 +17,9 @@
  */
  
 
-require_once("alipay.config.php");
-require_once("lib/alipay_notify.class.php");
+require_once dirname(__FILE__)."/alipay.config.php";
+require_once dirname(__FILE__)."/lib/alipay_notify.class.php";
+
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -39,6 +40,7 @@ if($verify_result) {//验证成功
     $total_fee		= $_GET['total_fee'];		//获取总价格
 
     if($_GET['trade_status'] == 'TRADE_FINISHED' || $_GET['trade_status'] == 'TRADE_SUCCESS') {
+    	//echo "succeed";
 		//判断该笔订单是否在商户网站中已经做过处理
 			//如果没有做过处理，根据订单号（out_trade_no）在商户网站的订单系统中查到该笔订单的详细，并执行商户的业务程序
 			//如果有做过处理，不执行商户的业务程序

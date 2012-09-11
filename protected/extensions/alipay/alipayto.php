@@ -15,8 +15,8 @@
  * 如果不想使用扩展功能请把扩展功能参数赋空值。
  */
 
-require_once("alipay.config.php");
-require_once("lib/alipay_service.class.php");
+require_once dirname(__FILE__)."/alipay.config.php";
+require_once dirname(__FILE__)."/lib/alipay_service.class.php";
 
 /**************************请求参数**************************/
 
@@ -24,13 +24,13 @@ require_once("lib/alipay_service.class.php");
 
 //请与贵网站订单系统中的唯一订单号匹配
 date_default_timezone_set("PRC");
-$out_trade_no = date('Ymdhis');
+$out_trade_no = date('Ymdhis')." - ".$model->id;// zjc
 //订单名称，显示在支付宝收银台里的“商品名称”里，显示在支付宝的交易管理的“商品名称”的列表里。
-$subject      = $_POST['subject'];
+$subject      = Yii::app()->user->name." recharge";// zjc
 //订单描述、订单详细、订单备注，显示在支付宝收银台里的“商品描述”里
-$body         = $_POST['body'];
+$body         = "";// zjc
 //订单总金额，显示在支付宝收银台里的“应付总额”里
-$total_fee    = $_POST['total_fee'];
+$total_fee    = $model->amount;// zjc
 
 
 
