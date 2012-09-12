@@ -145,7 +145,7 @@ class Order extends CActiveRecord
 		return $totalprice;
 	}
 	
-	public function orderFromArt($article)
+	public function orderFromArt($article,$user_id)
 	{
 		// create a new order
 		$order = new Order;

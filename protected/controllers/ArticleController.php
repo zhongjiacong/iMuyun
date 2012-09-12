@@ -204,7 +204,7 @@ class ArticleController extends Controller
 				
 				// give the order's id to subordinate article
 				if(0 == $model->orderlist)
-					$model->order_id = Order::model()->orderFromArt($model);
+					$model->order_id = Order::model()->orderFromArt($model,$user_id);
 				
 				date_default_timezone_set('PRC');
 				$model->edittime = date("Y-m-d H:i:s");
