@@ -307,8 +307,8 @@ class Article extends CActiveRecord
 	        }
 	        $zip->close();
 	        // 3. rmdir
-	        $this->rrmdir($path["dirname"]."/".$path["filename"]."_");
-	        $this->rrmdir($path["dirname"]."/".$path["filename"]."_.zip");
+	        //$this->rrmdir($path["dirname"]."/".$path["filename"]."_");
+	        //$this->rrmdir($path["dirname"]."/".$path["filename"]."_.zip");
 	        return $content;
 	    }
 	    return "";
