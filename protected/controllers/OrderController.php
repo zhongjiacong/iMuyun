@@ -157,14 +157,14 @@ class OrderController extends Controller
 	{
 		if(Yii::app()->request->isPostRequest)
 		{
-			// 递归删除
+			// recursive deletion
 			$orderart = Article::model()->findAll('`order_id` = :id',array(':id'=>$id));
 			foreach ($orderart as $key => $value) {
 				$artsent = Sentence::model()->findAll('`article_id` = :id',array(':id'=>$value->id));
 				foreach ($artsent as $key => $sentvalue) {
 					Sentence::model()->deleteByPk($sentvalue->id);
 				}
-				// 删除价位表中的记录
+				// delete article price
 				if(Spreadtable::model()->isReceived($value->id))
 					Spreadtable::model()->deleteAll('`article_id` = :id',array(':id'=>$value->id));
 				if(NULL != $value->filename)

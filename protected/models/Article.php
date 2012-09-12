@@ -111,6 +111,8 @@ class Article extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
+		
+		$criteria->order = "`id` DESC";
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('fieldcat_id',$this->fieldcat_id);
