@@ -90,8 +90,7 @@ class Spreadtable extends CActiveRecord
 	
 	public function isReceived($article_id)
 	{
-		$article = Spreadtable::model()->find('`article_id` = :article_id',
-			array(':article_id'=>intval($article_id)));
+		$article = Spreadtable::model()->find('`article_id` = :article_id',array(':article_id'=>intval($article_id)));
 		// 要先判断是否有这个数据模型
 		// 这里判断0是因为数据库没改，改过来同样可以用
 		return (NULL != $article && NULL != $article->translator_id && 0 != $article->translator_id)?

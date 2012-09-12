@@ -320,12 +320,22 @@ class ArticleController extends Controller
 	{
 		if(Yii::app()->request->isPostRequest)
 		{
-			// we only allow deletion via POST request
-			$this->loadModel($id)->delete();
+			$delflag = TRUE;
+			$order_id = $this->loadModel($id)->order_id;
+			// 1. delete article content
+			if(Article::model()->delArt($this->loadModel($id))) {
+				// 2. if order which this article belongs to has no other articles, delete it !
+				if(0 == Article::model()->count("`order_id` = :order_id",array("order_id"=>$order_id)))
+					Order::model()->deleteByPk($order_id);
+				echo json_encode(array('state'=>'succeed'));
+			}
+			else
+				echo json_encode(array('state'=>'fail'));
+			
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-			if(!isset($_GET['ajax']))
-				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			//if(!isset($_GET['ajax']))
+				//$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 		}
 		else
 			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');

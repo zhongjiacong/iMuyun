@@ -157,24 +157,21 @@ class OrderController extends Controller
 	{
 		if(Yii::app()->request->isPostRequest)
 		{
-			// recursive deletion
+			$delflag = TRUE;
+			// 1. recursive deletion
 			$orderart = Article::model()->findAll('`order_id` = :id',array(':id'=>$id));
 			foreach ($orderart as $key => $value) {
-				$artsent = Sentence::model()->findAll('`article_id` = :id',array(':id'=>$value->id));
-				foreach ($artsent as $key => $sentvalue) {
-					Sentence::model()->deleteByPk($sentvalue->id);
-				}
-				// delete article price
-				if(Spreadtable::model()->isReceived($value->id))
-					Spreadtable::model()->deleteAll('`article_id` = :id',array(':id'=>$value->id));
-				if(NULL != $value->filename)
-					unlink(Article::model()->fileAddr($value->id));
-				Article::model()->deleteByPk($value->id);
+				if(!Article::model()->delArt($value))
+					$delflag = FALSE;
 			}
-			// we only allow deletion via POST request
-			$this->loadModel($id)->delete();
-			echo json_encode(array('state'=>'succeed'));
-
+			// 2. we only allow deletion via POST request
+			if($delflag) {
+				$this->loadModel($id)->delete();
+				echo json_encode(array('state'=>'succeed'));
+			}
+			else
+				echo json_encode(array('state'=>'fail'));
+			
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			//if(!isset($_GET['ajax']))
 				//$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));

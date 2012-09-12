@@ -315,5 +315,24 @@ class Article extends CActiveRecord
 	    }
 	    return "";
 	}
+	
+	public function delArt($article)
+	{
+		if(!Spreadtable::model()->isReceived($article->id)) {
+			// recursive deletion
+			$artsent = Sentence::model()->findAll('`article_id` = :id',array(':id'=>$article->id));
+			foreach ($artsent as $key => $sentvalue) {
+				Sentence::model()->deleteByPk($sentvalue->id);
+			}
+			// delete article price
+			Spreadtable::model()->deleteAll('`article_id` = :id',array(':id'=>$article->id));
+			if(NULL != $article->filename)
+				unlink(Article::model()->fileAddr($article->id));
+			Article::model()->deleteByPk($article->id);
+			
+			return TRUE;
+		}
+		return FALSE;
+	}
 
 }
