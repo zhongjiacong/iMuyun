@@ -224,7 +224,6 @@ class Article extends CActiveRecord
 		$time = time();
 		
 		$path = pathinfo(urlencode($doccont->getName()));
-		$urlpath = Yii::app()->request->baseUrl.'/public/file/'.$time.".".$path["filename"].".".$path["extension"];
 		$phypath = dirname(__FILE__).'/../../public/file/'.$time.".".$path["filename"].".".$path["extension"];
 		$doccont->saveAs($phypath);
 		
@@ -248,7 +247,6 @@ class Article extends CActiveRecord
 			'allowtype'=>$allowtype,
 			'time'=>$time,
 			'phypath'=>$phypath,
-			'urlpath'=>$urlpath,
 			'filename'=>urldecode($path["basename"]),
 			'artcont'=>$artcont,
 		);
@@ -263,7 +261,7 @@ class Article extends CActiveRecord
 		
 		$path = pathinfo(urlencode($text->filename));
 
-		$urlpath = Yii::app()->request->baseUrl.'/public/file/'.$time.".".$path["filename"].".".$path["extension"];
+		$urlpath = Yii::app()->request->baseUrl.'/public/file/'.$time.".".addslashes($path["filename"]).".".$path["extension"];
 		$phypath = dirname(__FILE__).'/../../public/file/'.$time.".".$path["filename"].".".$path["extension"];
 
 		return $physical?$phypath:$urlpath;
