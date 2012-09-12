@@ -260,10 +260,9 @@ class Article extends CActiveRecord
 		$time = strtotime($text->edittime);
 		
 		$path = pathinfo(urlencode($text->filename));
-		throw new CHttpException(400,$path["filename"]);
 
-		$urlpath = Yii::app()->request->baseUrl.'/public/file/'.$time.".".addslashes($path["filename"]).".".$path["extension"];
 		$phypath = dirname(__FILE__).'/../../public/file/'.$time.".".$path["filename"].".".$path["extension"];
+		$urlpath = Yii::app()->request->baseUrl.'/public/file/'.$time.".".urlencode($path["filename"]).".".$path["extension"];
 
 		return $physical?$phypath:$urlpath;
 	}
