@@ -254,6 +254,21 @@ class Article extends CActiveRecord
 		);
 	}
 	
+	public function fileAddr($text_id,$physical = TRUE)
+	{
+		date_default_timezone_set('PRC');
+
+		$text = Article::model()->findByPk($text_id);
+		$time = strtotime($text->edittime);
+		
+		$path = pathinfo(urlencode($text->filename));
+
+		$urlpath = Yii::app()->request->baseUrl.'/public/file/'.$time.".".$path["filename"].".".$path["extension"];
+		$phypath = dirname(__FILE__).'/../../public/file/'.$time.".".$path["filename"].".".$path["extension"];
+
+		return $physical?$phypath:$urlpath;
+	}
+	
 	function rrmdir($dir) {
 	    if(is_dir($dir)) {
 	        $objects = scandir($dir);
