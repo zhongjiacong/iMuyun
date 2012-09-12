@@ -230,15 +230,15 @@ class Article extends CActiveRecord
 		
 		// read .doc, .pdf, .xls file though web and count the words
 		switch ($doccont->type) {
-			case $allowType[0]:
+			case $allowtype[0]:
 				$artcont = Article::model()->docx2text($phypath);break;
-			case $allowType[1]:
+			case $allowtype[1]:
 				$artcont = shell_exec('cat '.$phypath);break;
-			case $allowType[2]:
+			case $allowtype[2]:
 				$model->artcont = shell_exec(dirname(__FILE__).'/../extensions/antiword-0.37/antiword -m UTF-8.txt '.$phypath);break;
-			case $allowType[3]:
+			case $allowtype[3]:
 				$model->artcont = shell_exec('pdftotext -layout '.$phypath.' /dev/stdout');break;
-			case $allowType[4]:
+			case $allowtype[4]:
 				$model->artcont = shell_exec('xls2txt '.$phypath);break;
 			default:
 				throw new CHttpException(400,Yii::t('article','Wrong file format!'));break;
