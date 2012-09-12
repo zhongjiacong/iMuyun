@@ -156,10 +156,10 @@ class Order extends CActiveRecord
 		$order->submittime = $deadline;
 		$order->save();
 		// save order subject after order created
-		if($model->subject == NULL)
+		if($article->subject == NULL)
 			$order->subject = $order->id;
 		else
-			$order->subject = $model->subject;
+			$order->subject = $article->subject;
 		$order->save();
 
 		return $order->id;
