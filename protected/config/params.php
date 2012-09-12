@@ -98,5 +98,15 @@ return array(
 		'Video',
 		'Text',
 	),
+	
+	// should not change the order
+	'doctype'=>array(
+		'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+		'text/plain',
+		'application/msword',
+		'application/pdf',
+		'application/vnd.ms-excel',
+		//'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+	),
 
 );

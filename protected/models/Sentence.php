@@ -95,4 +95,20 @@ class Sentence extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	/**
+	 *  save article content sentence by sentence
+	 */
+	public function saveArtcont($article)
+	{
+		$sentence = new Sentence;
+		$sentence->article_id = $article->id;
+		$sentence->sentencenum = 0;
+		$sentence->original = $article->artcont;
+		date_default_timezone_set('PRC');
+		$sentence->edittime = date("Y-m-d H:i:s");
+		
+		return ($sentence->save())?TRUE:FALSE;
+	}
+	
 }

@@ -191,104 +191,28 @@ class ArticleController extends Controller
 			// -- Confirm User ID -- //
 			$user_id = User::model()->confirmUserId($model->email, $model->mobile);
 			
-			// 根据用户提交的是文档还是
 			if(is_object($model->doccont) && get_class($model->doccont) === 'CUploadedFile') {
-				// throw new CHttpException(400,$model->doccont->type);
-				// should not change the order
-				$allowType = array(
-					'application/msword',
-					'application/pdf',
-					'application/vnd.ms-excel',
-					'text/plain',
-					'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-					/*'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',*/
-				);
-				// cannot upload file format not in the list of allow type
-				if(!in_array($model->doccont->type, $allowType))
-					throw new CHttpException(400,Yii::t('article','Wrong file format!'));
+				// save the file and return information of the file
+				$fileinfo = Article::model()->saveFile($model->doccont);
+				$model->artcont = $fileinfo["artcont"];
 				
-				if(0 == $model->orderlist) {
-					// 新建订单
-					$order = new Order;
-					// 如果用户设置了主题
-					if($model->subject != NULL)
-						$order->subject = $model->subject;
-					
-					$order->customer_id = $user_id;
-					date_default_timezone_set('PRC');
-					$deadline = date("Y-m-d H:i:s");
-					$order->deadline = $deadline;//$model->deadline;
-					$order->submittime = $deadline;
-					$order->save();
-					// 如果用户没有设置新的主题，保存了之后将订单id记为subject
-					if($model->subject == NULL) {
-						$order->subject = $order->id;
-						$order->save();
-					}
+				// get text information
+				$textinfor = Article::model()->textInfor($model->srclang_id,$model->artcont);
+				$model->wordcount = $textinfor["wordcount"];
+				if($model->wordcount == 0)
+					throw new CHttpException(400,Yii::t('article','Please choose the correct source language!'));
 				
-					// 把订单号加入到Article中
-					$model->order_id = $order->id;
-				}
-			
+				// give the order's id to subordinate article
+				if(0 == $model->orderlist)
+					$model->order_id = Order::model()->ordreFromArt($model);
+				
 				date_default_timezone_set('PRC');
 				$model->edittime = date("Y-m-d H:i:s");
 				$model->filename = $model->doccont->getName();
 				
 				if($model->save()) {
-					// save the file
-					$path = Article::model()->fileAddr($model->id);
-					$model->doccont->saveAs($path);
-					
-					// read .doc, .pdf, .xls file though web and count the words
-					switch ($model->doccont->type) {
-						case $allowType[0]:
-							$shellcommand = dirname(__FILE__).'/../extensions/antiword-0.37/antiword -m UTF-8.txt '.$path;
-							$model->artcont = shell_exec($shellcommand);
-							break;
-						case $allowType[1]:
-							$shellcommand = 'pdftotext -layout '.$path.' /dev/stdout';
-							$model->artcont = shell_exec($shellcommand);
-							break;
-						case $allowType[2]:
-							$shellcommand = 'xls2txt '.$path;
-							$model->artcont = shell_exec($shellcommand);
-							break;
-						case $allowType[3]:
-							$shellcommand = 'cat '.$path;
-							$model->artcont = shell_exec($shellcommand);
-							break;
-						case $allowType[4]:
-							$model->artcont = Article::model()->docx2text($path);
-							break;
-						default:
-							// actually, this exception should never appear
-							throw new CHttpException(400,Yii::t('article','Wrong file format!'));
-							break;
-					}
-					
-					$textinfor = Article::model()->textInfor($model->srclang_id,$model->artcont);
-					$model->wordcount = $textinfor["wordcount"];
-					if($model->wordcount == 0)
-						throw new CHttpException(400,Yii::t('article','Please choose the correct source language!'));
-
-					// restore the model
-					$model->save();
-					
-					// 把文字存成句子
-					$sentence = new Sentence;
-					// 先给个初始的art id，在下面进行修改，以满足
-					$sentence->article_id = $model->id;
-					$sentence->sentencenum = 0;
-					$sentence->original = $model->artcont;
-					date_default_timezone_set('PRC');
-					$sentence->edittime = date("Y-m-d H:i:s");
-					$sentence->save();
-					
-					// 添加到价位表
-					$spreadtable = new Spreadtable;
-					$spreadtable->article_id = $model->id;
-					$spreadtable->price = $textinfor["price"];
-					$spreadtable->save();
+					Sentence::model()->saveArtcont($model);
+					Spreadtable::model()->saveArtPrice($model->id,$textinfor["price"]);
 					
 					// 注意这里的跳转要加上控制器名
 					if(Yii::app()->user->isGuest)

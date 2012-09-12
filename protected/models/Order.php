@@ -144,5 +144,25 @@ class Order extends CActiveRecord
 		}
 		return $totalprice;
 	}
+	
+	public function orderFromArt($article)
+	{
+		// create a new order
+		$order = new Order;
+		$order->customer_id = $user_id;
+		date_default_timezone_set('PRC');
+		$deadline = date("Y-m-d H:i:s");
+		$order->deadline = $deadline;//$model->deadline;
+		$order->submittime = $deadline;
+		$order->save();
+		// save order subject after order created
+		if($model->subject == NULL)
+			$order->subject = $order->id;
+		else
+			$order->subject = $model->subject;
+		$order->save();
+
+		return $order->id;
+	}
 
 }

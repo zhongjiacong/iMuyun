@@ -213,21 +213,45 @@ class Article extends CActiveRecord
 		return $transcont;
 	}
 	
-	public function fileAddr($text_id,$physical = TRUE)
+	public function saveFile($doccont)
 	{
+		// cannot upload file format not in the list of allow type
+		$allowtype = Yii::app()->params["doctype"];
+		if(!in_array($doccont->type, $allowtype))
+			throw new CHttpException(400,Yii::t('article','Wrong file format!'));
+		
 		date_default_timezone_set('PRC');
+		$time = time();
 		
-		$text = Article::model()->findByPk($text_id);
-		$time = strtotime($text->edittime);
-		$name = $text->filename;
+		$path = pathinfo(urlencode($doccont->getName()));
+		$urlpath = Yii::app()->request->baseUrl.'/public/file/'.$time.".".$path["filename"].".".$path["extension"];
+		$phypath = dirname(__FILE__).'/../../public/file/'.$time.".".$path["filename"].".".$path["extension"];
+		$doccont->saveAs($phypath);
 		
-		$namearr = explode('.', $name);
-		$type = '.'.$namearr[count($namearr)-1];
-		unset($namearr[count($namearr)-1]);
-		$filename = implode('.', $namearr);
+		// read .doc, .pdf, .xls file though web and count the words
+		switch ($doccont->type) {
+			case $allowType[0]:
+				$artcont = Article::model()->docx2text($phypath);break;
+			case $allowType[1]:
+				$artcont = shell_exec('cat '.$phypath);break;
+			case $allowType[2]:
+				$model->artcont = shell_exec(dirname(__FILE__).'/../extensions/antiword-0.37/antiword -m UTF-8.txt '.$phypath);break;
+			case $allowType[3]:
+				$model->artcont = shell_exec('pdftotext -layout '.$phypath.' /dev/stdout');break;
+			case $allowType[4]:
+				$model->artcont = shell_exec('xls2txt '.$phypath);break;
+			default:
+				throw new CHttpException(400,Yii::t('article','Wrong file format!'));break;
+		}
 		
-		return $physical?dirname(__FILE__).'/../../public/file/'.$time.sha1($filename).$type:
-			Yii::app()->request->baseUrl.'/public/file/'.$time.sha1($filename).$type;
+		return array(
+			'allowtype'=>$allowtype,
+			'time'=>$time,
+			'phypath'=>$phypath,
+			'urlpath'=>$urlpath,
+			'filename'=>urldecode($path["basename"]),
+			'artcont'=>$artcont,
+		);
 	}
 	
 	function rrmdir($dir) {
