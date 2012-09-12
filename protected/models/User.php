@@ -144,6 +144,8 @@ class User extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
+		
+		$criteria->order = '`id` DESC';
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('accountcat_id',$this->accountcat_id);

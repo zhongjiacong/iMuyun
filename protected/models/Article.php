@@ -285,32 +285,33 @@ class Article extends CActiveRecord
 
 	// linux
 	function docx2text($file) {
+		$path = pathinfo($file);
+		
 	    // 1. rename
-	    $newfile = pathinfo($file, PATHINFO_DIRNAME)."/".pathinfo($file, PATHINFO_FILENAME).'_.zip';
+	    $newfile = $path["dirname"]."/".$path["filename"].'_.zip';
 	    if(!is_file($newfile))
 	        shell_exec('cp -f '.$file.' '.$newfile);
+		
 	    // 2. zip
-	    $content = "";
 	    $zip = new ZipArchive();
-	
+	    $content = "";
 	    if($zip->open($newfile) === true) {
 	        for($i = 0; $i < $zip->numFiles; $i++) {
 	            $entry = $zip->getNameIndex($i);
 	            if(pathinfo($entry, PATHINFO_BASENAME) == "document.xml") {
-	                $zip->extractTo(pathinfo($file, PATHINFO_DIRNAME)."/".pathinfo($file, PATHINFO_FILENAME)."_", array($entry));
-	                $filepath = pathinfo($file, PATHINFO_DIRNAME)."/".pathinfo($file,PATHINFO_FILENAME)."_/".$entry;
+	                $zip->extractTo($path["dirname"]."/".$path["filename"]."_", array($entry));
+	                $filepath = $path["dirname"]."/".$path["filename"]."_/".$entry;
 	                $content = strip_tags(file_get_contents($filepath));
 	                break;
 	            }
 	        }
 	        $zip->close();
 	        // 3. rmdir
-	        $this->rrmdir(pathinfo($file, PATHINFO_DIRNAME)."/".pathinfo($file, PATHINFO_FILENAME)."_");
+	        $this->rrmdir($path["dirname"]."/".$path["filename"]."_");
+	        $this->rrmdir($path["dirname"]."/".$path["filename"]."_.zip");
 	        return $content;
 	    }
-	    else {
-	        return "";
-	    }
+	    return "";
 	}
 
 }
