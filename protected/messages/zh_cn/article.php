@@ -19,7 +19,7 @@
  * @version $Id: $
  */
 return array (
-  'Translation content cannot be empty!' => '翻译内容不能为空！',
+  'I accept Muyun Translation {terms of service}.' => '我接受牧云翻译 {terms of service}。',
   'Article Content' => '翻译内容',
   'Complete Time' => '完成时间',
   'Complete Translation' => '完成翻译',
@@ -29,7 +29,6 @@ return array (
   'Delete Article' => '删除文本',
   'Document Content' => '文档内容',
   'Edit Time' => '提交时间',
-  'I accept {terms of service}.' => '我接受 {terms of service}。',
   'ID' => '文本编号',
   'Language' => '语言',
   'List Article' => '文本列表',
@@ -55,10 +54,12 @@ return array (
   'Terms of Service' => '服务条款',
   'Text Translation' => '文本翻译',
   'Translation Content' => '译文内容',
+  'Translation content cannot be empty!' => '翻译内容不能为空！',
   'Update Article' => '更新文本',
   'User registration' => '用户登记',
   'Video Translation' => '视频翻译',
   'Word Count' => '字数统计',
+  'Words' => '字数',
   'Wrong file format!' => '错误的文件格式！',
   'You can login and skip this step.' => '您可以登录跳过这一步骤。',
   'You can reselect in the settings of your profile.' => '您可以在个人主页的设置中重新选择。',

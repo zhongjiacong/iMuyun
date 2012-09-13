@@ -218,12 +218,21 @@ div.shortbg
 #wordcount div
 {
 	width: 108px;
-	height: 56px;
+	height: 60px;
 	background: #CCC;
 	color: #1BAD7E;
-	line-height: 56px;
+	line-height: 30px;
 	border-radius: 3px;
 	text-align: center;
+}
+
+.acceptdiv input, .acceptdiv label {
+	cursor: pointer;
+	line-height: 18px;
+	float: left;
+}
+.acceptdiv label {
+	margin-left: 6px;
 }
 
 .droplist

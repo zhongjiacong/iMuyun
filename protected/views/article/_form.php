@@ -76,7 +76,7 @@
 	<dl class="numform<?=$counter; ?>">
 		<dt>
 			<div id="wordcount">
-				<div>￥0</div>
+				<div>￥: 0<br /><?=Yii::t('article','Words'); ?>: 0</div>
 			</div>
 		</dt>
 		<dd>
@@ -96,10 +96,12 @@
 	<dl class="numform<?=$counter; ?>">
 		<dt>&nbsp;</dt>
 		<dd>
-			<?=CHtml::checkBox('accept',array()).' '.
-				Yii::t('article','I accept {terms of service}.',array(
-				'{terms of service}'=>CHtml::link('《'.Yii::t('article','Terms of Service').'》',
-				array('/site/page','view'=>'terms')))); ?>
+			<div class="acceptdiv">
+				<?=CHtml::checkBox('accept',array()).CHtml::label(Yii::t('article','I accept Muyun Translation {terms of service}.',array(
+						'{terms of service}'=>CHtml::link('《'.Yii::t('article','Terms of Service').'》',
+						array('/site/page','view'=>'terms')))),
+					'accept'); ?>
+			</div>
 		</dd>
 	</dl>
 	<?php $counter++; ?>

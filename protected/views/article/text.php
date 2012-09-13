@@ -7,8 +7,10 @@ $this->menu=array(
 );
 
 Yii::app()->clientScript->registerScript('article', "
+	// init tgt lang when page loaded
 	$('#Article_tgtlang_id').get(0).selectedIndex = 1;
 	
+	// accept the terms and enable button
 	$('#accept').click(function(){
 		if($('#accept').attr('checked') == 'checked')
 			$('#redbtn').removeAttr('disabled');
@@ -16,6 +18,7 @@ Yii::app()->clientScript->registerScript('article', "
 			$('#redbtn').attr('disabled','disabled');
 	});
 	
+	// 
 	$('#numform1 div:nth-child(2), #numform1 div:nth-child(3)').addClass('shortbg');
 	
 	$('dl').click(function(){
@@ -26,8 +29,12 @@ Yii::app()->clientScript->registerScript('article', "
 		}
 	});
 	
+	// update text information if sendkeyup keep unchanged for 2 seconds
+	var sendkeyup;
 	$('#Article_artcont').keyup(function() {
-		textinfor();
+		clearTimeout(sendkeyup);
+		sendkeyup = setTimeout(textinfor,2000);
+		$('#wordcount div').html('￥: ...<br />".Yii::t('article','Words').": ...');
 	});
 	
 	// 因为要回调，所以这里写成函数
@@ -37,11 +44,9 @@ Yii::app()->clientScript->registerScript('article', "
 			url: '".Yii::app()->request->baseUrl."/index.php/article/textinfor',
 			data: {srclang_id: $('#Article_srclang_id').val(), content: $('#Article_artcont').val()},
 			dataType: 'json',
-			beforeSend: function() {
-				//$('#wordcount div').html('￥...');
-			},
+			beforeSend: function() {},
 			success: function(result) {
-				$('#wordcount div').html('￥'+formatFloat(result.price));
+				$('#wordcount div').html('￥: '+formatFloat(result.price)+'<br />".Yii::t('article','Words').": '+result.wordcount);
 			}
 		});
 	}
@@ -51,9 +56,12 @@ Yii::app()->clientScript->registerScript('article', "
 			'<textarea rows=\"10\" cols=\"63\" name=\"Article[artcont]\" id=\"Article_artcont\"></textarea>'+
 			'<div class=\"errorMessage\" id=\"Article_artcont_em_\" style=\"display:none\"></div>'
 		);
+		$('#wordcount div').fadeIn('fast');
 		// 这里竟然要写回调函数了，坑爹啊
 		$('#Article_artcont').keyup(function(){
-			textinfor();
+			clearTimeout(sendkeyup);
+			sendkeyup = setTimeout(textinfor,2000);
+			$('#wordcount div').html('￥: ...<br />".Yii::t('article','Words').": ...');
 		});
 	});
 	$('#fileartbtn').click(function(){
@@ -63,6 +71,7 @@ Yii::app()->clientScript->registerScript('article', "
 			'<div>Please upload .docx, .txt</div>'+
 			'<div class=\"errorMessage\" id=\"Article_doccont_em_\" style=\"display:none\"></div>'
 		);
+		$('#wordcount div').fadeOut('fast');
 	});
 	
 	$('.textintro span, .textintro div').animate({marginLeft:'100px',opacity:'1'},1500,function(){});
