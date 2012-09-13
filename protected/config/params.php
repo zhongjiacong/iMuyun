@@ -103,9 +103,9 @@ return array(
 	'doctype'=>array(
 		'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
 		'text/plain',
-		'application/msword',
+		/*'application/msword',
 		'application/pdf',
-		'application/vnd.ms-excel',
+		'application/vnd.ms-excel',*/
 		//'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
 	),
 

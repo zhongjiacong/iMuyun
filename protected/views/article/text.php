@@ -60,7 +60,7 @@ Yii::app()->clientScript->registerScript('article', "
 		$('#artcontent').html(
 			'<input id=\"ytArticle_doccont\" type=\"hidden\" value=\"\" name=\"Article[doccont]\">'+
 			'<input name=\"Article[doccont]\" id=\"Article_doccont\" type=\"file\"><br />'+
-			'<div>Please upload .doc, .pdf, .xls, .txt, .docx.</div>'+
+			'<div>Please upload .docx, .txt</div>'+
 			'<div class=\"errorMessage\" id=\"Article_doccont_em_\" style=\"display:none\"></div>'
 		);
 	});

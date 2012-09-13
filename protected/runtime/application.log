@@ -7935,3 +7935,15 @@ in D:\Dropbox\www\imuyun\index.php (13)
 2012/09/12 22:35:02 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
 in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (184)
 in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/13 07:26:16 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (420)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/13 07:26:16 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (420)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/13 07:26:16 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (420)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (180)
+in D:\Dropbox\www\imuyun\index.php (13)
