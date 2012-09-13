@@ -19,16 +19,19 @@
  * @version $Id: $
  */
 return array (
-  'I accept Muyun Translation {terms of service}.' => '我接受牧云翻译 {terms of service}。',
+  'Article delete failure' => '删除文章失败',
+  'Order information' => '订单信息',
   'Article Content' => '翻译内容',
   'Complete Time' => '完成时间',
   'Complete Translation' => '完成翻译',
   'Complete Translation failed' => '完成翻译失败',
+  'Confirm order information' => '确认订单信息',
   'Content to translate cannot be empty!' => '翻译内容不能为空',
   'Create Article' => '新建快速翻译',
   'Delete Article' => '删除文本',
   'Document Content' => '文档内容',
   'Edit Time' => '提交时间',
+  'I accept Muyun Translation {terms of service}.' => '我接受牧云翻译 {terms of service}。',
   'ID' => '文本编号',
   'Language' => '语言',
   'List Article' => '文本列表',
@@ -37,6 +40,7 @@ return array (
   'My Article' => '我领取的文本',
   'New subject' => '新主题',
   'Order' => '订单',
+  'Order state' => '订单状态',
   'Original-target Language' => '源-目标语言',
   'Please choose the correct source language!' => '请选择正确的源语言！',
   'Please {entertext} in the text box below, or {uploadfile}.' => '请在文本框{entertext}，或{uploadfile}。',

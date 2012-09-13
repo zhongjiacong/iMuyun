@@ -3,6 +3,30 @@
 $totalprice = Order::model()->orderPrice($model->id);
 // -- calculate the totalprice end -- //
 
+Yii::app()->clientScript->registerScript('orderarticle',"
+	function delart(id) {
+		$.ajax({
+			type: 'POST',
+			url: '".Yii::app()->request->baseUrl."/index.php/article/delete/'+id,
+			data: {id: id},
+			dataType: 'json',
+			beforeSend: function() {},
+			success: function(result) {
+				if(result.state == 'succeed')
+					window.location.reload();
+				else if(result.state == 'delorder')
+					window.location.href = '".Yii::app()->request->baseUrl."/index.php/order/index';
+				else
+					art.dialog({
+						title:'',
+						content: '".Yii::t('article','Article delete failure').">_<',
+						time: 1000,
+						lock: true,
+					});
+			}
+		});
+	}
+",CClientScript::POS_HEAD);
 if(Consume::model()->availableBalance() >= $totalprice)
 	Yii::app()->clientScript->registerScript('order', "
 		$('#redbtn').removeAttr('disabled');
@@ -35,8 +59,7 @@ $this->menu=array(
 	array('label'=>'Create Order', 'url'=>array('create'),'visible'=>User::model()->isAdmin()),
 	array('label'=>'Update Order', 'url'=>array('update', 'id'=>$model->id),'visible'=>User::model()->isAdmin()),
 	array('label'=>'Delete Order',
-		'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?'),
-		'visible'=>User::model()->isAdmin()),
+		'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Order', 'url'=>array('admin'),'visible'=>User::model()->isAdmin()),
 );
 ?>
@@ -47,8 +70,30 @@ $this->menu=array(
 	<div><?=CHtml::link(CHtml::button(Yii::t('order','Edit')),array('order/update','id'=>$model->id)); ?></div>
 </div>
 
+<div class="paytitle">
+	<?=Yii::t('article','Order state').": "; ?>
+</div>
+
 <?=$this->renderPartial('state', array('model'=>$model)); ?>
 
+<div class="paytitle">
+	<?=Yii::t('article','Confirm order information').": "; ?>
+</div>
+
+<table class="ordertable">
+	<thead>
+		<tr>
+			<th></th>
+			<th><?=Yii::t('article','Language'); ?></th>
+			<th><?=Yii::t('article','Word Count'); ?></th>
+			<th><?=Yii::t('article','Price'); ?></th>
+			<th><?=Yii::t('article','Edit Time'); ?></th>
+			<?php if(NULL == $model->paytime): ?>
+			<th></th>
+			<?php endif; ?>
+		</tr>
+	</thead>
+</table>
 <?php
 	$article = Article::model()->findAll('`order_id` = :order_id',array(':order_id'=>$model->id));
 	foreach($article as $key => $value):		
@@ -61,26 +106,25 @@ $this->menu=array(
 		}
 		$textinfor = Article::model()->textInfor($value->srclang_id, $artcont);
 ?>
-		<div class="form">
-			<dl>
-				<dt>
-					<?=CHtml::link(Article::model()->getAttributeLabel('id').': '.$value->id,
-						array('article/view','id'=>$value->id)); ?>
-					<br />
-					<?=Yii::t('article','Price').': '.$textinfor["price"]; ?>
-				</dt>
-				<dd>
-					<?=Yii::t('article','Language').': '.Yii::app()->params['language'][$value->srclang_id].'->'.
-						Yii::app()->params['language'][$value->tgtlang_id]; ?>
-					<br />
-					<?=Yii::t('article','Word Count').': '.$textinfor["price"]; ?>
-					<br />
-					<?=$value->edittime; ?>
-				</dd>
-			</dl>
-		</div>
+<table class="ordertable">
+	<tbody>
+		<tr>
+			<td><?=CHtml::link(Article::model()->getAttributeLabel('id').': '.$value->id,array('article/view','id'=>$value->id)); ?></td>
+			<td><?=Yii::app()->params['language'][$value->srclang_id].'->'.Yii::app()->params['language'][$value->tgtlang_id]; ?></td>
+			<td><?=$textinfor["wordcount"]; ?></td>
+			<td><?=$textinfor["price"]; ?></td>
+			<td><?=$value->edittime; ?></td>
+			<?php if(NULL == $model->paytime): ?>
+			<td><?=CHtml::button(Yii::t('layouts','Delete'),array('onclick'=>'delart('.$value->id.');')); ?></td>
+			<?php endif; ?>
+		</tr>
+	</tbody>
+</table>
 <?php endforeach; ?>
 
+<br />
+<br />
+<br />
 <div class="form">
 	<?php if($model->paytime==NULL): ?>
 	<dl>

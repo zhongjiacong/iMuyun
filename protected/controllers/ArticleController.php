@@ -31,7 +31,7 @@ class ArticleController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'text' and 'update' actions
-				'actions'=>array('index','update','view','video'),
+				'actions'=>array('index','update','view','video','delete'),
 				'users'=>array('@'),
 			),
 			array('allow',
@@ -39,7 +39,7 @@ class ArticleController extends Controller
 				'expression'=>array($this,'isTranslator'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin'),
 				'expression'=>array($this,'isAdmin'),
 			),
 			array('deny',  // deny all users
@@ -325,9 +325,12 @@ class ArticleController extends Controller
 			// 1. delete article content
 			if(Article::model()->delArt($this->loadModel($id))) {
 				// 2. if order which this article belongs to has no other articles, delete it !
-				if(0 == Article::model()->count("`order_id` = :order_id",array("order_id"=>$order_id)))
+				if(0 == Article::model()->count("`order_id` = :order_id",array("order_id"=>$order_id))) {
 					Order::model()->deleteByPk($order_id);
-				echo json_encode(array('state'=>'succeed'));
+					echo json_encode(array('state'=>'delorder'));
+				}
+				else
+					echo json_encode(array('state'=>'succeed'));
 			}
 			else
 				echo json_encode(array('state'=>'fail'));

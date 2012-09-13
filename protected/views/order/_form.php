@@ -33,7 +33,7 @@
 		</dd>
 	</dl>
 	
-	<?php if(User::model()->isAdmin()): ?>
+	<?php if(User::model()->isAdmin() && NULL != $model->paytime): ?>
 	<dl>
 		<dt><?=$form->labelEx($model,'audit'); ?></dt>
 		<dd>

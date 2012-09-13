@@ -1,4 +1,8 @@
 <?php
+// -- calculate the totalprice start -- //
+$totalprice = Order::model()->orderPrice($model->id);
+// -- calculate the totalprice end -- //
+
 Yii::app()->clientScript->registerScript('order', "
 	$('#redbtn').removeAttr('disabled');
 	
@@ -46,20 +50,34 @@ $this->menu=array(
 	<div><?=CHtml::link(CHtml::button(Yii::t('order','Edit')),array('order/update','id'=>$model->id)); ?></div>
 </div>
 
+<div class="paytitle">
+	<?=Yii::t('article','Order state').": "; ?>
+</div>
+
 <?=$this->renderPartial('state', array('model'=>$model)); ?>
 
+<div class="paytitle">
+	<?=Yii::t('article','Order information').": "; ?>
+</div>
+
+<table class="ordertable">
+	<thead>
+		<tr>
+			<th></th>
+			<th><?=Yii::t('article','Language'); ?></th>
+			<th><?=Yii::t('article','Word Count'); ?></th>
+			<th><?=Yii::t('article','Price'); ?></th>
+			<th><?=Yii::t('article','Edit Time'); ?></th>
+			<?php if(NULL == $model->paytime): ?>
+			<th></th>
+			<?php endif; ?>
+		</tr>
+	</thead>
+</table>
 <?php
-	// 总价格
-	$totalprice = 0;
 	// 获取当前订单号下的所有文本
 	$article = Article::model()->findAll('`order_id` = :order_id',array(':order_id'=>$model->id));
 	foreach ($article as $key => $value):
-		// 累计总价
-		$articleprice = Spreadtable::model()->findAll('`article_id` = :id',array(':id'=>$value->id));
-		foreach ($articleprice as $pricekey => $pricevalue) {
-			$totalprice += $pricevalue->price;
-		}
-		
 		// 找出所有该文章的句子，组合后存在变量中
 		$sentence = Sentence::model()->findAll('`article_id` = :article',
 			array(':article'=>$value->id));
@@ -69,24 +87,25 @@ $this->menu=array(
 		}
 		$textinfor = Article::model()->textInfor($value->srclang_id, $artcont);
 ?>
-		<div class="form">
-			<dl>
-				<dt><?=CHtml::link(Article::model()->getAttributeLabel('id').': '.$value->id,
-					array('article/view','id'=>$value->id)); ?>
-					<br />
-					<?=Yii::t('article','Price').': '.$textinfor["price"]; ?></dt>
-				<dd>
-					<?=Yii::t('article','Language').': '.Yii::app()->params['language'][$value->srclang_id].'->'.
-						Yii::app()->params['language'][$value->tgtlang_id]; ?>
-					<br />
-					<?=Yii::t('article','Word Count').': '.$value->wordcount; ?>
-					<br />
-					<?=$value->edittime; ?>
-				</dd>
-			</dl>
-		</div>
+<table class="ordertable">
+	<tbody>
+		<tr>
+			<td><?=CHtml::link(Article::model()->getAttributeLabel('id').': '.$value->id,array('article/view','id'=>$value->id)); ?></td>
+			<td><?=Yii::app()->params['language'][$value->srclang_id].'->'.Yii::app()->params['language'][$value->tgtlang_id]; ?></td>
+			<td><?=$textinfor["wordcount"]; ?></td>
+			<td><?=$textinfor["price"]; ?></td>
+			<td><?=$value->edittime; ?></td>
+			<?php if(NULL == $model->paytime): ?>
+			<td><?=CHtml::button(Yii::t('layouts','Delete'),array('onclick'=>'delart('.$value->id.');')); ?></td>
+			<?php endif; ?>
+		</tr>
+	</tbody>
+</table>
 <?php endforeach; ?>
 
+<br />
+<br />
+<br />
  <div class="form">
  	<dl>
 		<dt><?=Yii::t('order','Total Price'); ?></dt>
