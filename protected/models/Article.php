@@ -158,7 +158,7 @@ class Article extends CActiveRecord
 		
 		// remove punctuation
 		//$content = preg_replace("/(·|！|￥|…|（|）|—|【|】|；|：|“|”|‘|’|╗|╚|┐|└|《|》|〈|〉|？|，|。|、)+/","",
-		$content = preg_replace("/[\xa1-\xa3][\xa0-\xfe]/","",
+		$content = preg_replace("/[\x{ff00}-\x{ffef}\x{2000}-\x{206F}]/u","",
 			preg_replace("/[[:punct:]]/","",
 			preg_replace("/(\s|\d)+/","",$content)));
 		
