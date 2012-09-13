@@ -215,7 +215,7 @@ class Article extends CActiveRecord
 	public function saveFile($doccont)
 	{
 		// cannot upload file format not in the list of allow type
-		$allowtype = Yii::app()->params["doctype"];
+		$allowtype = array_slice(Yii::app()->params["doctype"], 0, 2);
 		if(!in_array($doccont->type, $allowtype))
 			throw new CHttpException(400,Yii::t('article','Wrong file format!'));
 		

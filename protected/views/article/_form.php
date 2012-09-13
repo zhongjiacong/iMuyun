@@ -42,8 +42,7 @@
 		<dt><?=Yii::t('article','Original-target Language'); ?></dt>
 		<?php
 			// supportable languages
-			$textlang = Yii::app()->params['language'];
-			$textlang = array_splice($textlang,0,2);
+			$textlang = array_slice(Yii::app()->params['language'],0,2);
 		?>
 		<dd>
 			<?=$form->dropDownList($model,'srclang_id',$textlang,array('class'=>'droplist')); ?>
