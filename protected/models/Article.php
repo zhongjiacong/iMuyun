@@ -238,7 +238,7 @@ class Article extends CActiveRecord
 			case $allowtype[0]:
 				$artcont = Article::model()->docx2text($phypath);break;
 			case $allowtype[1]:
-				shell_exec("iconv ".$phypath." -f gbk -t utf-8 > ".$phypath."_");
+				shell_exec("iconv ".$phypath." -f gb18030 -t utf-8 > ".$phypath."_");
 				shell_exec("rm -rf ".$phypath);
 				shell_exec("cp -f ".$phypath."_ ".$phypath);
 				$artcont = shell_exec('cat '.$phypath);break;
