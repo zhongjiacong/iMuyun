@@ -34,12 +34,12 @@
 					echo date('m-d H:i',strtotime($data->edittime));
 				?>
 			</td>
-			<?php if(NULL != Article::model()->comptime($data->id)): ?>
-				<td>
+			<td>
+				<?php if(NULL != Article::model()->comptime($data->id)): ?>
 					<b><?=CHtml::encode($data->getAttributeLabel('comptime')); ?>:</b>
 					<?=Time::timeDisplay(Article::model()->comptime($data->id),TRUE); ?>
-				</td>
-			<?php endif; ?>
+				<?php endif; ?>
+			</td>
 			<td>
 				<span><?=(Spreadtable::model()->isReceived($data->id) == NULL)?
 					CHtml::button(Yii::t('article','Receive Article'),array('onclick'=>'receiveart('.$data->id.')')):
