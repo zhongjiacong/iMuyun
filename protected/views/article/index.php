@@ -36,7 +36,7 @@ $this->menu=array(
 			<th><?=Yii::t('article','Language'); ?></th>
 			<th><?=CHtml::encode(Article::model()->getAttributeLabel('wordcount')); ?></th>
 			<th><?=Yii::t('article','Edit Time'); ?></th>
-			<?php if(NULL != $data->comptime): ?>
+			<?php if(NULL != Article::model()->compTime($data->id)): ?>
 			<th></th>
 			<?php endif; ?>
 			<th></th>
