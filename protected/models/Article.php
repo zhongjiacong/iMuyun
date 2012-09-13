@@ -171,7 +171,7 @@ class Article extends CActiveRecord
 			
 			case 1:
 				$wordcount = str_word_count(
-					preg_replace("/[\x{4e00}-\x{9fff}\x{f900}-\x{faff}]/u", "", $content));
+					preg_replace("/[\x{4e00}-\x{9fff}\x{f900}-\x{faff}]/u", " ", $content));
 				break;
 			
 			case 2:
