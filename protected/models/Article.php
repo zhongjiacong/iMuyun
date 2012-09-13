@@ -153,9 +153,13 @@ class Article extends CActiveRecord
 	 * @return 字数，报价
 	 */
 	public function textInfor($srclang_id,$content) {
+		if(0 == strlen($content))
+			throw new CHttpException(400,Yii::t('article','Translation content cannot be empty!'));
+		
 		// remove punctuation
 		$content = preg_replace("/(·|！|￥|…|（|）|—|【|】|；|：|“|”|‘|’|╗|╚|┐|└|《|》|〈|〉|？|，|。|、)+/","",
-			preg_replace("/[[:punct:]]/","",$content));
+			preg_replace("/[[:punct:]]/","",
+			preg_replace("/(\s)+/","",$content)));
 		
 		switch ($srclang_id) {
 			case 0:

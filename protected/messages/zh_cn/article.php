@@ -19,7 +19,7 @@
  * @version $Id: $
  */
 return array (
-  'Successfully submission.' => '成功提交。',
+  'Translation content cannot be empty!' => '翻译内容不能为空！',
   'Article Content' => '翻译内容',
   'Complete Time' => '完成时间',
   'Complete Translation' => '完成翻译',
@@ -50,6 +50,7 @@ return array (
   'Start Translation failed' => '开始翻译失败',
   'Subject' => '订单主题',
   'Successfully submission, we will contact you as soon as possible.' => '成功提交，我们将会尽快联系您。',
+  'Successfully submission.' => '成功提交。',
   'Target Language' => '目标语言',
   'Terms of Service' => '服务条款',
   'Text Translation' => '文本翻译',
