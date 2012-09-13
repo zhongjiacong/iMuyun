@@ -239,7 +239,8 @@ class Article extends CActiveRecord
 				$artcont = Article::model()->docx2text($phypath);break;
 			case $allowtype[1]:
 				shell_exec("iconv ".$phypath." -f gbk -t utf-8 > ".$phypath);
-				$artcont = shell_exec('cat '.$phypath);break;
+				$artcont = shell_exec('cat '.$phypath);
+			throw new CHttpException(400,$artcont);break;
 			case $allowtype[2]:
 				$model->artcont = shell_exec(dirname(__FILE__).'/../extensions/antiword-0.37/antiword -m UTF-8.txt '.$phypath);break;
 			case $allowtype[3]:
