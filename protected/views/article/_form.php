@@ -40,13 +40,13 @@
 	</div>
 	<dl class="numform<?=$counter; ?>">
 		<dt><?=Yii::t('article','Original-target Language'); ?></dt>
+		<?php
+			// supportable languages
+			$textlang = array_splice(Yii::app()->params['language'],0,2);
+		?>
 		<dd>
-			<?=$form->dropDownList($model,'srclang_id',Yii::app()->params['language'],
-				array('class'=>'droplist')); ?>
-			<?=$form->dropDownList($model,'tgtlang_id',Yii::app()->params['language'],
-				array('class'=>'droplist')); ?>
-			<?=$form->error($model,'srclang_id'); ?>
-			<?=$form->error($model,'tgtlang_id'); ?>
+			<?=$form->dropDownList($model,'srclang_id',$textlang,array('class'=>'droplist')); ?>
+			<?=$form->dropDownList($model,'tgtlang_id',$textlang,array('class'=>'droplist')); ?>
 		</dd>
 	</dl>
 	<dl class="numform<?=$counter; ?>">

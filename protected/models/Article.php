@@ -168,24 +168,16 @@ class Article extends CActiveRecord
 					preg_replace("|[a-z ]|is","",$content));
 				$wordcount = mb_strlen($content,'utf-8');
 				break;
-			
 			case 1:
 				$wordcount = str_word_count(
 					preg_replace("/[\x{4e00}-\x{9fff}\x{f900}-\x{faff}]/u", " ", $content));
 				break;
-			
-			case 2:
-				$total = mb_strlen($content,'utf-8');
-				$content = preg_replace("|[a-z]|is","",$content);
-				$wordcount = $total - mb_strlen($content,'utf-8');
+			/*case 2:
+				$wordcount = strlen(preg_replace("/ +/", " ", $content)) - strlen(preg_replace("/ +/", "", $content));
 				break;
-			
 			case 3:
-				$total = mb_strlen($content,'utf-8');
-				$content = preg_replace("|[a-z]|is","",$content);
-				$wordcount = $total - mb_strlen($content,'utf-8');
-				break;
-			
+				$wordcount = strlen(preg_replace("/ +/", " ", $content)) - strlen(preg_replace("/ +/", "", $content));
+				break;*/
 			default:
 				$wordcount = 0;
 				break;

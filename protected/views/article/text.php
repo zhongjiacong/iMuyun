@@ -66,6 +66,21 @@ Yii::app()->clientScript->registerScript('article', "
 	});
 	
 	$('.textintro span, .textintro div').animate({marginLeft:'100px',opacity:'1'},1500,function(){});
+	
+	//-- not the same language start --//
+	$('#Article_srclang_id').change(function(){
+		if(0 == $('#Article_srclang_id').val())
+			$('#Article_tgtlang_id').val(1);
+		else
+			$('#Article_tgtlang_id').val(0);
+	});
+	$('#Article_tgtlang_id').change(function(){
+		if(0 == $('#Article_tgtlang_id').val())
+			$('#Article_srclang_id').val(1);
+		else
+			$('#Article_srclang_id').val(0);
+	});
+	//-- not the same language end --//
 ");
 Yii::app()->clientScript->registerScript('textform', "
 	function selectOrderList() {
