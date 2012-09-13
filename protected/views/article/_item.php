@@ -22,9 +22,9 @@
 	?>
 	<br />
 
-	<?php if(NULL != $data->comptime) { ?>
+	<?php if(NULL != Article::model()->comptime($data->id)): ?>
 	<b><?=CHtml::encode($data->getAttributeLabel('comptime')); ?>:</b>
-	<?=Time::timeDisplay($data->comptime); ?>
-	<?php } ?>
+	<?=Time::timeDisplay(Article::model()->comptime($data->id),TRUE); ?>
+	<?php endif; ?>
 
 </div>

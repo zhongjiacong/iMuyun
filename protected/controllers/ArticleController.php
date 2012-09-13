@@ -35,7 +35,7 @@ class ArticleController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow',
-				'actions'=>array('receive','my','start','comp'),
+				'actions'=>array('receive','my','start','comp','trans'),
 				'expression'=>array($this,'isTranslator'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -70,6 +70,24 @@ class ArticleController extends Controller
 			echo json_encode(Article::model()->textInfor(intval($_POST["srclang_id"]),addslashes($_POST["content"])));
 		}
 	}
+	
+	public function actionTrans($id) {
+		$this->layout='//layouts/column1';
+		
+		$dataProvider = new CActiveDataProvider('Sentence',array(
+	        'criteria'=>array(
+	        	'order'=>'`sentencenum` ASC',
+	        	'condition'=>'`article_id` = '.$id,
+	        ),
+	        'pagination'=>array(
+	            //'pageSize'=>10,
+	        )));
+		
+		$this->render('trans',array(
+			'dataProvider'=>$dataProvider,
+			'model'=>$this->loadModel($id),
+		));
+	}
 
 	/**
 	 * Displays a particular model.
@@ -96,10 +114,11 @@ class ArticleController extends Controller
 	
 	public function actionStart()
 	{
-		if(isset($_POST['id'])) {
+		if(Yii::app()->request->isPostRequest) {
 			date_default_timezone_set('PRC');
-			Article::model()->updateByPk(intval($_POST['id']),
-				array('starttime'=>date("Y-m-d H:i:s")));
+			Spreadtable::model()->updateAll(array('starttime'=>date("Y-m-d H:i:s")),
+				"`article_id` = :article_id and `translator_id` = :translator_id",
+				array(":article_id"=>intval($_POST['id']),"translator_id"=>Yii::app()->user->getId()));
 			echo json_encode(array('state'=>'succeed'));
 		}
 		else
@@ -108,22 +127,12 @@ class ArticleController extends Controller
 	
 	public function actionComp()
 	{
-		if(isset($_POST['id'])) {
-			date_default_timezone_set('PRC');
-			Article::model()->updateByPk(intval($_POST['id']),
-				array('comptime'=>date("Y-m-d H:i:s")));
-			// 判断是否可以交付
-			$order_id = Article::model()->findByPk(intval($_POST['id']))->order_id;
-			$article = Article::model()->findAll('`order_id` = :id AND `comptime` is NULL',
-				array(':id'=>$order_id));
-			// 如果已经没有未完成的翻译内容，则交付
-			if($article == NULL)
-				Order::model()->updateByPk($order_id,array('deliverytime'=>date("Y-m-d H:i:s")));
+		if(Yii::app()->request->isPostRequest) {
+			$doccont = CUploadedFile::getInstanceByName('file');
+			Article::model()->saveTransFile(intval($_POST['id']),$doccont);
 				
-			echo json_encode(array('state'=>'succeed'));
+			$this->redirect(array('article/trans','id'=>intval($_POST['id'])));
 		}
-		else
-			echo json_encode(array('state'=>'fail'));
 	}
 
 	public function actionReceive()
@@ -209,10 +218,10 @@ class ArticleController extends Controller
 				date_default_timezone_set('PRC');
 				$model->edittime = date("Y-m-d H:i:s");
 				$model->filename = $model->doccont->getName();
+				$model->price = $textinfor["price"];
 				
 				if($model->save()) {
 					Sentence::model()->saveArtcont($model);
-					Spreadtable::model()->saveArtPrice($model->id,$textinfor["price"]);
 					
 					// 注意这里的跳转要加上控制器名
 					if(Yii::app()->user->isGuest)
@@ -229,47 +238,15 @@ class ArticleController extends Controller
 					throw new CHttpException(400,Yii::t('article','Please choose the correct source language!'));
 				
 				// 添加到订单
-				if(0 == $model->orderlist) {
-					$order = new Order;
-					// 如果用户设置了主题
-					if(NULL != $model->subject)
-						$order->subject = $model->subject;
-					
-					$order->customer_id = $user_id;
-					date_default_timezone_set('PRC');
-					$deadline = date("Y-m-d H:i:s");
-					$order->deadline = $deadline;//$model->deadline;
-					$order->submittime = $deadline;
-					$order->save();
-					// 如果用户没有设置新的主题，保存了之后将订单id记为subject
-					if(NULL == $model->subject) {
-						$order->subject = $order->id;
-						$order->save();
-					}
-				
-					// 把订单号加入到Article中，否则，订单号来自用户选择的旧订单号
-					$model->order_id = $order->id;
-				}
+				if(0 == $model->orderlist)
+					$model->order_id = Order::model()->orderFromArt($model,$user_id);
 				
 				date_default_timezone_set('PRC');
 				$model->edittime = date("Y-m-d H:i:s");
+				$model->price = $textinfor["price"];
 				
 				if($model->save()) {
-					// 把文字存成句子
-					$sentence = new Sentence;
-					// 先给个初始的art id，在下面进行修改，以满足
-					$sentence->article_id = $model->id;
-					$sentence->sentencenum = 0;
-					$sentence->original = $model->artcont;
-					date_default_timezone_set('PRC');
-					$sentence->edittime = date("Y-m-d H:i:s");
-					$sentence->save();
-					
-					// 添加到价位表
-					$spreadtable = new Spreadtable;
-					$spreadtable->article_id = $model->id;
-					$spreadtable->price = $textinfor["price"];
-					$spreadtable->save();
+					Sentence::model()->saveArtcont($model);
 					
 					// 重定向
 					if(Yii::app()->user->isGuest)

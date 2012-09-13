@@ -85,15 +85,14 @@ $this->menu=array(
 		foreach ($sentence as $skey => $svalue) {
 			$artcont .= $svalue->original;
 		}
-		$textinfor = Article::model()->textInfor($value->srclang_id, $artcont);
 ?>
 <table class="ordertable">
 	<tbody>
 		<tr>
 			<td><?=CHtml::link(Article::model()->getAttributeLabel('id').': '.$value->id,array('article/view','id'=>$value->id)); ?></td>
 			<td><?=Yii::app()->params['language'][$value->srclang_id].'->'.Yii::app()->params['language'][$value->tgtlang_id]; ?></td>
-			<td><?=$textinfor["wordcount"]; ?></td>
-			<td><?=$textinfor["price"]; ?></td>
+			<td><?=$value->wordcount; ?></td>
+			<td><?=$value->price; ?></td>
 			<td><?=$value->edittime; ?></td>
 			<?php if(NULL == $model->paytime): ?>
 			<td><?=CHtml::button(Yii::t('layouts','Delete'),array('onclick'=>'delart('.$value->id.');')); ?></td>

@@ -137,10 +137,7 @@ class Order extends CActiveRecord
 		$article = Article::model()->findAll('`order_id` = :order_id',array(':order_id'=>$order_id));
 		foreach($article as $key => $value) {
 			// calculate the totalprice
-			$articleprice = Spreadtable::model()->findAll('`article_id` = :id',array(':id'=>$value->id));
-			foreach ($articleprice as $pricekey => $pricevalue) {
-				$totalprice += $pricevalue->price;
-			}
+			$totalprice += $value->price;
 		}
 		return $totalprice;
 	}

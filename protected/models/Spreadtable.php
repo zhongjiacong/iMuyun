@@ -108,15 +108,4 @@ class Spreadtable extends CActiveRecord
 		return $textid;
 	}
 	
-	/**
-	 * add article price to spreadtable
-	 */
-	public function saveArtPrice($article_id, $price) {
-		$spreadtable = new Spreadtable;
-		$spreadtable->article_id = $article_id;
-		$spreadtable->price = $price;
-		
-		return ($spreadtable->save())?TRUE:FALSE;
-	}
-	
 }

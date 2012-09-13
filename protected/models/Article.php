@@ -268,6 +268,48 @@ class Article extends CActiveRecord
 
 		return $physical?$phypath:$urlpath;
 	}
+
+	public function saveTransFile($text_id,$doccont)
+	{
+		date_default_timezone_set('PRC');
+			
+		$text = Article::model()->findByPk($text_id);
+		$time = strtotime($text->edittime);
+		$comptime = date("Y-m-d H:i:s");
+		
+		$path = (NULL != $text->filename)?pathinfo(urlencode($text->filename)):pathinfo(urlencode($doccont->getName()));
+		
+		Spreadtable::model()->updateAll(array('filename'=>$doccont->getName(),'comptime'=>$comptime),
+			"`article_id` = :article_id and `translator_id` = :translator_id",
+			array(":article_id"=>$text_id,"translator_id"=>Yii::app()->user->getId()));
+		
+		$phypath = dirname(__FILE__).'/../../public/file/'.$time.".".$path["filename"].".".
+			Yii::app()->user->getId().".".strtotime($comptime).".".$path["extension"];
+		
+		$doccont->saveAs($phypath);
+	}
+	
+	public function transFileAddr($text_id,$user_id)
+	{
+		$spreadtable = Spreadtable::model()->find("`translator_id` = :translator_id and `article_id` = :article_id",
+			array(":translator_id"=>$user_id,":article_id"=>$text_id));
+		$text = Article::model()->findByPk($text_id);
+		$time = strtotime($text->edittime);
+		$comptime = strtotime($spreadtable->comptime);
+		
+		$path = (NULL != $text->filename)?pathinfo(urlencode($text->filename)):pathinfo(urlencode($spreadtable->filename));
+		
+		$phypath = dirname(__FILE__).'/../../public/file/'.$time.".".$path["filename"].".".
+			Yii::app()->user->getId().".".$comptime.".".$path["extension"];
+		$urlpath = Yii::app()->request->baseUrl.'/public/file/'.$time.".".urlencode($path["filename"]).".".
+			Yii::app()->user->getId().".".$comptime.".".$path["extension"];
+		
+		return array(
+			'filename'=>urldecode($path["basename"]),
+			'phypath'=>$phypath,
+			'urlpath'=>$urlpath,
+		);
+	}
 	
 	function rrmdir($dir) {
 	    if(is_dir($dir)) {
@@ -333,6 +375,36 @@ class Article extends CActiveRecord
 			return TRUE;
 		}
 		return FALSE;
+	}
+	
+	public function startTime($article_id)
+	{
+		$article = Spreadtable::model()->findAll("`article_id` = :article_id",array(":article_id"=>$article_id));
+		$isnull = TRUE;
+		date_default_timezone_set("PRC");
+		$timearr = array();
+		foreach ($article as $key => $value) {
+			if(NULL != $value->starttime) {
+				$timearr[$key] = strtotime($value->starttime);
+				$isnull = FALSE;
+			}
+		}
+		return $isnull?NULL:min($timearr);
+	}
+	
+	public function compTime($article_id)
+	{
+		$article = Spreadtable::model()->findAll("`article_id` = :article_id",array(":article_id"=>$article_id));
+		$isnull = TRUE;
+		date_default_timezone_set("PRC");
+		$timearr = array();
+		foreach ($article as $key => $value) {
+			if(NULL != $value->comptime) {
+				$timearr[$key] = strtotime($value->comptime);
+				$isnull = FALSE;
+			}
+		}
+		return $isnull?NULL:min($timearr);
 	}
 
 }

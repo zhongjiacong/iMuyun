@@ -29,7 +29,22 @@ $this->menu=array(
 );
 ?>
 
+<table class="ordertable">
+	<thead>
+		<tr>
+			<th></th>
+			<th><?=Yii::t('article','Language'); ?></th>
+			<th><?=CHtml::encode(Article::model()->getAttributeLabel('wordcount')); ?></th>
+			<th><?=Yii::t('article','Edit Time'); ?></th>
+			<?php if(NULL != $data->comptime): ?>
+			<th></th>
+			<?php endif; ?>
+			<th></th>
+		</tr>
+	</thead>
+</table>
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
+	'template'=>'{items}{summary}<br />{pager}'
 )); ?>
