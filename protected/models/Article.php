@@ -157,10 +157,10 @@ class Article extends CActiveRecord
 			throw new CHttpException(400,Yii::t('article','Translation content cannot be empty!'));
 		
 		// remove punctuation
-		//$content = preg_replace("/(·|！|￥|…|（|）|—|【|】|；|：|“|”|‘|’|╗|╚|┐|└|《|》|〈|〉|？|，|。|、)+/","",
-		$content = preg_replace("/[\x{ff00}-\x{ffef}\x{2000}-\x{206F}]/u","",
+		$content = preg_replace("/(·|！|￥|…|（|）|—|【|】|；|：|“|”|‘|’|╗|╚|┐|└|《|》|〈|〉|？|，|。|、)+/","",
+			preg_replace("/[\x{ff00}-\x{ffef}\x{2000}-\x{206F}]/u","",
 			preg_replace("/[[:punct:]]/","",
-			preg_replace("/(\s|\d)+/","",$content)));
+			preg_replace("/(\s|\d)+/","",$content))));
 		
 		switch ($srclang_id) {
 			case 0:
@@ -169,9 +169,8 @@ class Article extends CActiveRecord
 				break;
 			
 			case 1:
-				$total = mb_strlen($content,'utf-8');
-				$content = preg_replace("|[a-z]|is","",$content);
-				$wordcount = $total - mb_strlen($content,'utf-8');
+				$content = preg_replace("/[\x{4e00}-\x{9fff}\x{f900}-\x{faff}]/u", "", $content);
+				$wordcount = str_word_count($content);
 				break;
 			
 			case 2:
