@@ -157,9 +157,10 @@ class Article extends CActiveRecord
 			throw new CHttpException(400,Yii::t('article','Translation content cannot be empty!'));
 		
 		// remove punctuation
-		$content = preg_replace("/(·|！|￥|…|（|）|—|【|】|；|：|“|”|‘|’|╗|╚|┐|└|《|》|〈|〉|？|，|。|、)+/","",
+		//$content = preg_replace("/(·|！|￥|…|（|）|—|【|】|；|：|“|”|‘|’|╗|╚|┐|└|《|》|〈|〉|？|，|。|、)+/","",
+		$content = preg_replace("/[\xa1-\xa3][\xa0-\xfe]/","",
 			preg_replace("/[[:punct:]]/","",
-			preg_replace("/(\s)+/","",$content)));
+			preg_replace("/(\s|\d)+/","",$content)));
 		
 		switch ($srclang_id) {
 			case 0:
