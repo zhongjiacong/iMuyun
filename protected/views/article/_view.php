@@ -1,20 +1,16 @@
 <table class="ordertable">
 	<tbody>
-		<?php if(Article::model()->comptime($data->id) == NULL): ?>
-		<tr class="textview">
-		<?php else: ?>
+		<?php if(Spreadtable::model()->isProcessed($data->id)): ?>
 		<tr class="textview finishtextview">
+		<?php else: ?>
+		<tr class="textview">
 		<?php endif; ?>
 			<td>
 				<?php
 					if(!User::model()->isTranslator())
-						echo CHtml::link('<b>'.CHtml::encode($data->getAttributeLabel('id')).':</b>'.CHtml::encode($data->id),
-							array('article/view', 'id'=>$data->id));
-					else if(Spreadtable::model()->isReceived($data->id) == Yii::app()->user->getId())
-						echo CHtml::link('<b>'.CHtml::encode($data->getAttributeLabel('id')).':</b>'.CHtml::encode($data->id),
-							array('article/trans', 'id'=>$data->id));
+						echo CHtml::link(CHtml::encode($data->id),array('article/view', 'id'=>$data->id));
 					else
-						echo '<b>'.CHtml::encode($data->getAttributeLabel('id')).':</b>'.CHtml::encode($data->id);
+						echo CHtml::link(CHtml::encode($data->id),array('article/trans', 'id'=>$data->id));
 				?>
 			</td>
 			<?php /*
@@ -36,14 +32,13 @@
 			</td>
 			<td>
 				<?php if(NULL != Article::model()->comptime($data->id)): ?>
-					<b><?=CHtml::encode($data->getAttributeLabel('comptime')); ?>:</b>
 					<?=Time::timeDisplay(Article::model()->comptime($data->id),TRUE); ?>
 				<?php endif; ?>
 			</td>
 			<td>
-				<span><?=(Spreadtable::model()->isReceived($data->id) == NULL)?
-					CHtml::button(Yii::t('article','Receive Article'),array('onclick'=>'receiveart('.$data->id.')')):
-					User::model()->getNickname(Spreadtable::model()->isReceived($data->id),array('link'=>'link')); ?>
+				<span>
+					<?=Spreadtable::model()->isReceived($data->id)?"":
+						CHtml::button(Yii::t('article','Receive Article'),array('onclick'=>'receiveart('.$data->id.')')); ?>
 				</span>
 			</td>
 		</tr>

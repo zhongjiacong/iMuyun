@@ -272,11 +272,22 @@ class Article extends CActiveRecord
 	public function saveTransFile($text_id,$doccont)
 	{
 		date_default_timezone_set('PRC');
-			
+		
 		$text = Article::model()->findByPk($text_id);
 		$time = strtotime($text->edittime);
 		$comptime = date("Y-m-d H:i:s");
 		
+		// -- delete last file -- //
+		$spreadtable = Spreadtable::model()->find("`article_id` = :article_id and `translator_id` = :translator_id",
+			array(":article_id"=>$text_id,":translator_id"=>Yii::app()->user->getId()));
+		if(NULL != $spreadtable->filename) {
+			$path = pathinfo(urlencode($spreadtable->filename));
+			$filepath = dirname(__FILE__).'/../../public/file/'.$time.".".$path["filename"].".".
+				Yii::app()->user->getId().".".strtotime($spreadtable->comptime).".".$path["extension"];
+			if(is_file($filepath))
+				unlink($filepath);
+		}
+				
 		$path = (NULL != $text->filename)?pathinfo(urlencode($text->filename)):pathinfo(urlencode($doccont->getName()));
 		
 		Spreadtable::model()->updateAll(array('filename'=>$doccont->getName(),'comptime'=>$comptime),

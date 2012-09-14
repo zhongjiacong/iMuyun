@@ -36,6 +36,7 @@ return array(
 		'Senior Translator',
 		'Administrator',
 		'Super Administrator',
+		'Editor',
 	),
 	
 	// 需要进行领域分类的对象

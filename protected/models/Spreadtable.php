@@ -6,7 +6,9 @@
  * The followings are the available columns in table '{{u_spreadtable}}':
  * @property integer $article_id
  * @property integer $translator_id
- * @property string $price
+ * @property string $filename
+ * @property string $starttime
+ * @property string $comptime
  */
 class Spreadtable extends CActiveRecord
 {
@@ -36,12 +38,13 @@ class Spreadtable extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('article_id, price', 'required'),
+			array('article_id', 'required'),
 			array('article_id, translator_id', 'numerical', 'integerOnly'=>true),
-			array('price', 'length', 'max'=>31),
+			array('filename', 'length', 'max'=>255),
+			array('starttime, comptime', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('article_id, translator_id, price', 'safe', 'on'=>'search'),
+			array('article_id, translator_id, filename, starttime, comptime', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -62,9 +65,11 @@ class Spreadtable extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'article_id' => 'Article',
-			'translator_id' => 'Translator',
-			'price' => 'Price',
+			'article_id' => 'Article ID',
+			'translator_id' => 'Translator ID',
+			'filename' => 'File Name',
+			'starttime' => 'Start Time',
+			'comptime' => 'Comp Time',
 		);
 	}
 
@@ -80,21 +85,50 @@ class Spreadtable extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('article_id',$this->article_id);
-		$criteria->compare('translator_id',$this->translator_id);
-		$criteria->compare('price',$this->price,true);
+		$criteria->compare('translator_id',$this->translator_id);	
+		$criteria->compare('filename',$this->filename,true);
+		$criteria->compare('starttime',$this->starttime,true);
+		$criteria->compare('comptime',$this->comptime,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
 	
-	public function isReceived($article_id)
+	public function myReceived($article_id)
 	{
-		$article = Spreadtable::model()->find('`article_id` = :article_id',array(':article_id'=>intval($article_id)));
-		// 要先判断是否有这个数据模型
-		// 这里判断0是因为数据库没改，改过来同样可以用
-		return (NULL != $article && NULL != $article->translator_id && 0 != $article->translator_id)?
-			$article->translator_id:NULL;
+		$article = Spreadtable::model()->findAll('`article_id` = :article_id',array(':article_id'=>intval($article_id)));
+		$flag = FALSE;
+		foreach ($article as $key => $value) {
+			if($value->translator_id == Yii::app()->user->getId())
+				$flag = TRUE;
+		}
+		return $flag;
+	}
+	
+	public function isReceived($article_id) {
+		$article = Spreadtable::model()->findAll('`article_id` = :article_id',array(':article_id'=>intval($article_id)));
+		$flag = FALSE;
+		foreach ($article as $key => $value) {
+			if($value->comptime == NULL || ($value->starttime != NULL && $value->comptime != NULL &&
+				$value->translator_id == Yii::app()->user->getId()))
+				$flag = TRUE;
+		}
+		return $flag;
+	}
+	
+	/**
+	 * someone have the same privilege have processed
+	 */
+	public function isProcessed($article_id) {
+		$article = Spreadtable::model()->findAll('`article_id` = :article_id',array(':article_id'=>intval($article_id)));
+		$flag = FALSE;
+		foreach ($article as $key => $value) {
+			if(User::model()->findByPk($value->translator_id)->privilege_id ==
+				User::model()->findByPk(Yii::app()->user->getId())->privilege_id && $value->comptime != NULL)
+				$flag = TRUE;
+		}
+		return $flag;
 	}
 	
 	public function myText()

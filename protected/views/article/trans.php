@@ -96,12 +96,13 @@ Yii::app()->clientScript->registerScript('article',"
 				'label'=>Yii::app()->user->getId(),
 				'type'=>'raw',
 				'value'=>$transbtn,
+				'visible'=>Spreadtable::model()->myReceived($model->id),
 			),
 		),
 	));
 ?>
 
-<?php if(Article::model()->starttime($model->id) != NULL && Article::model()->comptime($model->id) == NULL): ?>
+<?php if(Article::model()->starttime($model->id) != NULL): ?>
 <br />
 <div class="form">
 	<dl>
