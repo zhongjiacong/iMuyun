@@ -36,7 +36,6 @@ $('.search-form form').submit(function(){
 		'wordcount',
 		'srclang_id',
 		'tgtlang_id',
-		'comptime',
 		'edittime',
 		array(
 			'class'=>'CButtonColumn',

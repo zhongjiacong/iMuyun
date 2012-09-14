@@ -30,8 +30,10 @@
 			
 			<td>
 				<?php
-					if($data->paytime == NULL)
+					if($data->paytime == NULL && $data->deliverytime == NULL)
 						echo Yii::t('order','Non-payment');
+					elseif($data->deliverytime != NULL)
+						echo Yii::t('order','Translation has completed')."<br />".CHtml::link(Yii::t('order','Order Detail'),array('view', 'id'=>$data->id));
 					else
 						echo Yii::t("order","Paid")."<br />".CHtml::link(Yii::t('order','Order Detail'),array('view', 'id'=>$data->id));
 				?>

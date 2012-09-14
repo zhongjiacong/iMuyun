@@ -258,21 +258,7 @@ class User extends CActiveRecord
 		$user_id = ("" == $user_id)?Yii::app()->user->getId():$user_id;
 		
 		$privilege_id = User::model()->findByPk(intval($user_id))->privilege_id;
-		return ($privilege_id == array_search('Translator', Yii::app()->params['privilege']));
-	}
-	
-	/**
-	 * @return 是否是译员
-	 */
-	public function isSenior($user_id = "")
-	{
-		if("" == $user_id && Yii::app()->user->isGuest)
-			return FALSE;
-		
-		$user_id = ("" == $user_id)?Yii::app()->user->getId():$user_id;
-		
-		$privilege_id = User::model()->findByPk(intval($user_id))->privilege_id;
-		return ($privilege_id == array_search('Senior Translator', Yii::app()->params['privilege']));
+		return ($privilege_id == 2 || $privilege_id == 3 || $privilege_id == 6);
 	}
 	
 	/**

@@ -130,6 +130,26 @@ class ArticleController extends Controller
 		if(Yii::app()->request->isPostRequest) {
 			$doccont = CUploadedFile::getInstanceByName('file');
 			Article::model()->saveTransFile(intval($_POST['id']),$doccont);
+			
+			date_default_timezone_set("PRC");
+			if(User::model()->findByPk(Yii::app()->user->getId())->privilege_id == 6) {
+				$flag = TRUE;
+				$order_id = Article::model()->findByPk(intval($_POST['id']))->order_id;
+				$article = Article::model()->findAll("`order_id` = :order_id",array(":order_id"=>$order_id));
+				foreach ($article as $key => $value) {
+					$spreadflag = FALSE;
+					$spreadtable = Spreadtable::model()->findAll("`article_id` = :article_id",
+						array(":article_id"=>$value->id));
+					foreach ($spreadtable as $key => $spreadvalue) {
+						if($spreadvalue->filename != NULL && 6 == User::model()->findByPk($spreadvalue->translator_id)->privilege_id)
+							$spreadflag = TRUE;
+					}
+					if(!$spreadflag)
+						$flag = FALSE;
+				}
+				if($flag)
+					Order::model()->updateByPk($order_id,array("deliverytime"=>date("Y-m-d H:i:s")));
+			}
 				
 			$this->redirect(array('article/trans','id'=>intval($_POST['id'])));
 		}
@@ -138,11 +158,11 @@ class ArticleController extends Controller
 	public function actionReceive()
 	{
 		if(Yii::app()->request->isPostRequest && !Spreadtable::model()->isReceived(intval($_POST['id']))) {
-			date_default_timezone_set("PRC");
+			//date_default_timezone_set("PRC");
 			$spreadtable = new Spreadtable;
 			$spreadtable->article_id = intval($_POST['id']);
 			$spreadtable->translator_id = Yii::app()->user->getId();
-			$spreadtable->starttime = date("Y-m-d H:i:s");
+			//$spreadtable->starttime = date("Y-m-d H:i:s");
 			echo ($spreadtable->save())?
 				json_encode(array('state'=>'succeed')):json_encode(array('state'=>'fail'));
 		}

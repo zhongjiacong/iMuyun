@@ -10,8 +10,6 @@
  * @property integer $wordcount
  * @property integer $srclang_id
  * @property integer $tgtlang_id
- * @property string $starttime
- * @property string $comptime
  * @property string $edittime
  */
 class Article extends CActiveRecord
@@ -60,10 +58,9 @@ class Article extends CActiveRecord
 			    'on' => 'doccreate',
 			),
 			array('fieldcat_id, order_id, wordcount, srclang_id, tgtlang_id', 'numerical', 'integerOnly'=>true),
-			array('starttime, comptime', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, fieldcat_id, order_id, wordcount, srclang_id, tgtlang_id, starttime, comptime, edittime', 'safe', 'on'=>'search'),
+			array('id, fieldcat_id, order_id, wordcount, srclang_id, tgtlang_id, edittime', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -90,8 +87,6 @@ class Article extends CActiveRecord
 			'wordcount' => Yii::t('article','Word Count'),
 			'srclang_id' => Yii::t('article','Source Language'),
 			'tgtlang_id' => Yii::t('article','Target Language'),
-			'starttime' => Yii::t('article','Start Time'),
-			'comptime' => Yii::t('article','Complete Time'),
 			'edittime' => Yii::t('article','Edit Time'),
 			// ext
 			'artcont' => Yii::t('article','Article Content'),
@@ -120,8 +115,6 @@ class Article extends CActiveRecord
 		$criteria->compare('wordcount',$this->wordcount);
 		$criteria->compare('srclang_id',$this->srclang_id);
 		$criteria->compare('tgtlang_id',$this->tgtlang_id);
-		$criteria->compare('starttime',$this->starttime,true);
-		$criteria->compare('comptime',$this->comptime,true);
 		$criteria->compare('edittime',$this->edittime,true);
 
 		return new CActiveDataProvider($this, array(
@@ -302,6 +295,8 @@ class Article extends CActiveRecord
 	
 	public function transFileAddr($text_id,$user_id)
 	{
+		date_default_timezone_set("PRC");
+		
 		$spreadtable = Spreadtable::model()->find("`translator_id` = :translator_id and `article_id` = :article_id",
 			array(":translator_id"=>$user_id,":article_id"=>$text_id));
 		$text = Article::model()->findByPk($text_id);
@@ -311,9 +306,9 @@ class Article extends CActiveRecord
 		$path = (NULL != $text->filename)?pathinfo(urlencode($text->filename)):pathinfo(urlencode($spreadtable->filename));
 		
 		$phypath = dirname(__FILE__).'/../../public/file/'.$time.".".$path["filename"].".".
-			Yii::app()->user->getId().".".$comptime.".".$path["extension"];
+			$user_id.".".$comptime.".".$path["extension"];
 		$urlpath = Yii::app()->request->baseUrl.'/public/file/'.$time.".".urlencode($path["filename"]).".".
-			Yii::app()->user->getId().".".$comptime.".".$path["extension"];
+			$user_id.".".$comptime.".".$path["extension"];
 		
 		return array(
 			'filename'=>urldecode($path["basename"]),

@@ -317,6 +317,7 @@ class UserController extends Controller
 					$model->loginpassword = User::hashPassword($_POST['User']['loginpassword']);
 			}
 			
+			date_default_timezone_set("PRC");
 			$model->birthday = date('Y-m-d',strtotime($_POST['User']['birthday']));
 			$model->introduce = $_POST['User']['introduce'];
 			$model->address = $_POST['User']['address'];

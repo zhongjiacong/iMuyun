@@ -36,11 +36,6 @@
 	</div>
 
 	<div class="row">
-		<?=$form->label($model,'comptime'); ?>
-		<?=$form->textField($model,'comptime'); ?>
-	</div>
-
-	<div class="row">
 		<?=$form->label($model,'edittime'); ?>
 		<?=$form->textField($model,'edittime'); ?>
 	</div>

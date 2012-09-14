@@ -11,6 +11,13 @@ if(User::model()->isAdmin())
 ?>
 
 <?php
+	$spreadtable = Spreadtable::model()->findAll("`article_id` = :article_id",array(":article_id"=>$model->id));
+	foreach ($spreadtable as $key => $value) {
+		if(User::model()->findByPk($value->translator_id)->privilege_id == 6)
+			$editor_id = $value->translator_id;
+	}
+	$transfile = Article::model()->transFileAddr($model->id,$editor_id);
+	
 	$this->widget('zii.widgets.CDetailView', array(
 		'data'=>$model,
 		'attributes'=>array(
@@ -50,18 +57,9 @@ if(User::model()->isAdmin())
 			array(
 				'label'=>Yii::t('article','Translation Content'),
 				'type'=>'raw',
-				'value'=>(NULL == $model->filename)?Article::model()->getTrans($model->id):
-					CHtml::link($model->filename,Article::model()->fileAddr($model->id,FALSE),
-					array('target'=>'_blank')),
+				'value'=>CHtml::link($transfile["filename"],$transfile["urlpath"]),
 				'visible'=>(NULL != Article::model()->comptime($model->id)),
 			),
 		),
 	));
-	
-	if(Article::model()->comptime($model->id) != NULL) {
-		$this->widget('zii.widgets.CListView', array(
-			'dataProvider'=>$dataProvider,
-			'itemView'=>'/sentence/_view',
-		));
-	}
 ?>

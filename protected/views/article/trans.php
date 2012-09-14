@@ -102,6 +102,25 @@ Yii::app()->clientScript->registerScript('article',"
 	));
 ?>
 
+<?php
+	$spreadtable = Spreadtable::model()->findAll("`article_id` = :article_id",array(":article_id"=>$model->id));
+	foreach ($spreadtable as $key => $value):
+		if($value->translator_id != Yii::app()->user->getId()):
+			$transfile = Article::model()->transFileAddr($model->id,$value->translator_id);
+			if(Article::model()->starttime($model->id) != NULL):
+?>
+<div class="form">
+	<dl>
+		<dt><?=$value->translator_id; ?></dt>
+		<dd><?=CHtml::link($transfile["filename"],$transfile["urlpath"]); ?></dd>
+	</dl>
+</div>
+<?php
+			endif;
+		endif;
+	endforeach;
+?>
+
 <?php if(Article::model()->starttime($model->id) != NULL): ?>
 <br />
 <div class="form">
