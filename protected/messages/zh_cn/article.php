@@ -19,12 +19,12 @@
  * @version $Id: $
  */
 return array (
-  'Article delete failure' => '删除文章失败',
-  'Order information' => '订单信息',
+  'Complete Translation failed' => '@@完成翻译失败@@',
+  'Start Time' => '@@开始翻译时间@@',
   'Article Content' => '翻译内容',
+  'Article delete failure' => '删除文章失败',
   'Complete Time' => '完成时间',
   'Complete Translation' => '完成翻译',
-  'Complete Translation failed' => '完成翻译失败',
   'Confirm order information' => '确认订单信息',
   'Content to translate cannot be empty!' => '翻译内容不能为空',
   'Create Article' => '新建快速翻译',
@@ -40,6 +40,7 @@ return array (
   'My Article' => '我领取的文本',
   'New subject' => '新主题',
   'Order' => '订单',
+  'Order information' => '订单信息',
   'Order state' => '订单状态',
   'Original-target Language' => '源-目标语言',
   'Please choose the correct source language!' => '请选择正确的源语言！',
@@ -48,7 +49,6 @@ return array (
   'Receive Article' => '领取文本',
   'Remember my choice next time.' => '下次记住我的选择。',
   'Source Language' => '源语言',
-  'Start Time' => '开始翻译时间',
   'Start Translation' => '开始翻译',
   'Start Translation failed' => '开始翻译失败',
   'Subject' => '订单主题',

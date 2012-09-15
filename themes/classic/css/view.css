@@ -354,23 +354,49 @@ div.shortbg
 .ordertable tbody tr.grayorder td {
 	background-color: #eee !important;
 }
-.ordertable thead tr th:nth-child(1), .ordertable tbody tr td:nth-child(1) {
+.orderindextable thead tr th:nth-child(1),
+.orderindextable tbody tr td:nth-child(1) {
 	width: 40px;
 }
-.ordertable thead tr th:nth-child(2), .ordertable tbody tr td:nth-child(2) {
+.orderindextable thead tr th:nth-child(2),
+.orderindextable tbody tr td:nth-child(2) {
 	width: 100px;
 }
-.ordertable thead tr th:nth-last-child(4), .ordertable tbody tr td:nth-last-child(4) {
+.orderindextable thead tr th:nth-last-child(4),
+.orderindextable tbody tr td:nth-last-child(4) {
 	width: 70px;
 }
-.ordertable thead tr th:nth-last-child(3), .ordertable tbody tr td:nth-last-child(3) {
+.orderindextable thead tr th:nth-last-child(3),
+.orderindextable tbody tr td:nth-last-child(3) {
 	width: 60px;
 }
-.ordertable thead tr th:nth-last-child(2), .ordertable tbody tr td:nth-last-child(2) {
+.orderindextable thead tr th:nth-last-child(2),
+.orderindextable tbody tr td:nth-last-child(2) {
 	width: 70px;
 }
-.ordertable thead tr th:nth-last-child(1), .ordertable tbody tr td:nth-last-child(1) {
+.orderindextable thead tr th:nth-last-child(1),
+.orderindextable tbody tr td:nth-last-child(1) {
 	width: 60px;
+}
+.articleindextable thead tr th:nth-child(1),
+.articleindextable tbody tr td:nth-child(1) {
+	width: 60px;
+}
+.articleindextable thead tr th:nth-child(2),
+.articleindextable tbody tr td:nth-child(2) {
+	width: 100px;
+}
+.articleindextable thead tr th:nth-child(3),
+.articleindextable tbody tr td:nth-child(3) {
+	width: 60px;
+}
+.articleindextable thead tr th:nth-child(4),
+.articleindextable tbody tr td:nth-child(4) {
+	width: 100px;
+}
+.articleindextable thead tr th:nth-child(5),
+.articleindextable tbody tr td:nth-child(5) {
+	width: 100px;
 }
 
 .artview

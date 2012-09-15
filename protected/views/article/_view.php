@@ -1,4 +1,4 @@
-<table class="ordertable">
+<table class="ordertable articleindextable">
 	<tbody>
 		<?php if(Spreadtable::model()->isProcessed($data->id)): ?>
 		<tr class="textview finishtextview">

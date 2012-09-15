@@ -383,6 +383,13 @@ class Article extends CActiveRecord
 		return FALSE;
 	}
 	
+	public function myStart($article_id) {
+		$article = Spreadtable::model()->find("`article_id` = :article_id AND `translator_id` = :translator_id",
+			array(":article_id"=>$article_id,":translator_id"=>Yii::app()->user->getId()));
+
+		return (NULL != $article->starttime);
+	}
+	
 	public function startTime($article_id)
 	{
 		$article = Spreadtable::model()->findAll("`article_id` = :article_id",array(":article_id"=>$article_id));
@@ -410,7 +417,7 @@ class Article extends CActiveRecord
 				$isnull = FALSE;
 			}
 		}
-		return $isnull?NULL:min($timearr);
+		return $isnull?NULL:max($timearr);
 	}
 
 }

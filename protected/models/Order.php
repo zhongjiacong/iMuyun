@@ -161,5 +161,13 @@ class Order extends CActiveRecord
 
 		return $order->id;
 	}
+	
+	public function isDelivered($id, $isArt = TRUE) {
+		if($isArt) {
+			$order_id = Article::model()->findByPk($id)->order_id;
+			return (NULL != Order::model()->findByPk($order_id)->deliverytime);
+		}
+		return (NULL != Order::model()->findByPk($id)->deliverytime);
+	}
 
 }

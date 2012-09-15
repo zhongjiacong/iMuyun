@@ -29,14 +29,14 @@ $this->menu=array(
 );
 ?>
 
-<table class="ordertable">
+<table class="ordertable articleindextable">
 	<thead>
 		<tr>
 			<th></th>
 			<th><?=Yii::t('article','Language'); ?></th>
 			<th><?=CHtml::encode(Article::model()->getAttributeLabel('wordcount')); ?></th>
 			<th><?=Yii::t('article','Edit Time'); ?></th>
-			<th><?=CHtml::encode(Article::model()->getAttributeLabel('comptime')); ?></th>
+			<th><?=CHtml::encode(Spreadtable::model()->getAttributeLabel('comptime')); ?></th>
 			<th></th>
 		</tr>
 	</thead>

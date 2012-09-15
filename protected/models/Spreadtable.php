@@ -69,7 +69,7 @@ class Spreadtable extends CActiveRecord
 			'translator_id' => 'Translator ID',
 			'filename' => 'File Name',
 			'starttime' => 'Start Time',
-			'comptime' => 'Comp Time',
+			'comptime' => Yii::t('spreadtable','Complete Time'),
 		);
 	}
 

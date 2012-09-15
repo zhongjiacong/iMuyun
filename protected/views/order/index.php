@@ -42,7 +42,7 @@ function evaluateorder(id) {
 ",CClientScript::POS_HEAD);
 ?>
 
-<table class="ordertable">
+<table class="ordertable orderindextable">
 	<thead>
 		<tr>
 			<th><?=CHtml::encode(Order::model()->getAttributeLabel('id')); ?></th>

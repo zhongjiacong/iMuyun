@@ -81,32 +81,22 @@ class OrderController extends Controller
 	 */
 	public function actionCreate()
 	{
-		if(isset($_POST['id']) && isset($_POST['remark']))
-		{
+		if(Yii::app()->request->isPostRequest) {
+			date_default_timezone_set('PRC');
 			$model = $this->loadModel(intval($_POST['id']));
 			$model->remark = addslashes($_POST['remark']);
-			date_default_timezone_set('PRC');
 			$model->paytime = date("Y-m-d H:i:s");
 			
-			// 总价格
-			$totalprice = 0;
-			$articleprice = Spreadtable::model()->findAll('`article_id` = :id',array(':id'=>$model->id));
-			foreach ($articleprice as $pricekey => $pricevalue) {
-				$totalprice += $pricevalue->price;
-			}
 			// 增加消费记录
 			$consume = new Consume;
 			$consume->user_id = Yii::app()->user->getId();
 			$consume->content = "Text Spending";
-			$consume->amount = -$totalprice;
+			$consume->amount = -Order::model()->orderPrice(intval($_POST['id']));
 			$consume->audit = 1;
 			$consume->edittime = date("Y-m-d H:i:s");
 			$consume->save();
 			
-			if($model->save())
-				echo json_encode(array('state'=>'succeed'));
-			else
-				echo json_encode(array('state'=>'fail'));
+			echo $model->save()?json_encode(array('state'=>'succeed')):json_encode(array('state'=>'fail'));
 		}
 	}
 

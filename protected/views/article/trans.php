@@ -64,8 +64,7 @@ Yii::app()->clientScript->registerScript('article',"
 			array('target'=>'_blank'));
 	
 	$transfile = Article::model()->transFileAddr($model->id,Yii::app()->user->getId());
-	$transbtn = (Article::model()->starttime($model->id) == NULL)?
-		CHtml::button(Yii::t('article','Start Translation'),
+	$transbtn = !Article::model()->myStart($model->id)?CHtml::button(Yii::t('article','Start Translation'),
 			array('id'=>'starttrans','onclick'=>'starttrans();')):
 			CHtml::link($transfile["filename"],$transfile["urlpath"]);
 	
@@ -121,7 +120,8 @@ Yii::app()->clientScript->registerScript('article',"
 	endforeach;
 ?>
 
-<?php if(Article::model()->starttime($model->id) != NULL): ?>
+<?php if(Article::model()->myStart($model->id) && !Order::model()->isDelivered($model->id)
+	&& Spreadtable::model()->myReceived($model->id)): ?>
 <br />
 <div class="form">
 	<dl>

@@ -1,4 +1,4 @@
-<table class="ordertable">
+<table class="ordertable orderindextable">
 	<tbody>
 		<tr<?=($data->deliverytime != NULL)?' class="grayorder"':''; ?>>
 			<td><?=CHtml::encode($data->id); ?></td>
