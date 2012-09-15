@@ -19,8 +19,8 @@
  * @version $Id: $
  */
 return array (
-  'Complete Translation failed' => '@@完成翻译失败@@',
-  'Start Time' => '@@开始翻译时间@@',
+  'Call Translator Only' => '仅呼叫译员',
+  'Trilateral video' => '三方视频',
   'Article Content' => '翻译内容',
   'Article delete failure' => '删除文章失败',
   'Complete Time' => '完成时间',
