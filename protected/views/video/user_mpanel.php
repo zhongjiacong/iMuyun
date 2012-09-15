@@ -25,21 +25,20 @@
                 </div>
             </div>
             <div class="row">
-                <div class="span8" id="conferencing_area">
-                </div>
+                <div class="span8" id="conferencing_area">&nbsp;</div>
                 <div class="span4">
                     <form class="well form-inline" id="add_contact_form">
                         <input type="text" class="input-large" id="new_contact" name="follow" placeholder="New contact..."/>
-                        <button type="submit" class="btn btn-success" id="add_contact_button">Add</button>
+                        <button type="submit" class="btn btn-success" id="add_contact_button"><?=Yii::t("article","Add"); ?></button>
                     </form>
                     <div class="well">
                         <ul class="nav nav-list" id="contacts-list">
                             <!-- DEBUG PURPOSE-->
-                            <li class="nav-header" id="contacts-list-head">Contacts</li>
+                            <li class="nav-header" id="contacts-list-head"><?=Yii::t("article","Contacts"); ?></li>
                         </ul>
                     </div>
                     <div id="btndiv">
-                    	<button class="btn btn-success" id="start_conference">Start Conference</button>
+                    	<button class="btn btn-success" id="start_conference"><?=Yii::t("article","Start Conference"); ?></button>
                     </div>
                 </div>
             </div>
@@ -108,7 +107,7 @@
             function end_conference() {
             	$("#end_conference").click(function() {
             		$("#btndiv").html('<button class="btn btn-success" id="start_conference">Start Conference</button>');
-		    		$("#conferencing_area").html("");
+		    		$("#conferencing_area").html("&nbsp;");
             		start_conference();
             	});
             }
@@ -215,7 +214,7 @@
                 // TODO
             }
 		    function streamDestroyedHandler(event){
-		    	$("#conferencing_area").html("");
+		    	$("#conferencing_area").html("&nbsp;");
 		    }
             function sessionConnectedHandler(event){
                 //alert("hey");

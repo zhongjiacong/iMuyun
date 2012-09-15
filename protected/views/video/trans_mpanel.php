@@ -14,9 +14,11 @@
                 <div class="span12">
                     <ul class="nav nav-tabs">
                         <li class="active">
-                            <a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video">Working Space</a>
+                            <a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video">
+                            	<?=Yii::t("article","Trilateral video"); ?></a>
                         </li>
-                        <li><a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video/cpanel">Control Panel</a></li>
+                        <li><a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video/cpanel">
+                        	<?=Yii::t("article","Call Translator Only"); ?></a></li>
                     </ul>
                 </div>
             </div>
@@ -136,7 +138,7 @@
                             rid = -1;
                         }
                 	});
-		    	$("#conferencing_area").html("");
+		    	$("#conferencing_area").html("&nbsp;");
             }
             function sessionConnectedHandler(event){
                 //alert(username+" connected");
