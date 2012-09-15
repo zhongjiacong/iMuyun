@@ -106,7 +106,7 @@
             
             function end_conference() {
             	$("#end_conference").click(function() {
-            		$("#btndiv").html('<button class="btn btn-success" id="start_conference">Start Conference</button>');
+            		$("#btndiv").html('<button class="btn btn-success" id="start_conference"><?=Yii::t("article","Start Conference"); ?></button>');
 		    		$("#conferencing_area").html("&nbsp;");
             		start_conference();
             	});
@@ -114,7 +114,7 @@
 
             function start_conference() {
             	$("#start_conference").click(function (){
-	            	$("#btndiv").html('<button class="btn btn-danger" id="end_conference">End</button>');
+	            	$("#btndiv").html('<button class="btn btn-danger" id="end_conference"><?=Yii::t("article","End"); ?></button>');
 	                isPublisher = true;
 	                reciever = $("#contacts-list").find(".active").text();
 	                $.ajax({
