@@ -19,15 +19,16 @@
  * @version $Id: $
  */
 return array (
+  'End' => '结束',
+  'New contact...' => '新联系人...',
   'Add' => '添加',
-  'Contacts' => '联系人',
-  'Start Conference' => '开始会议',
   'Article Content' => '翻译内容',
   'Article delete failure' => '删除文章失败',
   'Call Translator Only' => '仅呼叫译员',
   'Complete Time' => '完成时间',
   'Complete Translation' => '完成翻译',
   'Confirm order information' => '确认订单信息',
+  'Contacts' => '联系人',
   'Content to translate cannot be empty!' => '翻译内容不能为空',
   'Create Article' => '新建快速翻译',
   'Delete Article' => '删除文本',
@@ -51,6 +52,7 @@ return array (
   'Receive Article' => '领取文本',
   'Remember my choice next time.' => '下次记住我的选择。',
   'Source Language' => '源语言',
+  'Start Conference' => '开始会议',
   'Start Translation' => '开始翻译',
   'Start Translation failed' => '开始翻译失败',
   'Subject' => '订单主题',

@@ -28,7 +28,7 @@
                 <div class="span8" id="conferencing_area">&nbsp;</div>
                 <div class="span4">
                     <form class="well form-inline" id="add_contact_form">
-                        <input type="text" class="input-large" id="new_contact" name="follow" placeholder="New contact..."/>
+                        <input type="text" class="input-large" id="new_contact" name="follow" placeholder="<?=Yii::t('article','New contact...'); ?>"/>
                         <button type="submit" class="btn btn-success" id="add_contact_button"><?=Yii::t("article","Add"); ?></button>
                     </form>
                     <div class="well">
@@ -163,7 +163,7 @@
                     data: {},
                     crossDomain: true,
                     success: function(data) {
-                    	$('#contacts-list').html('<li class="nav-header" id="contacts-list-head">Contacts</li>');
+                    	$('#contacts-list').html('<li class="nav-header" id="contacts-list-head"><?=Yii::t('article','Contacts'); ?></li>');
                         $.each(data.contacts, function(key,val){
                             $('<li class="contact"><a><i class="icon-user"></i>'+
                             	val.email+

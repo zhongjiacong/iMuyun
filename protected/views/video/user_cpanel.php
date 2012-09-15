@@ -25,10 +25,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="span8" id="conferencing_area">
-                    <button class="btn"><?=Yii::app()->user->name; ?></button>
-                    <br />
-                </div>
+                <div class="span8" id="conferencing_area">&nbsp;</div>
                 <div class="span4">
                     <div class="btn-group">
                         <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
@@ -41,6 +38,10 @@
                             <li id=1 class="trans_only_btn"><a>English</a></li>
                             <li id=2 class="trans_only_btn"><a>Japanese</a></li>
                         </ul>
+                    </div>
+                    <br />
+                    <br />
+                    <div id="btndiv">
                     </div>
                 </div>
             </div>
@@ -103,26 +104,36 @@
                 },
                 3000
             )
-
-            $("#start_conference").click(function (){
-                isPublisher = true;
-                reciever = $("#contacts-list").find(".active").text();
-                    $.ajax({
-                        url: HOST+"videoCallTo/",
-                        type: "POST",
-                        cache: false,
-                        dataType: "json",
-                        crossDomain: true,
-                        // TODO condition
-                        data: "username="+username+"&callToUsername="+reciever+"&language="+target_language,
-                        success: function(data) {
-                            session_id = data.sessionId;
-                            token = data.token;
-                            connect();
-                        }
-                    });
-            });
-
+            
+            function end_conference() {
+            	$("#end_conference").click(function() {
+            		$("#conferencing_area").html("&nbsp;");
+            		start_conference();
+            	});
+            }
+            
+            function start_conference() {
+	           	$("#btndiv").html('<button class="btn btn-danger" id="end_conference"><?=Yii::t("article","End"); ?></button>');
+	            $("#start_conference").click(function (){
+	                isPublisher = true;
+	                reciever = $("#contacts-list").find(".active").text();
+	                    $.ajax({
+	                        url: HOST+"videoCallTo/",
+	                        type: "POST",
+	                        cache: false,
+	                        dataType: "json",
+	                        crossDomain: true,
+	                        // TODO condition
+	                        data: "username="+username+"&callToUsername="+reciever+"&language="+target_language,
+	                        success: function(data) {
+	                            session_id = data.sessionId;
+	                            token = data.token;
+	                            connect();
+	                        }
+	                    });
+	            });
+			}
+			
             $(".trans_only_btn").click(function (){
                 isPublisher = true;
                 target_language = $(this).attr("id");
