@@ -44,7 +44,7 @@
             </div>
         </div>
         <script type="text/javascript" charset="utf-8">
-            var HOST = "http://omegaga.net:8000/"
+            var HOST = "http://imuyun.com:8000/"
             //var HOST = "http://omegaga.net/muyunvideo/"
             var session_id, token;
             var username = "<?=Yii::app()->user->name; ?>";
