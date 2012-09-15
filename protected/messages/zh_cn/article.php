@@ -27,7 +27,7 @@ return array (
   'Complete Time' => '完成时间',
   'Complete Translation' => '完成翻译',
   'Confirm order information' => '确认订单信息',
-  'Contacts' => '联系人',
+  'Contacts' => '联系人列表',
   'Content to translate cannot be empty!' => '翻译内容不能为空',
   'Create Article' => '新建快速翻译',
   'Delete Article' => '删除文本',
