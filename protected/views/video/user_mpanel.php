@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="<?=Yii::app()->theme->baseUrl; ?>/css/bootstrap.css" rel="stylesheet" />
+        <link href="<?=Yii::app()->theme->baseUrl; ?>/css/bootstrap.css" rel="stylesheet">
         <script src="<?=Yii::app()->theme->baseUrl; ?>/js/jquery.min.js" ></script>
         <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
-<script src="http://staging.tokbox.com/v0.91/js/TB.min.js" ></script>
+		<script src="http://staging.tokbox.com/v0.91/js/TB.min.js" ></script>
         <!-- <script src="http://staging.tokbox.com/v0.91/js/TB.min.js" type="text/javascript" charset="utf-8"></script> -->
         <!-- <script src="http://static.opentok.com/v0.92-alpha/js/TB.min.js" type="text/javascript"></script>-->
 
@@ -16,15 +16,11 @@
                 <div class="span12">
                     <ul class="nav nav-tabs">
                         <li class="active">
-                        	<a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video">
-                        		<?=Yii::t("article","Trilateral video"); ?>
-                        	</a>
+                            <a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video">
+                            	<?=Yii::t("article","Trilateral video"); ?></a>
                         </li>
-                        <li>
-                        	<a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video/cpanel">
-                        		<?=Yii::t("article","Call Translator Only"); ?>
-                        	</a>
-                        </li>
+                        <li><a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video/cpanel">
+                        	<?=Yii::t("article","Call Translator Only"); ?></a></li>
                     </ul>
                 </div>
             </div>
