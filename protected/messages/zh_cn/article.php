@@ -19,8 +19,7 @@
  * @version $Id: $
  */
 return array (
-  'End' => '结束',
-  'New contact...' => '新联系人...',
+  'Select Language' => '选择语言',
   'Add' => '添加',
   'Article Content' => '翻译内容',
   'Article delete failure' => '删除文章失败',
@@ -34,6 +33,7 @@ return array (
   'Delete Article' => '删除文本',
   'Document Content' => '文档内容',
   'Edit Time' => '提交时间',
+  'End' => '结束',
   'I accept Muyun Translation {terms of service}.' => '我接受牧云翻译 {terms of service}。',
   'ID' => '文本编号',
   'Language' => '语言',
@@ -41,6 +41,7 @@ return array (
   'Manage Article' => '管理文本',
   'Merge to non-payment subject' => '合并到未付款主题',
   'My Article' => '我领取的文本',
+  'New contact...' => '新联系人...',
   'New subject' => '新主题',
   'Order' => '订单',
   'Order information' => '订单信息',

@@ -29,7 +29,7 @@
                 <div class="span4">
                     <div class="btn-group">
                         <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                            Call Translator Only
+                            <?=Yii::t("article","Select Language"); ?>
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">

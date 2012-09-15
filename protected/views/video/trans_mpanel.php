@@ -15,10 +15,10 @@
                     <ul class="nav nav-tabs">
                         <li class="active">
                             <a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video">
-                            	<?=Yii::t("article","Trilateral video"); ?></a>
+                            	Working Space</a>
                         </li>
                         <li><a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video/cpanel">
-                        	<?=Yii::t("article","Call Translator Only"); ?></a></li>
+                        	Control Panel</a></li>
                     </ul>
                 </div>
             </div>
@@ -110,9 +110,9 @@
                             alert( data.rid);
                             rid = data.rid;
                         }
-                })
-            }
-}
+	                })
+	            }
+			}
 
             function subscribeToStream(event){
                 alert("subscribe stream");
