@@ -75,10 +75,7 @@ class FriendController extends Controller
 			date_default_timezone_set('PRC');
 			$model->addtime = date("Y-m-d H:i:s");
 			
-			if($model->save())
-				echo json_encode(array('state'=>'Save'));
-			else
-				echo json_encode(array('state'=>'Fail'));
+			echo $model->save()?json_encode(array('state'=>'Save')):json_encode(array('state'=>'Fail'));
 		}
 		else
 			echo json_encode(array('state'=>'No'));
@@ -89,11 +86,12 @@ class FriendController extends Controller
 		$user_id = isset($_POST['user_id'])?intval($_POST['user_id']):Yii::app()->user->getId();
 		$friend = Friend::model()->findAll('`fans_id` = :fans_id',array(':fans_id'=>$user_id));
 		$contacts = array();
-		foreach ($friend as $key => $value) {
-			array_push($contacts, array(
-				'email'=>User::model()->findByPk($value->follow_id)->email)
-			);
-		}
+		if(NULL != $friend)
+			foreach ($friend as $key => $value) {
+				array_push($contacts, array(
+					'email'=>User::model()->findByPk($value->follow_id)->email)
+				);
+			}
 		echo json_encode(array('contacts'=>$contacts));
 	}
 

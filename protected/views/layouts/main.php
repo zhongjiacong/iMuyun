@@ -147,9 +147,9 @@
 					!(Yii::app()->controller->id == 'article' &&
 					Yii::app()->controller->action->id == 'product')) {
 					$menuItems = array(
-						array('label'=>Yii::t('layouts','Video Translation'), 'url'=>array('/article/video'),
+						array('label'=>Yii::t('layouts','Video Trans'), 'url'=>array('/article/video'),
 							'itemOptions'=>array('class'=>'tab-label-1')),
-						array('label'=>Yii::t('layouts','Text Translation'), 'url'=>array('/article/text'),
+						array('label'=>Yii::t('layouts','Text Trans'), 'url'=>array('/article/text'),
 							'itemOptions'=>array('class'=>'tab-label-2')),
 						array('label'=>Yii::t('layouts','My Order'), 'url'=>array('/order/index'),
 							'visible'=>!Yii::app()->user->isGuest,

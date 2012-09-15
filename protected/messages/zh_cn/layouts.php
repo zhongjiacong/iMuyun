@@ -19,13 +19,15 @@
  * @version $Id: $
  */
 return array (
-  'Consume' => '消费',
+  'Text Trans' => '文本翻译',
+  'Video Trans' => '远程视频翻译',
   'About Us' => '关于我们',
   'Add' => '添加',
   'Article' => '文本',
   'Bussiness' => '业务',
   'Charge Mode' => '计费方式',
   'Charging Method' => '计费方式',
+  'Consume' => '消费',
   'Contact Information' => '联系信息',
   'Contact Way' => '联系方式',
   'Copyright Reserved' => '版权所有',
@@ -54,10 +56,8 @@ return array (
   'Submit' => '提交',
   'Successful Case' => '成功案例',
   'Suggestion Feedback' => '意见反馈',
-  'Text Translation' => '文本翻译',
   'Update' => '更新',
   'User' => '用户',
-  'Video Translation' => '视频翻译',
   'Voucher Center' => '充值中心',
   '{appname}' => '牧云翻译',
 );
