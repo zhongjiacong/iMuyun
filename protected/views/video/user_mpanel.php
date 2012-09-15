@@ -26,8 +26,6 @@
             </div>
             <div class="row">
                 <div class="span8" id="conferencing_area">
-                    <button class="btn"><?=Yii::app()->user->name; ?></button>
-                    <br />
                 </div>
                 <div class="span4">
                     <form class="well form-inline" id="add_contact_form">
@@ -40,7 +38,9 @@
                             <li class="nav-header" id="contacts-list-head">Contacts</li>
                         </ul>
                     </div>
-                    <button class="btn btn-success" id="start_conference">Start Conference</button>
+                    <div id="btndiv">
+                    	<button class="btn btn-success" id="start_conference">Start Conference</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -102,26 +102,40 @@
                 },
                 3000
             )
+            
+            start_conference();
+            
+            function end_conference() {
+            	$("#end_conference").click(function() {
+            		$("#btndiv").html('<button class="btn btn-success" id="start_conference">Start Conference</button>');
+		    		$("#conferencing_area").html("");
+            		start_conference();
+            	});
+            }
 
-            $("#start_conference").click(function (){
-                isPublisher = true;
-                reciever = $("#contacts-list").find(".active").text();
-                    $.ajax({
-                        url: HOST+"videoCallTo/",
-                        type: "POST",
-                        cache: false,
-                        dataType: "json",
-                        crossDomain: true,
-                        // TODO condition
-                        data: "username="+username+"&callToUsername="+reciever+"&language="+target_language,
-                        success: function(data) {
-                            session_id = data.sessionId;
-                            token = data.token;
-                            connect();
-                        }
-                    });
-            });
-
+            function start_conference() {
+            	$("#start_conference").click(function (){
+	            	$("#btndiv").html('<button class="btn btn-danger" id="end_conference">End</button>');
+	                isPublisher = true;
+	                reciever = $("#contacts-list").find(".active").text();
+	                $.ajax({
+	                    url: HOST+"videoCallTo/",
+	                    type: "POST",
+	                    cache: false,
+	                    dataType: "json",
+	                    crossDomain: true,
+	                    // TODO condition
+	                    data: "username="+username+"&callToUsername="+reciever+"&language="+target_language,
+	                    success: function(data) {
+	                        session_id = data.sessionId;
+	                        token = data.token;
+	                        connect();
+	                    }
+	                });
+	                end_conference();
+	            });
+			}
+			
             $(".trans_only_btn").click(function (){
                 isPublisher = true;
                 target_language = $(this).attr("id");
@@ -171,6 +185,8 @@
                 session.addEventListener('sessionConnected', sessionConnectedHandler);
                 session.addEventListener('connectionCreated', connectionCreatedHandler);
                 session.addEventListener('streamCreated', streamCreatedHandler);
+                session.addEventListener('streamDestroyed',streamDestroyedHandler);
+
                 $("#conferencing_area").append("<div id='publisher' />");
                 session.connect(apiKey, token);
             }
@@ -198,7 +214,9 @@
                 //alert('hey');
                 // TODO
             }
-
+		    function streamDestroyedHandler(event){
+		    	$("#conferencing_area").html("");
+		    }
             function sessionConnectedHandler(event){
                 //alert("hey");
                 for (var i = 0; i < event.streams.length; i++) {

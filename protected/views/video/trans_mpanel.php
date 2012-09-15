@@ -123,7 +123,7 @@
                 // TODO
             }
             function streamDestroyedHandler(event) {
-                alert("stream Destroyed!");
+                //alert("stream Destroyed!");
                 if ( rid != -1 )
                     $.ajax({
                         url: HOST+"/endTimeCount/",
@@ -135,7 +135,8 @@
                         success: function(data) {
                             rid = -1;
                         }
-                })
+                	});
+		    	$("#conferencing_area").html("");
             }
             function sessionConnectedHandler(event){
                 //alert(username+" connected");
