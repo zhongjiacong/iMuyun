@@ -19,10 +19,12 @@
  * @version $Id: $
  */
 return array (
-  'Call Translator Only' => '仅呼叫译员',
-  'Trilateral video' => '三方视频',
+  'Add' => '添加',
+  'Contacts' => '联系人',
+  'Start Conference' => '开始会议',
   'Article Content' => '翻译内容',
   'Article delete failure' => '删除文章失败',
+  'Call Translator Only' => '仅呼叫译员',
   'Complete Time' => '完成时间',
   'Complete Translation' => '完成翻译',
   'Confirm order information' => '确认订单信息',
@@ -59,6 +61,7 @@ return array (
   'Text Translation' => '文本翻译',
   'Translation Content' => '译文内容',
   'Translation content cannot be empty!' => '翻译内容不能为空！',
+  'Trilateral video' => '三方视频',
   'Update Article' => '更新文本',
   'User registration' => '用户登记',
   'Video Translation' => '视频翻译',
