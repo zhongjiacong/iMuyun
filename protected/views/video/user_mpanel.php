@@ -4,7 +4,7 @@
         <link href="<?=Yii::app()->theme->baseUrl; ?>/css/bootstrap.css" rel="stylesheet">
         <script src="<?=Yii::app()->theme->baseUrl; ?>/js/jquery.min.js" ></script>
         <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
-        <script src="http://static.opentok.com/v0.91/js/TB.min.js" ></script>
+<script src="http://staging.tokbox.com/v0.91/js/TB.min.js" ></script>
         <!-- <script src="http://staging.tokbox.com/v0.91/js/TB.min.js" type="text/javascript" charset="utf-8"></script> -->
         <!-- <script src="http://static.opentok.com/v0.92-alpha/js/TB.min.js" type="text/javascript"></script>-->
 
@@ -56,7 +56,8 @@
             </div>
         </div>
         <script type="text/javascript" charset="utf-8">
-
+            var HOST = "http://omegaga.net:8000/"
+            //var HOST = "http://omegaga.net/muyunvideo/"
             var session_id, token;
             var username = "<?=Yii::app()->user->name; ?>";
             var address = "<?=$_SERVER['REMOTE_ADDR']; ?>";
@@ -75,7 +76,7 @@
 
             // Obtain the session ID and token
             $.ajax({
-                url: "http://omegaga.net:8000/session/",
+                url: HOST+"session/",
                 type: "POST",
                 cache: false,
                 dataType: "json",
@@ -94,7 +95,7 @@
             // Check comming call
             setInterval(function () {
                     $.ajax({
-                        url: "http://omegaga.net:8000/answerVideoCall/",
+                        url: HOST+"updateStatus/",
                         type: "POST",
                         cache: false,
                         dataType: "json",
@@ -117,7 +118,7 @@
                 isPublisher = true;
                 reciever = $("#contacts-list").find(".active").text();
                     $.ajax({
-                        url: "http://omegaga.net:8000/videoCallTo/",
+                        url: HOST+"videoCallTo/",
                         type: "POST",
                         cache: false,
                         dataType: "json",
@@ -136,7 +137,7 @@
                 isPublisher = true;
                 target_language = $(this).attr("id");
                     $.ajax({
-                        url: "http://omegaga.net:8000/interpreterVideoCallTo/",
+                        url: HOST+"interpreterVideoCallTo/",
                         type: "POST",
                         cache: false,
                         dataType: "json",

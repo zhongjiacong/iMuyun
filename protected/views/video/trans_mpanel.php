@@ -2,10 +2,9 @@
 <html>
     <head>
         <!-- <script src="http://static.opentok.com/v0.92-alpha/js/TB.min.js" type="text/javascript"></script>-->
-        <!-- <script src="http://staging.tokbox.com/v0.91/js/TB.min.js" type="text/javascript" charset="utf-8"></script> -->
-        <script src="http://static.opentok.com/v0.91/js/TB.min.js" ></script>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+         <script src="http://staging.tokbox.com/v0.91/js/TB.min.js" type="text/javascript" charset="utf-8"></script>
         <!-- <script src="http://static.opentok.com/v0.91/js/TB.min.js" ></script> -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script src="<?=Yii::app()->theme->baseUrl; ?>/js/bootstrap-dropdown.js" ></script>
         <link href="<?=Yii::app()->theme->baseUrl; ?>/css/bootstrap.css" rel="stylesheet">
     </head>
@@ -27,7 +26,8 @@
             </div>
         </div>
         <script type="text/javascript" charset="utf-8">
-            var session_id, token;
+            var session_id, token, streamCount;
+            var name = new Array();
             var username = "<?=Yii::app()->user->name; ?>";
             var address = "<?=$_SERVER['REMOTE_ADDR']; ?>";
             var session;
@@ -35,14 +35,16 @@
             var subscribers = {};
             //DEBUG PURPOSE
             var isPublisher = false;
+            var rid=-1;
             var isInVideoCall = false;
+            var HOST = "http://imuyun.com:8000";
  
             TB.setLogLevel(TB.INFO);
 
             // Check comming call
             setInterval(function () {
                     $.ajax({
-                        url: "http://omegaga.net:8000/answerVideoCall/",
+                        url: HOST+"/updateStatus/",
                         type: "POST",
                         cache: false,
                         dataType: "json",
@@ -52,6 +54,7 @@
                             if (data.sessionId != '' && isInVideoCall==false){
                                 token = data.token; 
                                 session_id = data.sessionId;
+                                alert( session_id );
                                 isInVideoCall = true;
                                 connect();
                             }
@@ -62,16 +65,23 @@
             )
 
             function connect(){
-                isInVideoCall = true
+                isInVideoCall = true;
+                streamCount = 0;
                 session = TB.initSession(session_id);
                 session.addEventListener('sessionConnected', sessionConnectedHandler);
                 session.addEventListener('connectionCreated', connectionCreatedHandler);
                 session.addEventListener('streamCreated', streamCreatedHandler);
+                session.addEventListener('streamDestroyed',streamDestroyedHandler);
                 $("#conferencing_area").append("<div id='publisher' />");
                 session.connect(apiKey, token);
             }
 
             function addStream(stream) {
+                if ( stream.name != "interpreter" ){
+                    name[streamCount]=stream.name;
+                    //alert(name[streamCount]+strval(streamCount));
+                    streamCount++;
+                }
                 if (stream.connection.connectionId == session.connection.connectionId) {
                     return;
                 }
@@ -84,6 +94,21 @@
                     TB.log("streamCreated - connectionId: " + event.streams[i].connection.connectionId);
                     TB.log("streamCreated - connectionData: " + event.streams[i].connection.data);
                     addStream(event.streams[i]);
+                }
+                alert(streamCount); 
+                if ( streamCount == 2 && rid==-1 ) {
+                    $.ajax({
+                        url: HOST+"/startTimeCount/",
+                        type: "POST",
+                        cache: false,
+                        dataType: "json",
+                        crossDomain: true,
+                        data: "user1="+name[0]+"&user2="+name[1],
+                        success: function(data) {
+                            alert( data.rid);
+                            rid = data.rid;
+                        }
+                })
             }
 }
 
@@ -97,13 +122,28 @@
             function connectionCreatedHandler(event) {
                 // TODO
             }
-
+            function streamDestroyedHandler(event) {
+                alert("stream Destroyed!");
+                if ( rid != -1 )
+                    $.ajax({
+                        url: HOST+"/endTimeCount/",
+                        type: "POST",
+                        cache: false,
+                        dataType: "json",
+                        crossDomain: true,
+                        data: "rid="+rid,
+                        success: function(data) {
+                            rid = -1;
+                        }
+                })
+            }
             function sessionConnectedHandler(event){
                 //alert(username+" connected");
                 
                 
                 for (var i = 0; i < event.streams.length; i++) {
                     addStream(event.streams[i]);
+                    alert("stream[i].streamId");
                 }
                 publisher = TB.initPublisher(apiKey, 'publisher', {name:"interpreter"});
                 session.publish(publisher);
