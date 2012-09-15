@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="<?=Yii::app()->theme->baseUrl; ?>/css/bootstrap.css" rel="stylesheet">
+        <link href="<?=Yii::app()->theme->baseUrl; ?>/css/bootstrap.css" rel="stylesheet" />
         <script src="<?=Yii::app()->theme->baseUrl; ?>/js/jquery.min.js" ></script>
         <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
 <script src="http://staging.tokbox.com/v0.91/js/TB.min.js" ></script>
@@ -16,9 +16,15 @@
                 <div class="span12">
                     <ul class="nav nav-tabs">
                         <li class="active">
-                            <a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video">Conferencing</a>
+                        	<a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video">
+                        		<?=Yii::t("article","Trilateral video"); ?>
+                        	</a>
                         </li>
-                        <li><a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video/cpanel">Control Panel</a></li>
+                        <li>
+                        	<a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video/cpanel">
+                        		<?=Yii::t("article","Call Translator Only"); ?>
+                        	</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -39,19 +45,6 @@
                         </ul>
                     </div>
                     <button class="btn btn-success" id="start_conference">Start Conference</button>
-                    <hr />
-                    <div class="btn-group">
-                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                            Call Translator Only
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <!-- HARD CODED!-->
-                            <li id=0 class="trans_only_btn"><a>Chinese</a></li>
-                            <li id=1 class="trans_only_btn"><a>English</a></li>
-                            <li id=2 class="trans_only_btn"><a>Japanese</a></li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>
