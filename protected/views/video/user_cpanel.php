@@ -137,21 +137,21 @@
 			
             $(".trans_only_btn").click(function (){
                 isPublisher = true;
-                target_language = $(this).attr("id");
-                    $.ajax({
-                        url: HOST+"interpreterVideoCallTo/",
-                        type: "POST",
-                        cache: false,
-                        dataType: "json",
-                        crossDomain: true,
-                        // TODO condition
-                        data: "username="+username+"&targetLanguage="+target_language,
-                        success: function(data) {
-                            session_id = data.sessionId;
-                            token = data.token;
-                            connect();
-                        }
-                    });
+                target_language = $(this).html().replace(/\<a\>/,'').replace(/\<\/a\>/,'');
+                $.ajax({
+                    url: HOST+"interpreterVideoCallTo/",
+                    type: "POST",
+                    cache: false,
+                    dataType: "json",
+                    crossDomain: true,
+                    // TODO condition
+                    data: "username="+username+"&targetLanguage="+target_language,
+                    success: function(data) {
+                        session_id = data.sessionId;
+                        token = data.token;
+                        connect();
+                    }
+                });
             });
 
             function getContact() {
