@@ -44,7 +44,7 @@
             TB.setLogLevel(TB.INFO);
 
             // Check comming call
-            setInterval(function () {
+            var commingcall = setInterval(function () {
                     $.ajax({
                         url: HOST+"/updateStatus/",
                         type: "POST",
@@ -59,6 +59,7 @@
                                 alert( session_id );
                                 isInVideoCall = true;
                                 connect();
+                                clearInterval(commingcall);
                             }
                         }
                     })

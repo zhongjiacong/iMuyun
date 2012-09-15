@@ -84,7 +84,7 @@
             });
             
             // Check comming call
-            setInterval(function () {
+            var commingcall = setInterval(function () {
                     $.ajax({
                         url: HOST+"updateStatus/",
                         type: "POST",
@@ -98,6 +98,7 @@
                                 session_id = data.sessionId;
                                 isInVideoCall = true;
                                 connect();
+                                clearInterval(commingcall);
                             }
                         }
                     })
