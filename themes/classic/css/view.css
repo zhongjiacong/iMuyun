@@ -398,6 +398,26 @@ div.shortbg
 .articleindextable tbody tr td:nth-child(5) {
 	width: 100px;
 }
+.orderpaytable thead tr th:nth-child(1),
+.orderpaytable tbody tr td:nth-child(1) {
+	width: 100px;
+}
+.orderpaytable thead tr th:nth-child(2),
+.orderpaytable tbody tr td:nth-child(2) {
+	width: 140px;
+}
+.orderpaytable thead tr th:nth-child(3),
+.orderpaytable tbody tr td:nth-child(3) {
+	width: 80px;
+}
+.orderpaytable thead tr th:nth-child(4),
+.orderpaytable tbody tr td:nth-child(4) {
+	width: 80px;
+}
+.orderpaytable thead tr th:nth-last-child(1),
+.orderpaytable tbody tr td:nth-last-child(1) {
+	width: 80px;
+}
 
 .artview
 {

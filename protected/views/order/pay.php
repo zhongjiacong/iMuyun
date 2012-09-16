@@ -80,7 +80,7 @@ $this->menu=array(
 	<?=Yii::t('article','Confirm order information').": "; ?>
 </div>
 
-<table class="ordertable">
+<table class="ordertable orderpaytable">
 	<thead>
 		<tr>
 			<th></th>
@@ -106,7 +106,7 @@ $this->menu=array(
 		}
 		$textinfor = Article::model()->textInfor($value->srclang_id, $artcont);
 ?>
-<table class="ordertable">
+<table class="ordertable orderpaytable">
 	<tbody>
 		<tr>
 			<td><?=CHtml::link(Article::model()->getAttributeLabel('id').': '.$value->id,array('article/view','id'=>$value->id)); ?></td>
