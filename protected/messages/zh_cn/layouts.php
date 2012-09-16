@@ -24,7 +24,7 @@ return array (
   'About Us' => '关于我们',
   'Add' => '添加',
   'Article' => '文本',
-  'Bussiness' => '业务',
+  'Bussiness' => '主营业务',
   'Charge Mode' => '计费方式',
   'Charging Method' => '计费方式',
   'Consume' => '消费',
