@@ -45,13 +45,15 @@ $this->menu=array(
 );
 ?>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
+<?php
+date_default_timezone_set("PRC");
+$this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		array(
 			'label'=>Yii::t('msg','Service Id'),
 			'type'=>'raw',
-			'value'=>User::model()->getNickname($model->service_id,'link'),
+			'value'=>User::model()->getNickname($model->service_id,array('link'=>TRUE)),
 			'visible'=>($model->service_id != NULL),/*注意这里的值为空时容易变成显示自己，所以要加上显示限制*/
 		),
 		'id',

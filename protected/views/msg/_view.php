@@ -4,7 +4,6 @@
 <div class="serviceview finishserviceview">
 <?php endif; ?>
 
-	
 	<?=CHtml::link('<b>'.CHtml::encode($data->getAttributeLabel('id')).':</b>'.CHtml::encode($data->id),
 		array('view', 'id'=>$data->id)); ?>
 
@@ -20,7 +19,7 @@
 	<span><?=($data->service_id == NULL)?
 		CHtml::button(Yii::t('msg','Receive msg'),
 		array('class'=>'receivebtn','onclick'=>'receivemsg('.$data->id.')')):
-		User::model()->getNickname($data->service_id,'link'); ?>
+		User::model()->getNickname($data->service_id,array('link'=>TRUE)); ?>
 	</span>
 
 </div>
