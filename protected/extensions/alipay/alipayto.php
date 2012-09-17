@@ -3,10 +3,6 @@
  * 功能：即时到帐接口接入页
  * 版本：3.2
  * 修改日期：2011-03-25
- * 说明：
- * 以下代码只是为了方便商户测试而提供的样例代码，商户可以根据自己网站的需要，按照技术文档编写,并非一定要使用该代码。
- * 该代码仅供学习和研究支付宝接口使用，只是提供一个参考。
-
  *************************注意*************************
  * 如果您在接口集成过程中遇到问题，可以按照下面的途径来解决
  * 1、商户服务中心（https://b.alipay.com/support/helperApply.htm?action=consultationApply），提交申请集成协助，我们会有专业的技术工程师主动联系您协助解决
@@ -24,7 +20,7 @@ require_once dirname(__FILE__)."/lib/alipay_service.class.php";
 
 //请与贵网站订单系统中的唯一订单号匹配
 date_default_timezone_set("PRC");
-$out_trade_no = date('Ymdhis')." - ".$model->id;// zjc
+$out_trade_no = $model->id;// zjc
 //订单名称，显示在支付宝收银台里的“商品名称”里，显示在支付宝的交易管理的“商品名称”的列表里。
 $subject      = Yii::app()->user->name." recharge";// zjc
 //订单描述、订单详细、订单备注，显示在支付宝收银台里的“商品描述”里
@@ -61,7 +57,7 @@ $exter_invoke_ip = '';
 //扩展功能参数——其他//
 
 //商品展示地址，要用 http://格式的完整路径，不允许加?id=123这类自定义参数
-$show_url			= 'http://www.xxx.com/order/myorder.php';
+$show_url			= '';//'http://www.xxx.com/order/myorder.php';
 //自定义参数，可存放任何内容（除=、&等特殊字符外），不会显示在页面上
 $extra_common_param = '';
 
