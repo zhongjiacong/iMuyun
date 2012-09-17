@@ -208,7 +208,7 @@ class Article extends CActiveRecord
 	public function saveFile($doccont)
 	{
 		// cannot upload file format not in the list of allow type
-		$allowtype = array_slice(Yii::app()->params["doctype"], 0, 2);
+		$allowtype = Yii::app()->params["doctype"];
 		if(!in_array($doccont->type, $allowtype))
 			throw new CHttpException(400,Yii::t('article','Wrong file format!'));
 		
@@ -229,7 +229,7 @@ class Article extends CActiveRecord
 				shell_exec("cp -f ".$phypath."_ ".$phypath);
 				$artcont = shell_exec('cat '.$phypath);break;
 			case $allowtype[2]:
-				$model->artcont = shell_exec(dirname(__FILE__).'/../extensions/antiword-0.37/antiword -m UTF-8.txt '.$phypath);break;
+				$model->artcont = shell_exec('antiword -m UTF-8.txt '.$phypath);break;
 			case $allowtype[3]:
 				$model->artcont = shell_exec('pdftotext -layout '.$phypath.' /dev/stdout');break;
 			case $allowtype[4]:
