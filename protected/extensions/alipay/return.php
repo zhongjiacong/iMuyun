@@ -1,6 +1,10 @@
 <?php
+header("Content-type: text/html; charset=utf-8");
+
 require_once dirname(__FILE__)."/alipay.config.php";
 require_once dirname(__FILE__)."/lib/alipay_notify.class.php";
+
+logResult($out_trade_no." returned\n");
 
 //计算得出通知验证结果
 $alipayNotify = new AlipayNotify($aliapy_config);

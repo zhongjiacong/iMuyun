@@ -4,9 +4,6 @@
  * 详细：该类是请求、通知返回两个文件所调用的公用函数核心处理文件
  * 版本：3.2
  * 日期：2011-03-25
- * 说明：
- * 以下代码只是为了方便商户测试而提供的样例代码，商户可以根据自己网站的需要，按照技术文档编写,并非一定要使用该代码。
- * 该代码仅供学习和研究支付宝接口使用，只是提供一个参考。
  */
 
 /**
@@ -108,6 +105,7 @@ function sign($prestr,$sign_type='MD5') {
  * @param $word 要写入日志里的文本内容 默认值：空值
  */
 function logResult($word='') {
+	date_default_timezone_set("PRC");
 	$fp = fopen("log.txt","a");
 	flock($fp, LOCK_EX) ;
 	fwrite($fp,"执行日期：".strftime("%Y%m%d%H%M%S",time())."\n".$word."\n");
