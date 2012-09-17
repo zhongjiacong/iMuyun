@@ -26,8 +26,12 @@ class ConsumeController extends Controller
 	public function accessRules()
 	{
 		return array(
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('return','notify'),
+				'users'=>array('*'),
+			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','create','view','return','notify'),
+				'actions'=>array('index','create','view'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -50,17 +54,13 @@ class ConsumeController extends Controller
 	
 	public function actionReturn()
 	{
-		require_once dirname(__FILE__)."/alipay.config.php";
-		require_once dirname(__FILE__)."/lib/alipay_notify.class.php";
+		require_once dirname(__FILE__)."/../extensions/alipay/alipay.config.php";
+		require_once dirname(__FILE__)."/../extensions/alipay/lib/alipay_notify.class.php";
 		
 		//计算得出通知验证结果
 		$alipayNotify = new AlipayNotify($aliapy_config);
 		$verify_result = $alipayNotify->verifyReturn();
-		if($verify_result) {//验证成功
-			/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-			//请在这里加上商户的业务逻辑程序代码
-			
-			//——请根据您的业务逻辑来编写程序（以下代码仅作参考）——
+		if($verify_result) {
 		    //获取支付宝的通知返回参数，可参考技术文档中页面跳转同步通知参数列表
 		    $out_trade_no	= $_GET['out_trade_no'];	//获取订单号
 		    $trade_no		= $_GET['trade_no'];		//获取支付宝交易号
@@ -85,8 +85,8 @@ class ConsumeController extends Controller
 	
 	public function actionNotify()
 	{
-		require_once dirname(__FILE__)."/alipay.config.php";
-		require_once dirname(__FILE__)."/lib/alipay_notify.class.php";//计算得出通知验证结果
+		require_once dirname(__FILE__)."/../extensions/alipay/alipay.config.php";
+		require_once dirname(__FILE__)."/../extensions/alipay/lib/alipay_notify.class.php";//计算得出通知验证结果
 		
 		$alipayNotify = new AlipayNotify($aliapy_config);
 		$verify_result = $alipayNotify->verifyNotify();
@@ -158,23 +158,25 @@ class ConsumeController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Consume;
+		$model = new Consume;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Consume']))
 		{
-			$model->attributes=$_POST['Consume'];
-			$model->user_id = Yii::app()->user->getId();
-			date_default_timezone_set('PRC');
-			$model->edittime = date("Y-m-d H:i:s");
-			$model->content = "Alipay";
-			// 创建不能直接审核通过
-			$model->audit = 0;
-			if($model->save())
-				require dirname(__FILE__).'/../extensions/alipay/alipayto.php';
-				//$this->redirect(array('view','id'=>$model->id));
+			if($_POST['Consume']['amount'] != NULL) {
+				$model->attributes = $_POST['Consume'];
+				$model->user_id = Yii::app()->user->getId();
+				date_default_timezone_set('PRC');
+				$model->edittime = date("Y-m-d H:i:s");
+				$model->content = "Alipay";
+				// 创建不能直接审核通过
+				$model->audit = 0;
+				$model->save();
+			}
+			
+			require dirname(__FILE__).'/../extensions/alipay/alipayto.php';
 		}
 		else
 			$this->render('create',array(
