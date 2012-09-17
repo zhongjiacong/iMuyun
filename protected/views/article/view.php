@@ -11,15 +11,6 @@ if(User::model()->isAdmin())
 ?>
 
 <?php
-	if(NULL != Article::model()->comptime($model->id)) {
-		$spreadtable = Spreadtable::model()->findAll("`article_id` = :article_id",array(":article_id"=>$model->id));
-		foreach ($spreadtable as $key => $value) {
-			if(User::model()->findByPk($value->translator_id)->privilege_id == 6)
-				$editor_id = $value->translator_id;
-		}
-		$transfile = Article::model()->transFileAddr($model->id,$editor_id);
-	}
-	
 	$this->widget('zii.widgets.CDetailView', array(
 		'data'=>$model,
 		'attributes'=>array(
@@ -56,12 +47,22 @@ if(User::model()->isAdmin())
 				'value'=>Article::model()->comptime($model->id),
 				'visible'=>(NULL != Article::model()->comptime($model->id)),
 			),
-			array(
-				'label'=>Yii::t('article','Translation Content'),
-				'type'=>'raw',
-				'value'=>CHtml::link($transfile["filename"],$transfile["urlpath"]),
-				'visible'=>(NULL != Article::model()->comptime($model->id)),
-			),
 		),
 	));
 ?>
+<?php
+	if(NULL != Article::model()->comptime($model->id)):
+		$spreadtable = Spreadtable::model()->findAll("`article_id` = :article_id",array(":article_id"=>$model->id));
+		foreach ($spreadtable as $key => $value) {
+			if(User::model()->findByPk($value->translator_id)->privilege_id == 6)
+				$editor_id = $value->translator_id;
+		}
+		$transfile = Article::model()->transFileAddr($model->id,$editor_id);
+?>
+<div class="form">
+	<dl>
+		<dt><?=Yii::t('article','Translation Content'); ?></dt>
+		<dd><?=CHtml::link($transfile["filename"],$transfile["urlpath"]); ?></dd>
+	</dl>
+</div>
+<?php endif; ?>
