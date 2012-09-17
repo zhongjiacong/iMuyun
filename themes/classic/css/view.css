@@ -418,6 +418,22 @@ div.shortbg
 .orderpaytable tbody tr td:nth-last-child(1) {
 	width: 80px;
 }
+.servicemsgtable thead tr th:nth-child(1),
+.servicemsgtable tbody tr td:nth-child(1) {
+	width: 100px;
+}
+.servicemsgtable thead tr th:nth-child(2),
+.servicemsgtable tbody tr td:nth-child(2) {
+	width: 100px;
+}
+.servicemsgtable thead tr th:nth-child(4),
+.servicemsgtable tbody tr td:nth-child(4) {
+	width: 100px;
+}
+.servicemsgtable thead tr th:nth-child(5),
+.servicemsgtable tbody tr td:nth-child(5) {
+	width: 100px;
+}
 
 .artview
 {

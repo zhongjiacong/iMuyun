@@ -29,7 +29,18 @@ $this->menu=array(
 );
 ?>
 
+<table class="ordertable servicemsgtable">
+	<thead>
+		<th></th>
+		<th><?=CHtml::encode(Msg::model()->getAttributeLabel('name')); ?></th>
+		<th><?=CHtml::encode(Msg::model()->getAttributeLabel('theme')); ?></th>
+		<th><?=CHtml::encode(Msg::model()->getAttributeLabel('mobile')); ?></th>
+		<th></th>
+	</thead>
+</table>
+
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
+	'template'=>'{items}{summary}<br />{pager}'
 )); ?>
