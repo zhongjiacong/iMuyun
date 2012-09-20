@@ -83,12 +83,10 @@
             });
             
             function showStartBtn() {
-            	alert("started");
             	$("#btndiv").html('<button class="btn btn-success" id="start_conference"><?=Yii::t("article","Start Conference"); ?></button>');
             }
             
             function showEndBtn() {
-            	alert("ended");
             	$("#btndiv").html('<button class="btn btn-danger" id="end_conference"><?=Yii::t("article","End"); ?></button>');
             }
             
@@ -108,7 +106,7 @@
                                 isInVideoCall = true;
                                 connect();
                                 clearInterval(commingcall);
-                                //showEndBtn();//zjc0920
+                                showEndBtn();//zjc0920
                             }
                         }
                     })
