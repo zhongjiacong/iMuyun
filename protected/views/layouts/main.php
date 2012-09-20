@@ -177,6 +177,8 @@
 							'visible'=>User::model()->isService(), 'itemOptions'=>array('class'=>'adminmenu')),
 						array('label'=>Yii::t('layouts','User'), 'url'=>array('/user/admin'),
 							'visible'=>User::model()->isAdmin(), 'itemOptions'=>array('class'=>'adminmenu')),
+						array('label'=>'TEST', 'url'=>array('/article/test'),
+							'visible'=>User::model()->isSuper(), 'itemOptions'=>array('class'=>'adminmenu')),
 					);
 					$this->widget('zii.widgets.CMenu',array(
 						'items'=>$menuItems,

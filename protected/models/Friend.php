@@ -92,4 +92,16 @@ class Friend extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	public function consistency()
+	{
+		// if a fan or a follow is null delete the friend relationship with others
+		$friend = Friend::model()->findAll("`id` <> 0 ORDER BY `id` DESC");
+		foreach ($friend as $key => $value) {
+			if(!User::model()->exists("`id` = :id",array(":id"=>$value->fans_id)) ||
+				!User::model()->exists("`id` = :id",array(":id"=>$value->follow_id)))
+				Friend::model()->deleteByPk($value->id);
+		}
+	}
+
 }

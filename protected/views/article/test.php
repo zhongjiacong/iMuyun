@@ -1,0 +1,3 @@
+<?php
+	Friend::model()->consistency();
+?>

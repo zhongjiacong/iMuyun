@@ -66,6 +66,9 @@ class FriendController extends Controller
 	public function actionCreate()
 	{
 		if(Yii::app()->request->isPostRequest) {
+			// check consistency in friendship
+			Friend::model()->consistency();
+			
 			$follow_id = User::model()->find('`email` = :email',
 				array(':email'=>addslashes($_POST['follow'])))->id;
 			

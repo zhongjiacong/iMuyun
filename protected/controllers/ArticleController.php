@@ -31,7 +31,7 @@ class ArticleController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'text' and 'update' actions
-				'actions'=>array('index','update','view','video','delete'),
+				'actions'=>array('index','update','view','video','delete','test'),
 				'users'=>array('@'),
 			),
 			array('allow',
@@ -69,6 +69,11 @@ class ArticleController extends Controller
 		if(Yii::app()->request->isPostRequest) {
 			echo json_encode(Article::model()->textInfor(intval($_POST["srclang_id"]),addslashes($_POST["content"])));
 		}
+	}
+	
+	public function actionTest()
+	{
+		$this->render('test',array());
 	}
 	
 	public function actionTrans($id) {
