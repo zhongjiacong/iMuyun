@@ -41,6 +41,7 @@
                         </ul>
                     </div>
                     <br />
+                    <div id="selectlang" class="hide"><?=Yii::t("article","You have select "); ?><span></span></div>
                     <br />
                     <div id="btndiv">
                     </div>
@@ -84,6 +85,16 @@
                 }
             });
             
+            function showStartBtn() {
+            	//alert("show start");
+            	$("#btndiv").html('<button class="btn btn-success" id="start_conference"><?=Yii::t("article","Start Conference"); ?></button>');
+            }
+            
+            function showEndBtn() {
+            	//alert("show end");
+            	$("#btndiv").html('<button class="btn btn-danger" id="end_conference"><?=Yii::t("article","End"); ?></button>');
+            }
+            
             // Check comming call
             var commingcall = setInterval(function () {
                     $.ajax({
@@ -105,56 +116,46 @@
                     })
                 },
                 3000
-            )
+			);
             
-            function end_conference() {
+            function endConference() {
             	$("#end_conference").click(function() {
+            		showStartBtn();
             		$("#conferencing_area").html("&nbsp;");
-            		start_conference();
+            		startConference();
             	});
             }
             
-            function start_conference() {
-	           	$("#btndiv").html('<button class="btn btn-danger" id="end_conference"><?=Yii::t("article","End"); ?></button>');
+            function startConference() {
 	            $("#start_conference").click(function (){
+	            	showEndBtn();
 	                isPublisher = true;
-	                reciever = $("#contacts-list").find(".active").text();
-	                    $.ajax({
-	                        url: HOST+"videoCallTo/",
-	                        type: "POST",
-	                        cache: false,
-	                        dataType: "json",
-	                        crossDomain: true,
-	                        // TODO condition
-	                        data: "username="+username+"&callToUsername="+reciever+"&language="+target_language,
-	                        success: function(data) {
-	                            session_id = data.sessionId;
-	                            token = data.token;
-	                            connect();
-                                clearInterval(commingcall);
-	                        }
-	                    });
+	                var lang = $("#selectlang span").html();
+	                $.ajax({
+	                    url: HOST+"interpreterVideoCallTo/",
+	                    type: "POST",
+	                    cache: false,
+	                    dataType: "json",
+	                    crossDomain: true,
+	                    // TODO condition
+	                    data: "username="+username+"&targetLanguage="+lang,
+	                    success: function(data) {
+	                        session_id = data.sessionId;
+	                        token = data.token;
+	                        connect();
+	                        clearInterval(commingcall);
+	                    }
+	                });
+	                endConference();
 	            });
 			}
 			
             $(".trans_only_btn").click(function (){
-                isPublisher = true;
-                target_language = $(this).html().replace(/\<a\>/,'').replace(/\<\/a\>/,'');
-                $.ajax({
-                    url: HOST+"interpreterVideoCallTo/",
-                    type: "POST",
-                    cache: false,
-                    dataType: "json",
-                    crossDomain: true,
-                    // TODO condition
-                    data: "username="+username+"&targetLanguage="+target_language,
-                    success: function(data) {
-                        session_id = data.sessionId;
-                        token = data.token;
-                        connect();
-                        clearInterval(commingcall);
-                    }
-                });
+            	showStartBtn();
+	            target_language = $(this).html().replace(/\<a\>/,'').replace(/\<\/a\>/,'');
+	            $("#selectlang span").html(target_language);
+	            $("#selectlang").removeClass("hide");
+            	startConference();
             });
 
             function getContact() {

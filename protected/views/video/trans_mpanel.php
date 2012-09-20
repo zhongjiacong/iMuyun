@@ -16,10 +16,10 @@
                     <ul class="nav nav-tabs">
                         <li class="active">
                             <a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video">
-                            	Working Space</a>
+                            	<?=Yii::t("article","Working Space"); ?></a>
                         </li>
                         <li><a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video/cpanel">
-                        	Control Panel</a></li>
+                        	<?=Yii::t("article","Control Panel"); ?></a></li>
                     </ul>
                 </div>
             </div>
@@ -64,7 +64,7 @@
                                     totalUser = 1;}
                                 else{
                                     totalUser = 2;}
-                                alert( session_id );
+                                //alert( session_id );
                                 isInVideoCall = true;
                                 connect();
                                 clearInterval(commingcall);
@@ -90,9 +90,9 @@
             function addStream(stream) {
                 if ( stream.name != "interpreter" ){
                     namelist[streamCount]=stream.name;
-                    alert(stream.name);
-                    alert(streamCount);
-                    alert(namelist[streamCount]);
+                    //alert(stream.name);
+                    //alert(streamCount);
+                    //alert(namelist[streamCount]);
                     streamCount++;
                 }
                 if (stream.connection.connectionId == session.connection.connectionId) {
@@ -109,11 +109,11 @@
                     addStream(event.streams[i]);
                 }
                 if ( streamCount == totalUser && rid==-1 ) {
-                    alert( "talUser is " + totalUser );
+                    //alert( "talUser is " + totalUser );
                     if ( totalUser == 1 )
                     {namelist[1] = username;}
-                    alert(namelist[0]);
-                    alert(namelist[1]);
+                    //alert(namelist[0]);
+                    //alert(namelist[1]);
                     $.ajax({
                         url: HOST+"startTimeCount/",
                         type: "POST",
@@ -122,7 +122,7 @@
                         crossDomain: true,
                         data: "user1="+namelist[0]+"&user2="+namelist[1],
                         success: function(data) {
-                            alert( data.rid);
+                            //alert( data.rid);
                             rid = data.rid;
                         }
 	                })
@@ -156,7 +156,7 @@
 		    	$("#conferencing_area").html("&nbsp;");
             }
             function sessionConnectedHandler(event){
-                alert(username+" connected");
+                //alert(username+" connected");
                 
                 
                 for (var i = 0; i < event.streams.length; i++) {

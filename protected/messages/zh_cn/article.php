@@ -19,7 +19,7 @@
  * @version $Id: $
  */
 return array (
-  'Select Language' => '选择语言',
+  'You have select ' => '您已经选择',
   'Add' => '添加',
   'Article Content' => '翻译内容',
   'Article delete failure' => '删除文章失败',
@@ -29,6 +29,7 @@ return array (
   'Confirm order information' => '确认订单信息',
   'Contacts' => '联系人列表',
   'Content to translate cannot be empty!' => '翻译内容不能为空',
+  'Control Panel' => '控制面板',
   'Create Article' => '新建快速翻译',
   'Delete Article' => '删除文本',
   'Document Content' => '文档内容',
@@ -52,6 +53,7 @@ return array (
   'Price' => '价格',
   'Receive Article' => '领取文本',
   'Remember my choice next time.' => '下次记住我的选择。',
+  'Select Language' => '选择语言',
   'Source Language' => '源语言',
   'Start Conference' => '开始会议',
   'Start Translation' => '开始翻译',
@@ -70,6 +72,7 @@ return array (
   'Video Translation' => '视频翻译',
   'Word Count' => '字数统计',
   'Words' => '字数',
+  'Working Space' => '工作台',
   'Wrong file format!' => '错误的文件格式！',
   'You can login and skip this step.' => '您可以登录跳过这一步骤。',
   'You can reselect in the settings of your profile.' => '您可以在个人主页的设置中重新选择。',

@@ -5,9 +5,11 @@
     </head>
     <body>
         <ul class="nav nav-tabs">
-            <li><a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video">Working Space</a></li>
+            <li><a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video">
+            	<?=Yii::t("article","Working Space"); ?></a></li>
             <li class="active">
-                <a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video/cpanel">Control Panel</a>
+                <a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video/cpanel">
+                	<?=Yii::t("article","Control Panel"); ?></a>
             </li>
         </ul>
     </body>
