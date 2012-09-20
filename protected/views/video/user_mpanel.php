@@ -98,6 +98,7 @@
                                 isInVideoCall = true;
                                 connect();
                                 clearInterval(commingcall);
+                                showEndBtn();//zjc0920
                             }
                         }
                     })
@@ -107,18 +108,26 @@
             
             start_conference();
             
+            function showStartBtn() {
+            	$("#btndiv").html('<button class="btn btn-success" id="start_conference"><?=Yii::t("article","Start Conference"); ?></button>');
+            }
+            
             function end_conference() {
+            	showStartBtn();
             	$("#end_conference").click(function() {
-            		$("#btndiv").html('<button class="btn btn-success" id="start_conference"><?=Yii::t("article","Start Conference"); ?></button>');
-		    		$("#conferencing_area").html("&nbsp;");
+            		$("#conferencing_area").html("&nbsp;");
             		start_conference();
             	});
+            }
+            
+            function showEndBtn() {
+            	$("#btndiv").html('<button class="btn btn-danger" id="end_conference"><?=Yii::t("article","End"); ?></button>');
             }
 
             function start_conference() {
             	$("#start_conference").click(function (){
-	            	$("#btndiv").html('<button class="btn btn-danger" id="end_conference"><?=Yii::t("article","End"); ?></button>');
-	                isPublisher = true;
+	            	showEndBtn();
+	            	isPublisher = true;
 	                reciever = $("#contacts-list").find(".active").text();
 	                $.ajax({
 	                    url: HOST+"videoCallTo/",
