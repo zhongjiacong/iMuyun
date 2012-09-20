@@ -4,7 +4,8 @@
         <link href="<?=Yii::app()->theme->baseUrl; ?>/css/bootstrap.css" rel="stylesheet">
         <script src="<?=Yii::app()->theme->baseUrl; ?>/js/jquery.min.js" ></script>
         <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
-		<script src="http://staging.tokbox.com/v0.91/js/TB.min.js" ></script>
+		<!-- <script src="http://staging.tokbox.com/v0.91/js/TB.min.js" ></script> -->
+        <script src="http://static.opentok.com/v0.91/js/TB.min.js" type="text/javascript" charset="utf-8"></script>
         <!-- <script src="http://staging.tokbox.com/v0.91/js/TB.min.js" type="text/javascript" charset="utf-8"></script> -->
         <!-- <script src="http://static.opentok.com/v0.92-alpha/js/TB.min.js" type="text/javascript"></script>-->
 
@@ -45,6 +46,7 @@
         </div>
         <script type="text/javascript" charset="utf-8">
             var HOST = "http://imuyun.com:8000/"
+            //var HOST = "http://imuyun.com/muyunvideo/"
             //var HOST = "http://omegaga.net/muyunvideo/"
             var session_id, token;
             var username = "<?=Yii::app()->user->name; ?>";

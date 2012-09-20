@@ -2,7 +2,8 @@
 <html>
     <head>
         <!-- <script src="http://static.opentok.com/v0.92-alpha/js/TB.min.js" type="text/javascript"></script>-->
-         <script src="http://staging.tokbox.com/v0.91/js/TB.min.js" type="text/javascript" charset="utf-8"></script>
+        <!-- <script src="http://staging.tokbox.com/v0.91/js/TB.min.js" type="text/javascript" charset="utf-8"></script> -->
+        <script src="http://static.opentok.com/v0.91/js/TB.min.js" type="text/javascript" charset="utf-8"></script>
         <!-- <script src="http://static.opentok.com/v0.91/js/TB.min.js" ></script> -->
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script src="<?=Yii::app()->theme->baseUrl; ?>/js/bootstrap-dropdown.js" ></script>
@@ -29,24 +30,26 @@
         </div>
         <script type="text/javascript" charset="utf-8">
             var session_id, token, streamCount;
-            var name = new Array();
+            var namelist = new Array();
             var username = "<?=Yii::app()->user->name; ?>";
             var address = "<?=$_SERVER['REMOTE_ADDR']; ?>";
             var session;
             var apiKey = "16937882"; 
             var subscribers = {};
+            var totalUser = 2;
             //DEBUG PURPOSE
             var isPublisher = false;
             var rid=-1;
             var isInVideoCall = false;
-            var HOST = "http://imuyun.com:8000";
+            var HOST = "http://imuyun.com:8000/";
+            //var HOST = "http://imuyun.com/muyunvideo/"
  
             TB.setLogLevel(TB.INFO);
 
             // Check comming call
             var commingcall = setInterval(function () {
                     $.ajax({
-                        url: HOST+"/updateStatus/",
+                        url: HOST+"updateStatus/",
                         type: "POST",
                         cache: false,
                         dataType: "json",
@@ -55,7 +58,12 @@
                         success: function(data) {
                             if (data.sessionId != '' && isInVideoCall==false){
                                 token = data.token; 
+                                callType = data.callType;
                                 session_id = data.sessionId;
+                                if ( callType == 1 ){
+                                    totalUser = 1;}
+                                else{
+                                    totalUser = 2;}
                                 alert( session_id );
                                 isInVideoCall = true;
                                 connect();
@@ -81,8 +89,10 @@
 
             function addStream(stream) {
                 if ( stream.name != "interpreter" ){
-                    name[streamCount]=stream.name;
-                    //alert(name[streamCount]+strval(streamCount));
+                    namelist[streamCount]=stream.name;
+                    alert(stream.name);
+                    alert(streamCount);
+                    alert(namelist[streamCount]);
                     streamCount++;
                 }
                 if (stream.connection.connectionId == session.connection.connectionId) {
@@ -98,15 +108,19 @@
                     TB.log("streamCreated - connectionData: " + event.streams[i].connection.data);
                     addStream(event.streams[i]);
                 }
-                alert(streamCount); 
-                if ( streamCount == 2 && rid==-1 ) {
+                if ( streamCount == totalUser && rid==-1 ) {
+                    alert( "talUser is " + totalUser );
+                    if ( totalUser == 1 )
+                    {namelist[1] = username;}
+                    alert(namelist[0]);
+                    alert(namelist[1]);
                     $.ajax({
-                        url: HOST+"/startTimeCount/",
+                        url: HOST+"startTimeCount/",
                         type: "POST",
                         cache: false,
                         dataType: "json",
                         crossDomain: true,
-                        data: "user1="+name[0]+"&user2="+name[1],
+                        data: "user1="+namelist[0]+"&user2="+namelist[1],
                         success: function(data) {
                             alert( data.rid);
                             rid = data.rid;
@@ -116,7 +130,6 @@
 			}
 
             function subscribeToStream(event){
-                alert("subscribe stream");
                 for (var i = 0; i < event.streams.length; i++) {
                     addStream(event.streams[i]);
                 }
@@ -127,9 +140,9 @@
             }
             function streamDestroyedHandler(event) {
                 //alert("stream Destroyed!");
-                if ( rid != -1 )
+                if ( rid != -1 ){
                     $.ajax({
-                        url: HOST+"/endTimeCount/",
+                        url: HOST+"endTimeCount/",
                         type: "POST",
                         cache: false,
                         dataType: "json",
@@ -138,16 +151,16 @@
                         success: function(data) {
                             rid = -1;
                         }
-                	});
+                    });
+                }
 		    	$("#conferencing_area").html("&nbsp;");
             }
             function sessionConnectedHandler(event){
-                //alert(username+" connected");
+                alert(username+" connected");
                 
                 
                 for (var i = 0; i < event.streams.length; i++) {
                     addStream(event.streams[i]);
-                    alert("stream[i].streamId");
                 }
                 publisher = TB.initPublisher(apiKey, 'publisher', {name:"interpreter"});
                 session.publish(publisher);
