@@ -82,6 +82,14 @@
                 }
             });
             
+            function showStartBtn() {
+            	$("#btndiv").html('<button class="btn btn-success" id="start_conference"><?=Yii::t("article","Start Conference"); ?></button>');
+            }
+            
+            function showEndBtn() {
+            	$("#btndiv").html('<button class="btn btn-danger" id="end_conference"><?=Yii::t("article","End"); ?></button>');
+            }
+            
             // Check comming call
             var commingcall = setInterval(function () {
                     $.ajax({
@@ -98,33 +106,25 @@
                                 isInVideoCall = true;
                                 connect();
                                 clearInterval(commingcall);
-                                showEndBtn();//zjc0920
+                                //showEndBtn();//zjc0920
                             }
                         }
                     })
                 },
                 3000
-            )
+			);
             
-            start_conference();
+            startConference();
             
-            function showStartBtn() {
-            	$("#btndiv").html('<button class="btn btn-success" id="start_conference"><?=Yii::t("article","Start Conference"); ?></button>');
-            }
-            
-            function end_conference() {
+            function endConference() {
             	showStartBtn();
             	$("#end_conference").click(function() {
             		$("#conferencing_area").html("&nbsp;");
-            		start_conference();
+            		startConference();
             	});
             }
-            
-            function showEndBtn() {
-            	$("#btndiv").html('<button class="btn btn-danger" id="end_conference"><?=Yii::t("article","End"); ?></button>');
-            }
 
-            function start_conference() {
+            function startConference() {
             	$("#start_conference").click(function (){
 	            	showEndBtn();
 	            	isPublisher = true;
@@ -143,7 +143,7 @@
 	                        connect();
 	                    }
 	                });
-	                end_conference();
+	                endConference();
 	            });
 			}
 			
