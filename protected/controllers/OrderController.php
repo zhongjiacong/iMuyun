@@ -68,6 +68,9 @@ class OrderController extends Controller
 	 */
 	public function actionView($id)
 	{
+		if(NULL == $this->loadModel($id)->paytime)
+			$this->redirect(array('pay','id'=>$id));
+		
 		$this->layout='//layouts/column1';
 		
 		$this->render('view',array(
@@ -129,8 +132,12 @@ class OrderController extends Controller
 			if($model->audit == 0)
 				$model->remark = $_POST['Order']['remark'];
 			
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			if($model->save()) {
+				if(NULL != $model->paytime)
+					$this->redirect(array('view','id'=>$model->id));
+				else
+					$this->redirect(array('pay','id'=>$model->id));
+			}
 		}
 
 		$this->render('update',array(
