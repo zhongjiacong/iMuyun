@@ -691,10 +691,10 @@ div .graystate .linktriangle
 	height: 220px;
 }
 #conferencing_area object:nth-child(2) {
-	width: 572px;
-	height: 440px;
-}
-#conferencing_area object:nth-child(3) {
 	width: 286px;
 	height: 220px;
+}
+#conferencing_area object:nth-child(3) {
+	width: 572px;
+	height: 440px;
 }
