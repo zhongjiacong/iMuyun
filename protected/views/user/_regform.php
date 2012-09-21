@@ -60,7 +60,7 @@
 
 	<div class="row buttons">
 		<?=CHtml::submitButton(Yii::t('layouts','Register'),
-			array('id'=>'redbtn','disabled'=>'disabled')); ?>
+			array('id'=>'redbtn')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
