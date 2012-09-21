@@ -1,7 +1,7 @@
 <div class="artview">
 
-	<?=CHtml::link('<b>'.CHtml::encode($data->getAttributeLabel('id')).':</b>'.
-		CHtml::encode($data->id), array('article/view', 'id'=>$data->id)); ?>
+	<b><?=CHtml::encode($data->getAttributeLabel('id')); ?>: </b>
+	<?=CHtml::link(CHtml::encode($data->id), array('article/view', 'id'=>$data->id)); ?>
 	<br />
 
 <?php /*
