@@ -132,7 +132,7 @@ class OrderController extends Controller
 			if(User::model()->isAdmin() && NULL != $model->paytime)
 				$model->audit = $_POST['Order']['audit'];
 			// 审核之后不能再改备注了
-			if($model->audit == 0)
+			if(User::model()->isAdmin() || $model->audit == 0)
 				$model->remark = $_POST['Order']['remark'];
 			
 			if($model->save()) {
