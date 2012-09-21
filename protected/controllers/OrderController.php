@@ -123,7 +123,7 @@ class OrderController extends Controller
 			//$model->customer_id = Yii::app()->user->getId();
 			// 只能改主题和备注
 			$model->subject = $_POST['Order']['subject'];
-			if(User::model()->isAdmin())
+			if(User::model()->isAdmin() && NULL != $model->paytime)
 				$model->audit = $_POST['Order']['audit'];
 			// 审核之后不能再改备注了
 			if($model->audit == 0)
