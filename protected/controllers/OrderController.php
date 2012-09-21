@@ -50,6 +50,9 @@ class OrderController extends Controller
 	
 	public function actionPay($id)
 	{
+		if(NULL != $this->loadModel($id)->paytime)
+			$this->redirect(array('view','id'=>$id));
+		
 		$this->layout = '//layouts/column1';
 		
 		$model = $this->loadModel($id);

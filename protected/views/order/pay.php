@@ -27,32 +27,6 @@ Yii::app()->clientScript->registerScript('orderarticle',"
 		});
 	}
 ",CClientScript::POS_HEAD);
-if(Consume::model()->availableBalance() >= $totalprice)
-	Yii::app()->clientScript->registerScript('order', "
-		$('#redbtn').removeAttr('disabled');
-		
-		$('#redbtn').click(function(){
-			var remark = $('#remark').val();
-			$.ajax({
-				type: 'POST',
-				url: '".Yii::app()->request->baseUrl."/index.php/order/create',
-				data: {id: ".$model->id.",remark: remark},
-				dataType: 'json',
-				beforeSend: function(){},
-				success: function(result) {
-					if(result.state == 'succeed') {
-						art.dialog({title:'',content: '".Yii::t('order','Pay successfully')."^_^',time: 500});
-						function myreload() {
-							window.location.reload();
-						}
-						setTimeout(myreload, 1000);
-					}
-					else
-						art.dialog({title:'',content: '".Yii::t('order','Pay failed').">_<',lock: true,time: 500});
-				}
-			})
-		});
-	");
 
 $this->menu=array(
 	array('label'=>'List Order', 'url'=>array('index'),'visible'=>User::model()->isAdmin()),
@@ -129,7 +103,7 @@ $this->menu=array(
 	<?php if($model->paytime==NULL): ?>
 	<dl>
 		<dt><?=Yii::t('order','Remark'); ?></dt>
-		<dd><?=CHtml::textArea('remark','',array('cols'=>50,'rows'=>6)); ?></dd>
+		<dd><?=CHtml::textArea('remark',$model->remark,array('cols'=>50,'rows'=>6)); ?></dd>
 	</dl>
 	
 	<dl>
@@ -164,3 +138,31 @@ $this->menu=array(
 	</dl>
 	<?php endif; ?>
 </div>
+
+<?php if(Consume::model()->availableBalance() >= $totalprice): ?>
+<script type="text/javascript">
+	$('#redbtn').removeAttr('disabled');
+	
+	$('#redbtn').click(function(){
+		var remark = $('#remark').val();
+		$.ajax({
+			type: 'POST',
+			url: '<?=Yii::app()->request->baseUrl; ?>/index.php/order/create',
+			data: {id: <?=$model->id; ?>,remark: remark},
+			dataType: 'json',
+			beforeSend: function(){},
+			success: function(result) {
+				if(result.state == 'succeed') {
+					art.dialog({title:'',content: '<?=Yii::t('order','Pay successfully'); ?>^_^',time: 500});
+					function myreload() {
+						window.location.reload();
+					}
+					setTimeout(myreload, 1000);
+				}
+				else
+					art.dialog({title:'',content: '<?=Yii::t('order','Pay failed'); ?>>_<',lock: true,time: 500});
+			}
+		})
+	});
+</script>
+<?php endif; ?>
