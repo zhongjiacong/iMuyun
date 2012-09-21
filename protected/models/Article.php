@@ -254,12 +254,15 @@ class Article extends CActiveRecord
 		$text = Article::model()->findByPk($text_id);
 		$time = strtotime($text->edittime);
 		
-		$path = pathinfo(urlencode($text->filename));
-
-		$phypath = dirname(__FILE__).'/../../public/file/'.$time.".".$path["filename"].".".$path["extension"];
-		$urlpath = Yii::app()->request->baseUrl.'/public/file/'.$time.".".urlencode($path["filename"]).".".$path["extension"];
-
-		return $physical?$phypath:$urlpath;
+		if(NULL != $text->filename) {
+			$path = pathinfo(urlencode($text->filename));
+	
+			$phypath = dirname(__FILE__).'/../../public/file/'.$time.".".$path["filename"].".".$path["extension"];
+			$urlpath = Yii::app()->request->baseUrl.'/public/file/'.$time.".".urlencode($path["filename"]).".".$path["extension"];
+	
+			return $physical?$phypath:$urlpath;
+		}
+		return NULL;
 	}
 
 	public function saveTransFile($text_id,$doccont)
