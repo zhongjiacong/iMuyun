@@ -60,7 +60,7 @@ $this->menu=array(
 	<?=Yii::t('article','Order information').": "; ?>
 </div>
 
-<table class="ordertable">
+<table class="ordertable orderpaytable">
 	<thead>
 		<tr>
 			<th></th>
@@ -86,7 +86,7 @@ $this->menu=array(
 			$artcont .= $svalue->original;
 		}
 ?>
-<table class="ordertable">
+<table class="ordertable orderpaytable">
 	<tbody>
 		<tr>
 			<td><?=CHtml::link(Article::model()->getAttributeLabel('id').': '.$value->id,array('article/view','id'=>$value->id)); ?></td>
