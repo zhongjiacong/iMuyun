@@ -227,6 +227,7 @@ class Article extends CActiveRecord
 				shell_exec("iconv ".$phypath." -f gb18030 -t utf-8 > ".$phypath."_");
 				shell_exec("rm -rf ".$phypath);
 				shell_exec("cp -f ".$phypath."_ ".$phypath);
+				shell_exec("rm -rf ".$phypath."_");
 				$artcont = shell_exec('cat '.$phypath);break;
 			case $allowtype[2]:
 				$artcont = shell_exec('antiword -m UTF-8.txt '.$phypath);break;

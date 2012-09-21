@@ -73,6 +73,12 @@ Yii::app()->clientScript->registerScript('textform', "
 			sendkeyup = setTimeout(textinfor,1000);
 			$('#wordcount div').html('￥: ...<br /><?=Yii::t('article','Words'); ?>: ...');
 		});
+		$('#Article_artcont').bind('paste',function() {
+			// the same as above
+			clearTimeout(sendkeyup);
+			sendkeyup = setTimeout(textinfor,1000);
+			$('#wordcount div').html('￥: ...<br /><?=Yii::t('article','Words'); ?>: ...');
+		});
 	}
 	
 	function textinfor() {
