@@ -3,32 +3,6 @@
 $totalprice = Order::model()->orderPrice($model->id);
 // -- calculate the totalprice end -- //
 
-Yii::app()->clientScript->registerScript('order', "
-	$('#redbtn').removeAttr('disabled');
-	
-	$('#redbtn').click(function(){
-		var remark = $('#remark').val();
-		$.ajax({
-			type: 'POST',
-			url: '".Yii::app()->request->baseUrl."/index.php/order/create',
-			data: {id: ".$model->id.",remark: remark},
-			dataType: 'json',
-			beforeSend: function(){},
-			success: function(result) {
-				if(result.state == 'succeed') {
-					art.dialog({title:'',content: '".Yii::t('order','Pay successfully')."^_^',time: 250});
-					function myreload() {
-						window.location.reload();
-					}
-					setTimeout(myreload, 1000);
-				}
-				else
-					art.dialog({title:'',content: '".Yii::t('order','Pay failed').">_<',lock: true,time: 500});
-			}
-		})
-	});
-");
-
 $this->menu=array(
 	array('label'=>'List Order', 'url'=>array('index'),
 		'visible'=>User::model()->isAdmin()),
@@ -63,14 +37,11 @@ $this->menu=array(
 <table class="ordertable orderpaytable">
 	<thead>
 		<tr>
-			<th></th>
+			<th><?=Article::model()->getAttributeLabel('id'); ?></th>
 			<th><?=Yii::t('article','Language'); ?></th>
 			<th><?=Yii::t('article','Word Count'); ?></th>
 			<th><?=Yii::t('article','Price'); ?></th>
 			<th><?=Yii::t('article','Edit Time'); ?></th>
-			<?php if(NULL == $model->paytime): ?>
-			<th></th>
-			<?php endif; ?>
 		</tr>
 	</thead>
 </table>
@@ -89,14 +60,11 @@ $this->menu=array(
 <table class="ordertable orderpaytable">
 	<tbody>
 		<tr>
-			<td><?=CHtml::link(Article::model()->getAttributeLabel('id').': '.$value->id,array('article/view','id'=>$value->id)); ?></td>
+			<td><?=CHtml::link($value->id,array('article/view','id'=>$value->id)); ?></td>
 			<td><?=Yii::app()->params['language'][$value->srclang_id].'->'.Yii::app()->params['language'][$value->tgtlang_id]; ?></td>
 			<td><?=$value->wordcount; ?></td>
 			<td><?=$value->price; ?></td>
 			<td><?=$value->edittime; ?></td>
-			<?php if(NULL == $model->paytime): ?>
-			<td><?=CHtml::button(Yii::t('layouts','Delete'),array('onclick'=>'delart('.$value->id.');')); ?></td>
-			<?php endif; ?>
 		</tr>
 	</tbody>
 </table>
@@ -112,12 +80,37 @@ $this->menu=array(
 			<div>￥<?=$totalprice; ?></div>
 		</dd>
 	</dl>
-	
-	<?php if($model->paytime != NULL) { ?>
+
 	<dl>
  		<dt><?=Yii::t('order','Remark'); ?></dt>
  		<dd><?=$model->remark; ?></dd>
  	</dl>
-	<?php } ?>
  </div>
+
+<script type="text/javascript">
+	$('#redbtn').removeAttr('disabled');
+	
+	$('#redbtn').click(function(){
+		var remark = $('#remark').val();
+		$.ajax({
+			type: 'POST',
+			url: '<?=Yii::app()->request->baseUrl; ?>/index.php/order/create',
+			data: {id: <?=$model->id; ?>,remark: remark},
+			dataType: 'json',
+			beforeSend: function(){},
+			success: function(result) {
+				if(result.state == 'succeed') {
+					art.dialog({title:'',content: '<?=Yii::t('order','Pay successfully'); ?>^_^',time: 250});
+					function myreload() {
+						window.location.reload();
+					}
+					setTimeout(myreload, 1000);
+				}
+				else
+					art.dialog({title:'',content: '<?=Yii::t('order','Pay failed'); ?>>_<',lock: true,time: 500});
+			}
+		})
+	});
+</script>
+
 

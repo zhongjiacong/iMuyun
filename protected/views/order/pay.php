@@ -62,9 +62,7 @@ $this->menu=array(
 			<th><?=Yii::t('article','Word Count'); ?></th>
 			<th><?=Yii::t('article','Price'); ?></th>
 			<th><?=Yii::t('article','Edit Time'); ?></th>
-			<?php if(NULL == $model->paytime): ?>
-			<th></th>
-			<?php endif; ?>
+			<th><?=Article::model()->getAttributeLabel('id'); ?></th>
 		</tr>
 	</thead>
 </table>
@@ -83,14 +81,12 @@ $this->menu=array(
 <table class="ordertable orderpaytable">
 	<tbody>
 		<tr>
-			<td><?=CHtml::link(Article::model()->getAttributeLabel('id').': '.$value->id,array('article/view','id'=>$value->id)); ?></td>
+			<td><?=CHtml::link($value->id,array('article/view','id'=>$value->id)); ?></td>
 			<td><?=Yii::app()->params['language'][$value->srclang_id].'->'.Yii::app()->params['language'][$value->tgtlang_id]; ?></td>
 			<td><?=$textinfor["wordcount"]; ?></td>
 			<td><?=$textinfor["price"]; ?></td>
 			<td><?=$value->edittime; ?></td>
-			<?php if(NULL == $model->paytime): ?>
 			<td><?=CHtml::button(Yii::t('layouts','Delete'),array('onclick'=>'delart('.$value->id.');')); ?></td>
-			<?php endif; ?>
 		</tr>
 	</tbody>
 </table>
@@ -100,7 +96,6 @@ $this->menu=array(
 <br />
 <br />
 <div class="form">
-	<?php if($model->paytime==NULL): ?>
 	<dl>
 		<dt><?=Yii::t('order','Remark'); ?></dt>
 		<dd><?=CHtml::textArea('remark',$model->remark,array('cols'=>50,'rows'=>6)); ?></dd>
@@ -130,13 +125,6 @@ $this->menu=array(
 	<div>
 		<?=CHtml::button(Yii::t('order','Pay'),array('id'=>'redbtn','disabled'=>'disabled')); ?>
 	</div>
-	
-	<?php else: ?>
-	<dl>
-		<dt><?=Yii::t('order','Remark'); ?></dt>
-		<dd><?=$model->remark; ?></dd>
-	</dl>
-	<?php endif; ?>
 </div>
 
 <?php if(Consume::model()->availableBalance() >= $totalprice): ?>
