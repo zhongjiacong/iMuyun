@@ -21,7 +21,7 @@
 		<dt><?=$form->labelEx($model,'remark'); ?></dt>
 		<dd>
 			<?php
-				if($model->audit == 0) {
+				if($model->audit == 0 || User::model()->isAdmin()) {
 					echo $form->textArea($model,'remark',array('rows'=>6, 'cols'=>50));
 					echo $form->error($model,'remark');
 				}
