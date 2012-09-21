@@ -153,7 +153,9 @@
                         }
                     });
                 }
+		    	// 09210821 -- have some problem to really destroyed the connection
 		    	$("#conferencing_area").html("&nbsp;");
+		    	window.location.reload();
             }
             function sessionConnectedHandler(event){
                 //alert(username+" connected");

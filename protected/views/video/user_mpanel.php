@@ -232,6 +232,7 @@
 		    function streamDestroyedHandler(event){
 		    	//alert("end");
 		    	endConference();
+		    	window.location.reload();
 		    }
             function sessionConnectedHandler(event){
                 //alert("hey");
