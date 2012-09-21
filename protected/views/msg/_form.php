@@ -72,7 +72,7 @@
 	<?php endif; ?>
 
 	<div class="row buttons">
-		<?=CHtml::submitButton(Yii::t('layouts','Create'),
+		<?=CHtml::submitButton(Yii::t('layouts','Submit'),
 			array('id'=>'redbtn','disabled'=>'disabled')); ?>
 	</div>
 
