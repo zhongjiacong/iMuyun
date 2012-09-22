@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- <script src="http://static.opentok.com/v0.92-alpha/js/TB.min.js" type="text/javascript"></script>-->
-        <!-- <script src="http://staging.tokbox.com/v0.91/js/TB.min.js" type="text/javascript" charset="utf-8"></script> -->
         <script src="http://static.opentok.com/v0.91/js/TB.min.js" type="text/javascript" charset="utf-8"></script>
-        <!-- <script src="http://static.opentok.com/v0.91/js/TB.min.js" ></script> -->
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script src="<?=Yii::app()->theme->baseUrl; ?>/js/bootstrap-dropdown.js" ></script>
         <link href="<?=Yii::app()->theme->baseUrl; ?>/css/bootstrap.css" rel="stylesheet">
@@ -44,7 +41,7 @@
             var HOST = "http://imuyun.com:8000/";
             //var HOST = "http://imuyun.com/muyunvideo/"
  
-            TB.setLogLevel(TB.INFO);
+            TB.setLogLevel(TB.DEBUG);
 
             // Check comming call
             var commingcall = setInterval(function () {
@@ -155,7 +152,7 @@
                 }
 		    	// 09210821 -- have some problem to really destroyed the connection
 		    	$("#conferencing_area").html("&nbsp;");
-		    	window.location.reload();
+		    	//window.location.reload();
             }
             function sessionConnectedHandler(event){
                 //alert(username+" connected");
