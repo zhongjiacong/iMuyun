@@ -19,7 +19,7 @@
  * @version $Id: $
  */
 return array (
-  'Non-payment' => '未付款',
+  'You have successfully payment, please wait for the translation.' => '您已付款成功，请等待翻译。',
   'Audit' => '审核',
   'Audited' => '已审核',
   'Customer' => '客户',
@@ -42,6 +42,7 @@ return array (
   'Pay Time' => '付款时间',
   'Pay failed' => '付款失败',
   'Pay successfully' => '付款成功',
+  'Please venue {recharge center}.' => '请移步{recharge center}。',
   'Remark' => '备注',
   'Save' => '保存',
   'Subject' => '订单主题',
@@ -53,4 +54,5 @@ return array (
   'View Order' => '查看订单',
   'Your balance is not enought.' => '您的余额不足。',
   'audited' => '已审核',
+  'recharge center' => '充值中心',
 );

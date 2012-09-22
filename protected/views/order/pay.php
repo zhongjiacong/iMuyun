@@ -116,7 +116,9 @@ $this->menu=array(
 				<br />
 				<?php
 					if(Consume::model()->availableBalance() < $totalprice)
-						echo Yii::t("order","Your balance is not enought.");
+						echo Yii::t("order","Your balance is not enought.").
+							Yii::t("order","Please venue {recharge center}.",
+								array("{recharge center}"=>CHtml::link(Yii::t("order","recharge center"),array('consume/create'))));
 				?>
 			</div>
 		</dd>
@@ -141,11 +143,11 @@ $this->menu=array(
 			beforeSend: function(){},
 			success: function(result) {
 				if(result.state == 'succeed') {
-					art.dialog({title:'',content: '<?=Yii::t('order','Pay successfully'); ?>^_^',time: 500});
+					art.dialog({title:'',content: '<?=Yii::t('order','You have successfully payment, please wait for the translation.'); ?>^_^',time: 1500});
 					function myreload() {
 						window.location.reload();
 					}
-					setTimeout(myreload, 1000);
+					setTimeout(myreload, 2000);
 				}
 				else
 					art.dialog({title:'',content: '<?=Yii::t('order','Pay failed'); ?>>_<',lock: true,time: 500});

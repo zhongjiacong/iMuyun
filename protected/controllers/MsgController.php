@@ -93,7 +93,7 @@ class MsgController extends Controller
 			$model->attributes=$_POST['Msg'];
 			
 			if($model->save()) {
-				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
+				Yii::app()->user->setFlash('contact',Yii::t('contact','Thank you for contacting us. We will respond to you as soon as possible.'));
 				$this->refresh();
 				//$this->redirect(array('view','id'=>$model->id));
 			}

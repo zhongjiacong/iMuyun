@@ -19,6 +19,7 @@
  * @version $Id: $
  */
 return array (
+  'Thank you for contacting us. We will respond to you as soon as possible.' => '谢谢您联系我们。我们将会尽快回复您。',
   'If you have business inquiries or other questions,
 			please fill out the following form to contact us. Thank you.' => '如果您有商业需求或者其他问题，请填写下面的表单联系我们。谢谢。',
   'Please enter the letters as they are shown in the image above.
