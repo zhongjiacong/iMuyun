@@ -299,7 +299,7 @@ class UserController extends Controller
 			// 安全性
 			// 不可修改邮箱，即使是管理员
 			$model->email = $email;
-			if(!User::model()->isAdmin()) {
+			if(!User::model()->isAdmin() || $model->email == Yii::app()->user->name) {
 				$model->privilege_id = $privilege_id;
 				$model->enabled = $enabled;
 				$model->verifycode = $verifycode;
