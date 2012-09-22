@@ -683,18 +683,27 @@ div .graystate .linktriangle
 	margin-top: 10px;
 }
 
+#conferencing_area {
+	min-height: 420px;
+}
 #conferencing_area object {
-	float: left;
+	position: absolute;
 }
 #conferencing_area object:nth-child(1) {
-	width: 286px;
-	height: 220px;
+	border: 3px solid white;
+	z-index: 2;
+	top: 490px;
+	width: 195px;
+	height: 150px;
 }
 #conferencing_area object:nth-child(2) {
-	width: 286px;
-	height: 220px;
-}
-#conferencing_area object:nth-child(3) {
+	border: 3px solid white;
+	z-index: 1;
+	top: 200px;
 	width: 572px;
 	height: 440px;
 }
+/*#conferencing_area object:nth-child(3) {
+	width: 572px;
+	height: 440px;
+}*/

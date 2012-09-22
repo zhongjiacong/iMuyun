@@ -15,8 +15,10 @@
                             <a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video">
                             	<?=Yii::t("article","Working Space"); ?></a>
                         </li>
+                        <?php /*
                         <li><a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video/cpanel">
                         	<?=Yii::t("article","Control Panel"); ?></a></li>
+						*/ ?>
                     </ul>
                 </div>
             </div>
@@ -152,7 +154,7 @@
                 }
 		    	// 09210821 -- have some problem to really destroyed the connection
 		    	$("#conferencing_area").html("&nbsp;");
-		    	//window.location.reload();
+		    	window.location.reload();
             }
             function sessionConnectedHandler(event){
                 //alert(username+" connected");
