@@ -187,17 +187,18 @@ class ArticleController extends Controller
 	{
 		$this->layout='//layouts/column1';
 		
+		// avoid the tri video just a minute
 		if(!isset($_GET['cpanel'])) {
 			if(User::model()->isTranslator())
 				$this->render('/video/trans_mpanel',array());
 			else
-				$this->render('/video/user_mpanel',array());
+				$this->render('/video/user_cpanel',array());
 		}
 		else {
 			if(User::model()->isTranslator())
 				$this->render('/video/trans_cpanel',array());
 			else
-				$this->render('/video/user_cpanel',array());
+				$this->render('/video/user_mpanel',array());
 		}
 	}
 

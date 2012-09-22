@@ -19,7 +19,8 @@
  * @version $Id: $
  */
 return array (
-  'New Password' => '新密码',
+  'If you can\'t find the email in your trash neither, please call our consume service.' => '如果您在垃圾箱也找不到相应邮件，请联系我们的客服人员。',
+  'If you don\'t receive the email in your inbox, perhaps you can find it in your trash.' => '如果您没有收到邮件，可能因邮箱安全级别高而放在垃圾箱。',
   'Account Category' => '用户类型',
   'Account Settings' => '帐号设置',
   'Address' => '地址',
@@ -48,6 +49,7 @@ return array (
   'Muyun Translation account activation:' => '牧云翻译用户验证：',
   'Muyun Translation reset password:' => '牧云翻译重置密码：',
   'Native Language' => '母语',
+  'New Password' => '新密码',
   'Nickname' => '昵称',
   'Pay Password' => '支付密码',
   'Please check your email.' => '请查看您的邮箱。',
