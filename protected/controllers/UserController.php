@@ -207,32 +207,29 @@ class UserController extends Controller
 		$model->scenario = 'langupdate';
 		
 		if(Yii::app()->request->isPostRequest) {
-			if(1 == intval($_POST['flag']))
-				Userlang::model()->deleteAll('`user_id` = :user_id',
-					array(':user_id'=>Yii::app()->user->getId()));
-			else if(0 == intval($_POST['flag'])) {
+			Userlang::model()->deleteAll('`user_id` = :user_id',
+				array(':user_id'=>Yii::app()->user->getId()));
+			$langArr = json_decode($_POST['lang']);
+			if(empty($langArr)) {
 				$userlang = new Userlang;
 				$userlang->user_id = Yii::app()->user->getId();
-				$userlang->lang_id = intval($_POST['lang_id']);
+				$userlang->lang_id = User::model()->defaultLang();
 				$userlang->save();
 			}
 			else {
-				// 判断用户是不是把所有语言删了，这样就得加入默认语言
-				if(!Userlang::model()->exists('`user_id` = :user_id',
-					array(':user_id'=>Yii::app()->user->getId()))) {
+				foreach ($langArr as $key => $value) {
 					$userlang = new Userlang;
 					$userlang->user_id = Yii::app()->user->getId();
-					$userlang->lang_id = User::model()->defaultLang();
+					$userlang->lang_id = intval($value);
 					$userlang->save();
 				}
-				echo json_encode(array('state'=>'succeed'));
 			}
+			echo json_encode(array('state'=>'succeed'));
 		}
-		else {
+		else
 			$this->render('langupdate',array(
 				'model'=>$model,
 			));
-		}
 		
 	}
 	

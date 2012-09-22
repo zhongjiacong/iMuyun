@@ -26,6 +26,7 @@
     <script type="text/javascript" src="<?=Yii::app()->theme->baseUrl; ?>/js/jquery.animate-colors-min.js"></script>
     <script type="text/javascript" src="<?=Yii::app()->theme->baseUrl; ?>/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="<?=Yii::app()->theme->baseUrl; ?>/js/view.js"></script>
+    <script type="text/javascript" src="<?=Yii::app()->theme->baseUrl; ?>/js/jquery.json-2.3.min.js"></script>
     <?php
         Yii::app()->clientScript->registerScriptFile(
             Yii::app()->theme->baseUrl.'/js/artDialog/artDialog.min.js', CClientScript::POS_HEAD);
