@@ -350,6 +350,13 @@ class User extends CActiveRecord
         return $pattern;
     }
 	
+	public function userDefaultLang()
+	{
+		// need to change defult = 0
+		$userlang = Userlang::model()->find("`user_id` = :user_id AND `default` = 0",array(":user_id"=>Yii::app()->user->getId()));
+		return $userlang->lang_id;
+	}
+	
 	public function defaultLang()
 	{
 		//只取前4位，这样只判断最优先的语言。如果取前5位，可能出现en,zh的情况，影响判断。

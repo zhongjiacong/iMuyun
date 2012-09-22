@@ -19,10 +19,11 @@
  * @version $Id: $
  */
 return array (
-  'You have select ' => '您已经选择',
+  'End Translation' => '结束翻译',
   'Add' => '添加',
   'Article Content' => '翻译内容',
   'Article delete failure' => '删除文章失败',
+  'Call Translator' => '呼叫译员',
   'Call Translator Only' => '仅呼叫译员',
   'Complete Time' => '完成时间',
   'Complete Translation' => '完成翻译',
@@ -53,7 +54,7 @@ return array (
   'Price' => '价格',
   'Receive Article' => '领取文本',
   'Remember my choice next time.' => '下次记住我的选择。',
-  'Select Language' => '选择语言',
+  'Select Language Need To Translate' => '选择需翻译的语言',
   'Source Language' => '源语言',
   'Start Conference' => '开始会议',
   'Start Translation' => '开始翻译',
@@ -76,6 +77,7 @@ return array (
   'Wrong file format!' => '错误的文件格式！',
   'You can login and skip this step.' => '您可以登录跳过这一步骤。',
   'You can reselect in the settings of your profile.' => '您可以在个人主页的设置中重新选择。',
+  'You have select ' => '您已经选择',
   'enter text' => '输入文本',
   'upload file' => '上传文件',
 );

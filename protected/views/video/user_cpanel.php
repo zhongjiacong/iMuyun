@@ -16,12 +16,14 @@
             <div class="row">
                 <div class="span12">
                     <ul class="nav nav-tabs">
+        				<?php /*
                         <li>
                             <a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video">
                             	<?=Yii::t("article","Trilateral video"); ?></a>
                         </li>
+            			*/ ?>
                         <li class="active"><a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video/cpanel">
-                        	<?=Yii::t("article","Call Translator Only"); ?></a></li>
+                        	<?=Yii::t("article","Call Translator"); ?></a></li>
                     </ul>
                 </div>
             </div>
@@ -30,14 +32,21 @@
                 <div class="span4">
                     <div class="btn-group">
                         <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                            <?=Yii::t("article","Select Language"); ?>
+                            <?=Yii::t("article","Select Language Need To Translate"); ?>
                             <span class="caret"></span>
                         </a>
+                        <?php
+                        	// remove user's language
+                        	$langli = "";
+							$useingLang = array_slice(Yii::app()->params['language'],0,2);
+							foreach ($useingLang as $key => $value) {
+								if($key != User::model()->userDefaultLang())
+									$langli .= '<li id="'.$key.'" class="trans_only_btn"><a>'.$value.'</a></li>';
+							}
+                        ?>
                         <ul class="dropdown-menu">
                             <!-- HARD CODED!-->
-                            <li id=0 class="trans_only_btn"><a>Chinese</a></li>
-                            <li id=1 class="trans_only_btn"><a>English</a></li>
-                            <li id=2 class="trans_only_btn"><a>Japanese</a></li>
+                            <?=$langli; ?>
                         </ul>
                     </div>
                     <br />
@@ -87,12 +96,12 @@
             
             function showStartBtn() {
             	//alert("show start");
-            	$("#btndiv").html('<button class="btn btn-success" id="start_conference"><?=Yii::t("article","Start Conference"); ?></button>');
+            	$("#btndiv").html('<button class="btn btn-success" id="start_conference"><?=Yii::t("article","Start Translation"); ?></button>');
             }
             
             function showEndBtn() {
             	//alert("show end");
-            	$("#btndiv").html('<button class="btn btn-danger" id="end_conference"><?=Yii::t("article","End"); ?></button>');
+            	$("#btndiv").html('<button class="btn btn-danger" id="end_conference"><?=Yii::t("article","End Translation"); ?></button>');
             }
             
             // Check comming call
