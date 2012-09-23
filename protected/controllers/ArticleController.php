@@ -27,7 +27,7 @@ class ArticleController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('text','product','textinfor'),
+				'actions'=>array('text','product','textinfor','terms'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'text' and 'update' actions
@@ -63,6 +63,11 @@ class ArticleController extends Controller
     {
         return User::model()->isAdmin();
     }
+	
+	public function actionTerms()
+	{
+		$this->renderPartial('terms');
+	}
 	
 	public function actionTextinfor()
 	{

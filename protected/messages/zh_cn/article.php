@@ -19,7 +19,7 @@
  * @version $Id: $
  */
 return array (
-  'End Translation' => '结束翻译',
+  'Complete reading' => '完成阅读',
   'Add' => '添加',
   'Article Content' => '翻译内容',
   'Article delete failure' => '删除文章失败',
@@ -36,6 +36,7 @@ return array (
   'Document Content' => '文档内容',
   'Edit Time' => '提交时间',
   'End' => '结束',
+  'End Translation' => '结束翻译',
   'I accept Muyun Translation {terms of service}.' => '我接受牧云翻译 {terms of service}。',
   'ID' => '文本编号',
   'Language' => '语言',

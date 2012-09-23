@@ -40,6 +40,21 @@ Yii::app()->clientScript->registerScript('textform', "
 ?>
 
 <script type="text/javascript">
+	$('#showterms').click(function(){
+		var myDialog = art.dialog();
+		jQuery.ajax({
+			url: '<?=Yii::app(	)->request->baseUrl; ?>/index.php/article/terms',
+			success:function(data){
+				myDialog.title('<?=Yii::t('article','Terms of Service'); ?>');
+				myDialog.content(data);
+				myDialog.lock();
+				myDialog.button({
+					value: '<?=Yii::t('article','Complete reading'); ?>^_^',
+					callback: function(){	}
+				});
+			}
+		})
+	});
 	// init tgt lang when page loaded
 	$('#Article_tgtlang_id').get(0).selectedIndex = 1;
 	

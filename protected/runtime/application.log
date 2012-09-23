@@ -11143,3 +11143,135 @@ in D:\Dropbox\www\imuyun\index.php (13)
 2012/09/23 04:00:41 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
 in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (220)
 in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/23 00:30:53 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (427)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (216)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/23 00:30:53 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (427)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (216)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/23 00:30:53 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (427)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (216)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/23 08:30:59 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (220)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/23 08:30:59 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (220)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/23 08:30:59 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (220)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/23 00:31:16 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (427)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (216)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/23 00:31:16 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (427)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (216)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/23 00:31:16 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (427)
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (216)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/23 08:31:18 [warning] [application] Failed to set unsafe attribute "orderlist" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (220)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/23 08:31:18 [warning] [application] Failed to set unsafe attribute "subject" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (220)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/23 08:31:18 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
+in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (220)
+in D:\Dropbox\www\imuyun\index.php (13)
+2012/09/23 02:24:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message '找不到请求的视图 "pages"。' in D:\Dropbox\www\imuyun\framework\web\actions\CViewAction.php:113
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\web\actions\CViewAction.php(124): CViewAction->resolveView('pages')
+#1 D:\Dropbox\www\imuyun\framework\web\actions\CAction.php(75): CViewAction->run()
+#2 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 D:\Dropbox\www\imuyun\framework\web\CController.php(287): CController->runAction(Object(CViewAction))
+#4 D:\Dropbox\www\imuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('page')
+#6 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('site/page')
+#7 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/imuyun/index.php/site/page?view=pages
+HTTP_REFERER=http://localhost/imuyun/index.php/article/text
+---
+2012/09/23 02:24:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message '找不到请求的视图 "pages"。' in D:\Dropbox\www\imuyun\framework\web\actions\CViewAction.php:113
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\web\actions\CViewAction.php(124): CViewAction->resolveView('pages')
+#1 D:\Dropbox\www\imuyun\framework\web\actions\CAction.php(75): CViewAction->run()
+#2 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 D:\Dropbox\www\imuyun\framework\web\CController.php(287): CController->runAction(Object(CViewAction))
+#4 D:\Dropbox\www\imuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('page')
+#6 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('site/page')
+#7 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/imuyun/index.php/site/page?view=pages
+HTTP_REFERER=http://localhost/imuyun/index.php/article/text
+---
+2012/09/23 02:25:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message '找不到请求的视图 "pages"。' in D:\Dropbox\www\imuyun\framework\web\actions\CViewAction.php:113
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\web\actions\CViewAction.php(124): CViewAction->resolveView('pages')
+#1 D:\Dropbox\www\imuyun\framework\web\actions\CAction.php(75): CViewAction->run()
+#2 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 D:\Dropbox\www\imuyun\framework\web\CController.php(287): CController->runAction(Object(CViewAction))
+#4 D:\Dropbox\www\imuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('page')
+#6 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('site/page')
+#7 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/imuyun/index.php/site/page?view=pages
+HTTP_REFERER=http://localhost/imuyun/index.php/article/text
+---
+2012/09/23 02:25:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message '找不到请求的视图 "pages"。' in D:\Dropbox\www\imuyun\framework\web\actions\CViewAction.php:113
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\web\actions\CViewAction.php(124): CViewAction->resolveView('pages')
+#1 D:\Dropbox\www\imuyun\framework\web\actions\CAction.php(75): CViewAction->run()
+#2 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 D:\Dropbox\www\imuyun\framework\web\CController.php(287): CController->runAction(Object(CViewAction))
+#4 D:\Dropbox\www\imuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('page')
+#6 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('site/page')
+#7 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/imuyun/index.php/site/page?view=pages
+HTTP_REFERER=http://localhost/imuyun/index.php/article/text
+---
+2012/09/23 02:26:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message '找不到请求的视图 "pages"。' in D:\Dropbox\www\imuyun\framework\web\actions\CViewAction.php:113
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\web\actions\CViewAction.php(124): CViewAction->resolveView('pages')
+#1 D:\Dropbox\www\imuyun\framework\web\actions\CAction.php(75): CViewAction->run()
+#2 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 D:\Dropbox\www\imuyun\framework\web\CController.php(287): CController->runAction(Object(CViewAction))
+#4 D:\Dropbox\www\imuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('page')
+#6 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('site/page')
+#7 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/imuyun/index.php/site/page?view=pages
+HTTP_REFERER=http://localhost/imuyun/index.php/article/text
+---
+2012/09/23 02:29:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message '找不到请求的视图 "pages"。' in D:\Dropbox\www\imuyun\framework\web\actions\CViewAction.php:113
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\web\actions\CViewAction.php(124): CViewAction->resolveView('pages')
+#1 D:\Dropbox\www\imuyun\framework\web\actions\CAction.php(75): CViewAction->run()
+#2 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 D:\Dropbox\www\imuyun\framework\web\CController.php(287): CController->runAction(Object(CViewAction))
+#4 D:\Dropbox\www\imuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('page')
+#6 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('site/page')
+#7 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/imuyun/index.php/site/page?view=pages
+HTTP_REFERER=http://localhost/imuyun/index.php/article/text
+---

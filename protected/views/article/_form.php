@@ -99,8 +99,7 @@
 			<div class="acceptdiv">
 				<?=CHtml::checkBox('accept',array()).CHtml::label(Yii::t('article','I accept Muyun Translation {terms of service}.',array(
 						'{terms of service}'=>CHtml::link('《'.Yii::t('article','Terms of Service').'》',
-						array('/site/page','view'=>'terms')))),
-					'accept'); ?>
+						'javascript:void(0);',array('id'=>'showterms')))),'accept'); ?>
 			</div>
 		</dd>
 	</dl>
