@@ -164,6 +164,7 @@ class Article extends CActiveRecord
 			case 1:
 				$wordcount = str_word_count(
 					preg_replace("/[\x{4e00}-\x{9fff}\x{f900}-\x{faff}]/u", " ", $content));
+				$price = Article::model()->difficultyCoefficient($srclang_id, $content) * $wordcount * 0.12;
 				break;
 			/*case 2:
 				$wordcount = strlen(preg_replace("/ +/", " ", $content)) - strlen(preg_replace("/ +/", "", $content));
