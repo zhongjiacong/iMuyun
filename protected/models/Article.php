@@ -197,7 +197,7 @@ class Article extends CActiveRecord
 				$result = $seg->getWords($content);
 				foreach($result as $key => $arr) {
 					foreach($arr as $key => $value) {
-						$nums = Chinese::model()->find("`word` = :word",array(":word"=>$value["word"]))->nums;
+						$nums = Chinese::model()->find("`word` = :word",array(":word"=>addslashes($value["word"])))->nums;
 						$nums = (NULL == $nums)?1:$nums;
 						$coefficient += 8 / sqrt($nums);
 					}
