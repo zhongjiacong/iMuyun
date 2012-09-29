@@ -197,8 +197,8 @@ class Article extends CActiveRecord
 				$result = $seg->getWords($content);
 				foreach($result as $key => $arr) {
 					foreach($arr as $key => $value) {
-						$nums = Chinese::model()->find("`word` = :word",array(":word"=>addslashes($value["word"])))->nums;
-						$nums = (NULL == $nums)?1:$nums;
+						$word = Chinese::model()->find("`word` = :word",array(":word"=>addslashes($value["word"])));
+						$nums = (NULL == $word)?1:$word->nums;
 						$coefficient += 8 / sqrt($nums);
 					}
 				}
@@ -210,8 +210,8 @@ class Article extends CActiveRecord
 					preg_replace("/[\x{4e00}-\x{9fff}\x{f900}-\x{faff}]/u", " ", $content));
 				$result = explode(" ", $content);
 				foreach($result as $key => $value) {
-					$nums = English::model()->find("`word` = :word",array(":word"=>$value))->nums;
-					$nums = (NULL == $nums)?1:$nums;
+					$word = English::model()->find("`word` = :word",array(":word"=>$value));
+					$nums = (NULL == $word)?1:$word->nums;
 					$coefficient += 8 / sqrt($nums);
 				}
 				$coefficient = $coefficient / $wordcount;
