@@ -195,14 +195,16 @@ class Article extends CActiveRecord
 				$wordcount = mb_strlen($content,'utf-8');
 				$seg = Segmentation::getInstance();
 				$result = $seg->getWords($content);
+				$arrcount = 0;
 				foreach($result as $key => $arr) {
 					foreach($arr as $key => $value) {
 						$word = Chinese::model()->find("`word` = :word",array(":word"=>addslashes($value["word"])));
 						$nums = (NULL == $word)?1:$word->nums;
 						$coefficient += 8 / sqrt($nums);
+						$arrcount++;
 					}
 				}
-				$coefficient = $coefficient / count($result);
+				$coefficient = $coefficient / $arrcount;
 				break;
 			case 1:
 				$coefficient = 0;
