@@ -19,7 +19,7 @@
  * @version $Id: $
  */
 return array (
-  'Complete reading' => '完成阅读',
+  'Wrong Source Language!' => '错误的源语言！',
   'Add' => '添加',
   'Article Content' => '翻译内容',
   'Article delete failure' => '删除文章失败',
@@ -27,6 +27,7 @@ return array (
   'Call Translator Only' => '仅呼叫译员',
   'Complete Time' => '完成时间',
   'Complete Translation' => '完成翻译',
+  'Complete reading' => '完成阅读',
   'Confirm order information' => '确认订单信息',
   'Contacts' => '联系人列表',
   'Content to translate cannot be empty!' => '翻译内容不能为空',

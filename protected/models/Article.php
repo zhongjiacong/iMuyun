@@ -150,16 +150,16 @@ class Article extends CActiveRecord
 			throw new CHttpException(400,Yii::t('article','Translation content cannot be empty!'));
 		
 		// remove punctuation reserve space
-		$content = preg_replace("/(·|！|￥|…|（|）|—|【|】|；|：|“|”|‘|’|╗|╚|┐|└|《|》|〈|〉|？|，|。|、)+/","",
-			preg_replace("/[\x{ff00}-\x{ffef}\x{2000}-\x{206F}]/u","",
-			preg_replace("/[[:punct:]]/","",
-			preg_replace("/(\f|\n|\r|\t|\v|\d)+/","",$content))));
+		$content = preg_replace("/(·|！|￥|…|（|）|—|【|】|；|：|“|”|‘|’|╗|╚|┐|└|《|》|〈|〉|？|，|。|、)+/"," ",
+			preg_replace("/[[:punct:]]/"," ",
+			preg_replace("/(\f|\n|\r|\t|\v|\d)+/"," ",$content)));
 		
 		switch ($srclang_id) {
 			case 0:
 				$content = preg_replace("/(\s)+/", "",
 					preg_replace("|[a-z ]|is","",$content));
 				$wordcount = mb_strlen($content,'utf-8');
+				$price = Article::model()->difficultyCoefficient($srclang_id, $content) * $wordcount * 0.12;
 				break;
 			case 1:
 				$wordcount = str_word_count(
@@ -172,17 +172,51 @@ class Article extends CActiveRecord
 				$wordcount = strlen(preg_replace("/ +/", " ", $content)) - strlen(preg_replace("/ +/", "", $content));
 				break;*/
 			default:
-				$wordcount = 0;
+				throw new CHttpException(400,Yii::t('article','Wrong Source Language!'));
 				break;
 		}
-		
-		// 待完善
-		$price = $wordcount / 5;
 		
 		return array(
 			'wordcount'=>$wordcount,
 			'price'=>$price,
 		);
+	}
+
+	public function difficultyCoefficient($srclang_id,$content)
+	{
+		switch ($srclang_id) {
+			case 0:
+				$coefficient = 0;
+				$wordcount = mb_strlen($content,'utf-8');
+				$seg = Segmentation::getInstance();
+				$result = $seg->getWords($content);
+				foreach($result as $key => $arr) {
+					foreach($arr as $key => $value) {
+						$nums = Chinese::model()->find("`word` = :word",array(":word"=>$value["word"]))->nums;
+						$nums = (NULL == $nums)?1:$nums;
+						$coefficient += 8 / sqrt($nums);
+					}
+				}
+				$coefficient = $coefficient / $wordcount;
+				break;
+			case 1:
+				$coefficient = 0;
+				$wordcount = str_word_count(
+					preg_replace("/[\x{4e00}-\x{9fff}\x{f900}-\x{faff}]/u", " ", $content));
+				$result = explode(" ", $content);
+				foreach($result as $key => $value) {
+					$nums = English::model()->find("`word` = :word",array(":word"=>$value))->nums;
+					$nums = (NULL == $nums)?1:$nums;
+					$coefficient += 8 / sqrt($nums);
+				}
+				$coefficient = $coefficient / $wordcount;
+				break;
+			default:
+				$coefficient = 8;
+				break;
+		}
+		
+		return $coefficient;
 	}
 	
 	public function getText($text_id)
