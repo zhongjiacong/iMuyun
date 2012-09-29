@@ -204,7 +204,7 @@ class Article extends CActiveRecord
 						$arrcount++;
 					}
 				}
-				$coefficient = $coefficient / $arrcount;
+				$coefficient = (0 == $arrcount)?8:$coefficient / $arrcount;
 				break;
 			case 1:
 				$coefficient = 0;
@@ -216,7 +216,7 @@ class Article extends CActiveRecord
 					$nums = (NULL == $word)?1:$word->nums;
 					$coefficient += 8 / sqrt($nums);
 				}
-				$coefficient = $coefficient / count($result);
+				$coefficient = (0 == count($result))?8:$coefficient / count($result);
 				break;
 			default:
 				break;
