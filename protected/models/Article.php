@@ -181,7 +181,7 @@ class Article extends CActiveRecord
 		
 		return array(
 			'wordcount'=>$wordcount,
-			'price'=>$price,
+			'price'=>round($price,3),
 		);
 	}
 
