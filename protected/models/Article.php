@@ -188,7 +188,7 @@ class Article extends CActiveRecord
 	public function difficultyCoefficient($srclang_id,$content)
 	{
 		// init
-		$coefficient = 8;
+		$coefficient = 16;
 		switch ($srclang_id) {
 			case 0:
 				$coefficient = 0;
@@ -199,7 +199,7 @@ class Article extends CActiveRecord
 					foreach($arr as $key => $value) {
 						$word = Chinese::model()->find("`word` = :word",array(":word"=>addslashes($value["word"])));
 						$nums = (NULL == $word)?1:$word->nums;
-						$coefficient += 8 / sqrt($nums);
+						$coefficient += 16 / sqrt($nums);
 					}
 				}
 				$coefficient = $coefficient / $wordcount;
@@ -212,7 +212,7 @@ class Article extends CActiveRecord
 				foreach($result as $key => $value) {
 					$word = English::model()->find("`word` = :word",array(":word"=>$value));
 					$nums = (NULL == $word)?1:$word->nums;
-					$coefficient += 8 / sqrt($nums);
+					$coefficient += 16 / sqrt($nums);
 				}
 				$coefficient = $coefficient / $wordcount;
 				break;
