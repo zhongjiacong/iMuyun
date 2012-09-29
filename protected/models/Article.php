@@ -154,6 +154,8 @@ class Article extends CActiveRecord
 			preg_replace("/[[:punct:]]/"," ",
 			preg_replace("/(\f|\n|\r|\t|\v|\d)+/"," ",$content)));
 		
+		// init
+		$price = 10000000;
 		switch ($srclang_id) {
 			case 0:
 				$content = preg_replace("/(\s)+/", "",
