@@ -187,6 +187,8 @@ class Article extends CActiveRecord
 
 	public function difficultyCoefficient($srclang_id,$content)
 	{
+		// init
+		$coefficient = 8;
 		switch ($srclang_id) {
 			case 0:
 				$coefficient = 0;
@@ -215,7 +217,6 @@ class Article extends CActiveRecord
 				$coefficient = $coefficient / $wordcount;
 				break;
 			default:
-				$coefficient = 8;
 				break;
 		}
 		
