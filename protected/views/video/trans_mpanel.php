@@ -119,7 +119,7 @@
                         cache: false,
                         dataType: "json",
                         crossDomain: true,
-                        data: "user1="+namelist[0]+"&user2="+namelist[1],
+                        data: "user1="+namelist[0]+"&user2="+namelist[1]+"&translator="+username,
                         success: function(data) {
                             //alert( data.rid);
                             rid = data.rid;
@@ -146,7 +146,7 @@
                         cache: false,
                         dataType: "json",
                         crossDomain: true,
-                        data: "rid="+rid,
+                        data: "rid="+rid+"&translator="+username,
                         success: function(data) {
                             rid = -1;
                         }
