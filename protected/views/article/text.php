@@ -36,6 +36,8 @@ Yii::app()->clientScript->registerScript('textform', "
 	</div>
 <?php
 	endif;
+	// $curl = new CUrlManager;
+	// echo $curl->getBaseUrl();
 	$this->renderPartial('_form', array('model'=>$model));
 ?>
 
