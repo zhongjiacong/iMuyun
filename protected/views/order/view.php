@@ -94,7 +94,7 @@ $this->menu=array(
 		var remark = $('#remark').val();
 		$.ajax({
 			type: 'POST',
-			url: '<?=Yii::app()->request->baseUrl; ?>/index.php/order/create',
+			url: '<?=Yii::app()->request->baseUrl; ?>/order/create',
 			data: {id: <?=$model->id; ?>,remark: remark},
 			dataType: 'json',
 			beforeSend: function(){},

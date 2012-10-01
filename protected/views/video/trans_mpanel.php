@@ -12,11 +12,11 @@
                 <div class="span12">
                     <ul class="nav nav-tabs">
                         <li class="active">
-                            <a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video">
+                            <a href="<?=Yii::app()->request->baseUrl; ?>/article/video">
                             	<?=Yii::t("article","Working Space"); ?></a>
                         </li>
                         <?php /*
-                        <li><a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video/cpanel">
+                        <li><a href="<?=Yii::app()->request->baseUrl; ?>/article/video/cpanel">
                         	<?=Yii::t("article","Control Panel"); ?></a></li>
 						*/ ?>
                     </ul>

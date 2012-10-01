@@ -17,10 +17,10 @@
                 <div class="span12">
                     <ul class="nav nav-tabs">
                         <li class="active">
-                            <a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video">
+                            <a href="<?=Yii::app()->request->baseUrl; ?>/article/video">
                             	<?=Yii::t("article","Trilateral video"); ?></a>
                         </li>
-                        <li><a href="<?=Yii::app()->request->baseUrl; ?>/index.php/article/video/cpanel">
+                        <li><a href="<?=Yii::app()->request->baseUrl; ?>/article/video/cpanel">
                         	<?=Yii::t("article","Call Translator Only"); ?></a></li>
                     </ul>
                 </div>
@@ -172,7 +172,7 @@
 
             function getContact() {
                 $.ajax({
-                    url: "<?=Yii::app()->request->baseUrl; ?>/index.php/friend/contacts/",
+                    url: "<?=Yii::app()->request->baseUrl; ?>/friend/contacts/",
                     type: "POST",
                     cache: false,
                     dataType: "json",
@@ -245,7 +245,7 @@
 
             $("#add_contact_form").bind("submit", function () {
                 $.ajax({
-                    url: "<?=Yii::app()->request->baseUrl; ?>/index.php/friend/create/",
+                    url: "<?=Yii::app()->request->baseUrl; ?>/friend/create/",
                     type: "POST",
                     cache: false,
                     dataType: "json",

@@ -11,7 +11,7 @@ Yii::app()->clientScript->registerScript('msg', "
 		var remark = $('#remark').val();
 		$.ajax({
 			type: 'POST',
-			url: '".Yii::app()->request->baseUrl."/index.php/msg/update',
+			url: '".Yii::app()->request->baseUrl."/msg/update',
 			data: {id: ".$model->id.",remark: remark},
 			dataType: 'json',
 			beforeSend: function(){},

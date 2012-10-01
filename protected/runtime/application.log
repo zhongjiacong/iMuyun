@@ -11534,3 +11534,25 @@ in D:\Dropbox\www\imuyun\index.php (13)
 2012/09/30 20:17:04 [warning] [application] Failed to set unsafe attribute "artcont" of "Article".
 in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (225)
 in D:\Dropbox\www\imuyun\index.php (13)
+2012/10/01 04:33:53 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "D:\Dropbox\www\imuyun\assets" 是无效的. 请确定它是一个可被 Web server process 写入资料的目录.' in D:\Dropbox\www\imuyun\framework\web\CAssetManager.php:116
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\web\CAssetManager.php(101): CAssetManager->setBasePath('D:\Dropbox\www\...')
+#1 D:\Dropbox\www\imuyun\framework\web\CAssetManager.php(219): CAssetManager->getBasePath()
+#2 D:\Dropbox\www\imuyun\framework\web\CClientScript.php(449): CAssetManager->publish('D:\Dropbox\www\...')
+#3 D:\Dropbox\www\imuyun\framework\web\CClientScript.php(486): CClientScript->getCoreScriptUrl()
+#4 D:\Dropbox\www\imuyun\framework\web\CClientScript.php(302): CClientScript->getPackageBaseUrl('jquery')
+#5 D:\Dropbox\www\imuyun\framework\web\CClientScript.php(195): CClientScript->renderCoreScripts()
+#6 D:\Dropbox\www\imuyun\framework\web\CController.php(352): CClientScript->render('<!DOCTYPE html>...')
+#7 D:\Dropbox\www\imuyun\framework\web\CController.php(789): CController->processOutput('<!DOCTYPE html>...')
+#8 D:\Dropbox\www\imuyun\protected\controllers\SiteController.php(27): CController->render('index')
+#9 D:\Dropbox\www\imuyun\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#10 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 D:\Dropbox\www\imuyun\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 D:\Dropbox\www\imuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('')
+#14 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('')
+#15 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/imuyun/
+---

@@ -11,7 +11,7 @@ Yii::app()->clientScript->registerScript('seleprod',"
 	function seleprod(prod) {
 		if($('#autoaccess').attr('checked'))
 			$.cookie('SELEPROD',prod,{expires:30,path:'/'});
-		window.location.href = '".Yii::app()->request->baseUrl."/index.php/article/'+prod;
+		window.location.href = '".Yii::app()->request->baseUrl."/article/'+prod;
 	}
 ",CClientScript::POS_HEAD);
 ?>

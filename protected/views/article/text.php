@@ -45,7 +45,7 @@ Yii::app()->clientScript->registerScript('textform', "
 	$('#showterms').click(function(){
 		var myDialog = art.dialog();
 		jQuery.ajax({
-			url: '<?=Yii::app(	)->request->baseUrl; ?>/index.php/article/terms',
+			url: '<?=Yii::app(	)->request->baseUrl; ?>/article/terms',
 			success:function(data){
 				myDialog.title('<?=Yii::t('article','Terms of Service'); ?>');
 				myDialog.content(data);
@@ -106,7 +106,7 @@ Yii::app()->clientScript->registerScript('textform', "
 		else {
 			$.ajax({
 				type: 'POST',
-				url: '<?=Yii::app()->request->baseUrl; ?>/index.php/article/textinfor',
+				url: '<?=Yii::app()->request->baseUrl; ?>/article/textinfor',
 				data: {srclang_id: $('#Article_srclang_id').val(), content: $('#Article_artcont').val()},
 				dataType: 'json',
 				beforeSend: function() {},

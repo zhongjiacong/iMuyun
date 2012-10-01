@@ -3,7 +3,7 @@ Yii::app()->clientScript->registerScript('article',"
 	function starttrans() {
 		$.ajax({
 			type: 'POST',
-			url: '".Yii::app()->request->baseUrl."/index.php/article/start',
+			url: '".Yii::app()->request->baseUrl."/article/start',
 			data: {id: ".$model->id."},
 			dataType: 'json',
 			beforeSend: function(){},
@@ -24,7 +24,7 @@ Yii::app()->clientScript->registerScript('article',"
 		var translation = $('#translation'+id).val();
 		$.ajax({
 			type: 'POST',
-			url: '".Yii::app()->request->baseUrl."/index.php/sentence/update',
+			url: '".Yii::app()->request->baseUrl."/sentence/update',
 			data: {id: id, translation: translation},
 			dataType: 'json',
 			beforeSend: function(){},
@@ -127,7 +127,7 @@ Yii::app()->clientScript->registerScript('article',"
 	<dl>
 		<dt><?=Yii::t('sentence','Translation'); ?></dt>
 		<dd>
-			<form method="post" " action="<?=Yii::app()->request->baseUrl; ?>/index.php/article/comp" enctype="multipart/form-data">
+			<form method="post" " action="<?=Yii::app()->request->baseUrl; ?>/article/comp" enctype="multipart/form-data">
 				<input type="hidden" name="id" value="<?=$model->id; ?>" />
 				<input type="file" name="file" />
 				<input type="submit" value="<?=Yii::t('article','Complete Translation'); ?>" />

@@ -310,7 +310,7 @@ class User extends CActiveRecord
 	public function emailVerify($email, $verifycode)
 	{
 		$link = Yii::app()->request->hostInfo.Yii::app()->request->baseUrl.
-			'/index.php/user/emailverify?verifycode='.$verifycode;
+			'/user/emailverify?verifycode='.$verifycode;
 		Email::sendEmail($email, Yii::t('user','Muyun Translation account activation:'),
 			Yii::t('user','Click the link to activate your account! ').CHtml::link($link, $link));
 	}

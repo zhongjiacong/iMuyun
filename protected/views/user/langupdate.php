@@ -58,7 +58,7 @@
 		}
 		$.ajax({
 			type: 'POST',
-			url: '<?=Yii::app()->request->baseUrl; ?>/index.php/user/langupdate',
+			url: '<?=Yii::app()->request->baseUrl; ?>/user/langupdate',
 			data: {lang: $.toJSON(langArr)},
 			dataType: 'json',
 			beforeSend: function(){},

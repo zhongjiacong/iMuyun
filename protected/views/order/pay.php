@@ -7,7 +7,7 @@ Yii::app()->clientScript->registerScript('orderarticle',"
 	function delart(id) {
 		$.ajax({
 			type: 'POST',
-			url: '".Yii::app()->request->baseUrl."/index.php/article/delete/'+id,
+			url: '".Yii::app()->request->baseUrl."/article/delete/'+id,
 			data: {id: id},
 			dataType: 'json',
 			beforeSend: function() {},
@@ -15,7 +15,7 @@ Yii::app()->clientScript->registerScript('orderarticle',"
 				if(result.state == 'succeed')
 					window.location.reload();
 				else if(result.state == 'delorder')
-					window.location.href = '".Yii::app()->request->baseUrl."/index.php/order/index';
+					window.location.href = '".Yii::app()->request->baseUrl."/order/index';
 				else
 					art.dialog({
 						title:'',
@@ -137,7 +137,7 @@ $this->menu=array(
 		var remark = $('#remark').val();
 		$.ajax({
 			type: 'POST',
-			url: '<?=Yii::app()->request->baseUrl; ?>/index.php/order/create',
+			url: '<?=Yii::app()->request->baseUrl; ?>/order/create',
 			data: {id: <?=$model->id; ?>,remark: remark},
 			dataType: 'json',
 			beforeSend: function(){},

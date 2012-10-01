@@ -9,7 +9,7 @@ Yii::app()->clientScript->registerScript('order', "
             callback: function () {
 				$.ajax({
 					type: 'POST',
-					url: '".Yii::app()->request->baseUrl."/index.php/order/delete',
+					url: '".Yii::app()->request->baseUrl."/order/delete',
 					data: {id: id},
 					dataType: 'json',
 					beforeSend: function(){},

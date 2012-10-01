@@ -96,7 +96,7 @@ class UserController extends Controller
 				
 				// 4. 发送验证邮件
 				User::model()->emailVerify($model->email, $verifyCode);
-				//$this->redirect(Yii::app()->request->baseUrl.'/index.php/user/register');
+				//$this->redirect(Yii::app()->request->baseUrl.'/user/register');
 			}
 		}
 		$model->lang = User::model()->defaultLang();
@@ -123,7 +123,7 @@ class UserController extends Controller
 			User::model()->updateAll(array("verifycode"=>$verifyCode),"`email` = :email",array(":email"=>$model->email));
 			
 			$link = Yii::app()->request->hostInfo.Yii::app()->request->baseUrl.
-				'/index.php/user/reset?verifycode='.$verifyCode;
+				'/user/reset?verifycode='.$verifyCode;
 			Email::sendEmail($model->email, Yii::t('user','Muyun Translation reset password:'),
 				Yii::t('user','Click the link to reset your password! ').CHtml::link($link, $link));
 			
@@ -158,7 +158,7 @@ class UserController extends Controller
 			$identity->authenticate();
 			Yii::app()->user->login($identity,0);
 			
-			$this->redirect(Yii::app()->request->baseUrl.'/index.php/user/'.$user->id);
+			$this->redirect(Yii::app()->request->baseUrl.'/user/'.$user->id);
 		}
 		else if(isset($_GET["verifycode"])) {
 			// 如果要下面else的异常抛出成立，那么verifycode不能改，因为改了就找不到相应的用户了，或者用户不能删除
@@ -183,7 +183,7 @@ class UserController extends Controller
 			$user = User::model()->getVerifiedUser(addslashes($_GET['verifycode']));
 			if($user != NULL) {
 				if(User::model()->afterEmailVerify($user))
-					$this->redirect(Yii::app()->request->baseUrl.'/index.php/user/'.$user->id);
+					$this->redirect(Yii::app()->request->baseUrl.'/user/'.$user->id);
 			}
 			else
 				throw new CHttpException(400,Yii::t('user','Your account has been activated.'));

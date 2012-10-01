@@ -38,7 +38,7 @@
 				document.location.reload();
 			});
 			$("#headleft").click(function(){
-				window.location.href = "'.Yii::app()->request->baseUrl.'/index.php/site/index";
+				window.location.href = "'.Yii::app()->request->baseUrl.'/site/index";
 			});
 		',CClientScript::POS_LOAD);
 		Yii::app()->clientScript->registerScript('clock','

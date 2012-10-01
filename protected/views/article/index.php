@@ -3,7 +3,7 @@ Yii::app()->clientScript->registerScript('article',"
 	function receiveart(id) {
 		$.ajax({
 			type: 'POST',
-			url: '".Yii::app()->request->baseUrl."/index.php/article/receive',
+			url: '".Yii::app()->request->baseUrl."/article/receive',
 			data: {id: id},
 			dataType: 'json',
 			beforeSend: function(){},
