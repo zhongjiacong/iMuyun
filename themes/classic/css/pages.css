@@ -7,6 +7,26 @@
 	text-indent: 30px;
 	margin: 15px 0;
 }
+.intro div:nth-child(1) {
+	border-bottom: dotted 1px #BBB;
+	margin-left: 30px;
+	padding-bottom: 10px;
+	margin-bottom: 25px;
+	text-indent: 0px;
+}
+.intro div:nth-child(1) span {
+	padding-right: 3px;
+	min-width: 20px;
+	background-image: url(../img/arrow.png);
+	background-repeat: no-repeat;
+	background-position: 0px 3px;
+}
+.intro .weare {
+	float: right;
+	padding-right: 30px;
+	width: 330px;
+	height: 350px;
+}
 .intro .center {
 	text-align: center;
 }

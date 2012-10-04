@@ -19,8 +19,7 @@
  * @version $Id: $
  */
 return array (
-  'Text Trans' => '文本翻译',
-  'Video Trans' => '远程视频翻译',
+  'Home' => '首页',
   'About Us' => '关于我们',
   'Add' => '添加',
   'Article' => '文本',
@@ -56,8 +55,10 @@ return array (
   'Submit' => '提交',
   'Successful Case' => '成功案例',
   'Suggestion Feedback' => '意见反馈',
+  'Text Trans' => '文本翻译',
   'Update' => '更新',
   'User' => '用户',
+  'Video Trans' => '远程视频翻译',
   'Voucher Center' => '充值中心',
   '{appname}' => '牧云翻译',
 );
