@@ -37,19 +37,19 @@ $this->pageTitle=Yii::app()->name . ' - Regular Service';
 		</thead>
 		<tbody>
 			<tr>
-				<td>普通型</td>
+				<td class="tag">普通型</td>
 				<td>120-250</td>
 				<td>250-350</td>
 				<td>350-500</td>
 			</tr>
 			<tr>
-				<td>专业型</td>
+				<td class="tag">专业型</td>
 				<td>260-400</td>
 				<td>360-560</td>
 				<td>500-700</td>
 			</tr>
 			<tr>
-				<td>出版型</td>
+				<td class="tag">出版型</td>
 				<td>380-480</td>
 				<td>480-600</td>
 				<td>600-1000</td>
@@ -68,19 +68,19 @@ $this->pageTitle=Yii::app()->name . ' - Regular Service';
 		</thead>
 		<tbody>
 			<tr>
-				<td>普通型</td>
+				<td class="tag">普通型</td>
 				<td>100-200</td>
 				<td>220-360</td>
 				<td>480-600</td>
 			</tr>
 			<tr>
-				<td>专业型</td>
+				<td class="tag">专业型</td>
 				<td>200-360</td>
 				<td>300-500</td>
 				<td>360-560</td>
 			</tr>
 			<tr>
-				<td>出版型</td>
+				<td class="tag">出版型</td>
 				<td>300-460</td>
 				<td>460-660</td>
 				<td>500-900</td>
