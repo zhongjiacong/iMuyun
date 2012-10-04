@@ -657,19 +657,6 @@ div .graystate .linktriangle
 	-webkit-box-shadow: 0px 1px 3px rgba(255,255,255,0.2);
 }
 
-.intro {
-	padding: 0 20px;
-}
-.intro div {
-	font-size: 15px;
-	line-height: 24px;
-	text-indent: 30px;
-	margin: 15px 0;
-}
-.intro .center {
-	text-align: center;
-}
-
 .updatelink {
 	float: right;
 }

@@ -14,6 +14,7 @@
 	<![endif]-->
 
 	<link rel="stylesheet" type="text/css" href="<?=Yii::app()->theme->baseUrl; ?>/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="<?=Yii::app()->theme->baseUrl; ?>/css/pages.css" />
 	<link rel="stylesheet" type="text/css" href="<?=Yii::app()->theme->baseUrl; ?>/css/form.css" />
 	<link rel="stylesheet" type="text/css" href="<?=Yii::app()->theme->baseUrl; ?>/css/layouts.css" />
 	<link rel="stylesheet" type="text/css" href="<?=Yii::app()->theme->baseUrl; ?>/css/view.css" />

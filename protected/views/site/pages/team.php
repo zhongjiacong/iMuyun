@@ -2,6 +2,10 @@
 $this->pageTitle=Yii::app()->name . ' - Our Team';
 ?>
 
+<div class="pagesHead">
+	&nbsp;
+</div>
+
 <div class="intro">
 	<div>广州牧云翻译服务有限公司成立于2011年，是经由广州市工商行政管理局合法认证的提供专业语言服务的公司。
 		我们以即时人工在线视频口译、即时人工文本笔译、商务陪同翻译为主营业务，兼营语言培训，语言软件开发等相关业务。
