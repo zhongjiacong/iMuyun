@@ -53,6 +53,23 @@
 	color: rgb(3,61,32);
 	background-color: rgb(83,218,148);
 }
+.intro .triprovide {
+	width: 280px;
+	margin-right: 10px;
+	float: left;
+}
+.intro .triprovide span {
+	float: left;
+	color: white;
+	line-height: 49px;
+	font-size: 40px;
+	width: 59px;
+	height: 49px;
+	text-indent: 15px;
+	font-family: "Times New Roman";
+	background-image: url(../img/introservicenum.png);
+	background-repeat: no-repeat;
+}
 
 .pagesHead {
 	font-size: 35px;

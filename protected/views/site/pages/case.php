@@ -2,7 +2,18 @@
 $this->pageTitle=Yii::app()->name . ' - Successful case';
 ?>
 
+<div class="pagesHead">Successful Case</div>
+
 <div class="intro">
+	<div>
+		<span>&nbsp;&nbsp;&nbsp;</span><?=Yii::t('layouts','Home'); ?>
+		&nbsp;
+		<span>&nbsp;&nbsp;&nbsp;</span><?=Yii::t('layouts','Successful Case'); ?>
+	</div>
+	<div>
+		<?=CHtml::image(Yii::app()->theme->baseUrl.'/img/quotewedone.png'); ?>
+	</div>
+	<div class="title"><?=Yii::t('layouts','Successful Case'); ?></div>
 	<div>1. 中山大学官方网站资料翻译</div>
 	<div>2. 亚洲能源论坛交互传译和同声传译</div>
     <div>3. 广东省长黄华华在庆祝大会上的讲话英译</div>

@@ -83,6 +83,8 @@ class MsgController extends Controller
 	 */
 	public function actionContact()
 	{
+		$this->layout='//layouts/column1';
+		
 		$model=new Msg;
 
 		// Uncomment the following line if AJAX validation is needed

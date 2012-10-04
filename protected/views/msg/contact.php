@@ -11,8 +11,18 @@ Yii::app()->clientScript->registerScript('contact', "
 			$('#redbtn').attr('disabled','disabled');
 	});
 ");
-$this->pageTitle=Yii::t('layouts','{appname}',array('{appname}'=>Yii::app()->name)) . ' - Contact Us';
+$this->pageTitle=Yii::t('layouts','{appname}',array('{appname}'=>Yii::app()->name)) . ' - Suggestion Feedback';
 ?>
+
+<div class="pagesHead">Suggestion Feedback</div>
+
+<div class="intro">
+	<div>
+		<span>&nbsp;&nbsp;&nbsp;</span><?=Yii::t('layouts','Home'); ?>
+		&nbsp;
+		<span>&nbsp;&nbsp;&nbsp;</span><?=Yii::t('layouts','Suggestion Feedback'); ?>
+	</div>
+</div>
 
 <?php if(Yii::app()->user->hasFlash('contact')): ?>
 	<div class="flash-success">

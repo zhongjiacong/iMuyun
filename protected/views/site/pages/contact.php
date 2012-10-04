@@ -2,7 +2,14 @@
 $this->pageTitle=Yii::app()->name . ' - Contact';
 ?>
 
+<div class="pagesHead">Contact Information</div>
+
 <div class="intro">
+	<div>
+		<span>&nbsp;&nbsp;&nbsp;</span><?=Yii::t('layouts','Home'); ?>
+		&nbsp;
+		<span>&nbsp;&nbsp;&nbsp;</span><?=Yii::t('layouts','Contact Way'); ?>
+	</div>
 	<div><b>广州牧云翻译服务有限公司办公地址</b></div>
 	<pre>
 	地址：广州市番禺区大学城中山大学南管理学院楼D403
