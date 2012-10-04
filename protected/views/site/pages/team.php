@@ -2,9 +2,7 @@
 $this->pageTitle=Yii::app()->name . ' - Our Team';
 ?>
 
-<div class="pagesHead">
-	&nbsp;
-</div>
+<div class="pagesHead">Team Introduction</div>
 
 <div class="intro">
 	<div>
