@@ -249,7 +249,7 @@ class ArticleController extends Controller
 				if(0 == $model->orderlist)
 					$model->order_id = Order::model()->orderFromArt($model,$user_id);
 				
-				$model->edittime = $textinfor["time"];
+				$model->edittime = date("Y-m-d H:i:s",$fileinfo["time"]);
 				$model->filename = $model->doccont->getName();
 				$model->price = $textinfor["price"];
 				
