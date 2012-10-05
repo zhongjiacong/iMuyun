@@ -1,7 +1,7 @@
 <?php
 
 if($_SERVER['SERVER_NAME'] == "www.imuyun.com")
-	header("Location: http://imuyun.com".$_SERVER['PHP_SELF']);
+	header("Location: http://imuyun.com".str_replace("/index.php","",$_SERVER["REQUEST_URI"]));
 else {
 	// change the following paths if necessary
 	$yii=dirname(__FILE__).'/framework/yii.php';
