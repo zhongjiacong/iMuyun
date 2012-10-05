@@ -83,8 +83,8 @@ $this->menu=array(
 		<tr>
 			<td><?=CHtml::link($value->id,array('article/view','id'=>$value->id)); ?></td>
 			<td><?=Yii::app()->params['language'][$value->srclang_id].'->'.Yii::app()->params['language'][$value->tgtlang_id]; ?></td>
-			<td><?=$textinfor["wordcount"]; ?></td>
-			<td><?=$textinfor["price"]; ?></td>
+			<td><?=$value->wordcount; ?></td>
+			<td><?=$value->price; ?></td>
 			<td><?=$value->edittime; ?></td>
 			<td><?=CHtml::button(Yii::t('layouts','Delete'),array('onclick'=>'delart('.$value->id.');')); ?></td>
 		</tr>

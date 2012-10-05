@@ -233,6 +233,8 @@ class ArticleController extends Controller
 			$user_id = User::model()->confirmUserId($model->email, $model->mobile);
 			
 			if(is_object($model->doccont) && get_class($model->doccont) === 'CUploadedFile') {
+				date_default_timezone_set('PRC');
+				
 				// save the file and return information of the file
 				$fileinfo = Article::model()->saveFile($model->doccont);
 				$model->artcont = $fileinfo["artcont"];
@@ -247,8 +249,7 @@ class ArticleController extends Controller
 				if(0 == $model->orderlist)
 					$model->order_id = Order::model()->orderFromArt($model,$user_id);
 				
-				date_default_timezone_set('PRC');
-				$model->edittime = date("Y-m-d H:i:s");
+				$model->edittime = $fileinfo["time"];
 				$model->filename = $model->doccont->getName();
 				$model->price = $textinfor["price"];
 				
