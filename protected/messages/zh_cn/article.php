@@ -19,7 +19,7 @@
  * @version $Id: $
  */
 return array (
-  'Wrong Source Language!' => '错误的源语言！',
+  'Max size' => '最大',
   'Add' => '添加',
   'Article Content' => '翻译内容',
   'Article delete failure' => '删除文章失败',
@@ -52,6 +52,8 @@ return array (
   'Order state' => '订单状态',
   'Original-target Language' => '源-目标语言',
   'Please choose the correct source language!' => '请选择正确的源语言！',
+  'Please contact us if you can\'t upload your file' => '如果无法上传您的文件，请联系我们',
+  'Please upload' => '请上传',
   'Please {entertext} in the text box below, or {uploadfile}.' => '请在文本框{entertext}，或{uploadfile}。',
   'Price' => '价格',
   'Receive Article' => '领取文本',
@@ -76,6 +78,7 @@ return array (
   'Word Count' => '字数统计',
   'Words' => '字数',
   'Working Space' => '工作台',
+  'Wrong Source Language!' => '错误的源语言！',
   'Wrong file format!' => '错误的文件格式！',
   'You can login and skip this step.' => '您可以登录跳过这一步骤。',
   'You can reselect in the settings of your profile.' => '您可以在个人主页的设置中重新选择。',

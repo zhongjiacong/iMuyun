@@ -19,8 +19,7 @@
  * @version $Id: $
  */
 return array (
-  'If you can\'t find the email in your trash neither, please call our consume service.' => '如果您在垃圾箱也找不到相应邮件，请联系我们的客服人员。',
-  'If you don\'t receive the email in your inbox, perhaps you can find it in your trash.' => '如果您没有收到邮件，可能因邮箱安全级别高而放在垃圾箱。',
+  'Email is not exist. Please confirm you have input the right email address.' => '',
   'Account Category' => '用户类型',
   'Account Settings' => '帐号设置',
   'Address' => '地址',
@@ -39,6 +38,8 @@ return array (
   'Find' => '找回',
   'Gender' => '性别',
   'Gender Id' => '性别',
+  'If you can\'t find the email in your trash neither, please call our consume service.' => '如果您在垃圾箱也找不到相应邮件，请联系我们的客服人员。',
+  'If you don\'t receive the email in your inbox, perhaps you can find it in your trash.' => '如果您没有收到邮件，可能因邮箱安全级别高而放在垃圾箱。',
   'Introduce' => '介绍',
   'Last Login Time' => '上次登录时间',
   'Last login time' => '上次登录时间',

@@ -131,7 +131,8 @@ Yii::app()->clientScript->registerScript('textform', "
 		$('#artcontent').html(
 			'<input id="ytArticle_doccont" type="hidden" value="" name="Article[doccont]">'+
 			'<input name="Article[doccont]" id="Article_doccont" type="file"><br />'+
-			'<div>Please upload .doc, .pdf, .docx, .txt, .xls</div>'+
+			'<div><?=Yii::t('article','Please upload'); ?> .doc, .pdf, .docx, .txt, .xls<br />'+
+			"<?=Yii::t('article','Max size'); ?> 20M, <?=Yii::t('article',"Please contact us if you can't upload your file"); ?>^_^</div>"+
 			'<div class="errorMessage" id="Article_doccont_em_" style="display:none"></div>'
 		);
 		$('#wordcount div').fadeOut('fast');
