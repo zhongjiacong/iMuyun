@@ -11556,3 +11556,22 @@ Stack trace:
 #17 {main}
 REQUEST_URI=/imuyun/
 ---
+2012/10/04 16:43:42 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Error' in D:\Dropbox\www\imuyun\protected\controllers\UserController.php:170
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\web\actions\CInlineAction.php(50): UserController->actionReset()
+#1 D:\Dropbox\www\imuyun\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 D:\Dropbox\www\imuyun\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 D:\Dropbox\www\imuyun\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 D:\Dropbox\www\imuyun\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 D:\Dropbox\www\imuyun\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 D:\Dropbox\www\imuyun\framework\web\CController.php(292): CFilterChain->run()
+#8 D:\Dropbox\www\imuyun\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(276): CController->run('reset')
+#10 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('user/reset')
+#11 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Dropbox\www\imuyun\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/imuyun/user/reset?verifycode=3b0cd41761924a2d78fd
+HTTP_REFERER=http://twebmail.mail.126.com/js5/read/readhtml.jsp?ssid=JJiWF9Krd6ZwgGxjqiS8RcaQVTIsY0jtPE4bCgrSouQ%3d&mid=159:1tbinxY+Gk3ksoFjVAAAsA
+---
