@@ -418,7 +418,7 @@ class Article extends CActiveRecord
 			}
 			// delete article price
 			Spreadtable::model()->deleteAll('`article_id` = :id',array(':id'=>$article->id));
-			if(NULL != $article->filename)
+			if(NULL != $article->filename && is_file(Article::model()->fileAddr($article->id)))
 				unlink(Article::model()->fileAddr($article->id));
 			Article::model()->deleteByPk($article->id);
 			
