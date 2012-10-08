@@ -230,7 +230,7 @@ class ArticleController extends Controller
 			$model->doccont = CUploadedFile::getInstance($model,'doccont');
 			
 			// -- Confirm User ID -- //
-			$user_id = User::model()->confirmUserId($model->email, $model->mobile);
+			$user_id = User::model()->confirmUserId($_POST['Article']['email'], $_POST['Article']['mobile']);
 			
 			if(is_object($model->doccont) && get_class($model->doccont) === 'CUploadedFile') {
 				date_default_timezone_set('PRC');
