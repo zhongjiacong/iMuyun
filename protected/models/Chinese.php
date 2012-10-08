@@ -1,10 +1,9 @@
 <?php
 
 /**
- * This is the model class for table "{{l_chinese}}".
+ * This is the model class for table "{{l_ch}}".
  *
- * The followings are the available columns in table '{{l_chinese}}':
- * @property integer $id
+ * The followings are the available columns in table '{{l_ch}}':
  * @property string $word
  * @property integer $nums
  */
@@ -25,7 +24,7 @@ class Chinese extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{l_chinese}}';
+		return '{{l_ch}}';
 	}
 
 	/**
@@ -41,7 +40,7 @@ class Chinese extends CActiveRecord
 			array('word', 'length', 'max'=>31),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, word, nums', 'safe', 'on'=>'search'),
+			array('word, nums', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -62,7 +61,6 @@ class Chinese extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
 			'word' => 'Word',
 			'nums' => 'Nums',
 		);
@@ -79,7 +77,6 @@ class Chinese extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
 		$criteria->compare('word',$this->word,true);
 		$criteria->compare('nums',$this->nums);
 
