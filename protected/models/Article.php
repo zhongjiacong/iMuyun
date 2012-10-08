@@ -164,8 +164,9 @@ class Article extends CActiveRecord
 				$price = Article::model()->difficultyCoefficient($srclang_id, $content) * $wordcount * 0.12;
 				break;
 			case 1:
-				$wordcount = str_word_count(
-					preg_replace("/[\x{4e00}-\x{9fff}\x{f900}-\x{faff}]/u", " ", $content));
+				//$wordcount = str_word_count(
+					//preg_replace("/[\x{4e00}-\x{9fff}\x{f900}-\x{faff}]/u", " ", $content));
+				$wordcount = str_word_count(preg_replace("/\d+/", " ", preg_replace("/[^(\w| )]+/", "", $content)));
 				$price = Article::model()->difficultyCoefficient($srclang_id, $content) * $wordcount * 0.12;
 				break;
 			/*case 2:
@@ -192,7 +193,6 @@ class Article extends CActiveRecord
 		switch ($srclang_id) {
 			case 0:
 				$coefficient = 0;
-				$wordcount = mb_strlen($content,'utf-8');
 				$seg = Segmentation::getInstance();
 				$result = $seg->getWords($content);
 				$arrcount = 0;
@@ -200,23 +200,23 @@ class Article extends CActiveRecord
 					foreach($arr as $key => $value) {
 						$word = Chinese::model()->find("`word` = :word",array(":word"=>addslashes($value["word"])));
 						$nums = (NULL == $word)?1:$word->nums;
-						$coefficient += 8 / sqrt($nums);
+						$coefficient += 1 / sqrt($nums);
 						$arrcount++;
 					}
 				}
-				$coefficient = (0 == $arrcount)?8:$coefficient / $arrcount;
+				$coefficient = (0 == $arrcount)?1:$coefficient / $arrcount;
+				$coefficient = 8 * $coefficient;
 				break;
 			case 1:
 				$coefficient = 0;
-				$wordcount = str_word_count(
-					preg_replace("/[\x{4e00}-\x{9fff}\x{f900}-\x{faff}]/u", " ", $content));
 				$result = explode(" ", $content);
 				foreach($result as $key => $value) {
 					$word = English::model()->find("`word` = :word",array(":word"=>$value));
 					$nums = (NULL == $word)?1:$word->nums;
-					$coefficient += 8 / sqrt($nums);
+					$coefficient += 1 / pow($nums, 1/6);
 				}
-				$coefficient = (0 == count($result))?8:$coefficient / count($result);
+				$coefficient = (0 == count($result))?1:$coefficient / count($result);
+				$coefficient = 6 * $coefficient;
 				break;
 			default:
 				break;
