@@ -149,39 +149,31 @@ class Article extends CActiveRecord
 		if(0 == strlen($content))
 			throw new CHttpException(400,Yii::t('article','Translation content cannot be empty!'));
 		
-		// remove punctuation reserve space
-		$content = preg_replace("/(·|！|￥|…|（|）|—|【|】|；|：|“|”|‘|’|╗|╚|┐|└|《|》|〈|〉|？|，|。|、)+/"," ",
-			preg_replace("/[[:punct:]]/"," ",
-			preg_replace("/(\f|\n|\r|\t|\v|\d)+/"," ",$content)));
-		
 		// init
 		$price = 10000000;
 		switch ($srclang_id) {
 			case 0:
+				// remove punctuation reserve space
+				$content = preg_replace("/(·|！|￥|…|（|）|—|【|】|；|：|“|”|‘|’|╗|╚|┐|└|《|》|〈|〉|？|，|、)+/"," ",
+					preg_replace("/(\f|\n|\r|\t|\v|\d)+/"," ",$content));
+				$content = preg_replace("/[[:punct:]]/"," ",$content);
 				$content = preg_replace("/(\s)+/", "",
 					preg_replace("|[a-z ]|is","",$content));
-				$wordcount = mb_strlen($content,'utf-8');
-				$price = Article::model()->difficultyCoefficient($srclang_id, $content) * $wordcount * 0.12;
+				$artinfo = Article::model()->difficultyCoefficient($srclang_id, $content);
+				$price = $artinfo['coefficient'] * $artinfo['wordcount'] * 0.12;
 				break;
 			case 1:
-				//$wordcount = str_word_count(
-					//preg_replace("/[\x{4e00}-\x{9fff}\x{f900}-\x{faff}]/u", " ", $content));
-				$wordcount = str_word_count(preg_replace("/\d+/", " ", preg_replace("/[^(\w| )]+/", "", $content)));
-				$price = Article::model()->difficultyCoefficient($srclang_id, $content) * $wordcount * 0.12;
+				$content = preg_replace("/[^(a-zA-Z| |[:punct:])]+/", " ", $content);
+				$artinfo = Article::model()->difficultyCoefficient($srclang_id, $content);
+				$price = $artinfo['coefficient'] * $artinfo['wordcount'] * 0.12;
 				break;
-			/*case 2:
-				$wordcount = strlen(preg_replace("/ +/", " ", $content)) - strlen(preg_replace("/ +/", "", $content));
-				break;
-			case 3:
-				$wordcount = strlen(preg_replace("/ +/", " ", $content)) - strlen(preg_replace("/ +/", "", $content));
-				break;*/
 			default:
 				throw new CHttpException(400,Yii::t('article','Wrong Source Language!'));
 				break;
 		}
 		
 		return array(
-			'wordcount'=>$wordcount,
+			'wordcount'=>$artinfo['wordcount'],
 			'price'=>round($price,3),
 		);
 	}
@@ -193,36 +185,97 @@ class Article extends CActiveRecord
 		switch ($srclang_id) {
 			case 0:
 				$coefficient = 0;
+				$wordcount = mb_strlen(preg_replace("/。+/", "", $content),'utf-8');
+				$content = preg_replace("/。+/", "。", $content);
+				$contsent = explode("。", $content);
+				
 				$seg = Segmentation::getInstance();
-				$result = $seg->getWords($content);
-				$arrcount = 0;
-				foreach($result as $key => $arr) {
-					foreach($arr as $key => $value) {
-						$word = Chinese::model()->find("`word` = :word",array(":word"=>addslashes($value["word"])));
-						$nums = (NULL == $word)?1:$word->nums;
-						$coefficient += 1 / sqrt($nums);
-						$arrcount++;
+				foreach ($contsent as $key => $value) {
+					$result = $seg->getWords($value);
+					$arrcount = 0;
+					foreach($result as $key => $arr) {
+						foreach($arr as $key => $value) {
+							$word = Chinese::model()->find("`word` = :word",array(":word"=>addslashes($value["word"])));
+							$nums = (NULL == $word)?1:$word->nums;
+							$coefficient += 1 / sqrt($nums);
+							$arrcount++;
+						}
 					}
+					$coefficient = (0 == $arrcount)?1:$coefficient / $arrcount;
+					$coefficient = 1.5 * $coefficient;
 				}
-				$coefficient = (0 == $arrcount)?1:$coefficient / $arrcount;
-				$coefficient = 8 * $coefficient;
 				break;
 			case 1:
+				// init
 				$coefficient = 0;
-				$result = explode(" ", $content);
-				foreach($result as $key => $value) {
-					$word = English::model()->find("`word` = :word",array(":word"=>$value));
-					$nums = (NULL == $word)?1:$word->nums;
-					$coefficient += 1 / pow($nums, 1/6);
+				$contsent = Article::model()->enUniqueSent($content);
+				
+				foreach ($contsent['sentence'] as $key => $value) {
+					$value = trim(preg_replace("/[([:punct:]| )]+/"," ",$value));
+					if("" != $value) {
+						$sentword = explode(" ", $value);
+						
+						$wordcoefftemp = 0;
+						foreach ($sentword as $wordkey => $wordvalue) {
+							$word = English::model()->find("`word` = :word",array(":word"=>$wordvalue));
+							$nums = (NULL == $word)?1:$word->nums;
+							$wordcoefftemp += 16 / pow($nums, 1/4);
+						}
+						$longcoefftemp = pow(count($sentword), 1/4) / 2;
+						$coefficient += $wordcoefftemp * $longcoefftemp;
+					}
 				}
-				$coefficient = (0 == count($result))?1:$coefficient / count($result);
-				$coefficient = 6 * $coefficient;
+				$coefficient /= $contsent['wordcount'];
+				$wordcount = $contsent['wordcount'];
 				break;
 			default:
 				break;
 		}
 		
-		return $coefficient;
+		return array(
+			'coefficient'=>$coefficient,
+			'wordcount'=>$wordcount
+		);
+	}
+
+	public function enUniqueSent($content)
+	{
+		// init
+		$solongwecannotcalculatetwicelangth = 10;
+		
+		// remove ugly character
+		$content = preg_replace("/[^(a-zA-Z| |[:punct:])]+/", " ", $content);
+		$contsent = explode(".", $content);
+		// remove empty sentence and punct
+		foreach ($contsent as $key => $value) {
+			if($value == "" || $value == " ")
+				unset($contsent[$key]);
+			else
+				$contsent[$key] = $value;
+		}
+		// merge the long sentences
+		$longcontsent = array();
+		foreach ($contsent as $key => $value) {
+			if(str_word_count(preg_replace("/[[:punct:]]+/", " ", $value)) >= $solongwecannotcalculatetwicelangth) {
+				if(!in_array($value, $longcontsent))
+					$longcontsent = array_merge($longcontsent,array($value));
+				unset($contsent[$key]);
+			}
+		}
+		// final sentence need to calculate the price
+		$finalcontsent = array();
+		$finalcontsent = array_merge($contsent,$longcontsent);
+		
+		// count the words
+		$wordcount = 0;
+		foreach ($finalcontsent as $key => $value) {
+			$wordcount += str_word_count(preg_replace("/[[:punct:]]+/", " ", $value));
+		}
+		
+		return array(
+			'sentence'=>$finalcontsent,
+			'wordcount'=>$wordcount
+		);
 	}
 	
 	public function getText($text_id)
