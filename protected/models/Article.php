@@ -150,30 +150,30 @@ class Article extends CActiveRecord
 			throw new CHttpException(400,Yii::t('article','Translation content cannot be empty!'));
 		
 		// init
-		$price = 10000000;
 		switch ($srclang_id) {
 			case 0:
 				// remove punctuation reserve space
-				$content = preg_replace("/(·|！|￥|…|（|）|—|【|】|；|：|“|”|‘|’|╗|╚|┐|└|《|》|〈|〉|？|，|、)+/"," ",
-					preg_replace("/(\f|\n|\r|\t|\v|\d)+/"," ",$content));
-				$content = preg_replace("/[[:punct:]]/"," ",$content);
-				$content = preg_replace("/(\s)+/", "",
-					preg_replace("|[a-z ]|is","",$content));
+				$content = preg_replace("/(·|￥|…|（|）|—|【|】|；|：|“|”|‘|’|╗|╚|┐|└|《|》|〈|〉|，|、|＄|＝|€|￡|℃|≥|①|②|③|④|⑤|⑥|⑦|⑧|⑨|⑩|─|⊕|∞|≤|∏|｀|→|△|｜|■|◆|℉|㎡|￥|～|★|∶|∝|≈|∫|ˉ|√|∪|Ⅰ|Ⅱ|Ⅲ|Ⅵ|Ⅸ|Ⅻ|】|Φ|Σ|Ψ|Ω|θ|κ|λ|ν|α|γ|δ|ε|η|μ|﹝|﹞|﹖|﹕|﹔|﹒|﹑|﹐|．|é|ü|ò|è|à|ì|ù|︰)+/"," ",$content);
+				$content = preg_replace("/(\s|\d)+/"," ",$content);
+				$content = preg_replace("/[(a-z| |[:punct:])]+/is"," ",$content);
 				$artinfo = Article::model()->difficultyCoefficient($srclang_id, $content);
+				$wordcount = $artinfo['wordcount'];
 				$price = $artinfo['coefficient'] * $artinfo['wordcount'] * 0.12;
 				break;
 			case 1:
 				$content = preg_replace("/[^(a-zA-Z| |[:punct:])]+/", " ", $content);
 				$artinfo = Article::model()->difficultyCoefficient($srclang_id, $content);
+				$wordcount = $artinfo['wordcount'];
 				$price = $artinfo['coefficient'] * $artinfo['wordcount'] * 0.12;
 				break;
 			default:
-				throw new CHttpException(400,Yii::t('article','Wrong Source Language!'));
+				$wordcount = 1000000;
+				$price = 1000000;
 				break;
 		}
 		
 		return array(
-			'wordcount'=>$artinfo['wordcount'],
+			'wordcount'=>$wordcount,
 			'price'=>round($price,3),
 		);
 	}
@@ -181,29 +181,33 @@ class Article extends CActiveRecord
 	public function difficultyCoefficient($srclang_id,$content)
 	{
 		// init
-		$coefficient = 8;
 		switch ($srclang_id) {
 			case 0:
 				$coefficient = 0;
-				$wordcount = mb_strlen(preg_replace("/。+/", "", $content),'utf-8');
-				$content = preg_replace("/。+/", "。", $content);
+				$wordcount = mb_strlen(preg_replace("/(。|！|？|……| )+/", "", $content),'utf-8');
+				$content = preg_replace("/(。|！|？|……)+/", "。", $content);
 				$contsent = explode("。", $content);
 				
 				$seg = Segmentation::getInstance();
 				foreach ($contsent as $key => $value) {
-					$result = $seg->getWords($value);
-					$arrcount = 0;
-					foreach($result as $key => $arr) {
-						foreach($arr as $key => $value) {
-							$word = Chinese::model()->find("`word` = :word",array(":word"=>addslashes($value["word"])));
-							$nums = (NULL == $word)?1:$word->nums;
-							$coefficient += 1 / sqrt($nums);
-							$arrcount++;
+					if("" != $value) {
+						$result = $seg->getWords($value);
+						$wordcoefftemp = 0;
+						$arrcount = 0;
+						foreach($result as $resultkey => $arr) {
+							foreach($arr as $arrkey => $word) {
+								$word = Chinese::model()->find("`word` = :word",array(":word"=>addslashes($word["word"])));
+								$nums = (NULL == $word)?100:$word->nums;
+								$wordcoefftemp += 16 / pow($nums, 1/5);
+								$arrcount++;
+							}
 						}
+						$longcoefftemp = $this->longCoeff($arrcount);
+						$coefficient += $wordcoefftemp * $longcoefftemp;
 					}
-					$coefficient = (0 == $arrcount)?1:$coefficient / $arrcount;
-					$coefficient = 1.5 * $coefficient;
 				}
+				// cannot division by zero
+				$coefficient = (0 != $wordcount)?$coefficient/$wordcount:0;
 				break;
 			case 1:
 				// init
@@ -218,17 +222,20 @@ class Article extends CActiveRecord
 						$wordcoefftemp = 0;
 						foreach ($sentword as $wordkey => $wordvalue) {
 							$word = English::model()->find("`word` = :word",array(":word"=>$wordvalue));
-							$nums = (NULL == $word)?1:$word->nums;
+							$nums = (NULL == $word)?100:$word->nums;
 							$wordcoefftemp += 16 / pow($nums, 1/4);
 						}
-						$longcoefftemp = pow(count($sentword), 1/4) / 2;
+						$longcoefftemp = $this->longCoeff(count($sentword));
 						$coefficient += $wordcoefftemp * $longcoefftemp;
 					}
 				}
-				$coefficient /= $contsent['wordcount'];
 				$wordcount = $contsent['wordcount'];
+				// cannot division by zero
+				$coefficient = (0 != $wordcount)?$coefficient/$wordcount:0;
 				break;
 			default:
+				$coefficient = 8;
+				$wordcount = 1000000;
 				break;
 		}
 		
@@ -236,6 +243,10 @@ class Article extends CActiveRecord
 			'coefficient'=>$coefficient,
 			'wordcount'=>$wordcount
 		);
+	}
+
+	private function longCoeff($length) {
+		return pow($length, 1/4) / 2;
 	}
 
 	public function enUniqueSent($content)
