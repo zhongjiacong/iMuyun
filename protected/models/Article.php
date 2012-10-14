@@ -203,7 +203,7 @@ class Article extends CActiveRecord
 							}
 						}
 						$longcoefftemp = $this->longCoeff($arrcount);
-						$coefficient += $wordcoefftemp * $longcoefftemp;
+						$coefficient += round($wordcoefftemp,3) * round($longcoefftemp,2);
 					}
 				}
 				// cannot division by zero
@@ -226,7 +226,7 @@ class Article extends CActiveRecord
 							$wordcoefftemp += 16 / pow($nums, 1/4);
 						}
 						$longcoefftemp = $this->longCoeff(count($sentword));
-						$coefficient += $wordcoefftemp * $longcoefftemp;
+						$coefficient += round($wordcoefftemp,3) * round($longcoefftemp,2);
 					}
 				}
 				$wordcount = $contsent['wordcount'];
