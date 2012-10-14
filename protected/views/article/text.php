@@ -94,6 +94,10 @@ Yii::app()->clientScript->registerScript('textform', "
 	}
 	
 	function contentResponse() {
+		// textarea height
+		var artcontlen = $('#Article_artcont').val().length;
+		if(artcontlen > 350)
+			document.getElementById("Article_artcont").rows = 10 + (artcontlen - 350) / 40;
 		clearTimeout(sendkeyup);
 		sendkeyup = setTimeout(textinfor,1000);
 		$('#wordcount div').html('￥: ...<br /><?=Yii::t('article','Words'); ?>: ...');
