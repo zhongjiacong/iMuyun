@@ -86,16 +86,17 @@ Yii::app()->clientScript->registerScript('textform', "
 	// convenient for callback function
 	function keyupResponse() {
 		$('#Article_artcont').keyup(function() {
-			clearTimeout(sendkeyup);
-			sendkeyup = setTimeout(textinfor,1000);
-			$('#wordcount div').html('￥: ...<br /><?=Yii::t('article','Words'); ?>: ...');
+			contentResponse();
 		});
 		$('#Article_artcont').bind('paste',function() {
-			// the same as above
-			clearTimeout(sendkeyup);
-			sendkeyup = setTimeout(textinfor,1000);
-			$('#wordcount div').html('￥: ...<br /><?=Yii::t('article','Words'); ?>: ...');
+			contentResponse();
 		});
+	}
+	
+	function contentResponse() {
+		clearTimeout(sendkeyup);
+		sendkeyup = setTimeout(textinfor,1000);
+		$('#wordcount div').html('￥: ...<br /><?=Yii::t('article','Words'); ?>: ...');
 	}
 	
 	function textinfor() {
@@ -146,12 +147,14 @@ Yii::app()->clientScript->registerScript('textform', "
 			$('#Article_tgtlang_id').val(1);
 		else
 			$('#Article_tgtlang_id').val(0);
+		contentResponse();
 	});
 	$('#Article_tgtlang_id').change(function(){
 		if(0 == $('#Article_tgtlang_id').val())
 			$('#Article_srclang_id').val(1);
 		else
 			$('#Article_srclang_id').val(0);
+		contentResponse();
 	});
 	//-- not the same language end --//
 </script>

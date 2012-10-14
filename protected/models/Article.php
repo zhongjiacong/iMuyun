@@ -256,6 +256,8 @@ class Article extends CActiveRecord
 		
 		// remove ugly character
 		$content = preg_replace("/[^(a-zA-Z| |[:punct:])]+/", " ", $content);
+		// $content = preg_replace("/(。|！|？|……)+/", "。", $content);
+		$content = preg_replace("/[(.|?|…|!)]+/",".",$content);
 		$contsent = explode(".", $content);
 		// remove empty sentence and punct
 		foreach ($contsent as $key => $value) {
