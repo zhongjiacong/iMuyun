@@ -40,7 +40,7 @@
             var isPublisher = false;
             var rid=-1;
             var isInVideoCall = false;
-            var HOST = "http://imuyun.com:8000/";
+            var HOST = "http://imuyun.com:8001/";
             //var HOST = "http://imuyun.com/muyunvideo/"
  
             TB.setLogLevel(TB.DEBUG);
