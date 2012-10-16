@@ -217,6 +217,8 @@
 <?php endif; ?>
 
 <div class="container" id="page">
+	<div id="audio" style="display: none;"></div>
+	
 	<div id="maincontent">
 		<?php if(isset($this->breadcrumbs)):?>
 			<?php $this->widget('zii.widgets.CBreadcrumbs', array(

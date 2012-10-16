@@ -1983,3 +1983,39 @@ in D:\Dropbox\www\imuyun\index.php (16)
 in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (433)
 in D:\Dropbox\www\imuyun\protected\controllers\ArticleController.php (221)
 in D:\Dropbox\www\imuyun\index.php (16)
+2012/10/16 12:03:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "public/audio/newmsg.mp3"。' in D:\Dropbox\www\imuyun\framework\web\CWebApplication.php:280
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('public/audio/ne...')
+#1 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Dropbox\www\imuyun\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/imuyun/public/audio/newmsg.mp3
+HTTP_REFERER=http://localhost/imuyun/article/test
+---
+2012/10/16 12:03:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "public/audio/newmsg.wav"。' in D:\Dropbox\www\imuyun\framework\web\CWebApplication.php:280
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('public/audio/ne...')
+#1 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Dropbox\www\imuyun\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/imuyun/public/audio/newmsg.wav
+HTTP_REFERER=http://localhost/imuyun/article/test
+---
+2012/10/16 12:03:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "public/audio/newmsg.mp3"。' in D:\Dropbox\www\imuyun\framework\web\CWebApplication.php:280
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('public/audio/ne...')
+#1 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Dropbox\www\imuyun\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/imuyun/public/audio/newmsg.mp3
+HTTP_REFERER=http://localhost/imuyun/article/test
+---
+2012/10/16 12:03:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "public/audio/newmsg.wav"。' in D:\Dropbox\www\imuyun\framework\web\CWebApplication.php:280
+Stack trace:
+#0 D:\Dropbox\www\imuyun\framework\web\CWebApplication.php(135): CWebApplication->runController('public/audio/ne...')
+#1 D:\Dropbox\www\imuyun\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Dropbox\www\imuyun\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/imuyun/public/audio/newmsg.wav
+HTTP_REFERER=http://localhost/imuyun/article/test
+---

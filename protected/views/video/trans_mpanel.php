@@ -123,6 +123,18 @@
                         success: function(data) {
                             //alert( data.rid);
                             rid = data.rid;
+                            // add music
+							$("#audio").html(
+								'<audio controls="controls" autoplay="autoplay">'+
+									'<source src="<?=Yii::app()->theme->baseUrl; ?>/audio/SuperMario.mp3" type="audio/mp3" />'+
+									'<source src="<?=Yii::app()->theme->baseUrl; ?>/audio/SuperMario.wav" type="audio/wav" />'+
+									'Your browser does not support the audio element.'+
+								'</audio>'
+							);
+							function closeAudio() {
+								$("#audio").html('');
+							}
+							setTimeOut(closeAudio, 3000);
                         }
 	                })
 	            }
