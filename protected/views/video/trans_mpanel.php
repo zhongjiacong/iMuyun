@@ -134,7 +134,7 @@
 							function closeAudio() {
 								$("#audio").html('');
 							}
-							setTimeOut(closeAudio, 3000);
+							setTimeout(closeAudio, 7000);
                         }
 	                })
 	            }

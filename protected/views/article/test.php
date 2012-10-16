@@ -9,5 +9,9 @@
 				'Your browser does not support the audio element.'+
 			'</audio>'
 		);
+		function closeAudio() {
+			$("#audio").html('');
+		}
+		setTimeout(closeAudio, 7000);
 	});
 </script>
