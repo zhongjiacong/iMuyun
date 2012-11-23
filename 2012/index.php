@@ -28,34 +28,38 @@
         <script src="themes/classic/js/bootstrap-dropdown.js" ></script>
     </head>
     <body>
-        <div id="container">
-            <div class="row">
-                <div class="span12">
-                    <ul class="nav nav-tabs">
-                        <li class="active">Call Translator</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row">
-                <div class="span8" id="conferencing_area">&nbsp;</div>
-                <div class="span4">
-                    <div class="btn-group">
-                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                            Select Language Need To Translate
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <!-- HARD CODED!-->
-                            <li id="1" class="trans_only_btn"><a>English</a></li>
-                        </ul>
-                    </div>
-                    <br />
-                    <div id="selectlang" class="hide">You have select <span></span></div>
-                    <br />
-                    <div id="btndiv">
-                    </div>
-                </div>
-            </div>
+        <div class="container" id="container">
+	        <div id="maincontent">
+		        <div id="content">
+		            <div class="row">
+		                <div class="span12">
+		                    <ul class="nav nav-tabs">
+		                        <li class="active">Call Translator</li>
+		                    </ul>
+		                </div>
+		            </div>
+		            <div class="row">
+		                <div class="span8" id="conferencing_area">&nbsp;</div>
+		                <div class="span4">
+		                    <div class="btn-group">
+		                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+		                            Select Language Need To Translate
+		                            <span class="caret"></span>
+		                        </a>
+		                        <ul class="dropdown-menu">
+		                            <!-- HARD CODED!-->
+		                            <li id="1" class="trans_only_btn"><a>English</a></li>
+		                        </ul>
+		                    </div>
+		                    <br />
+		                    <div id="selectlang" class="hide">You have select <span></span></div>
+		                    <br />
+		                    <div id="btndiv">
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+	        </div>
         </div>
         <script type="text/javascript" charset="utf-8">
             var HOST = "http://imuyun.com:8001/"
