@@ -121,8 +121,8 @@
                             // add music
 							$("#audio").html(
 								'<audio controls="controls" autoplay="autoplay">'+
-									'<source src="imuyun.com/audio/SuperMario.mp3" type="audio/mp3" />'+
-									'<source src="imuyun.com/audio/SuperMario.wav" type="audio/wav" />'+
+									'<source src="themes/classic/audio/SuperMario.mp3" type="audio/mp3" />'+
+									'<source src="themes/classic/audio/SuperMario.wav" type="audio/wav" />'+
 									'Your browser does not support the audio element.'+
 								'</audio>'
 							);
