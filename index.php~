@@ -1,7 +1,6 @@
 <?php
 if($_SERVER['SERVER_NAME'] == "www.vflag.com" ||
 	$_SERVER['SERVER_NAME'] == "vflag.com") {
-		header("Location: http://vflag.com/2012");
 }
 else if($_SERVER['SERVER_NAME'] == "www.imuyun.com")
 	header("Location: http://imuyun.com".str_replace("/index.php","",$_SERVER["REQUEST_URI"]));
