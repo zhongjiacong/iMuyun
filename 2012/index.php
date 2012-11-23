@@ -28,18 +28,9 @@
                             Select Language Need To Translate
                             <span class="caret"></span>
                         </a>
-                        <?php
-                        	// remove user's language
-                        	$langli = "";
-							$useingLang = array_slice(Yii::app()->params['language'],0,2);
-							foreach ($useingLang as $key => $value) {
-								if($key != User::model()->userDefaultLang())
-									$langli .= '<li id="'.$key.'" class="trans_only_btn"><a>'.$value.'</a></li>';
-							}
-                        ?>
                         <ul class="dropdown-menu">
                             <!-- HARD CODED!-->
-                            <?=$langli; ?>
+                            <li id="1" class="trans_only_btn"><a>English</a></li>
                         </ul>
                     </div>
                     <br />
