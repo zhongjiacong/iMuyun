@@ -1,10 +1,32 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="http://static.opentok.com/v0.91/js/TB.min.js" type="text/javascript" charset="utf-8"></script>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-        <script src="themes/classic/js/bootstrap-dropdown.js" ></script>
-        <link href="themes/classic/css/bootstrap.css" rel="stylesheet">
+				<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+				<meta name="language" content="en" />
+	
+				<!-- blueprint CSS framework -->
+				<link rel="stylesheet" type="text/css" href="/themes/classic/css/screen.css" media="screen, projection" />
+				<link rel="stylesheet" type="text/css" href="/themes/classic/css/print.css" media="print" />
+				<!--[if lt IE 8]>
+				<link rel="stylesheet" type="text/css" href="/themes/classic/css/ie.css" media="screen, projection" />
+				<![endif]-->
+				
+				<link rel="stylesheet" type="text/css" href="/themes/classic/css/main.css" />
+				<link rel="stylesheet" type="text/css" href="/themes/classic/css/pages.css" />
+				<link rel="stylesheet" type="text/css" href="/themes/classic/css/form.css" />
+				<link rel="stylesheet" type="text/css" href="/themes/classic/css/layouts.css" />
+				<link rel="stylesheet" type="text/css" href="/themes/classic/css/view.css" />
+				<link rel="stylesheet" type="text/css" href="/themes/classic/css/menu.css" />
+				<link href="themes/classic/css/bootstrap.css" rel="stylesheet">
+							
+				<script src="http://static.opentok.com/v0.91/js/TB.min.js" type="text/javascript" charset="utf-8"></script>
+				<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+				<script src="themes/classic/js/bootstrap-dropdown.js" ></script>
+	
+				<script type="text/javascript" src="/themes/classic/js/jquery.animate-colors-min.js"></script>
+				<script type="text/javascript" src="/themes/classic/js/jquery.cookie.js"></script>
+				<script type="text/javascript" src="/themes/classic/js/view.js"></script>
+				<script type="text/javascript" src="/themes/classic/js/jquery.json-2.3.min.js"></script>
     </head>
     <body>
         <div class="container" id="container">
