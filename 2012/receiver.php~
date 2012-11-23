@@ -7,7 +7,9 @@
         <link href="themes/classic/css/bootstrap.css" rel="stylesheet">
     </head>
     <body>
-        <div id="container">
+        <div class="container" id="container">
+	        <div id="maincontent">
+		        <div id="content">
             <div class-"row">
                 <div class="span12">
                     <ul class="nav nav-tabs">
@@ -21,7 +23,10 @@
                 <div class="span8" id="conferencing_area">
                 </div>
             </div>
+           </div>
+          </div>
         </div>
+        <div id="audio" style="display: none;"></div>
         <script type="text/javascript" charset="utf-8">
             var session_id, token, streamCount;
             var namelist = new Array();
@@ -122,7 +127,7 @@
 							$("#audio").html(
 								'<audio controls="controls" autoplay="autoplay">'+
 									'<source src="themes/classic/audio/SuperMario.mp3" type="audio/mp3" />'+
-									'<source src="imuyun.com/audio/SuperMario.wav" type="audio/wav" />'+
+									'<source src="themes/classic/audio/SuperMario.wav" type="audio/wav" />'+
 									'Your browser does not support the audio element.'+
 								'</audio>'
 							);
