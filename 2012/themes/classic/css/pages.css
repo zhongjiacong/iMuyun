@@ -1,0 +1,87 @@
+.intro {
+	padding: 0 20px;
+}
+.intro div {
+	font-size: 15px;
+	line-height: 24px;
+	text-indent: 30px;
+	margin: 15px 0;
+}
+.intro div:nth-child(1) {
+	border-bottom: dotted 1px #BBB;
+	margin-left: 30px;
+	padding-bottom: 10px;
+	margin-bottom: 25px;
+	text-indent: 0px;
+}
+.intro div:nth-child(1) span {
+	padding-right: 3px;
+	min-width: 20px;
+	background-image: url(../img/arrow.png);
+	background-repeat: no-repeat;
+	background-position: 0px 3px;
+}
+.intro .weare {
+	float: right;
+	padding-right: 30px;
+	width: 330px;
+	height: 350px;
+}
+.intro .title {
+	color: white;
+	line-height: 28px;
+	height: 28px;
+	margin-left: 30px;
+	text-indent: 40px;
+	background-image: url(../img/introsubtitle.png);
+	background-repeat: no-repeat;
+}
+.intro .center {
+	text-align: center;
+}
+.intro table {
+	margin-left: 30px;
+	width: 820px;
+	border-collapse: collapse;
+}
+.intro table th, .intro table td {
+	padding: 15px 10px;
+	border: 1px solid #ccc;
+}
+.intro table .tag {
+	font-size: 14px;
+	color: rgb(3,61,32);
+	background-color: rgb(83,218,148);
+}
+.intro .triprovide {
+	width: 280px;
+	margin-right: 10px;
+	float: left;
+}
+.intro .triprovide span {
+	float: left;
+	color: white;
+	line-height: 49px;
+	font-size: 40px;
+	width: 59px;
+	height: 49px;
+	text-indent: 15px;
+	font-family: "Times New Roman";
+	background-image: url(../img/introservicenum.png);
+	background-repeat: no-repeat;
+}
+
+.pagesHead {
+	font-size: 35px;
+	text-transform: uppercase;
+	color: rgb(35,81,114);
+	text-shadow: 0px 1px rgb(133,160,180);
+	padding-left: 42px;
+	width: 907px;
+	padding-top: 38px;
+	height: 81px;
+	float: left;
+	margin: -15px 0 15px -15px;
+	background-image: url(../img/pageshead.png);
+	border: 0px;
+}

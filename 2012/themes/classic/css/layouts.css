@@ -1,0 +1,121 @@
+/* Global Start */
+input[type='button']
+{
+	cursor: pointer !important;
+}
+/* Global End */
+
+.adminmenu
+{
+	float: right;
+}
+
+#headleft
+{
+	width: 240px;
+	overflow: hidden;
+	display: block;
+	cursor: pointer;
+}
+
+#headright
+{
+	width: 640px;
+	padding: 10px;
+	float: right;
+}
+
+#logoimgdiv
+{
+	float: left;
+	margin: 28px 18px;
+}
+
+#logoimgdiv img
+{
+	background: white;
+	width: 40px;
+	height: 40px;
+	padding: 2px;
+	border: 1px solid #DDD;
+	border-radius: 2px;
+}
+
+#logo span
+{
+	font-size: 14px;
+	float: left;
+}
+
+#syslangdiv
+{
+	float: right;
+	margin: 20px;
+}
+
+#login
+{
+	float: right;
+	text-align: right;
+	font-size: 14px;
+	line-height: 20px;
+	width: 420px;
+	padding: 20px;
+}
+
+#footer dl
+{
+	float: left;
+	width: 200px;
+	text-align: left;
+	margin: 0px 15px 0px 15px;
+}
+
+#footer dt
+{
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#footer ul
+{
+	list-style-type: none;
+}
+
+#footer ul li a
+{
+	color: white !important;
+}
+
+#clock {
+	padding: 0px;
+	margin: 10px 0px 0px 0px;
+	float: right;
+	position: relative;
+	width: 60px;
+	height: 60px;
+	background: url(../img/clock/clockface.png);
+	list-style: none;
+}
+
+#sec, #min, #hour {
+	position: absolute;
+	width: 1px;
+	height: 60px;
+	left: 30px;
+}
+
+#sec {
+	background: url(../img/clock/sechand.png);
+	z-index: 3;
+}
+   
+#min {
+	background: url(../img/clock/minhand.png);
+	z-index: 2;
+}
+   
+#hour {
+	background: url(../img/clock/hourhand.png);
+	z-index: 1;
+}
