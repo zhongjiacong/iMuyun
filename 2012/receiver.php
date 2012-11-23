@@ -126,8 +126,8 @@
                             // add music
 							$("#audio").html(
 								'<audio controls="controls" autoplay="autoplay">'+
-									'<source src="themes/classic/audio/SuperMario.mp3" type="audio/mp3" />'+
-									'<source src="themes/classic/audio/SuperMario.wav" type="audio/wav" />'+
+									'<source src="http://vflag.com/2012/themes/classic/audio/SuperMario.mp3" type="audio/mp3" />'+
+									'<source src="http://vflag.com/2012/themes/classic/audio/SuperMario.wav" type="audio/wav" />'+
 									'Your browser does not support the audio element.'+
 								'</audio>'
 							);
